@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+    <string-array name="menus">
+        <item>Add</item>
+        <item>Home settings</item>
+        <item>System settings</item>
+        <item>Manage applications</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item">
+        <item>Picture</item>
+        <item>Camera</item>
+        <item>Revert to default</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>Picture</item>
+        <item>Camera</item>
+        <item>Revert to default</item>
+    </string-array>
+
+   <string-array name="appicon_background_entries">
+        <item>Average color</item>
+        <item>Complementary color</item>
+    </string-array>
+    <string-array name="appicon_background_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="long_click_wall">
+        <item>Home settings</item>
+        <item>3D object</item>
+        <item>Application</item>
+        <item>Folder</item>
+        <item>Shortcut</item>
+        <item>Widget</item>
+        <item>Wallpaper</item>
+    </string-array>
+
+    <string-array name="app_drawer_sort_type">
+        <item>Name</item>
+        <item>Recently Install</item>
+        <item>Frequently Used</item>
+    </string-array>
+    
+</resources>

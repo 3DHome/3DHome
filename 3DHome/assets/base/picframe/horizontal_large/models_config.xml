@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_largewallpicframe"
+    basedataFile="largewallpicframe_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,0.5,0.5,0.5"
+    maxPoint="155,0,238.5"
+    minPoint="-155,0,-238.5"
+    sceneFile="largewallpicframe_scene.cbf"
+    slotType="wall"
+    spanX="2"
+    spanY="2"
+    type="PictureFrame" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="shengzi_03.png@largewallpicframe_basedata.cbf"
+            imagePath="shengzi_03.png" />
+
+        <imageInfo
+            imageName="xiangkuang.jpg@largewallpicframe_basedata.cbf"
+            imagePath="xiangkuang.jpg" />
+
+        <imageInfo
+            imageName="xp_2.jpg@largewallpicframe_basedata.cbf"
+            imagePath="xp_2.jpg" />
+
+        <imageInfo
+            imageName="xiangkuang.jpg@largewallpicframe_basedata.cbf_0"
+            imagePath="xiangkuang.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="picture"
+                spatialName="Object82@group_largewallpicframe" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="frame"
+                spatialName="Box116@group_largewallpicframe" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="shadow"
+                spatialName="yinying04@group_largewallpicframe" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="rope"
+                spatialName="Plane81@group_largewallpicframe" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="hook"
+                spatialName="Cylinder08@group_largewallpicframe" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="0"
+                statusValue="0" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gallery</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="edit_photo_frame">Edycja elektroniczny album</string>
+    <string name="change_pic">Wymień płytę</string>
+    <string name="select_frame_material">Wybierz materiał ramki</string>
+    <string name="photo_count_and_layout">Ilość zdjęć i układ</string>
+    <string name="interval_time">przedział czasu</string>
+    <string name="min_5">5 min</string>
+    <string name="min_10">10 min</string>
+    <string name="min_15">15 min</string>
+    <string name="single">wolny</string>
+    <string name="folder">Folder</string>
+    <string name="all">wszystko</string>
+</resources>

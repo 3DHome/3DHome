@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BorqsResource version="1" defaultLang="en_US">
+<id>com.borqs.se.object.shelf</id>
+<app>com.borqs.se</app>
+<category>object</category>
+<name>
+  <langs>
+    <en_US>Shelf</en_US>
+    <zh_CN></zh_CN>
+  </langs>
+</name>
+<description>
+  <langs>
+    <en_US></en_US>
+    <zh_CN></zh_CN>
+  </langs>
+</description>
+<authorName>3dhomerelease</authorName>
+<authorEmail>3dhomerelease@borqs.com</authorEmail>
+<logo>cover.png</logo>
+<cover>cover.png</cover>
+<screenshot1>screenshot1.png</screenshot1>
+<version>3</version>
+<versionName>
+  <langs>
+    <en_US>3</en_US>
+    <zh_CN></zh_CN>
+  </langs>
+</versionName>
+<recentChange>
+  <langs>
+    <en_US></en_US>
+    <zh_CN></zh_CN>
+  </langs>
+</recentChange>
+</BorqsResource>

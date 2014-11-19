@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" >
+
+            <include android:id="@+id/process_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dip"
+                android:layout_marginTop="40dip"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                layout = "@layout/wallpaper_download_process"
+                android:visibility="gone" 
+                />
+         </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/pages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/pager_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/pages"
+            android:layerType="software"
+            android:clipChildren="false" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/mPager"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dip"
+                android:layout_marginRight="40dip"
+                android:layout_marginTop="10dip"
+                android:layout_marginBottom="10dip"
+                android:clipChildren="false" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <LinearLayout
+            android:id="@+id/opertion_group_view"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dip"
+            android:orientation="horizontal" >
+
+        <Button
+                android:id="@+id/delete_or_download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/action_purchase"
+                android:background="?attr/buttonSelectableBackground"
+                android:textColor="@color/white" />
+    </LinearLayout>
+
+</FrameLayout>

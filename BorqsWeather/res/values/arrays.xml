@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="interval_time_entries">
+        <item>Half an hour</item>
+        <item>1 hour</item>
+        <item>2 hours</item>
+        <item>3 hours</item>
+        <item>4 hours</item>
+        <item>5 hours</item>
+    </string-array>
+    <string-array name="interval_time_values" translatable="false">
+        <item>1800000</item> <!-- 1800000 -->
+        <item>3600000</item> <!-- 3600000 -->
+        <item>7200000</item> <!-- 7200000 -->
+        <item>10800000</item> <!-- 10800000 -->
+        <item>14400000</item> <!-- 14400000 -->
+        <item>18000000</item> <!-- 18000000 -->
+    </string-array>
+</resources>

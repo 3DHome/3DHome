@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="desk_fang"
+    actionStatus="320"
+    basedataFile="deskfang_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,0.85,0.85,0.9"
+    maxPoint="242.27,112.164,116"
+    minPoint="-242.27,-112.164,0.290199"
+    sceneFile="deskfang_scene.cbf"
+    slotType="desk"
+    supportScreen="portrait"
+    type="DeskPort" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="object_fangzhuo01_fhq.png@deskfang_basedata.cbf"
+            imagePath="object_fangzhuo01_fhq.png" />
+
+        <imageInfo
+            imageName="object_fangzhuo01_fhq.png@deskfang_basedata.cbf_0"
+            imagePath="object_fangzhuo01_fhq.png" />
+
+        <imageInfo
+            imageName="object_fangzhuo01_fhq.png@deskfang_basedata.cbf_1"
+            imagePath="object_fangzhuo01_fhq.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="object_fangzhuo01_fhq@deskfang" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="fangzhuozhuomian@deskfang" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113605" />
+
+            <alpha alphaValue="0.6" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="fangzhuozhijia01@deskfang" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

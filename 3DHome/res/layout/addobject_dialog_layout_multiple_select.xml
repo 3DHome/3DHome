@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/folderl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/addobject_dialog_folder_paddingbottom"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="@dimen/addobject_dialog_folder_wh"
+            android:layout_height="@dimen/addobject_dialog_folder_wh"
+            android:layout_gravity="center"
+            android:background="@drawable/addobject_dialog_folder"
+            android:orientation="vertical" />
+
+        <TableLayout
+            android:layout_width="@dimen/addobject_dialog_folder_wh"
+            android:layout_height="@dimen/addobject_dialog_folder_wh"
+            android:layout_gravity="center"
+            android:padding="@dimen/addobject_dialog_folder_icon_padding"
+            android:stretchColumns="0, 1" >
+
+            <TableRow
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/folderiv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="3px"
+                        android:gravity="center"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/folderiv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3px"
+                        android:gravity="center"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/folderiv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3px"
+                        android:gravity="center"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/folderiv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3px"
+                        android:gravity="center"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/addobject_dialog_contentv_bluelight_padding"
+            android:layout_marginRight="@dimen/addobject_dialog_contentv_bluelight_padding"
+            android:background="@drawable/addobject_dialog_title"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" >
+
+            <TextView
+                android:id="@+id/contenttitle_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text="@string/addobject_select_to_add_app"
+                android:textColor="@color/black"
+                android:textSize="@dimen/addobject_dialog_title_textsize" />
+
+            <com.borqs.se.addobject.AddObjectEditText
+                android:id="@+id/contenttitle_ev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_weight="1"
+                android:background="@drawable/addobject_folder_edit_bg"
+                android:enabled="false"
+                android:gravity="center|left"
+                android:hint="@string/folder_title"
+                android:maxLines="1"
+                android:paddingBottom="10px"
+                android:paddingLeft="4px"
+                android:paddingRight="4px"
+                android:paddingTop="8px"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/addobject_foldername_color_hint"
+                android:textSize="@dimen/addobject_dialog_title_textsize"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/selectedinfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_weight="3"
+                android:gravity="center|right"
+                android:textColor="@color/black"
+                android:textSize="@dimen/addobject_dialog_title_textsize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contentvplparent"
+            android:layout_width="@dimen/addobject_dialog_contentv_default_clear_w"
+            android:layout_height="@dimen/addobject_dialog_contentv_default_h"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="@dimen/addobject_dialog_contentv_bluelight_lr_w"
+                android:layout_height="match_parent"
+                android:background="@drawable/addobject_bluelight_left" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/addobject_select_color_ntransparent_bg"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <FrameLayout
+                        android:id="@+id/contentvpl"
+                        android:layout_width="@dimen/addobject_dialog_contentv_default_w"
+                        android:layout_height="@dimen/addobject_dialog_contentv_default_h"
+                        android:background="@drawable/addobject_dialog_contentv_slant_bg"
+                        android:orientation="vertical" >
+
+                        <com.borqs.se.addobject.AddObjectViewPager
+                            android:id="@+id/contentvp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:id="@+id/fadingv_left_l"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="left" >
+
+                            <com.borqs.se.addobject.FadingView
+                                android:id="@+id/fadingv_left"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:tag="0"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/fadingv_right_l"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:gravity="right" >
+
+                            <com.borqs.se.addobject.FadingView
+                                android:id="@+id/fadingv_right"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:tag="1"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:id="@+id/contentvpcvl"
+                            android:layout_width="@dimen/addobject_dialog_contentv_default_w"
+                            android:layout_height="@dimen/addobject_dialog_contentv_default_h"
+                            android:background="@android:color/transparent"
+                            android:clickable="true"
+                            android:orientation="vertical"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/pageindicatorl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/addobject_dialog_indicator_h"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/addobject_dialog_contentv_bluelight_lr_w"
+                android:layout_height="match_parent"
+                android:background="@drawable/addobject_bluelight_right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/addobject_dialog_contentv_bluelight_btm_h"
+            android:background="@drawable/addobject_bluelight_bottom" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonsl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/addobject_dialog_contentv_bluelight_padding"
+        android:layout_marginRight="@dimen/addobject_dialog_contentv_bluelight_padding"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/addobject_btn_cancel"
+                android:layout_width="@dimen/addobject_dialog_button_w"
+                android:layout_height="@dimen/addobject_dialog_button_h"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/addobject_cancel_selector"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/addobject_btn_ok"
+                android:layout_width="@dimen/addobject_dialog_button_w"
+                android:layout_height="@dimen/addobject_dialog_button_h"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/addobject_ok_selector"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

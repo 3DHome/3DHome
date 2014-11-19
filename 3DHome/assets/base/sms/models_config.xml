@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_sms"
+    basedataFile="duanxin_basedata.cbf"
+    keyWords="com.android.mms,mms"
+    localTrans="0,0,-2,0,0,0,0,0.8,0.8,0.8"
+    maxPoint="41.5235,37.7153,98.0419"
+    minPoint="-41.5235,-37.7153,0.1818"
+    sceneFile="duanxin_scene.cbf"
+    slotType="desktop"
+    type="SMS" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="duanxin.jpg@duanxin_basedata.cbf"
+            imagePath="duanxin.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="duanxin_01@duanxin" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

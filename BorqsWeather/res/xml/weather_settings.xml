@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="auto_update_setting"
+    android:persistent="false"
+    android:title="@string/weather_settings" >
+
+    <PreferenceCategory
+        android:key="weather_settings"
+        android:title="@string/auto_update_common" >
+        <CheckBoxPreference
+            android:key="use_celsius"
+            android:persistent="false"
+            android:title="@string/switch_units_title"
+            android:widgetLayout="@layout/weather_c_f_checkbox" />
+        
+        <CheckBoxPreference
+            android:disableDependentsState="true"
+            android:key="auto_location"
+            android:persistent="false"
+            android:summary="@string/auto_location_summary"
+            android:title="@string/auto_location_title" />
+
+        <EditTextPreference
+            android:dependency="auto_location"
+            android:dialogMessage="@string/set_location_msg"
+            android:key="set_location"
+            android:persistent="false"
+            android:title="@string/set_location_title" />
+
+        <Preference
+            android:key="update_now"
+            android:persistent="false"
+            android:summary="@string/update_now_summary"
+            android:title="@string/update_now_title" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="auto_update_setting"
+        android:title="@string/auto_update_setting" >
+        <CheckBoxPreference
+            android:key="auto_update"
+            android:persistent="false"
+            android:summary="@string/auto_update_summary"
+            android:title="@string/auto_update_title" />
+
+        <Preference
+            android:dependency="auto_update"
+            android:key="start_time"
+            android:summary="@string/start_time_summary"
+            android:title="@string/start_time_title" />
+        <Preference
+            android:dependency="auto_update"
+            android:key="end_time"
+            android:summary="@string/end_time_summary"
+            android:title="@string/end_time_title" />
+
+        <ListPreference
+            android:dependency="auto_update"
+            android:entries="@array/interval_time_entries"
+            android:entryValues="@array/interval_time_values"
+            android:key="interval_time"
+            android:persistent="false"
+            android:summary="@string/interval_time_summary"
+            android:title="@string/interval_time_title" />
+
+        <Preference
+            android:key="send_log_to_us"
+            android:persistent="false"
+            android:summary="@string/send_weather_log_des"
+            android:title="@string/send_weather_log_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

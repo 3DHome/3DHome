@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>1월</item>
+        <item>2월</item>
+        <item>3월</item>
+        <item>4월</item>
+        <item>5월</item>
+        <item>6월</item>
+        <item>7월</item>
+        <item>8월</item>
+        <item>9월</item>
+        <item>10월</item>
+        <item>11월</item>
+        <item>12월</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>일</item>
+        <item>월</item>
+        <item>화</item>
+        <item>수</item>
+        <item>목</item>
+        <item>금</item>
+        <item>토</item>
+    </string-array>
+    <string-array name="menus">
+        <item>추가</item>
+        <item>주제 설정</item>
+        <item>시트템 설정</item>
+        <item>프로그램 관리</item>
+    </string-array>
+    <string-array name="edit_wall_menu_item">
+        <item>그림</item>
+        <item>카메라</item>
+        <item>기본값으로 되돌리기</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>그림</item>
+        <item>카메라</item>
+        <item>기본값으로 되돌리기</item>
+    </string-array>
+   <string-array name="appicon_background_entries">
+        <item>평균 색</item>
+        <item>보색</item>
+    </string-array>
+    <string-array name="long_click_wall">
+        <item>주제 설정</item>
+        <item>3D 개체를 추가</item>
+        <item>응용 프로그램 추가</item>
+        <item>폴더 추가</item>
+        <item>바로 가기를 추가</item>
+        <item>위젯을 추가</item>
+        <item>배경 화면을 변경</item>
+    </string-array>
+
+    <string-array name="app_drawer_sort_type">
+        <item>이름</item>
+        <item>최근 설치</item>
+        <item>자주 사용하는</item>
+    </string-array>
+
+</resources>

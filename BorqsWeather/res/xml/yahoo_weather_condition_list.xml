@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<condition code="0" displayName="Tornado" key="tornado" type="4" />
+	<condition code="1" displayName="Tropical Storm" key="tropical storm"
+		type="4" />
+	<condition code="2" displayName="Hurricane" key="hurricane"
+		type="4" />
+	<condition code="3" displayName="Severe Thunderstorms" key="severe thunderstorms"
+		type="3" />
+	<condition code="4" displayName="Thunderstorms" key="thunderstorms"
+		type="3" />
+	<condition code="5" displayName="Mixed Rain and Snow" key="mixed rain and snow"
+		type="8" />
+	<condition code="6" displayName="Mixed Rain and Sleet" key="mixed rain and sleet"
+		type="10" />
+	<condition code="7" displayName="Mixed Snow and Sleet" key="mixed snow and sleet"
+		type="8" />
+	<condition code="8" displayName="Freezing Drizzle" key="freezing drizzle"
+		type="1" />
+	<condition code="9" displayName="Drizzle" key="drizzle" type="1" />
+	<condition code="10" displayName="Freezing Rain" key="freezing rain"
+		type="1" />
+	<condition code="11" displayName="Showers" key="showers"
+		type="1" />
+	<condition code="12" displayName="Showers" key="showers"
+		type="1" />
+	<condition code="13" displayName="Snow Flurries" key="snow flurries"
+		type="2" />
+	<condition code="14" displayName="Light Snow Showers" key="light snow showers"
+		type="2" />
+	<condition code="15" displayName="Blowing Snow" key="blowing snow"
+		type="2" />
+	<condition code="16" displayName="Snow" key="snow" type="2" />
+	<condition code="17" displayName="Hail" key="hail" type="9" />
+	<condition code="18" displayName="Sleet" key="sleet" type="10" />
+	<condition code="19" displayName="Dust" key="dust" type="7" />
+	<condition code="20" displayName="Foggy" key="foggy" type="6" />
+	<condition code="21" displayName="Haze" key="haze" type="6" />
+	<condition code="22" displayName="Smoky" key="smoky" type="6" />
+	<condition code="23" displayName="Blustery" key="blustery"
+		type="4" />
+	<condition code="24" displayName="Windy" key="windy" type="4" />
+	<condition code="25" displayName="Cold" key="cold" type="4" />
+	<condition code="26" displayName="Cloudy" key="cloudy" type="5" />
+	<condition code="27" displayName="Mostly Cloudy" key="mostly cloudy (night)"
+		type="5" />
+	<condition code="28" displayName="Mostly Cloudy" key="mostly cloudy (day)"
+		type="5" />
+	<condition code="29" displayName="Partly Cloudy" key="partly cloudy (night)"
+		type="0" />
+	<condition code="30" displayName="Partly Cloudy" key="partly cloudy (day)"
+		type="0" />
+	<condition code="31" displayName="Clear" key="clear (night)"
+		type="4" />
+	<condition code="32" displayName="Sunny" key="sunny" type="4" />
+	<condition code="33" displayName="Fair" key="fair (night)"
+		type="4" />
+	<condition code="34" displayName="Fair" key="fair (day)"
+		type="4" />
+	<condition code="35" displayName="Mixed Rain and Hail" key="mixed rain and hail"
+		type="1" />
+	<condition code="36" displayName="Hot" key="hot" type="4" />
+	<condition code="37" displayName="Isolated Thunderstorms"
+		key="isolated thunderstorms" type="3" />
+	<condition code="38" displayName="Scattered Thunderstorms"
+		key="scattered thunderstorms" type="3" />
+	<condition code="39" displayName="Scattered Thunderstorms"
+		key="scattered thunderstorms" type="3" />
+	<condition code="40" displayName="Scattered Showers" key="scattered showers"
+		type="1" />
+	<condition code="41" displayName="Heavy Snow" key="heavy snow"
+		type="2" />
+	<condition code="42" displayName="Scattered Snow Showers"
+		key="scattered snow showers" type="2" />
+	<condition code="43" displayName="Heavy Snow" key="heavy snow"
+		type="2" />
+	<condition code="44" displayName="Partly Cloudy" key="partly cloudy"
+		type="0" />
+	<condition code="45" displayName="Thundershowers" key="thundershowers"
+		type="3" />
+	<condition code="46" displayName="Snow Showers" key="snow showers"
+		type="2" />
+	<condition code="47" displayName="Isolated Thundershowers"
+		key="isolated thundershowers" type="3" />
+	<condition code="3200" displayName="Not available" key="not available"
+		type="-1" />
+	
+	<condition code="100" displayName="light rain"
+		key="light rain" type="1" />
+	<condition code="101" displayName="Moderate rain"
+		key="moderate rain" type="1" />
+	<condition code="102" displayName="Heavy rain"
+		key="heavy rain" type="1" />
+	<condition code="103" displayName="Rainstorm"
+		key="rainstorm" type="1" />
+	<condition code="104" displayName="Severe rainstorm"
+		key="severe rainstorm" type="1" />
+	<condition code="105" displayName="Extra torrential rainstorm"
+		key="extra torrential rainstorm" type="1" />
+	<condition code="106" displayName="Shower with thunder and hail"
+		key="shower with thunder and hail" type="3" />
+	<condition code="107" displayName="Rain"
+		key="rain" type="1" />
+	<condition code="108" displayName="Snowstorm"
+		key="snowstorm" type="2" />
+	<condition code="109" displayName="Moderate snow"
+		key="moderate snow" type="2" />
+	<condition code="110" displayName="Dust and sand storm"
+		key="dust and sand storm" type="7" />
+	<condition code="111" displayName="Wind with dust and sand"
+		key="wind with dust and sand" type="7" />
+	<condition code="112" displayName="Severe dust and sand storm"
+		key="severe dust and sand storm" type="7" />
+
+</resources>

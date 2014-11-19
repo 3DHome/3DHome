@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>日</item>
+        <item>月</item>
+        <item>火</item>
+        <item>水</item>
+        <item>木</item>
+        <item>金</item>
+        <item>土</item>
+    </string-array>
+    <string-array name="menus">
+        <item>追加</item>
+        <item>メイン画面設置</item>
+        <item>系統設置</item>
+        <item>アプリケーションを管理</item>
+    </string-array>
+    <string-array name="edit_wall_menu_item">
+        <item>絵</item>
+        <item>カメラ</item>
+        <item>デフォルトの設定に戻す</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>絵</item>
+        <item>カメラ</item>
+        <item>デフォルトの設定に戻す</item>
+    </string-array>
+
+   <string-array name="appicon_background_entries">
+        <item>平均色</item>
+        <item>補色</item>
+    </string-array>
+    <!-- below strings have not been translated to other languages -->
+    <string-array name="long_click_wall">
+        <item>メイン画面設置</item>
+        <item>3Dオブジェクトを追加</item>
+        <item>アプリを追加</item>
+        <item>フォルダの追加</item>
+        <item>ショートカットを追加</item>
+        <item>ウィジェットを追加</item>
+        <item>壁紙を変える</item>
+    </string-array>
+
+    <string-array name="app_drawer_sort_type">
+        <item>名前</item>
+        <item>最近インストール</item>
+        <item>よく使う</item>
+    </string-array>
+</resources>

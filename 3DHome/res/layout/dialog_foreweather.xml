@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal">
+    <include android:id="@+id/fweather_1"
+        layout="@layout/dialog_foreweather_item"/>
+    
+    <include layout="@layout/weather_divider"/>
+    
+    <include android:id="@+id/fweather_2"
+        layout="@layout/dialog_foreweather_item"/>
+    
+    <include layout="@layout/weather_divider"/>
+    
+    <include android:id="@+id/fweather_3"
+        layout="@layout/dialog_foreweather_item"/>
+    
+    <include layout="@layout/weather_divider"/>
+    
+    <include android:id="@+id/fweather_4"
+        layout="@layout/dialog_foreweather_item"/>
+</LinearLayout>

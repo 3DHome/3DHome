@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="fangdajing"
+    actionStatus="0"
+    basedataFile="wangyuanjing_basedata.cbf"
+    componentName="com.borqs.se/.home3d.SearchActivity"
+    localTrans="0,0,-4,0,0,0,1,0.8,0.8,0.8"
+    maxPoint="43.9234,44.5465,70.8918"
+    minPoint="-43.9234,-42.0883,3.7609"
+    sceneFile="wangyuanjing_scene.cbf"
+    slotType="desktop"
+    type="fangdajing" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="wangyuanjing_01.jpg@wangyuanjing_basedata.cbf"
+            imagePath="wangyuanjing_01.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="wangyuanjing_01@wangyuanjing" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

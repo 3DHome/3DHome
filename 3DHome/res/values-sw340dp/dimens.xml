@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="workspace_cell_width">80dp</dimen>
+    <dimen name="workspace_cell_height">100dp</dimen>
+
+    <dimen name="helper_title_font">21px</dimen>
+    <dimen name="helper_content_font">15px</dimen>
+    
+    <dimen name="app_customize_icon_size">48dp</dimen>
+    <dimen name="app_customize_icon_PaddingTop">6dp</dimen>
+    <dimen name="app_customize_icon_Padding">2dp</dimen>
+    <dimen name="app_customize_icon_text_size">14dp</dimen>
+    
+    <!-- AppsCustomize -->
+    <dimen name="apps_customize_cell_width">78dp</dimen>
+    <dimen name="apps_customize_cell_height">96dp</dimen>
+    <dimen name="apps_customize_pageLayoutWidthGap">6dp</dimen>
+    <dimen name="apps_customize_pageLayoutHeightGap">12dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingTop">18dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingBottom">48dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingLeft">12dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingRight">12dp</dimen>
+    <dimen name="apps_customize_dock_size">48dp</dimen>
+    
+    <dimen name="option_menu_padding">8dp</dimen>
+
+    <!-- addobject begin -->
+    <!-- _contentv_item_icon_wh + _contentv_item_padding * 2 = _contentv_object_w -->
+    <dimen name="addobject_dialog_contentv_object_w">74dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_icon_wh">40dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_padding">17dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_checkbox_wh">16dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_checkbox_padding">10dp</dimen>
+
+    <dimen name="addobject_dialog_button_w">200px</dimen>
+    <dimen name="addobject_dialog_button_h">50px</dimen>
+    <!-- addobject end-->
+
+</resources>

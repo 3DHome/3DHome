@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string-array name="interval_time_entries">
+        <item>Pół godziny</item>
+        <item>1 godzina</item>
+        <item>2 godziny</item>
+        <item>3 godziny</item>
+        <item>4 godziny</item>
+        <item>5 godzin</item>
+    </string-array>
+</resources>

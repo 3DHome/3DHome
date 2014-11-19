@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="3dp"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_height="56dp"
+        android:layout_width="56dp"
+        android:layout_centerHorizontal="true">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/itemText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemImage"
+        android:lines="2"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+    </TextView>  
+    <!-- android:lines="2"  this is a workground, prvent item disappear when scrolling, need to find reason-->
+
+</RelativeLayout>

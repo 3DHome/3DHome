@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- wallpaper & user share -->
+    <!-- TODO: need translations (except for simple Chinese) later -->
+    <string name="wallpapers">Wall Paper</string>
+    <string name="wallpaper_summary">Download and apply Wall paper</string>
+    <string name="action_export_wallpaper">Export my papers</string>
+    <string name="user_share_description">Show my using wallpapers to community</string>
+    <string name="wallpaper_bundle">Wallpaper Bundle</string>
+    <string name="wallpaper_clean_one_wall">Clean a paper</string>
+    <string name="wallpaper_show">Show to ...</string>
+
+    <string name="setting_wallpaper">Wallpaper Settings</string>
+    <string name="wallpaper_size_summary">1024x1024(px)</string>
+    <string name="wallpaper_size_title">Max Wallpaper Size</string>
+    <!-- wallpaper & user share end -->
+
+</resources>

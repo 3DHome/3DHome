@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <dimen name="shoot_screen_width">300dip</dimen>
+    <dimen name="shoot_screen_height">512dip</dimen>
+</resources>

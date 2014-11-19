@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="@dimen/shoot_screen_width"
+              android:layout_height="@dimen/shoot_screen_height"
+              android:background="@color/detail_background"
+              android:orientation="vertical" >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:drawableLeft="@drawable/icon_product_desc"
+                android:drawablePadding="10dip"
+                android:text="@string/paper_export_subject" />
+
+    <EditText
+            android:id="@+id/tv_title"
+            style="@style/product_decription_style"
+            android:layout_width="match_parent"
+            android:layout_height="44dip"
+            android:layout_gravity="left"
+            android:ellipsize="end"
+            android:maxLength="@integer/max_char_share_title"
+            android:singleLine="true"
+            android:hint="@string/product_info_title"
+            android:gravity="center_vertical"/>
+
+    <EditText
+            android:id="@+id/tv_author"
+            style="@style/product_decription_style"
+            android:layout_width="match_parent"
+            android:layout_height="44dip"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dip"
+            android:ellipsize="end"
+            android:maxLength="@integer/max_char_share_author"
+            android:singleLine="true"
+            android:hint="@string/product_info_author"
+            android:gravity="center_vertical"/>
+
+    <EditText
+            android:id="@+id/tv_desc"
+            style="@style/product_decription_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dip"
+            android:hint="@string/product_info_desc"
+            android:maxLines="15" />
+
+</LinearLayout>

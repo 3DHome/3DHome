@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="house_wood_theme"
+    basedataFile="home_basedata.cbf"
+    maxPoint="1060.13,1059.67,1177.61"
+    minPoint="-1058.93,-1059.73,0"
+    sceneFile="home_scene.cbf"
+    slotType="house"
+    type="House" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_6"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_biankuang01_fhq.jpg@home_basedata.cbf"
+            imagePath="home_biankuang01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_dimian01_fhq.jpg@home_basedata.cbf"
+            imageNewPath="data/data/com.borqs.se/files/wood/ground_paper_0"
+            imagePath="home_dimian01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_dengguang01_fhq.png@home_basedata.cbf"
+            imagePath="home_dengguang01_fhq.png" />
+
+        <imageInfo
+            imageName="home_wuding01_fhq.jpg@home_basedata.cbf"
+            imagePath="home_wuding01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf_0"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_5"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_touying_zch.png@home_basedata.cbf"
+            imagePath="home_touying_zch.png" />
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf_1"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_2"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf_2"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_1"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf_3"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_7"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf_4"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_0"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf_5"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_3"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_bizhi01_fhq.jpg@home_basedata.cbf_6"
+            imageNewPath="data/data/com.borqs.se/files/wood/wall_paper_4"
+            imagePath="home_bizhi01_fhq.jpg" />
+
+        <imageInfo
+            imageName="home_wuding02_fhq.jpg@home_basedata.cbf"
+            imagePath="home_wuding02_fhq.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_6"
+                spatialName="qiang01@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="biankuang@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+
+                <light lightName="fangliang" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114560" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="ground"
+                spatialName="home_ground01@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="35669248" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="light"
+                spatialName="deng@group_house8" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="1064965" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="roof"
+                spatialName="wuding01@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+
+                <light lightName="help" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114560" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_5"
+                spatialName="qiang08@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="biankuangyingzi@group_house8" />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="1065989" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_2"
+                spatialName="qiang05@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_1"
+                spatialName="qiang04@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_7"
+                spatialName="qiang07@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_0"
+                spatialName="qiang06@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_3"
+                spatialName="qiang03@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_4"
+                spatialName="qiang02@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="18892032" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="roof"
+                spatialName="wuding02@group_house8" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+
+                <light lightName="help" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114560" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

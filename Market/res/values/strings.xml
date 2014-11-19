@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">borqsMarket</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    
+    <string name="themes_market">Themes Market</string>
+    <string name="top_navigation_theme">Theme</string>
+    <string name="top_navigation_wallpaper">Wallpapers</string>
+    <string name="title_wallpaper_share">Share Wallpaer</string>
+    <string name="top_navigation_object">3D object</string>
+    <string name="bottom_navigation_local">Downloaded</string>
+    <string name="bottom_navigation_online">Online</string>
+    <string name="theme_loading">Loading</string>
+    <string name="action_purchase">Purchase</string>
+    <string name="action_prepare_purchase">Prepare purchase...</string>
+    <string name="action_download">Download</string>	
+	<string name="action_downloading">Downloading</string>
+	<string name="action_downloaded">Downloaded</string>
+	<string name="action_waiting">Waiting</string>
+	<string name="action_delete">Delete</string>
+	<string name="action_apply">Apply</string>
+	<string name="action_install">Installing...</string>
+	<string name="action_update">Update</string>
+	<string name="action_unapply">Unapply</string>
+	<string name="local_theme">Local themes</string>
+    <string name="local_object">Local 3D objects</string>
+    <string name="no_local_theme">No local themes</string>
+	<string name="no_local_object">No local 3D objects</string>      
+	<string name="preview">Preview</string>
+	<string name="progress_prefix">Downloading...</string>
+	<string name="msg_no_sdcard">No sdcard, can not be downloaded</string>
+	<string name="iab_unavailable">Your google play can not pay, please update to the latest version of google play</string>
+    <string name="empty_list">Empty List</string>
+    <string name="tab_online">Online</string>
+    <string name="tab_local">Local</string>
+    <string name="tab_user_share">User share</string>
+	
+    <string name="product_info_subject">Details</string>
+    <string name="product_info_title">Title:</string>
+    <string name="product_info_size">Size:</string>
+    <string name="product_info_version">Version:</string>
+    <string name="product_info_author">Author:</string>
+    <string name="product_info_download_count">Downloads:</string>
+    <string name="product_info_rating">Rating:</string>
+    <string name="product_info_update_time">Update time:</string>
+    <string name="product_info_desc">Description:</string>
+    <string name="none">none</string>
+    <string name="free">Free</string>
+
+	<string name="loading">Loading...</string>
+	<string name="purchase_failed">Purchase failed, please try again</string>
+	<string name="download_failed">Download failed, the download manager does not work!</string>
+	<string name="download_failed_try_again">Download failed, please try again!</string>
+	
+	<string name="qiupu_exit_title">Exit</string>
+     <string name="qiupu_exit_message">Are you sure to exit?</string>
+     
+     <string name="label_ok">OK</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_done">Done</string>
+    <string name="label_save">Save</string>
+    <string name="label_skip">Skip</string>
+    
+    <string name="label_process">Processing...</string>
+    <string name="delete_file_message">Sure to delete the file</string>
+    <string name="update_object_message">The objects with the same name in house will be removed, are you sure to update it?</string>
+    
+    <string name="action_refresh">refresh</string>
+    <string name="msg_loadi_failed">Loading fail, retry...</string>
+    <string name="msg_show_paper_failed">Show wallpapers fail, rety...</string>
+    <string name="dlg_msg_no_active_connectivity">No valid network, check the settings and retry.</string>
+    <string name="action_setting">Setting</string>
+    
+    <!-- google account -->
+    <string name="action_login">Login</string>
+    <string name="action_logout">Logout</string>
+    <string name="choose_account_title">Choose Account</string>
+    <string name="add_a_google_account">Add a Google Account</string>
+    <string name="login_success">Login Success</string>
+	<string name="login_failed">Login Failed</string>
+	<string name="lable_being_login">Login...</string>
+	<string name="onekey_login">一键登录</string>
+	<string name="onekey_login_message">一键登录需要发送一条普通短信，资费由运营商收取</string>
+    <string name="action_export_wallpaper">Export my papers</string>
+
+    <string name="wallpaper_state_applied">In use</string>
+    <string name="action_wallpaper_setting">Applying...</string>
+    <string name="tab_tile_wallpaper">Wallpapers</string>
+    <string name="tab_title_local">Local</string>
+    <string name="tab_title_stock">Online</string>
+    <string name="state_applied">In use</string>
+    <string name="tab_title_share">Shared</string>
+    
+    <!-- comment -->
+    <string name="resource_comment_edit_text_default">Write a comment</string>
+    <string name="resource_comment_publish">Submit</string>
+    <string name="resource_comment_edit_comment">Add comments</string>
+    <string name="title_comment">Comments</string>
+    <string name="lable_comment_on">comment on</string>
+    <string name="title_edit_comment">Edit comment</string>
+    <string name="send_failed">Send fail, retry...</string>
+    <string name="send_successed">Send success,it will be displayed after the audit</string>
+    <string name="plase_give_a_score">please touch the stars to give a score</string>
+    <string name="comment_not_empty">Comment can not empty</string>
+    <string name="label_comment_sending">Comment sending...</string>
+    <string name="action_view_comments">%1$s comments, click to view</string>
+
+    <string name="publish">Publish</string>
+    <string name="publishing">Publishing...</string>
+    <string name="published">Published</string>
+    <string name="publish_again">Retry</string>
+
+    <string name="paper_export_subject">Show wallpapers</string>
+    <string name="publis_anyway_title">Continue?</string>
+    <string name="publis_anyway_message">No change since last applying or sharing. Are you sure to publish current
+        papers anyway, which might cause many duplicate copy in your category.
+    </string>
+    <string name="description_null">null</string>
+    <string name="user_share">User Share</string>
+    <string name="user_share_title">Share%1$s</string>
+    <string name="user_share_desc">[%1$s] Show my using wallpapers.</string>
+
+    <string name="no_networking">No connection!</string>
+    <string name="scanning_fail">Get Papers Fail</string>
+    <string name="storage_full">Storage Full</string>
+
+    <string name="prompt_empty_title">Please set the title.</string>
+    <string name="press_to_room">Long press to put it to the room</string>
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<condition code="0" displayName="торнадо" key="tornado" type="4" />
+	<condition code="1" displayName="Тропический шторм" key="tropical storm"
+		type="4" />
+	<condition code="2" displayName="ураган" key="hurricane"
+		type="4" />
+	<condition code="3" displayName="сильные грозы" key="severe thunderstorms"
+		type="3" />
+	<condition code="4" displayName="Грозы" key="thunderstorms"
+		type="3" />
+	<condition code="5" displayName="Смешанная Дождь и снег" key="mixed rain and snow"
+		type="8" />
+	<condition code="6" displayName="Смешанная дождь и мокрый снег" key="mixed rain and sleet"
+		type="10" />
+	<condition code="7" displayName="Смешанная снег и мокрый снег" key="mixed snow and sleet"
+		type="8" />
+	<condition code="8" displayName="изморозь" key="freezing drizzle"
+		type="1" />
+	<condition code="9" displayName="морось" key="drizzle" type="1" />
+	<condition code="10" displayName="ледяной дождь" key="freezing rain"
+		type="1" />
+	<condition code="11" displayName="дождь" key="showers"
+		type="1" />
+	<condition code="12" displayName="дождь" key="showers"
+		type="1" />
+	<condition code="13" displayName="снегопады" key="snow flurries"
+		type="2" />
+	<condition code="14" displayName="Небольшой Снег" key="light snow showers"
+		type="2" />
+	<condition code="15" displayName="низовая метель" key="blowing snow"
+		type="2" />
+	<condition code="16" displayName="снег" key="snow" type="2" />
+	<condition code="17" displayName="град" key="hail" type="9" />
+	<condition code="18" displayName="дождь со снегом" key="sleet" type="10" />
+	<condition code="19" displayName="пыль" key="dust" type="7" />
+	<condition code="20" displayName="туманный" key="foggy" type="6" />
+	<condition code="21" displayName="дымка" key="haze" type="6" />
+	<condition code="22" displayName="дымчатый" key="smoky" type="6" />
+	<condition code="23" displayName="бушующий" key="blustery"
+		type="4" />
+	<condition code="24" displayName="ветреный" key="windy" type="4" />
+	<condition code="25" displayName="холодный" key="cold" type="4" />
+	<condition code="26" displayName="облачный" key="cloudy" type="5" />
+	<condition code="27" displayName="Переменная облачность" key="mostly cloudy (night)"
+		type="5" />
+	<condition code="28" displayName="Переменная облачность" key="mostly cloudy (day)"
+		type="5" />
+	<condition code="29" displayName="Небольшая облачность" key="partly cloudy (night)"
+		type="0" />
+	<condition code="30" displayName="Небольшая облачность" key="partly cloudy (day)"
+		type="0" />
+	<condition code="31" displayName="Очистить" key="clear (night)"
+		type="4" />
+	<condition code="32" displayName="солнечно" key="sunny" type="4" />
+	<condition code="33" displayName="ярмарка" key="fair (night)"
+		type="4" />
+	<condition code="34" displayName="ярмарка" key="fair (day)"
+		type="4" />
+	<condition code="35" displayName="Смешанная дождем и градом" key="mixed rain and hail"
+		type="1" />
+	<condition code="36" displayName="горячий" key="hot" type="4" />
+	<condition code="37" displayName="отдельные грозы"
+		key="isolated thunderstorms" type="3" />
+	<condition code="38" displayName="Временами грозы"
+		key="scattered thunderstorms" type="3" />
+	<condition code="39" displayName="Временами грозы"
+		key="scattered thunderstorms" type="3" />
+	<condition code="40" displayName="рассеянного душ" key="scattered showers"
+		type="1" />
+	<condition code="41" displayName="сильный снегопад" key="heavy snow"
+		type="2" />
+	<condition code="42" displayName="Небольшая Снег"
+		key="scattered snow showers" type="2" />
+	<condition code="43" displayName="сильный снегопад" key="heavy snow"
+		type="2" />
+	<condition code="44" displayName="Небольшая облачность" key="partly cloudy"
+		type="0" />
+	<condition code="45" displayName="грозой" key="thundershowers"
+		type="3" />
+	<condition code="46" displayName="ливни со снегом" key="snow showers"
+		type="2" />
+	<condition code="47" displayName="Изолированные ливни"
+		key="isolated thundershowers" type="3" />
+	<condition code="3200" displayName="недоступный" key="not available"
+		type="-1" />
+	
+	<condition code="100" displayName="небольшой дождь"
+		key="light rain" type="1" />
+	<condition code="101" displayName="умеренный дождь"
+		key="moderate rain" type="1" />
+	<condition code="102" displayName="сильный дождь"
+		key="heavy rain" type="1" />
+	<condition code="103" displayName="ливень с ураганом"
+		key="rainstorm" type="1" />
+	<condition code="104" displayName="Тяжелый дождь"
+		key="severe rainstorm" type="1" />
+	<condition code="105" displayName="Дополнительные проливными ливнями"
+		key="extra torrential rainstorm" type="1" />
+	<condition code="106" displayName="Душ с громом и градом"
+		key="shower with thunder and hail" type="3" />
+	<condition code="107" displayName="дождь"
+		key="rain" type="1" />
+	<condition code="108" displayName="метель"
+		key="snowstorm" type="2" />
+	<condition code="109" displayName="Умеренный снег"
+		key="moderate snow" type="2" />
+	<condition code="110" displayName="Пыли и песка храненияm"
+		key="dust and sand storm" type="7" />
+	<condition code="111" displayName="Ветер с пылью и песком"
+		key="wind with dust and sand" type="7" />
+	<condition code="112" displayName="Тяжелые пыли и песчаных бурь"
+		key="severe dust and sand storm" type="7" />
+
+</resources>

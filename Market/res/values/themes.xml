@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="Theme.custom.NoTitleBar" parent="android:Theme">        
+    	<item name="android:windowBackground">@drawable/main_bg</item>   
+    	<item name="buttonSelectableBackground">@drawable/list_selector_background</item>
+    	 <item name="android:windowNoTitle">true</item> 
+    </style>
+    
+    <style name="Theme.Sherlock.Custom" parent="android:Theme.Holo.Light">
+        <item name="android:windowBackground">@drawable/market_bg_repeat</item> 
+        <item name="android:windowNoTitle">true</item>
+        <item name="titleBarActionSelector">@drawable/action_bar_item_background_selector</item>
+ 		<item name="titleBarBackIndicator">@drawable/icon_back</item>        
+ 		<item name="titleBarItemBackground">@drawable/bg_tab</item>        
+ 		<item name="buttonSelectableBackground">@drawable/download_button_bg</item>     
+ 		<item name="theme_background">@android:color/transparent</item>  
+    </style>
+    
+    <style name="Theme.Sherlock.Custom.black" parent="Theme.Sherlock.Custom">
+        <item name="android:windowBackground">@color/transparent_black</item> 
+        <item name="android:windowIsTranslucent">true</item>
+　　		<item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+    
+    <style name="Theme.wallpaper" parent="android:Theme.Holo.Light">
+        <item name="android:windowBackground">@drawable/market_bg_repeat</item>
+        <item name="android:actionOverflowButtonStyle">@style/Widget.Holo.ActionButton.Overflow.Custom</item>
+        <item name="android:actionBarStyle">@style/Widget.Sherlock.ActionBar.Custom</item>
+        <item name="android:actionBarItemBackground">@drawable/action_bar_item_background_selector</item>
+        <item name="theme_background">@color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:homeAsUpIndicator">@drawable/icon_back</item>
+        <item name="buttonSelectableBackground">@drawable/download_button_bg</item>        
+        
+		<!-- <item name="android:actionBarTabStyle">@style/Widget.Sherlock.ActionBar.TabView.Custom</item>
+		-->
+		<item name="android:actionBarTabStyle">@style/Widget.Sherlock.ActionBar.TabView.Custom</item> 
+		<item name="android:selectableItemBackground">@android:color/holo_green_dark</item>
+		<item name="android:actionBarTabTextStyle">@style/MyActionBarTabTextStyle</item>
+		<item name="android:actionBarTabBarStyle">@style/Theme.Client.ActionBarTabBar</item>
+		<item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    <style name="Theme.wallpaper.black" parent="Theme.wallpaper">
+        <item name="android:actionBarStyle">@style/Widget.Sherlock.ActionBar.Custom.black</item> 
+    </style>
+</resources>

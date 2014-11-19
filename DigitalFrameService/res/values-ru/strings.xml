@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gallery</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="edit_photo_frame">Редактирование электронный альбом</string>
+    <string name="change_pic">Заменить альбом</string>
+    <string name="select_frame_material">Выберите материал рамы</string>
+    <string name="photo_count_and_layout">Количество фотографий и макет</string>
+    <string name="interval_time">интервал времени</string>
+    <string name="min_5">5 мин</string>
+    <string name="min_10">10 мин</string>
+    <string name="min_15">15 мин</string>
+    <string name="single">один</string>
+    <string name="folder">папка</string>
+    <string name="all">все</string>
+</resources>

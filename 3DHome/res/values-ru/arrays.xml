@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>январь</item>
+        <item>февраль</item>
+        <item>март</item>
+        <item>апрель</item>
+        <item>может</item>
+        <item>июнь</item>
+        <item>июль</item>
+        <item>август</item>
+        <item>сентябрь</item>
+        <item>октябрь</item>
+        <item>ноябрь</item>
+        <item>декабрь</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>солнце</item>
+        <item>понедельник</item>
+        <item>вторник</item>
+        <item>женить</item>
+        <item>четверг</item>
+        <item>пятница</item>
+        <item>суббота</item>
+    </string-array>
+    <string-array name="menus">
+        <item>добавлять</item>
+        <item>Страница Настройки</item>
+        <item>Системные настройки</item>
+        <item>Управление приложениями</item>
+    </string-array>
+   <string-array name="appicon_background_entries">
+        <item>Средний цвет</item>
+        <item>Дополнительные цвета</item>
+    </string-array>
+    <string-array name="edit_wall_menu_item">
+        <item>картина</item>
+        <item>камера</item>
+        <item>Вернуть по умолчанию</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>картина</item>
+        <item>камера</item>
+        <item>Вернуть по умолчанию</item>
+    </string-array>
+
+    <string-array name="long_click_wall">
+        <item>Страница Настройки</item>
+        <item>Добавить 3D-объект</item>
+        <item>Добавить приложение</item>
+        <item>Добавить папку</item>
+        <item>Добавить ярлык</item>
+        <item>Добавить виджет</item>
+        <item>менять обои</item>
+    </string-array>
+
+    <string-array name="app_drawer_sort_type">
+        <item>название</item>
+        <item>Установить последнее</item>
+        <item>Часто используемые</item>
+    </string-array>
+
+</resources>

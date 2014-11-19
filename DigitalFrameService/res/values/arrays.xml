@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <resources>
+      <string-array name="picture_selected">
+          <item>Single</item>
+          <item>Folder</item>
+          <item>All</item>
+      </string-array>
+      <string-array name="material_selected">
+        <item>Calm black</item>
+        <item>Classic White</item>
+        <item>Clear wood</item>
+        <item>Fashion metal</item>
+    </string-array>
+      <string-array name="interval_time">
+        <item>10min</item>
+        <item>15min</item>
+        <item>30min</item>
+    </string-array>
+  </resources>

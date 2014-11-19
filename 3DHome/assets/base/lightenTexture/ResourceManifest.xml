@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BorqsResource version="1" defaultLang="en_US">
+<id>com.borqs.se.theme.lighten</id>
+<app>com.borqs.se</app>
+<category>theme</category>
+<name>
+  <langs>
+    <en_US>Blue theme</en_US>
+    <zh_CN>蓝色主题</zh_CN>
+  </langs>
+</name>
+<authorName>Borqs</authorName>
+<cover>cover.jpg</cover>
+<screenshot1>cover.jpg</screenshot1>
+<version>1</version>
+</BorqsResource>

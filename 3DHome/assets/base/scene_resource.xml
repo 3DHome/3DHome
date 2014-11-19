@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--物体只能使用一个聚光灯， 点光和直线光可以有多个-->
+<resource>
+    <lights>
+        <light>
+            <lightType lighttype="1" />
+            <lightName lightname="fangliang" />
+            <lightColor x="1" y="0.95" z="0.88" />
+            <lightPos x="0" y="0" z="0" />
+            <lightDir x="0" y="0" z="1" />
+            <lightAttenuation constant="1" linear="0" quadratic="0" />
+            <lightStrength strength="0.35" />
+            <lightSpot cutoff="0.1" exp="20" />
+        </light>
+        <light>
+            <lightType lighttype="1" />
+            <lightName lightname="help" />
+            <lightColor x="1" y="0.95" z="0.88" />
+            <lightPos x="0" y="0" z="0" />
+            <lightDir x="0" y="1" z="1" />
+            <lightAttenuation constant="1" linear="0" quadratic="0" />
+            <lightStrength strength="1.35" />
+            <lightSpot cutoff="0.1" exp="20" />
+        </light>
+        <light>
+            <lightType lighttype="1" />
+            <lightName lightname="mainsun" />
+            <lightColor x="1" y="0.95" z="0.88" />
+            <lightPos x="0" y="0" z="0" />
+            <lightDir x="0" y="1" z="-1" />
+            <lightAttenuation constant="1" linear="0" quadratic="0" />
+            <lightStrength strength="1.35" />
+            <lightSpot cutoff="0.1" exp="20" />
+        </light>
+        <light>
+            <lightType lighttype="0" />
+            <lightName lightname="bookshelflight" />
+            <lightColor x="1" y="1" z="1" />
+            <lightPos x="0" y="-100" z="430" />
+            <lightDir x="0" y="1" z="-1" />
+            <lightAttenuation constant="1" linear="1" quadratic="0" />
+            <lightStrength strength="1.35" />
+            <lightSpot cutoff="0.1" exp="20" />
+        </light>
+    </lights>
+</resource>

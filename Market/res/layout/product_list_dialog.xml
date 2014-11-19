@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/market_bg_repeat">
+	<include android:id="@+id/layout_titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/product_dialog_title"/>
+    <LinearLayout
+        android:id="@+id/tab_container"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:layout_below="@id/layout_titlebar"
+        android:background="@drawable/bg_tab"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/tab_online"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_indicator_ab_holo" >
+
+            <TextView
+                android:id="@+id/lable_online"
+                style="@style/MyActionBarTabTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tab_online"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tab_local"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_selected">
+
+            <TextView
+                android:id="@+id/lable_local"
+                style="@style/MyActionBarTabTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tab_local" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tab_container" />
+
+</RelativeLayout>

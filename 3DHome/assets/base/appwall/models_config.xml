@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_appwall"
+    basedataFile="appwall4_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,1,1,1"
+    maxPoint="190,0,245"
+    minPoint="-180,-50,-245"
+    sceneFile="appwall4_scene.cbf"
+    slotType="wall"
+    spanX="2"
+    spanY="2"
+    type="AppWall" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="home_appwall02_zch.png@appwall4_basedata.cbf"
+            imagePath="home_appwall02_zch.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="Object01@group_appwall4@appwall4_basedata.cbf" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114693" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

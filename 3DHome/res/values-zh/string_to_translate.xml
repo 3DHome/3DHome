@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- wallpaper & user share -->
+    <!-- TODO: need translations (except for simple Chinese) later -->
+    <string name="wallpapers">墙纸</string>
+    <string name="wallpaper_summary">下载和应用墙纸</string>
+    <string name="action_export_wallpaper">壁纸秀秀</string>
+    <string name="user_share_description">秀当前壁纸给小伙伴们</string>
+    <!-- wallpaper & user share end -->
+
+    <string name="wallpaper_bundle">壁纸包</string>
+    <string name="wallpaper_clean_one_wall">清除当面墙的壁纸</string>
+    <string name="wallpaper_show">秀出到...</string>
+
+    <string name="setting_wallpaper">墙纸设置</string>
+    <string name="wallpaper_size_summary">1024x1024(像素)</string>
+    <string name="wallpaper_size_title">墙纸图片最大范围</string>
+    <!-- wallpaper & user share end -->
+
+</resources>

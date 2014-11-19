@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">galerie</string>
+    <string name="action_settings">réglages</string>
+    <string name="hello_world">Bonjour tout le monde!</string>
+
+    <string name="edit_photo_frame">Modification album électronique</string>
+    <string name="change_pic">remplacer album</string>
+    <string name="select_frame_material">Choisissez le matériau du cadre</string>
+    <string name="photo_count_and_layout">Nombre de photos et la mise en page</string>
+    <string name="interval_time">Intervalle de temps</string>
+    <string name="ok">OK</string>
+    <string name="cancel">résilier</string>
+    <string name="min_5">5 min</string>
+    <string name="min_10">10 min</string>
+    <string name="min_15">15 min</string>
+    <string name="single">simple</string>
+    <string name="folder">dossier</string>
+    <string name="all">tous</string>
+</resources>

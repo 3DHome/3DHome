@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.borqs.borqsweather"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="15"/>
+
+    
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name=".WeatherApplication" >
+        <activity
+            android:label="@string/weather_settings"
+            android:name="com.borqs.borqsweather.weather.WeatherSettings"
+            android:title="@string/weather_settings"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:label="@string/weather_settings"
+            android:name="com.borqs.borqsweather.weather.CheckLocServiceDialogActivity"
+            android:title="@string/weather_settings"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <service android:name="com.borqs.borqsweather.weather.LoopForInfoService" >
+        </service>
+        
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+    </application>
+
+</manifest>

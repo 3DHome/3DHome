@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background" android:drawable="@drawable/resource_comment_star_readonly_off_normal" />
+    <item android:id="@android:id/secondaryProgress" android:drawable="@drawable/resource_comment_star_readonly_off_normal" />
+    <item android:id="@android:id/progress" android:drawable="@drawable/resource_comment_star_readonly_normal" />
+</layer-list>

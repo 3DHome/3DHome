@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <condition code="0" displayName="Tornado" key="tornado" type="4" />
+    <condition code="1" displayName="Burza tropikalna" key="tropical storm"
+        type="4" />
+    <condition code="2" displayName="Huragan" key="hurricane"
+        type="4" />
+    <condition code="3" displayName="Ciężkie burze" key="severe thunderstorms"
+        type="3" />
+    <condition code="4" displayName="Burze" key="thunderstorms"
+        type="3" />
+    <condition code="5" displayName="Deszcz i śnieg" key="mixed rain and snow"
+        type="8" />
+    <condition code="6" displayName="Deszcz i deszcz ze śniegiem" key="mixed rain and sleet"
+        type="10" />
+    <condition code="7" displayName="Śnieg i deszcz ze śniegiem" key="mixed snow and sleet"
+        type="8" />
+    <condition code="8" displayName="Marznąca mżawka" key="freezing drizzle"
+        type="1" />
+    <condition code="9" displayName="Mżawka" key="drizzle" type="1" />
+    <condition code="10" displayName="Marznący deszcz" key="freezing rain"
+        type="1" />
+    <condition code="11" displayName="Przelotne opady" key="showers"
+        type="1" />
+    <condition code="12" displayName="Przelotne opady" key="showers"
+        type="1" />
+    <condition code="13" displayName="Niewielkie opady śniegu" key="snow flurries"
+        type="2" />
+    <condition code="14" displayName="Lekkie opady śniegu" key="light snow showers"
+        type="2" />
+    <condition code="15" displayName="Śnieżek" key="blowing snow"
+        type="2" />
+    <condition code="16" displayName="Śnieg" key="snow" type="2" />
+    <condition code="17" displayName="Grad" key="hail" type="9" />
+    <condition code="18" displayName="Deszcz ze śniegiem" key="sleet" type="10" />
+    <condition code="19" displayName="Kurz" key="dust" type="7" />
+    <condition code="20" displayName="Mgła" key="foggy" type="6" />
+    <condition code="21" displayName="Mgiełka" key="haze" type="6" />
+    <condition code="22" displayName="Zadymienie" key="smoky" type="6" />
+    <condition code="23" displayName="Wietrznie" key="blustery"
+        type="4" />
+    <condition code="24" displayName="Wietrznie" key="windy" type="4" />
+    <condition code="25" displayName="Zimno" key="cold" type="4" />
+    <condition code="26" displayName="Pochmurno" key="cloudy" type="5" />
+    <condition code="27" displayName="Przewaga chmur" key="mostly cloudy (night)"
+        type="5" />
+    <condition code="28" displayName="Przewaga chmur" key="mostly cloudy (day)"
+        type="5" />
+    <condition code="29" displayName="Częściowe zachmurzenie" key="partly cloudy (night)"
+        type="0" />
+    <condition code="30" displayName="Częściowe zachmurzenie" key="partly cloudy (day)"
+        type="0" />
+    <condition code="31" displayName="Bezchmurnie" key="clear (night)"
+        type="4" />
+    <condition code="32" displayName="Słonecznie" key="sunny" type="4" />
+    <condition code="33" displayName="Czyste niebo" key="fair (night)"
+        type="4" />
+    <condition code="34" displayName="Bezchmurnie" key="fair (day)"
+        type="4" />
+    <condition code="35" displayName="Deszcz i grad" key="mixed rain and hail"
+        type="1" />
+    <condition code="36" displayName="Gorąco" key="hot" type="4" />
+    <condition code="37" displayName="Pojedyńcze burze"
+        key="isolated thunderstorms" type="3" />
+    <condition code="38" displayName="Rozproszone burze"
+        key="scattered thunderstorms" type="3" />
+    <condition code="39" displayName="Rozproszone burze"
+        key="scattered thunderstorms" type="3" />
+    <condition code="40" displayName="Przelotne opady" key="scattered showers"
+        type="1" />
+    <condition code="41" displayName="Intensywne opady śniegu" key="heavy snow"
+        type="2" />
+    <condition code="42" displayName="Możliwe opady śniegu"
+        key="scattered snow showers" type="2" />
+    <condition code="43" displayName="Intensywne opady śniegu" key="heavy snow"
+        type="2" />
+    <condition code="44" displayName="Częściowe zachmurzenie" key="partly cloudy"
+        type="0" />
+    <condition code="45" displayName="Grzmi" key="thundershowers"
+        type="3" />
+    <condition code="46" displayName="Przelotne opady śniegu" key="snow showers"
+        type="2" />
+    <condition code="47" displayName="Pojedyńcze grzmoty"
+        key="isolated thundershowers" type="3" />
+    <condition code="3200" displayName="Niedostępne" key="not available"
+        type="-1" />
+    <condition code="100" displayName="Lekki deszcz"
+        key="light rain" type="1" />
+    <condition code="101" displayName="Umiarkowany deszcz"
+        key="moderate rain" type="1" />
+    <condition code="102" displayName="Ulewa"
+        key="heavy rain" type="1" />
+    <condition code="103" displayName="Ulewa"
+        key="rainstorm" type="1" />
+    <condition code="104" displayName="Ciężka ulewa"
+        key="severe rainstorm" type="1" />
+    <condition code="105" displayName="Oberwanie chmury"
+        key="extra torrential rainstorm" type="1" />
+    <condition code="106" displayName="Burza z piorunami i gradem"
+        key="shower with thunder and hail" type="3" />
+    <condition code="107" displayName="Deszcz"
+        key="rain" type="1" />
+    <condition code="108" displayName="Zamieć śnieżna"
+        key="snowstorm" type="2" />
+    <condition code="109" displayName="Umiarkowany śnieg"
+        key="moderate snow" type="2" />
+    <condition code="110" displayName="Burza piaskowa"
+        key="dust and sand storm" type="7" />
+    <condition code="111" displayName="Wiatr z piaskiem i kurzem"
+        key="wind with dust and sand" type="7" />
+    <condition code="112" displayName="Burza piaskowa"
+        key="severe dust and sand storm" type="7" />
+
+</resources>

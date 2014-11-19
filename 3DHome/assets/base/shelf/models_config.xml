@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="shelf"
+    basedataFile="jiazi_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,1.0,1.0,1.0"
+    maxPoint="121.022,-1.8322,0.032"
+    minPoint="-121.022,-112.79,-138.941"
+    sceneFile="jiazi_scene.cbf"
+    spanX="1"
+    spanY="1"
+    type="Shelf" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="hd_object_jiazitouying_zch.png@jiazi_basedata.cbf"
+            imagePath="hd_object_jiazitouying_zch.png" />
+
+        <imageInfo
+            imageName="hd_object_jiazi_zch.jpg@jiazi_basedata.cbf"
+            imagePath="hd_object_jiazi_zch.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="Plane04@jiazi" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="7"
+                statusValue="1064965" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="Box04@jiazi" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="7"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

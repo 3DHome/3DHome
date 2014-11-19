@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/Quake/res/strings.xml
+**
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="network_error">手機沒有連接到網絡。</string>
+    <string name="dialog_gls_msg">此應用程序將使用您的當前位置，請在系統設置中啟用“我的位置”源。</string>
+    <string name="activity_not_found">"未安裝該應用程序。"</string>
+    <string name="enable">啟用</string>
+    <string name="disable">禁用</string>
+    <!-- Weather setting strings -->
+    <string name="weather_settings">天氣設置</string>
+    <string name="auto_update_common">基本設置</string>
+    <string name="auto_location_title">使用“我的位置”</string>
+    <string name="auto_location_summary">自動確定位置</string>
+    <string name="set_location_title">設置位置</string>
+    <string name="set_location_msg">輸入城市名稱全拼： </string>
+    <string name="city_name_error">城市名稱不能為空。</string>
+    <string name="dialog_choose_city">選擇城市</string>
+    <string name="weather_update_success">已更新天氣位置。</string>
+    <string name="update_now_title">立即更新</string>
+    <string name="update_now_summary">確保手機已經連接到網絡</string>
+ 	<string name="switch_units_title">切換溫度單位</string>
+    <string name="switch_units_summary_celsius">攝氏溫度</string>
+    <string name="switch_units_summary_fahrenheit">華氏溫度</string>
+    
+    <string name="auto_update_setting">自動更新設置</string>
+    <string name="auto_update_title">開啟自動更新</string>
+    <string name="auto_update_summary">通過網絡自動獲取天氣信息</string>
+    <string name="start_time_title">更新開始時間</string>
+    <string name="end_time_title">更新結束時間</string>
+    <string name="interval_time_title">更新間隔時間</string>
+    <string name="interval_time_summary">3 小時</string>
+    <string name="get_latest_weather_failed">未能獲取到最新的天氣信息。</string>
+    <string name="wait_dialog_title">請稍候\u2026</string>
+    <string name="wait_dialog_msg_weather">正在搜索\u2026</string>
+    <string name="req_error">天氣信息獲取失敗。</string>
+    <string name="locate_error">未能獲取當前位置。</string>
+    <string name="gps_error">請打開GPS.</string>
+
+    <string name="wind_n">北風</string>
+    <string name="wind_ne">東北風</string>
+    <string name="wind_e">東風</string>
+    <string name="wind_se">東南風</string>
+    <string name="wind_s">南風</string>
+    <string name="wind_sw">西南風</string>
+    <string name="wind_w">西風</string>
+    <string name="wind_nw">西北風</string>
+    <string name="wind_var">无固定風向</string>
+    <string name="wind_condition_1">微風</string>
+    <string name="wind_condition_2">微風</string>
+    <string name="wind_condition_3"><xliff:g id="direction" example="NE">%1$s</xliff:g>三級</string>
+    <string name="wind_condition_4"><xliff:g id="direction" example="NE">%1$s</xliff:g>四級</string>
+    <string name="wind_condition_5"><xliff:g id="direction" example="NE">%1$s</xliff:g>五級</string>
+    <string name="wind_condition_6"><xliff:g id="direction" example="NE">%1$s</xliff:g>六級</string>
+    <string name="wind_condition_7"><xliff:g id="direction" example="NE">%1$s</xliff:g>七級</string>
+    <string name="wind_condition_8"><xliff:g id="direction" example="NE">%1$s</xliff:g>八級</string>
+    <string name="wind_condition_9"><xliff:g id="direction" example="NE">%1$s</xliff:g>九級</string>
+    <string name="wind_condition_10"><xliff:g id="direction" example="NE">%1$s</xliff:g>十級</string>
+    <string name="wind_condition_11"><xliff:g id="direction" example="NE">%1$s</xliff:g>十一級</string>
+    <string name="wind_condition_hurricane">颶風<xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    
+	<string name="send_weather_log_title">發送天氣日誌</string>
+    <string name="send_weather_log_des">假如天氣錯誤發送天氣日誌給開發者</string>
+	<string name="weather_log_email_title">我的天氣是錯誤的</string>
+    <string name="weather_log_email_city">我的城市 </string>
+    <string name="weather_log_email_description">描述</string>
+</resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <dimen name="default_padding">10dip</dimen>
+    <dimen name="small_margin">4.0dip</dimen>
+    <dimen name="default_text_padding_left">4.0dip</dimen>
+    <dimen name="default_text_padding_right">4.0dip</dimen>
+    <dimen name="default_text_padding_top">10.0dip</dimen>
+    <dimen name="default_text_padding_bottom">10.0dip</dimen>
+    
+     <dimen name="head_title_text_size">18dp</dimen>
+     <dimen name="subtitle_text_size">14dp</dimen>
+    <!-- Top margin for action bar subtitles -->
+    <dimen name="subtitle_top_margin">-3dp</dimen>
+    <!-- Bottom margin for action bar subtitles -->
+    <dimen name="subtitle_bottom_margin">5dip</dimen>
+    
+    
+    <dimen name="default_list_item_height">160dip</dimen>
+    
+    <dimen name="title_bar_height">48dip</dimen>
+    <dimen name="title_bar_shadow_height">38.5dip</dimen>
+    <dimen name="title_bar_action_heigth">48dip</dimen>
+    <dimen name="title_bar_action_width">48dip</dimen>
+    
+    <dimen name="main_padding_top">50dip</dimen>
+    
+    <dimen name="shoot_screen_width_landscape">512dip</dimen>
+    <dimen name="shoot_screen_height_landscape">270dip</dimen>
+    <dimen name="shoot_screen_width_portrait">270dip</dimen>
+    <dimen name="shoot_screen_height_portrait">300dip</dimen>
+    
+    <dimen name="list_divider_height">1.0px</dimen>
+    <dimen name="list_item_info_text_size">11.0dip</dimen>
+    <dimen name="list_item_rating_height">12.0dip</dimen>
+    <dimen name="list_item_title_info_margin">7.0dip</dimen>
+    <dimen name="list_item_inner_margin">9.0dip</dimen>
+    <dimen name="list_item_title_fading_edge_length">20.0dip</dimen>
+    <dimen name="detail_top_favorites_width">60.0dip</dimen>
+    <dimen name="list_item_height">60.0dip</dimen>
+    <dimen name="list_item_title_text_size">16.0dip</dimen>
+    <dimen name="detail_intro_text_size">12.0dip</dimen>
+    <dimen name="detail_base_info_padding_left">8.0dip</dimen>
+    <dimen name="detail_base_info_padding_top">8.0dip</dimen>
+    <dimen name="detail_base_info_padding_right">8.0dip</dimen>
+    <dimen name="detail_base_info_padding_bottom">8.0dip</dimen>
+    <dimen name="detail_author_margin_left">5.0dip</dimen>
+    <dimen name="detail_certify_title_margin_left">7.0dip</dimen>
+    <dimen name="detail_certify_margin_left">5.0dip</dimen>
+    <dimen name="detail_certify_margin_right">5.0dip</dimen>
+    <dimen name="detail_version_title_margin_top">8.0dip</dimen>
+    <dimen name="detail_version_margin_left">17.0dip</dimen>
+    <dimen name="detail_version_margin_top">8.0dip</dimen>
+    <dimen name="detail_size_margin_left">17.0dip</dimen>
+    <dimen name="detail_size_margin_top">8.0dip</dimen>
+    <dimen name="detail_line_height">1.0px</dimen>
+    <dimen name="detail_line_margin_left">8.0dip</dimen>
+    <dimen name="detail_line_margin_right">8.0dip</dimen>
+    <dimen name="detail_description_layout_padding_top">8.0dip</dimen>
+    <dimen name="detail_description_margin_left">8.0dip</dimen>
+    <dimen name="detail_description_margin_right">8.0dip</dimen>
+    <dimen name="detail_description_certify_left">8.0dip</dimen>
+    <dimen name="detail_description_certify_right">8.0dip</dimen>
+    <dimen name="btn_expand_colapse_height">23.0dip</dimen>
+    <dimen name="detail_descrption_text_size">15.0dip</dimen>
+    <dimen name="detail_gallery_margin">8.0dip</dimen>
+    
+    <!-- product list -->
+    <dimen name="product_list_item_height">272dip</dimen>
+    <dimen name="product_textview_width">100dip</dimen>
+    <dimen name="product_textview_height">32dip</dimen>
+    <dimen name="product_progress_width">100dip</dimen>
+    <dimen name="product_progress_height">8dip</dimen>
+    <dimen name="product_list_activity_margin_top">60dip</dimen>
+    
+    <dimen name="product_item_image_landscape_width">200dip</dimen>
+    <dimen name="product_item_image_landscape_height">105dip</dimen>
+    
+    <dimen name="product_item_image_portrait_width">110dip</dimen>
+    <dimen name="product_item_image_portrait_height">240dip</dimen>
+    
+    
+    <dimen name="product_item_padding">2dip</dimen>
+    
+    <dimen name="product_item_image_square">130dip</dimen>
+    
+    <dimen name="recommend_margin">40dip</dimen>
+    
+    <!-- Comment -->
+    <dimen name="resource_comment_common_padding">13dip</dimen>
+    <dimen name="resource_comment_padding">20dip</dimen>
+    <dimen name="comment_item_paddingTop">4dip</dimen>
+    <dimen name="comment_item_paddingBottom">4dip</dimen>
+    
+    <dimen name="detail_activity_margin_top">100dip</dimen>
+    <dimen name="detail_fragment_bottom_height">60dip</dimen>
+
+    <dimen name="shoot_screen_width">300dip</dimen>
+    <dimen name="shoot_screen_height">512dip</dimen>
+</resources>

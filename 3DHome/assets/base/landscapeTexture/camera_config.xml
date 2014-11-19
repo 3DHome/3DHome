@@ -1,0 +1,66 @@
+<config>
+
+    <nearestCamera
+        far="5000"
+        fov="76"
+        near="10" >
+
+        <location
+            x="0"
+            y="-553"
+            z="431" />
+
+        <zaxis
+            x="0"
+            y="-1"
+            z="0" />
+
+        <up
+            x="0"
+            y="0"
+            z="1" />
+    </nearestCamera>
+
+    <bestCamera
+        far="5000"
+        fov="78"
+        near="10" >
+
+        <location
+            x="0"
+            y="-653"
+            z="431" />
+
+        <zaxis
+            x="0"
+            y="-1"
+            z="0" />
+
+        <up
+            x="0"
+            y="0"
+            z="1" />
+    </bestCamera>
+
+    <farthestCamera
+        far="5000"
+        fov="80.51882"
+        near="10" >
+
+        <location
+            x="0"
+            y="-1086"
+            z="431" />
+
+        <zaxis
+            x="0"
+            y="-1"
+            z="0" />
+
+        <up
+            x="0"
+            y="0"
+            z="1" />
+    </farthestCamera>
+
+</config>

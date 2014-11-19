@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_desk_2"
+    actionStatus="320"
+    basedataFile="newdeskgreen_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,0.9,0.9,0.9"
+    maxPoint="220, 220, 118"
+    minPoint="-220, -220, 0"
+    sceneFile="newdeskgreen_scene.cbf"
+    slotType="desk"
+    supportScreen="portrait"
+    type="DeskPort" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="object_table_fhq.png@newdeskgreen_basedata.cbf"
+            imagePath="object_table_fhq.png" />
+
+        <imageInfo
+            imageName="object_table_fhq.png@newdeskgreen_basedata.cbf_0"
+            imagePath="object_table_fhq.png" />
+
+        <imageInfo
+            imageName="object_table_fhq.png@newdeskgreen_basedata.cbf_1"
+            imagePath="object_table_fhq.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="face"
+                spatialName="object_table02_fhq@newdeskgreen" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113605" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="frame"
+                spatialName="object_table03_fhq@newdeskgreen" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="object_table01_fhq@newdeskgreen" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

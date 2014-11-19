@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/Quake/res/strings.xml
+**
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="network_error">電話がインターネットに接続されていません。</string>
+    <string name="dialog_gls_msg">このアプリケーションはあなたの現在の位置を使って、系統的な設置の中で“私の位置”の源を使用し始めて下さい。</string>
+    <string name="activity_not_found">"アプリケーションがインストールされていません."</string>
+    <string name="enable">ON</string>
+    <string name="disable">使用禁止</string>
+    <!-- Weather setting strings -->
+    <string name="weather_settings">天気設定</string>
+    <string name="auto_update_common">基本設定</string>
+    <string name="auto_location_title">"私の場所"を使用</string>
+    <string name="auto_location_summary">自動的に位置を決定</string>
+    <string name="set_location_title">位置を設定</string>
+    <string name="set_location_msg">都市名を入力： </string>
+    <string name="city_name_error">都市名を空にすることはできません。</string>
+    <string name="dialog_choose_city">都市を選択してください</string>
+    <string name="weather_update_success">天気場所を更新されました。</string>
+    <string name="update_now_title">直ちに更新</string>
+    <string name="update_now_summary">お電話が既にインターネットに接続されていることを確認</string>
+	  <string name="switch_units_title">スイッチの温度単位</string>
+    <string name="switch_units_summary_celsius">摂氏</string>
+    <string name="switch_units_summary_fahrenheit">華氏</string>
+    
+    <string name="auto_update_setting">自動更新設定</string>
+    <string name="auto_update_title">自動更新をオンにする</string>
+    <string name="auto_update_summary">インターネット経由で自動的に天気情報を取得</string>
+    <string name="start_time_title">開始時刻を更新</string>
+    <string name="end_time_title">終了時刻を更新</string>
+    <string name="interval_time_title">更新間隔</string>
+    <string name="interval_time_summary">3時間</string>
+    <string name="get_latest_weather_failed">最新の気象情報を取得できませんでした。</string>
+    <string name="wait_dialog_title">しばらくお待ちください\u2026</string>
+    <string name="wait_dialog_msg_weather">検索しています\u2026</string>    
+    <string name="req_error">天気情報の取得に失敗しました。</string>
+    <string name="locate_error">現在位置の取得に失敗。</string>
+    <string name="gps_error">GPSを開いてください.</string>
+
+    <string name="wind_n">北</string>
+    <string name="wind_ne">北東</string>
+    <string name="wind_e">東</string>
+    <string name="wind_se">南東</string>
+    <string name="wind_s">南</string>
+    <string name="wind_sw">南西</string>
+    <string name="wind_w">西</string>
+    <string name="wind_nw">北西</string>
+    <string name="wind_var">そよ風</string>
+    <string name="wind_condition_1"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_2"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_3"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_4"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_5"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_6"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_7"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_8"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_9"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_10"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_11"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_hurricane"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">ハリケーン</xliff:g></string>
+        
+	<string name="send_weather_log_title">天候ログを送信</string>
+    <string name="send_weather_log_des">天候が間違っている場合、開発者にログを送信する</string>
+	<string name="weather_log_email_title">マイ·ウェザーが間違っている</string>
+    <string name="weather_log_email_city">私の町</string>
+    <string name="weather_log_email_description">説明</string>
+</resources>

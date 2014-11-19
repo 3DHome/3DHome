@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="application_bg">#fff2f2f2</color>
+    
+     <color name="transparent">#00000000</color>
+     <color name="transparent_black">#dd000000</color>
+     <color name="white">#ffffff</color>
+     <color name="red">#ff0000</color>
+
+     <color name="actionbar_color">#2c87c3</color>
+     <color name="actionbar_tab_color_normal">#569dcb</color>
+     <color name="actionbar_tab_color_selected">#abcee5</color>
+     <color name="actionbar_tab_textcolor">#006fba</color>
+     <color name="theme_bg">#d8e2e5</color>
+     
+     <color name="text">#1E1E1E</color>
+     <color name="grey">#ededed</color>
+     <color name="actionbar_title_text">#ffffff</color>
+     
+     <color name="item_content">#ff8499a1</color>
+     <color name="item_title">#ff333f4d</color>
+     
+      <color name="detail_background">#ffd5d5d8</color>
+    <color name="detail_cert_text">#ff6bd700</color>
+    <color name="detail_line_up">#ffc2ccd0</color>
+    <color name="detail_line_down">#ffc2ccd0</color>
+    <color name="detail_report_text">#ffff6666</color>
+    <color name="detail_top_text">#ff8499a1</color>
+    <color name="detail_softinfo_text">#ff8499a1</color>
+    <color name="detail_description_text">#ff4d7f8f</color>
+    <color name="detail_section_title_text">#ff4d7f8f</color>
+    <color name="detail_other_soft_text">#ff8499a1</color>
+    <color name="detail_download_progress_text">#ffffffff</color>
+    <color name="detail_collapse_btn_text">#ff8499a1</color>
+    <color name="detail_checking_text">#ffffffff</color>
+    
+    <color name="bg_item_normal">#30000000</color>
+    
+    <color name="item_pressed">#8033b5e5</color>
+    
+</resources>

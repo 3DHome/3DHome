@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="airplane"
+    basedataFile="airplane_basedata.cbf"
+    localTrans="0,0,0,15,1,0,0,1.2,1.2,1.2"
+    sceneFile="airplane_scene.cbf"
+    slotType="sky"
+    type="Airship" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="ad_plane_fhq.jpg@airplane_basedata.cbf"
+            imagePath="ad_plane_fhq.jpg" />
+
+        <imageInfo
+            imageName="ad_plane_fhq.jpg@airplane_basedata.cbf_0"
+            imagePath="ad_plane_fhq.jpg" />
+
+        <imageInfo
+            imageName="ggq_01.jpg@airplane_basedata.cbf"
+            imagePath="ggq_01.jpg" />
+
+        <imageInfo
+            imageName="shengzi_03.png@airplane_basedata.cbf"
+            imagePath="shengzi_03.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="banner"
+                spatialName="ggq_01@airplane" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2179072" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="body"
+                spatialName="mainairplane@airplane" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="windStick"
+                spatialName="airplane_lxj@mainairplane@airplane" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+    </childrenAttribute>
+
+</config>

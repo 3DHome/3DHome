@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_email"
+    basedataFile="email_basedata.cbf"
+    keyWords="email"
+    localTrans="0,0,0,0,0,0,1,1.2,1.2,1.2"
+    sceneFile="email_scene.cbf"
+    slotType="desktop"
+    type="Email" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="xinxiang.jpg@email_basedata.cbf"
+            imagePath="xinxiang.jpg" />
+
+        <imageInfo
+            imageName="xinxiang.jpg@email_basedata.cbf_0"
+            imagePath="xinxiang.jpg" />
+
+        <imageInfo
+            imageName="xinxiang.jpg@email_basedata.cbf_1"
+            imagePath="xinxiang.jpg" />
+
+        <imageInfo
+            imageName="xinxiang.jpg@email_basedata.cbf_2"
+            imagePath="xinxiang.jpg" />
+
+        <imageInfo
+            imageName="xinxiang.jpg@email_basedata.cbf_3"
+            imagePath="xinxiang.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="Box13@email" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="Box14@email" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

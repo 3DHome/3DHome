@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="iab_google_public" translatable="false">"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhkZ7JD41qpdayDQqb7e6GMx+NwRtU7omRx33cBRw/tlkGmxisX8FPfdBoG3UfzTgMBNW029PcaKih1frsqz6yR352TebaZnpHe5KwrMk+3nZNUemVnls9c+mbRfOMxd5jBMXe/hC5UEYTbSU2siXwnIV3J+ZdRQbSBsc3dzVJ2PAUomTmc4Ds1cSm+xMtDeUod8aDunKAyGL1lKONSXjl8i4wz+XrTWzoD2ARIuiJmx09IX/L0KbuVFarWzffGlVkgn0hbgK46Lqtomz+ZnPM24+vrcLFDf6v2x7fkstFdxXzmarlrvKwLQQd/efzAsvPqXutyYTwG+HgOmjSpCXKwIDAQAB"</string>
+    <string name="share_content_link_google" translatable="false">https://play.google.com/store/apps/details?id</string>
+    <string name="share_content_link_amazon" translatable="false">https://www.amazon.com/gp/mas/dl/android?p</string>
+
+    <string name="key_channel" translatable="false">CHANNEL</string>
+    <string name="channel_default" translatable="false">google</string>
+    <string name="channel_amazon" translatable="false">amazon</string>
+
+    <!-- package and class target name -->
+    <string name="self_package_name" translatable="false">com.borqs.se</string>
+    <string name="class_name_settings_weather" translatable="false">com.borqs.borqsweather.weather.WeatherSettings</string>
+    <string name="class_name_settings_about" translatable="false">com.borqs.se.home3d.SettingAbout</string>
+     <string name="class_name_ase_loader" translatable="false">com.borqs.se.ase.ASELoaderActivity</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+    <string-array name="menus">
+        <item>Ajouter</item>
+        <item>Paramètres accueil</item>
+        <item>Paramètres système</item>
+        <item>Gestion applications</item>
+    </string-array>
+
+   <string-array name="appicon_background_entries">
+        <item>Couleur moyenne</item>
+        <item>Couleur complémentaire</item>
+    </string-array>
+
+    <!-- below strings have not been translated to other languages -->
+    <string-array name="edit_wall_menu_item">
+        <item>Photo</item>
+        <item>Caméra</item>
+        <item>Revenir à la version par défaut</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>Photo</item>
+        <item>Caméra</item>
+        <item>Revenir à la version par défaut</item>
+    </string-array>
+
+    <string-array name="long_click_wall">
+        <item>Paramètres accueil</item>
+        <item>Objet 3D</item>
+        <item>Application</item>
+        <item>Dossier</item>
+        <item>Raccourci</item>
+        <item>Widget</item>
+        <item>Papier peint</item>
+    </string-array>
+
+    <string-array name="app_drawer_sort_type">
+        <item>nom</item>
+        <item>Installez récemment</item>
+        <item>fréquemment utilisés</item>
+    </string-array>
+
+</resources>

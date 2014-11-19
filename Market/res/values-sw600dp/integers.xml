@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<integer name="gridview_number">3</integer>
+	
+	<integer name="shoot_screen_maxNumOfPixels">307200</integer>
+	
+	<integer name="object_margin_bottom">-20</integer>
+	
+	<integer name="object_list_column">2</integer>
+	
+	<integer name="wallpaper_list_column">2</integer>
+</resources>

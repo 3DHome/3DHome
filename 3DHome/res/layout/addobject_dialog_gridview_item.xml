@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/addobject_dialog_contentv_object_w"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/addobject_gridview_item_image"
+                android:layout_width="@dimen/addobject_dialog_contentv_item_icon_wh"
+                android:layout_height="@dimen/addobject_dialog_contentv_item_icon_wh"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/addobject_dialog_contentv_item_padding"
+                android:gravity="center"
+                android:paddingLeft="@dimen/addobject_dialog_contentv_item_padding"
+                android:paddingRight="@dimen/addobject_dialog_contentv_item_padding" />
+
+            <TextView
+                android:id="@+id/addobject_gridview_item_text"
+                android:layout_width="@dimen/addobject_dialog_contentv_object_w"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingBottom="@dimen/addobject_dialog_contentv_item_padding"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:singleLine="true"
+                android:text=""
+                android:textSize="@dimen/addobject_dialog_contentv_object_icontext_size" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/addobject_gridview_item_checkitem"
+            android:layout_width="@dimen/addobject_dialog_contentv_item_checkbox_wh"
+            android:layout_height="@dimen/addobject_dialog_contentv_item_checkbox_wh"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="@dimen/addobject_dialog_contentv_item_checkbox_padding"
+            android:layout_marginTop="@dimen/addobject_dialog_contentv_item_checkbox_padding"
+            android:background="@drawable/addobject_gridview_item_checkbox_selected"
+            android:checked="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="top|right"
+            android:text="" />
+    </FrameLayout>
+
+</LinearLayout>

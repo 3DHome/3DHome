@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_iconbox"
+    basedataFile="iconbox_basedata.cbf"
+    localTrans="0,0,-5,0,0,0,1,0.92,0.92,0.92"
+    maxPoint="50,50,100"
+    minPoint="-50,-50,0"
+    sceneFile="iconbox_scene.cbf"
+    slotType="desktop"
+    type="IconBox" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="wall03.png@iconbox_basedata.cbf"
+            imagePath="wall03.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="face"
+                spatialName="Box02@IconBox" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113701" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

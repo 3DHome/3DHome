@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recommend_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/recommend_margin"
+    android:padding="10px" 
+    android:visibility="gone">
+
+            <com.borqs.market.view.ViewPagerInListView
+                android:id="@+id/mPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+   	<LinearLayout
+   	    android:id="@+id/layout_lable"
+   	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#b0000000"
+        android:orientation="vertical"
+        android:padding="8dip"
+        android:gravity="right"
+   	    >
+   	    
+	    <TextView
+	        android:id="@+id/tv_recommend_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="5dp"
+	        android:textColor="@color/white"
+	        android:textSize="18sp"/>
+	    <LinearLayout
+	        android:id="@+id/pages_number"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:orientation="horizontal"/>
+   	</LinearLayout>
+
+
+</RelativeLayout>

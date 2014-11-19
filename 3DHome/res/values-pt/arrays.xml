@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Fev</item>
+        <item>Mar</item>
+        <item>Abr</item>
+        <item>Mai</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Ago</item>
+        <item>Set</item>
+        <item>Out</item>
+        <item>Nov</item>
+        <item>Dez</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>Dom</item>
+        <item>Seg</item>
+        <item>Ter</item>
+        <item>Qua</item>
+        <item>Qui</item>
+        <item>Sex</item>
+        <item>Sáb</item>
+    </string-array>
+    <string-array name="menus">
+        <item>Adicionar</item>
+        <item>Configurações 3D Home</item>
+        <item>Configurações do Sistema</item>
+        <item>Gerenciar aplicativos</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item">
+        <item>Imagem</item>
+        <item>Câmera</item>
+        <item>Restaurar padrão</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>Imagem</item>
+        <item>Câmera</item>
+        <item>Restaurar padrão</item>
+    </string-array>
+
+   <string-array name="appicon_background_entries">
+        <item>Médio cor</item>
+        <item>Complementar cor</item>
+    </string-array>
+
+    <string-array name="long_click_wall">
+        <item>Configurações 3D Home</item>
+        <item>Objeto 3D</item>
+        <item>Aplicativo</item>
+        <item>Pasta</item>
+        <item>Atalho</item>
+        <item>Widget</item>
+        <item>Papel de Parede</item>
+    </string-array>
+
+    <string-array name="app_drawer_sort_type">
+        <item>Nome</item>
+        <item>Recentes</item>
+        <item>Mais utilizados</item>
+    </string-array>
+
+</resources>

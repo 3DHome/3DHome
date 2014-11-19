@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/option_menu_pop"
+        style="@style/OptionMenu"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/menu00"
+            style="@style/OptionMenuItem" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/option_menu_item_padding" />
+
+        <TextView
+            android:id="@+id/menu01"
+            style="@style/OptionMenuItem" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/option_menu_item_padding" />
+
+        <TextView
+            android:id="@+id/menu02"
+            style="@style/OptionMenuItem" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/option_menu_item_padding" />
+
+        <TextView
+            android:id="@+id/menu03"
+            style="@style/OptionMenuItem" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/option_menu_item_padding_bottom" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<condition code="0" displayName="龙卷风" key="tornado" type="4" />
+	<condition code="1" displayName="热带风暴" key="tropical storm"
+		type="4" />
+	<condition code="2" displayName="飓风" key="hurricane" type="4" />
+	<condition code="3" displayName="大雷雨" key="severe thunderstorms"
+		type="3" />
+	<condition code="4" displayName="雷阵雨" key="thunderstorms"
+		type="3" />
+	<condition code="5" displayName="雨夹雪" key="mixed rain and snow"
+		type="8" />
+	<condition code="6" displayName="雨夹雪" key="mixed rain and sleet"
+		type="10" />
+	<condition code="7" displayName="雨夹雪" key="mixed snow and sleet"
+		type="8" />
+	<condition code="8" displayName="冻雾雨" key="freezing drizzle"
+		type="1" />
+	<condition code="9" displayName="毛毛雨" key="drizzle" type="1" />
+	<condition code="10" displayName="冻雨" key="freezing rain"
+		type="1" />
+	<condition code="11" displayName="阵雨" key="showers" type="1" />
+	<condition code="12" displayName="阵雨" key="showers" type="1" />
+	<condition code="13" displayName="小雪" key="snow flurries"
+		type="2" />
+	<condition code="14" displayName="阵雪" key="light snow showers"
+		type="2" />
+	<condition code="15" displayName="高吹雪" key="blowing snow"
+		type="2" />
+	<condition code="16" displayName="雪" key="snow" type="2" />
+	<condition code="17" displayName="冰雹" key="hail" type="9" />
+	<condition code="18" displayName="冻雨" key="sleet" type="10" />
+	<condition code="19" displayName="沙尘" key="dust" type="7" />
+	<condition code="20" displayName="雾" key="foggy" type="6" />
+	<condition code="21" displayName="阴霾" key="haze" type="6" />
+	<condition code="22" displayName="浓雾" key="smoky" type="6" />
+	<condition code="23" displayName="大风" key="blustery" type="4" />
+	<condition code="24" displayName="大风" key="windy" type="4" />
+	<condition code="25" displayName="寒冷" key="cold" type="4" />
+	<condition code="26" displayName="阴" key="cloudy" type="5" />
+	<condition code="27" displayName="阴" key="mostly cloudy (night)"
+		type="5" />
+	<condition code="28" displayName="阴" key="mostly cloudy (day)"
+		type="5" />
+	<condition code="29" displayName="多云" key="partly cloudy (night)"
+		type="0" />
+	<condition code="30" displayName="多云" key="partly cloudy (day)"
+		type="0" />
+	<condition code="31" displayName="晴" key="clear (night)"
+		type="4" />
+	<condition code="32" displayName="晴" key="sunny" type="4" />
+	<condition code="33" displayName="晴" key="fair (night)" type="4" />
+	<condition code="34" displayName="晴" key="fair (day)" type="4" />
+	<condition code="35" displayName="雨夹冰雹" key="mixed rain and hail"
+		type="1" />
+	<condition code="36" displayName="酷热" key="hot" type="4" />
+	<condition code="37" displayName="局部雷雨" key="isolated thunderstorms"
+		type="3" />
+	<condition code="38" displayName="局部雷雨" key="scattered thunderstorms"
+		type="3" />
+	<condition code="39" displayName="局部雷雨" key="scattered thunderstorms"
+		type="3" />
+	<condition code="40" displayName="局部阵雨" key="scattered showers"
+		type="1" />
+	<condition code="41" displayName="大雪" key="heavy snow" type="2" />
+	<condition code="42" displayName="局部阵雪" key="scattered snow showers"
+		type="2" />
+	<condition code="43" displayName="大雪" key="heavy snow" type="2" />
+	<condition code="44" displayName="局部多云" key="partly cloudy"
+		type="0" />
+	<condition code="45" displayName="雷阵雨" key="thundershowers"
+		type="3" />
+	<condition code="46" displayName="阵雪" key="snow showers"
+		type="2" />
+	<condition code="47" displayName="局部雷雨" key="isolated thundershowers"
+		type="3" />
+	<condition code="3200" displayName="无信息" key="not available"
+		type="-1" />
+
+    <condition code="100" displayName="小雨"
+		key="light rain" type="1" />
+	<condition code="101" displayName="中雨"
+		key="moderate rain" type="1" />
+	<condition code="102" displayName="大雨"
+		key="heavy rain" type="1" />
+	<condition code="103" displayName="暴雨"
+		key="rainstorm" type="1" />
+	<condition code="104" displayName="大暴雨"
+		key="severe rainstorm" type="1" />
+	<condition code="105" displayName="特大暴雨"
+		key="extra torrential rainstorm" type="1" />
+	<condition code="106" displayName="雷阵雨伴有冰雹"
+		key="shower with thunder and hail" type="3" />
+	<condition code="107" displayName="雨"
+		key="rain" type="1" />
+	<condition code="108" displayName="暴雪"
+		key="snowstorm" type="2" />
+	<condition code="109" displayName="中雪"
+		key="moderate snow" type="2" />
+	<condition code="110" displayName="沙尘暴"
+		key="dust and sand storm" type="7" />
+	<condition code="111" displayName="扬沙"
+		key="wind with dust and sand" type="7" />
+	<condition code="112" displayName="强沙尘暴"
+		key="severe dust and sand storm" type="7" />
+</resources>

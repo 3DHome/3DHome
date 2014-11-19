@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>gennaio</item>
+        <item>febbraio</item>
+        <item>marzo</item>
+        <item>aprile</item>
+        <item>maggio</item>
+        <item>giugno</item>
+        <item>luglio</item>
+        <item>agosto</item>
+        <item>settembre</item>
+        <item>ottobre</item>
+        <item>novembre</item>
+        <item>dicembre</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>domenica</item>
+        <item>Lunedi</item>
+        <item>martedì</item>
+        <item>mercoledì</item>
+        <item>Giovedi</item>
+        <item>venerdì</item>
+        <item>sabato</item>
+    </string-array>
+    <string-array name="menus">
+        <item>Aggiungi</item>
+        <item>Impostazioni Home</item>
+        <item>Impostazioni sistema</item>
+        <item>Gestisci applicazioni</item>
+    </string-array>
+   <string-array name="appicon_background_entries">
+        <item>Medio colore</item>
+        <item>Complementare colore</item>
+    </string-array>
+    <!-- below strings have not been translated to other languages -->
+    <string-array name="edit_wall_menu_item">
+        <item>Fotografia</item>
+        <item>Macchina fotografica</item>
+        <item>Ripristina impostazioni predefinite</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>Fotografia</item>
+        <item>Macchina fotografica</item>
+        <item>Ripristina impostazioni predefinite</item>
+    </string-array>
+
+    <string-array name="long_click_wall">
+        <item>Impostazioni Home</item>
+        <item>Oggetto 3D</item>
+        <item>Applicazione</item>
+        <item>Cartella</item>
+        <item>Scorciatoia</item>
+        <item>Widget</item>
+        <item>Cambiare lo sfondo</item>
+    </string-array>
+
+    <string-array name="app_drawer_sort_type">
+        <item>nome</item>
+        <item>Installare recente</item>
+        <item>Usato frequenti</item>
+    </string-array>
+
+</resources>

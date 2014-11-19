@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="network_error">Svp soyez sûr que votre mobile est connecté avec le réseau.</string>
+    <string name="dialog_gls_msg">Cette application souhaite utiliser votre localisation actuelle. Svp activez la source 
+Ma Localisation dans les paramètres du système.</string>
+    <string name="activity_not_found">L\'application n\'est pas installée.</string>
+    <string name="enable">Activer</string>
+    <string name="disable">Désactiver</string>
+    <!-- Weather setting strings -->
+    <string name="weather_settings">Paramètres météo</string>
+    <string name="auto_update_common">Paramètres communs</string>
+    <string name="auto_location_title">Utiliser ma localisation</string>
+    <string name="auto_location_summary">Détermine automatiquement ma localisation</string>    
+    <string name="set_location_title">Définir localisation</string>
+    <string name="set_location_msg">Entrer nom de la ville: </string>
+    <string name="city_name_error">Le nom de la ville ne peut pas être vide.</string>
+    <string name="dialog_choose_city">Choisissez la ville</string>
+    <string name="weather_update_success">Localisation de la météo mis à jour.</string>    
+    <string name="update_now_title">Mettre à jour maintenant</string>
+    <string name="update_now_summary">Soyez sûr que le réseau est connecté.</string>    
+	<string name="switch_units_title">Commutateur unités de température</string>
+    <string name="switch_units_summary_celsius">Celsius</string>
+    <string name="switch_units_summary_fahrenheit">Fahrenheit</string>
+    
+    <string name="auto_update_setting">Paramètres mise à jour auto</string>
+    <string name="auto_update_title">Mettre à jour auto</string>
+    <string name="auto_update_summary">Obtenir automatiquement des infos de la météo par le réseau</string>
+    <string name="start_time_title">Heure de début</string>
+    <string name="end_time_title">Heure de fin</string>
+    <string name="interval_time_title">Heure d\'intervalle</string>
+    <string name="interval_time_summary">3 heures</string>
+    <string name="get_latest_weather_failed">Echec pour obtenir les dernières infos météo.</string>
+    <string name="wait_dialog_title">Svp patientez\u2026</string>
+    <string name="wait_dialog_msg_weather">Recherche\u2026</string>
+    <string name="req_error">Echec pour obtenir les infos météo.</string>
+    <string name="locate_error">Echec pour obtenir la localisation actuelle.</string>
+    <string name="gps_error">s\'il vous plaît ouvrir GPS.</string>
+
+    <string name="wind_n">N</string>
+    <string name="wind_ne">NE</string>
+    <string name="wind_e">E</string>
+    <string name="wind_se">SE</string>
+    <string name="wind_s">S</string>
+    <string name="wind_sw">SW</string>
+    <string name="wind_w">W</string>
+    <string name="wind_nw">NW</string>
+    <string name="wind_var">VAR</string>
+    <string name="wind_condition_1"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_2"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_3"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_4"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_5"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_6"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_7"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_8"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_9"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_10"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_11"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_hurricane"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">Hurricane</xliff:g></string>
+        
+    <string name="send_weather_log_title">Envoyer journal météo</string>
+    <string name="send_weather_log_des">Envoyer journal au développeur si le temps est mauvais</string>
+    
+     <string name="weather_log_email_title">Mon temps est mauvais</string>
+     <string name="weather_log_email_city">ma ville </string>
+     <string name="weather_log_email_description">description</string>
+</resources>

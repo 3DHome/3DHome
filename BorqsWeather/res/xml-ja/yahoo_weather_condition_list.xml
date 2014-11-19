@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<condition code="0" displayName="竜巻" key="tornado" type="4" />
+	<condition code="1" displayName="熱帯暴風雨" key="tropical storm"
+		type="4" />
+	<condition code="2" displayName="ハリケーン" key="hurricane"
+		type="4" />
+	<condition code="3" displayName="激しい雷雨" key="severe thunderstorms"
+		type="3" />
+	<condition code="4" displayName="雷雨" key="thunderstorms"
+		type="3" />
+	<condition code="5" displayName="混合雨や雪" key="mixed rain and snow"
+		type="8" />
+	<condition code="6" displayName="混合雨とみぞれ" key="mixed rain and sleet"
+		type="10" />
+	<condition code="7" displayName="混合雪とみぞれ" key="mixed snow and sleet"
+		type="8" />
+	<condition code="8" displayName="着氷性の霧雨" key="freezing drizzle"
+		type="1" />
+	<condition code="9" displayName="霧雨" key="drizzle" type="1" />
+	<condition code="10" displayName="冷たい雨" key="freezing rain"
+		type="1" />
+	<condition code="11" displayName="シャワー" key="showers"
+		type="1" />
+	<condition code="12" displayName="シャワー" key="showers"
+		type="1" />
+	<condition code="13" displayName="雪突風" key="snow flurries"
+		type="2" />
+	<condition code="14" displayName="光雪にわか雨" key="light snow showers"
+		type="2" />
+	<condition code="15" displayName="雪を吹く" key="blowing snow"
+		type="2" />
+	<condition code="16" displayName="雪" key="snow" type="2" />
+	<condition code="17" displayName="雹" key="hail" type="9" />
+	<condition code="18" displayName="みぞれ" key="sleet" type="10" />
+	<condition code="19" displayName="ほこり" key="dust" type="7" />
+	<condition code="20" displayName="フォギー" key="foggy" type="6" />
+	<condition code="21" displayName="ヘイズ" key="haze" type="6" />
+	<condition code="22" displayName="スモーキー" key="smoky" type="6" />
+	<condition code="23" displayName="大声で話す" key="blustery"
+		type="4" />
+	<condition code="24" displayName="風の強い" key="windy" type="4" />
+	<condition code="25" displayName="コールド" key="cold" type="4" />
+	<condition code="26" displayName="曇った" key="cloudy" type="5" />
+	<condition code="27" displayName="ほとんど曇り" key="mostly cloudy (night)"
+		type="5" />
+	<condition code="28" displayName="ほとんど曇り" key="mostly cloudy (day)"
+		type="5" />
+	<condition code="29" displayName="一部曇り" key="partly cloudy (night)"
+		type="0" />
+	<condition code="30" displayName="一部曇り" key="partly cloudy (day)"
+		type="0" />
+	<condition code="31" displayName="クリア" key="clear (night)"
+		type="4" />
+	<condition code="32" displayName="日当たりの良い" key="sunny" type="4" />
+	<condition code="33" displayName="フェア" key="fair (night)"
+		type="4" />
+	<condition code="34" displayName="フェア" key="fair (day)"
+		type="4" />
+	<condition code="35" displayName="混合雨と雹" key="mixed rain and hail"
+		type="1" />
+	<condition code="36" displayName="ホット" key="hot" type="4" />
+	<condition code="37" displayName="隔離された雷雨"
+		key="isolated thunderstorms" type="3" />
+	<condition code="38" displayName="散乱雷雨"
+		key="scattered thunderstorms" type="3" />
+	<condition code="39" displayName="散乱雷雨"
+		key="scattered thunderstorms" type="3" />
+	<condition code="40" displayName="散乱シャワー" key="scattered showers"
+		type="1" />
+	<condition code="41" displayName="大雪" key="heavy snow"
+		type="2" />
+	<condition code="42" displayName="散在スノーシャワー"
+		key="scattered snow showers" type="2" />
+	<condition code="43" displayName="大雪" key="heavy snow"
+		type="2" />
+	<condition code="44" displayName="一部曇り" key="partly cloudy"
+		type="0" />
+	<condition code="45" displayName="雷雨" key="thundershowers"
+		type="3" />
+	<condition code="46" displayName="雪が降ったりやんだりすること" key="snow showers"
+		type="2" />
+	<condition code="47" displayName="隔離された雷雨"
+		key="isolated thundershowers" type="3" />
+	<condition code="3200" displayName="利用できない" key="not available"
+		type="-1" />
+	
+	<condition code="100" displayName="小雨"
+		key="light rain" type="1" />
+	<condition code="101" displayName="適度な雨"
+		key="moderate rain" type="1" />
+	<condition code="102" displayName="大雨"
+		key="heavy rain" type="1" />
+	<condition code="103" displayName="暴風雨"
+		key="rainstorm" type="1" />
+	<condition code="104" displayName="豪雨"
+		key="severe rainstorm" type="1" />
+	<condition code="105" displayName="エクストラ豪雨暴風雨"
+		key="extra torrential rainstorm" type="1" />
+	<condition code="106" displayName="雷と雹とシャワー"
+		key="shower with thunder and hail" type="3" />
+	<condition code="107" displayName="雨"
+		key="rain" type="1" />
+	<condition code="108" displayName="吹雪"
+		key="snowstorm" type="2" />
+	<condition code="109" displayName="適度な雪"
+		key="moderate snow" type="2" />
+	<condition code="110" displayName="ほこりや砂の嵐"
+		key="dust and sand storm" type="7" />
+	<condition code="111" displayName="ほこりや砂と風"
+		key="wind with dust and sand" type="7" />
+	<condition code="112" displayName="重度のほこりや砂の嵐"
+		key="severe dust and sand storm" type="7" />
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- addobject begin -->
+    <dimen name="addobject_settings_h">62dp</dimen>
+    <dimen name="addobject_glassbg_h">96dp</dimen>
+    <dimen name="addobject_group_padding_top">8dp</dimen>
+    <dimen name="addobject_main_bottom_padding">0dp</dimen>
+    <!-- addobject end-->
+
+    <dimen name="option_menu_width">320dp</dimen>
+
+</resources>

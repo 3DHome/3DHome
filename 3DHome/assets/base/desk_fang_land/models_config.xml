@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="desk_fang_land"
+    actionStatus="320"
+    basedataFile="desk_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,1,1,1"
+    maxPoint="400,180,170"
+    minPoint="-400,-180,0"
+    sceneFile="desk_scene.cbf"
+    slotType="desk"
+    supportScreen="landscape"
+    type="DeskLand" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="hd_table02_fhq.png@desk_basedata.cbf"
+            imagePath="hd_table02_fhq.png" />
+
+        <imageInfo
+            imageName="hd_table02_fhq.png@desk_basedata.cbf_0"
+            imagePath="hd_table02_fhq.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="fangzhuo_4_ding@desk" />
+
+            <lights />
+
+            <geostatus statusValue="2113605" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="fangzhuo_4_di@desk" />
+
+            <lights />
+
+            <geostatus statusValue="2113541" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

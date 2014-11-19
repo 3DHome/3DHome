@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_sky"
+    basedataFile="sky_basedata.cbf"
+    sceneFile="sky_scene.cbf"
+    slotType="sky"
+    type="Sky" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="qingtianbogyun.jpg@sky_basedata.cbf"
+            imagePath="qingtianbogyun.jpg" />
+    </imageInfos>
+
+</config>

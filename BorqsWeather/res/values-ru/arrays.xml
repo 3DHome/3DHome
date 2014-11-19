@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="interval_time_entries">
+        <item>Полчаса</item>
+        <item>1 час</item>
+        <item>2 часа</item>
+        <item>3 часа</item>
+        <item>4 часа</item>
+        <item>5 часов</item>
+    </string-array>
+
+</resources>

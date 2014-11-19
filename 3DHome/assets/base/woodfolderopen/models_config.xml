@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="woodfolderopen"
+    basedataFile="wenjianjia_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,0.25,0.25,0.25"
+    maxPoint="100, 0, 105"
+    minPoint="-100, -20, -105"
+    sceneFile="wenjianjia_scene.cbf"
+    type="Folder" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="object_folder02b_fhq.png@wenjianjia_basedata.cbf"
+            imagePath="object_folder02b_fhq.png" />
+
+        <imageInfo
+            imageName="object_folder02b_fhq.png@wenjianjia_basedata.cbf_0"
+            imagePath="object_folder02b_fhq.png" />
+
+        <imageInfo
+            imageName="object_folder02b_fhq_name.png@wenjianjia_basedata.cbf"
+            imagePath="object_folder02b_fhq_name.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="editfolder"
+                spatialName="Plane02@woodfolderopen" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="1064965" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="15"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="object_folder02b@woodfolderopen" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="1064965" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="15"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="foldername"
+                spatialName="Plane01@woodfolderopen" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="1064965" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="15"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

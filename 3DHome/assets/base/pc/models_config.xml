@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_pc"
+    basedataFile="pc_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,0.85,0.85,0.85"
+    sceneFile="pc_scene.cbf"
+    slotType="desktop"
+    type="Laptop" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="diannao.jpg@pc_basedata.cbf"
+            imagePath="diannao.jpg" />
+
+        <imageInfo
+            imageName="yinying.png@pc_basedata.cbf"
+            imagePath="yinying.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="screen"
+                spatialName="Object05@group_pc@pc_basedata.cbf" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="pillar"
+                spatialName="Object03@group_pc@pc_basedata.cbf" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+                <child>
+
+            <geometry
+                spatialName="Object04@group_pc@pc_basedata.cbf" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

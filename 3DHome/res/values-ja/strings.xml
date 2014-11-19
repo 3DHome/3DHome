@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/Quake/res/strings.xml
+**
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">3Dメイン画面</string>
+    <string name="description">真実な世界は3Dです、他のホームスクリーン設計と異なり、この3Dホームスクリーンはあなたの家をシミュレートします。あなたは日常生活の中でどのようにスタッフ、フォン、テレビ、カメラ、クロック、カレンダーなどを使用するか。それはあなたに新鮮で真新しいモバイルの操業体験を持って来ます。</string>
+
+    <!-- Home setting strings -->
+    <string name="menu_preference">3Dメイン画面設定</string>
+    <string name="setting_display">ディスプレイの設定</string>
+    <string name="themes">テーマ</string>
+    <string name="theme_summary">テーマをダウンロードして適用し</string>
+    <string name="objects">3Dオブジェクト</string>
+    <string name="object_summary">ダウンロードマネージャと3Dオブジェクト</string>
+    <string name="setting_style">スタイル設定</string>
+    <string name="icon_background_title">アプリケーションアイコンの背景</string>
+    <string name="full_screen">フルスクリーン</string>
+    <string name="wall_indicator">壁のインジケータ</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="enable">ON</string>
+    <string name="disable">使用禁止</string>
+    <string name="weather_settings">天気設定</string>
+    <string name="weather_summary">場所、単位を設定</string>
+    <string name="update_settings">更新設定</string>
+    <string name="upgrade_title">検査更新</string>
+    <string name="share">シェア</string>
+    <string name="score">スコア</string>
+    <string name="feedback">フィードバック</string>
+    <string name="help">ヘルプ</string>
+    <string name="about">について</string>
+
+    <!-- Customize house setting strings  -->
+    <string name="edit_wall_menu_title">壁紙を選択</string>
+
+    <!-- delete 3D Objects dialog -->
+    <string name="delete_objects_title">3Dオブジェクトを削除する</string>
+    <string name="confirm_delete_selected_objects"><xliff:g id="name">%s</xliff:g>を削除しますか？</string>
+
+    <!-- Check update strings -->
+    <string name="network_error">電話がインターネットに接続されていません。</string>
+    <string name="no_update">これは最新バージョンです。</string>
+    <string name="check_update_error">インターネットやサーバーの問題のために、ソフトウェアのバージョンを検査し、アップグレードに失敗しました後でもう一度やり直してください。</string>
+    <string name="upgrade_dialog_title">アプリケーション更新</string>
+    <string name="wait_dialog_msg_sw">チェックしています\u2026</string>
+    <string name="upgrade_dialog_msg">新しいバージョンを検出しました。\r\nもしモバイルネットのダウンロードを使って更新して流量費用に発生するならば、ダウンロードするかどうか？</string>
+    <string name="upgrade_dialog_current_version">現バージョン：</string>
+    <string name="upgrade_dialog_latest_version">最新バージョン：</string>
+    <string name="upgrade_dialog_file_size">ファイルサイズ：</string>
+    <string name="upgrade_dialog_update_changes">更新説明：</string>
+    <string name="upgrade_dialog_ok">ダウンロード</string>
+    <string name="upgrade_dialog_cancel">谛める</string>
+
+    <string name="share_content">私は、3Dホームをインストールしました,  あなたはそれを試してお勧めします,  アドレスをダウンロード:  \n%1$s=%2$s</string>
+
+    <!-- Help strings -->
+    <string name="help_title_00">アプリケーションをブラウズ</string>
+    <string name="help_title_01">アプリケーションを追加</string>
+    <string name="help_title_02">オブジェクトを削除</string>
+    <string name="help_content_00">デスクトップノートブックをクリックして、インストールされているすべてのアプリケーションをブラウズ。</string>
+    <string name="help_content_01">長押して壁にアプリケーションを追加。</string>
+    <string name="help_content_02">缶を投げる/ゴミにドラッグを通じてシーンからオブジェクトを削除します。</string>
+
+    <!-- About strings -->
+    <string name="about_version">バージョン：  %s</string>
+    <string name="about_website">公式ホームページ ： http://apps.borqs.com/3dhome.html</string>
+
+    <!-- Weather strings -->
+    <string name="no_info_msg">天気情報がありません</string>
+    <string name="day_of_week_short_sunday">日</string>
+    <string name="day_of_week_short_monday">月</string>
+    <string name="day_of_week_short_tuesday">火</string>
+    <string name="day_of_week_short_wednesday">水</string>
+    <string name="day_of_week_short_thursday">木</string>
+    <string name="day_of_week_short_friday">金</string>
+    <string name="day_of_week_short_saturday">土</string>
+
+    <string name="gadget_error_text">小さなプラグインをロードしている</string>
+    <string name="activity_not_found">"アプリケーションがインストールされていません."</string>
+    <string name="uninstall_system_app_text">"これはシステムアプリケーション、アンインストールすることはできませんです."</string>
+    <string name="delete_preset_object_text">プリセットのオブジェクトを削除することができません。</string>
+    <string name="delete_being_used_desk_text">使用されているテーブルを削除することはできません.</string>
+    <string name="can_not_put_object_in_room">オブジェクトは、この部屋に配置することはできません</string>
+    
+    <!-- 3D Object strings -->
+    <string name="select_app">バインドされたアプリケーションを選択</string>
+
+	<!-- select shortcut dialog -->
+    <string name="title_select_shortcut">ショートカットを選択</string>
+    
+    <!-- Room strings -->
+    <string name="no_room">このシーンは壁にスペースがない。</string>
+    <string name="no_room_desk">このシーンはデスクトップにがない。</string>
+
+    <!-- app drawer -->
+    <string name="title_select_drawer_sort">ソートの種類を選択してください</string>
+
+    <string name="search_activity_title">Google検索</string>
+    <string name="search_activity_hint_text">入力検索キーワード</string>
+    <string name="search_activity_button_text">検索</string>
+
+    <string name="change_icon_dialog_title">アイコンの変更</string>
+    <string name="change_icon_dialog_select_img">画像を選ぶ</string>
+    <string name="change_icon_dialog_reset_img">リセット</string>
+    <string name="change_label_dialog_title">リネーム</string>
+    
+    <!-- Folder strings -->
+    <string name="folder_title">フォルダ</string>
+    
+    <!-- Application search -->
+    <string name="app_search_hint">検索</string>
+
+    <!-- Long click object menu icon text -->
+    <string name="long_click_object_menu_delete">削除</string>
+    <string name="long_click_object_menu_setting">設定</string>
+    <string name="long_click_object_menu_change_bind">関連</string>
+    <string name="long_click_object_menu_change_icon">アイコン</string>
+    <string name="long_click_object_menu_change_label">リネーム</string>
+    <string name="long_click_object_menu_uninstall">アンインストール</string>
+    <string name="long_click_object_menu_resize">サイズ</string>
+    <string name="long_click_object_menu_change_color">カラー</string>
+    <string name="long_click_object_menu_replace">替える</string>
+    
+    <!-- Camera Adjust -->
+    <string name="camera_adjust_settings_summary">位置とカメラのFOVを調整</string>
+    <string name="camera_adjust_settings_title">カメラの調整</string>
+    <string name="camera_adjust_down_up_text">の垂直位置</string>
+    <string name="camrea_adjust_setp_in_out_text">フロントとリアの位置</string>
+    <string name="camera_adjust_camera_location">カメラ位置</string>
+    <string name="camera_adjust_camera_fov">FOV</string>
+    <string name="camera_adjust_button_reset">リセット</string>
+
+    <!-- Edit color dialog -->
+    <string name="edit_color_red">レッド</string>
+    <string name="edit_color_green">グリーン</string>
+    <string name="edit_color_blue">ブルー</string>
+    
+    <!-- Settings AD Content -->
+    <string name="ad_content_title">カスタム広告コンテンツ</string>
+    <string name="ad_content_dialog_title">広告コンテンツを設定する</string>
+    <string name="ad_content_summary">飛行船のための広告コンテンツを設定する</string>
+    <string name="ad_default_blessings">頑張って！！！</string>
+
+    <!-- addobject -->
+    <string name="addobject_select_to_add_app">アプリケーション</string>
+    <string name="select_app_to_hide">非表示にするアプリケーションを選択します</string>
+    <string name="addobject_select_to_add_folder_no_room">はスペースない.</string>
+    <string name="addobject_select_to_add_folder_not_empty">フォルダは空であってはならない.</string>
+    <string name="addobject_select_to_add_app_no_room">はスペースない.</string>
+    <string name="app_sorting">アプリの並べ替え</string>
+    <string name="app_hiding">アプリの非表示</string>
+
+    <!-- app icon decorator begin -->
+    <string name="show_shelf">表示アプリケーションは、棚をアイコン</string>
+    <string name="show_shelf_for_desktop_object">小さなオブジェクトの棚を表示</string>
+    <!-- app icon decorator end -->
+    
+    <string name="load_ase_title">カスタム3Dオブジェクトを追加します</string>
+    <string name="load_ase_summary">それは3DMaxからエクスポートASE形式のファイルを読み込むことができます</string>
+</resources>

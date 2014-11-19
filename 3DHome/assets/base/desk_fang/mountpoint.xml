@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mountPointsConfig>
+
+    <mountPoints
+        containerName="fangzhuo"
+        containerType="1"
+        groupName="desk_fang" >
+
+        <mountPointData
+            mountPointName="point_00"
+            rotateAngle="0"
+            rotatex="0"
+            rotatey="0"
+            rotatez="1"
+            scalex="0.88"
+            scaley="0.88"
+            scalez="0.88"
+            translatex="0"
+            translatey="0"
+            translatez="116" />
+
+        <mountPointData
+            mountPointName="point_01"
+            rotateAngle="0"
+            rotatex="0"
+            rotatey="0"
+            rotatez="1"
+            scalex="0.88"
+            scaley="0.88"
+            scalez="0.88"
+            translatex="170"
+            translatey="0"
+            translatez="116" />
+
+        <mountPointData
+            mountPointName="point_02"
+            rotateAngle="0"
+            rotatex="0"
+            rotatey="0"
+            rotatez="1"
+            scalex="0.88"
+            scaley="0.88"
+            scalez="0.88"
+            translatex="85"
+            translatey="0"
+            translatez="116" />
+
+        <mountPointData
+            mountPointName="point_03"
+            rotateAngle="0"
+            rotatex="0"
+            rotatey="0"
+            rotatez="1"
+            scalex="0.88"
+            scaley="0.88"
+            scalez="0.88"
+            translatex="-85"
+            translatey="0"
+            translatez="116" />
+
+        <mountPointData
+            mountPointName="point_04"
+            rotateAngle="0"
+            rotatex="0"
+            rotatey="0"
+            rotatez="1"
+            scalex="0.88"
+            scaley="0.88"
+            scalez="0.88"
+            translatex="-170"
+            translatey="0"
+            translatez="116" />
+    </mountPoints>
+
+</mountPointsConfig>

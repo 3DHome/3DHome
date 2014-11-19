@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/Quake/res/strings.xml
+**
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">3D主屏</string>
+    <string name="description">前所未有的真实3D主屏体验。真实的世界是立体的，不像任何其他主屏，3D主屏能带给您身临其境的真实体验。通过模拟您的日常生活来使用您的手机，电视，相机，时钟，日历等，3D主屏给您带来一种完全不一样的全新的手机和平板电脑操作体验。</string>
+
+    <!-- Home setting strings -->
+    <string name="menu_preference">三维主屏设置</string>
+    <string name="setting_display">显示设置</string>
+    <string name="themes">主题</string>
+    <string name="theme_summary">下载和应用主题</string>
+    <string name="objects">三维物体</string>
+    <string name="object_summary">下载和管理三维物体</string>
+    <string name="setting_style">样式设置</string>
+    <string name="icon_background_title">应用图标背景</string>
+    <string name="full_screen">全屏显示</string>
+    <string name="wall_indicator">墙面指示器</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="enable">启用</string>
+    <string name="disable">禁用</string>
+    <string name="weather_settings">天气设置</string>
+    <string name="weather_summary">设置位置，温度单位</string>
+    <string name="update_settings">更新设置</string>
+    <string name="upgrade_title">检查更新</string>
+    <string name="share">分享</string>
+    <string name="score">评分</string>
+    <string name="feedback">意见反馈</string>
+    <string name="help">帮助</string>
+    <string name="about">关于</string>
+
+    <!-- Customize house setting strings -->
+    <string name="edit_wall_menu_title">选择墙纸</string>
+
+    <!-- delete 3D Objects dialog -->
+    <string name="delete_objects_title">删除三维物体</string>
+    <string name="confirm_delete_selected_objects">确定删除<xliff:g id="name">%s</xliff:g>吗?</string>
+
+    <!-- Weather setting strings -->
+    <string name="auto_update_common">基本设置</string>
+    <string name="auto_location_title">使用“我的位置”</string>
+    <string name="auto_location_summary">自动确定位置</string>
+    <string name="set_location_title">设置位置</string>
+    <string name="set_location_msg">输入城市名称全拼： </string>
+    <string name="update_now_title">立即更新</string>
+    <string name="update_now_summary">确保手机已经连接到网络</string>
+    <string name="auto_update_setting">自动更新设置</string>
+    <string name="auto_update_title">开启自动更新</string>
+    <string name="auto_update_summary">通过网络自动获取天气信息</string>
+    <string name="start_time_title">更新开始时间</string>
+    <string name="end_time_title">更新结束时间</string>
+    <string name="interval_time_title">更新间隔时间</string>
+    <string name="interval_time_summary">3 小时</string>
+    <string name="wait_dialog_title">请稍候\u2026</string>
+
+    <!-- Check update strings -->
+    <string name="network_error">手机没有连接到网络。</string>
+    <string name="no_update">当前已是最新版本。</string>
+    <string name="check_update_error">由于网络或服务器的问题，检查和升级软件版本失败，请稍后重试。</string>
+    <string name="upgrade_dialog_title">应用更新</string>
+    <string name="wait_dialog_msg_sw">正在检查\u2026</string>
+    <string name="upgrade_dialog_msg">检测到新版本。\r\n若使用移动网络下载更新会产生流量费用，是否下载？</string>
+    <string name="upgrade_dialog_current_version">当前版本：</string>
+    <string name="upgrade_dialog_latest_version">最新版本：</string>
+    <string name="upgrade_dialog_file_size">文件大小：</string>
+    <string name="upgrade_dialog_update_changes">更新说明：</string>
+    <string name="upgrade_dialog_ok">下载</string>
+    <string name="upgrade_dialog_cancel">放弃</string>
+    <string name="share_content">我安装了3D Home，推荐你也试试～，下载地址: \n%1$s=%2$s</string>
+
+    <!-- Help strings -->
+    <string name="help_title_00">浏览应用程序</string>
+    <string name="help_title_01">添加应用程序</string>
+    <string name="help_title_02">删除物体</string>
+    <string name="help_content_00">点击桌面上的笔记本浏览所有已安装的应用程序。</string>
+    <string name="help_content_01">长按应用程序添加至墙面。</string>
+    <string name="help_content_02">抛掷/移动物体至垃圾桶可删除房间中的物体。</string>
+
+    <!-- About strings -->
+    <string name="about_version">版本： %s</string>
+    <string name="about_website">官方主页： http://apps.borqs.com/3dhome.html</string>
+
+    <!-- Weather strings -->
+    <string name="no_info_msg">没有天气信息</string>
+    <string name="day_of_week_short_sunday">周日</string>
+    <string name="day_of_week_short_monday">周一</string>
+    <string name="day_of_week_short_tuesday">周二</string>
+    <string name="day_of_week_short_wednesday">周三</string>
+    <string name="day_of_week_short_thursday">周四</string>
+    <string name="day_of_week_short_friday">周五</string>
+    <string name="day_of_week_short_saturday">周六</string>
+    <string name="gadget_error_text">加载小部件出现问题</string>
+    <string name="activity_not_found">"未安装该应用程序。"</string>
+    <string name="uninstall_system_app_text">"这是系统应用程序，无法卸载。"</string>
+    <string name="delete_preset_object_text">这是预置的物体，无法删除。</string>
+    <string name="delete_being_used_desk_text">不能删除正在使用的桌子</string>
+    <string name="can_not_put_object_in_room">不能摆放该物体</string>
+
+    <!-- 3D Object strings -->
+    <string name="select_app">选择绑定的应用程序</string>
+
+    <!-- select shortcut dialog -->
+    <string name="title_select_shortcut">选择快捷方式</string>
+
+    <!-- Room strings -->
+    <string name="no_room">此场景的墙上已没有空间。</string>
+    <string name="no_room_desk">此场景的桌面上已没有空间。</string>
+
+    <!-- app drawer -->
+    <string name="title_select_drawer_sort">选择排序方式</string>
+    <string name="search_activity_title">谷歌搜索</string>
+    <string name="search_activity_hint_text">输入您的搜索关键词</string>
+    <string name="search_activity_button_text">搜索</string>
+    <string name="change_icon_dialog_title">更改图标</string>
+    <string name="change_icon_dialog_select_img">选择图片</string>
+    <string name="change_icon_dialog_reset_img">重置</string>
+    <string name="change_label_dialog_title">重命名</string>
+
+    <!-- Folder strings -->
+    <string name="folder_title">文件夹</string>
+
+    <!-- Application search -->
+    <string name="app_search_hint">搜索</string>
+
+    <!-- Edit color dialog -->
+    <string name="edit_color_red">红</string>
+    <string name="edit_color_green">黄</string>
+    <string name="edit_color_blue">蓝</string>
+
+    <!-- Long click object menu icon text -->
+    <string name="long_click_object_menu_delete">删除</string>
+    <string name="long_click_object_menu_change_bind">绑定</string>
+    <string name="long_click_object_menu_change_icon">图标</string>
+    <string name="long_click_object_menu_change_label">重命名</string>
+    <string name="long_click_object_menu_uninstall">卸载</string>
+    <string name="long_click_object_menu_resize">更改大小</string>
+    <string name="long_click_object_menu_change_color">颜色</string>
+    <string name="long_click_object_menu_replace">替换</string>
+
+    <!-- Camera Adjust -->
+    <string name="camera_adjust_settings_summary">调整相机的位置和视场角(张角)。</string>
+    <string name="camera_adjust_settings_title">相机调整</string>
+    <string name="camera_adjust_down_up_text">上下位置</string>
+    <string name="camrea_adjust_setp_in_out_text">前后位置</string>
+    <string name="camera_adjust_camera_location">相机位置</string>
+    <string name="camera_adjust_camera_fov">视场角</string>
+    <string name="camera_adjust_button_reset">重置</string>
+
+    <!-- Settings AD Content -->
+    <string name="ad_content_title">自定义广告内容</string>
+    <string name="ad_content_dialog_title">设置广告内容</string>
+    <string name="ad_content_summary">设置飞艇广告内容</string>
+    <string name="ad_default_blessings">祝你好运！！！</string>
+
+    <!-- addobject -->
+    <string name="addobject_select_to_add_app">选择应用</string>
+    <string name="select_app_to_hide">选择需要隐藏的应用</string>
+    <string name="addobject_select_to_add_folder_no_room">文件夹已无空间.</string>
+    <string name="addobject_select_to_add_folder_not_empty">文件夹不能为空.</string>
+    <string name="addobject_select_to_add_app_no_room">已无空间.</string>
+    <string name="app_sorting">应用排序</string>
+    <string name="app_hiding">应用隐藏</string>
+
+    <!-- app icon decorator begin -->
+    <string name="show_shelf">显示图标托架</string>
+    <string name="show_shelf_for_desktop_object">显示小物体托架</string>
+    <!-- app icon decorator end -->
+
+
+    <!-- 3DMax file loader begin -->
+    <string name="load_ase_title">添加自定义3D物体</string>
+    <string name="load_ase_summary">可加载从3DMax中输出的ASE格式的模型文件</string>
+    <string name="select_file_btn">选择包含模型文件的ZIP包</string>
+    <string name="add_it_to_house">添加到房间中</string>
+    <string name="export_to_sdcard">输出到SDCARD</string>
+    <string name="edittext_content">请输入文件名</string>
+    <string name="ase_reset">复位</string>
+    <string name="ase_content_describe">仅支持3DMax输出的.ASE模型文件：\n\n\n
+        第一步：打开3DMax并创建一个3D物体；\n\n
+        第二步：输出ASE文件：\nFile->Export...->AscII Scene Export(*ASE);\n\n
+        第三步：把ASE文件以及图片文件移动到相同目录下并打包成zip格式;\n\n 
+        第四步：把创建好的zip文件拷贝至Sdcard目录下。\n</string>        
+    <string name="ase_content_describe2">(zip包中可包含一张名称为cover.png的预览图,以及三张详情图分别为：screenshot1.png、screenshot2.png、screenshot3.png)</string>
+    <!-- 3DMax file loader end -->
+
+</resources>

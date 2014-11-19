@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_s3"
+    basedataFile="s3_basedata.cbf"
+    keyWords="touchdialer,dialpad,dialtacts,phone"
+    localTrans="0,0,0,0,0,0,1,0.95,0.95,0.95"
+    sceneFile="s3_scene.cbf"
+    slotType="desktop"
+    type="TouchDialer" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="sjdizuo_01.jpg@s3_basedata.cbf"
+            imagePath="sjdizuo_01.jpg" />
+
+        <imageInfo
+            imageName="dh_03.jpg@s3_basedata.cbf"
+            imagePath="dh_03.jpg" />
+
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="Box01@group_s3@s3_basedata.cbf" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="shoujizuo_01@group_s3@s3_basedata.cbf" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+
+                <light lightName="fangliang" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

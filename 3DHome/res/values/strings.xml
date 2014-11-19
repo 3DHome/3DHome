@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">3D Home</string>
+    <string name="description">The unprecedented true 3D home screen experience.The real world is 3D,
+        unlike any other home screen design, this 3D launcher simulates your home and
+        how you use your staff, Phone, TV, Camera, Clock, Calendar, etc.
+        in your day-today life. It brings you a fresh and brand new mobile operation
+        experience.</string>
+
+    <!-- Home setting strings -->
+    <string name="menu_preference">Home settings</string>
+    <string name="setting_display">Display settings</string>
+    <string name="themes">Themes</string>
+    <string name="theme_summary">Download and apply theme</string>
+    <string name="objects">3D objects</string>
+    <string name="object_summary">Download and manage 3D object</string>
+    <string name="setting_style">Style settings</string>
+    <string name="icon_background_title">Application icon background</string>
+    <string name="full_screen">Full screen</string>
+    <string name="wall_indicator">Wall indicator</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="weather_settings">Weather settings</string>
+    <string name="weather_summary">Set your location, temperature units and update timing</string>
+    <string name="update_settings">SW version</string>
+    <string name="upgrade_title">Check update</string>
+    <string name="share">Share</string>
+    <string name="score">Score</string>
+    <string name="feedback">Feedback</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+
+    <!-- Customize house setting strings  -->
+    <string name="edit_wall_menu_title">Select wallpaper</string>
+    
+    <!-- delete 3D Objects dialog -->
+    <string name="delete_objects_title">Delete 3D Objects</string>
+    <string name="confirm_delete_selected_objects">Delete <xliff:g id="name">%s</xliff:g>?</string>
+
+    <!-- Check update strings -->
+    <string name="network_error">Please make sure your phone is connected with network.</string>
+    <string name="no_update">Your application is up to date.</string>
+    <string name="check_update_error">Fail to check and upgrade SW version due to temporal network or server issue,
+        please retry it later.</string>
+    <string name="upgrade_dialog_title">Upgrade SW</string>
+    <string name="wait_dialog_msg_sw">Checking\u2026</string>
+    <string name="upgrade_dialog_msg">New version found, download it?</string>
+    <string name="upgrade_dialog_current_version">Current version: </string>
+    <string name="upgrade_dialog_latest_version">Latest version:</string>
+    <string name="upgrade_dialog_file_size">File size:</string>
+    <string name="upgrade_dialog_update_changes">Release note:</string>
+    <string name="upgrade_dialog_ok">Download</string>
+    <string name="upgrade_dialog_cancel">Cancel</string>
+
+    <string name="share_content">I installed the 3D Home,Recommend you try it,Download address:\n %1$s=%2$s</string>
+
+    <!-- Help strings -->
+    <string name="help_title_00">Show applications</string>
+    <string name="help_title_01">Add application</string>
+    <string name="help_title_02">Delete object</string>
+    <string name="help_content_00">Click the laptop to browse all applications.</string>
+    <string name="help_content_01">Long press application icon to add it to scene as a shortcut</string>
+    <string name="help_content_02">Delete objects from the scene through throwing/dragging it to garbage can.</string>
+
+    <!-- About strings -->
+    <string name="about_version">Version: %s</string>
+    <string name="about_copy_right1" translatable="false">Copyright © 2013 Borqs Ltd.  All rights reserved.</string>
+    <string name="about_website">Official homepage: http://apps.borqs.com/3dhome.html</string>
+
+    <!-- Weather strings -->
+    <string name="no_info_msg">Weather info unavailable.</string>
+    <string name="day_of_week_short_sunday">Sun</string>
+    <string name="day_of_week_short_monday">Mon</string>
+    <string name="day_of_week_short_tuesday">Tue</string>
+    <string name="day_of_week_short_wednesday">Wed</string>
+    <string name="day_of_week_short_thursday">Thu</string>
+    <string name="day_of_week_short_friday">Fri</string>
+    <string name="day_of_week_short_saturday">Sat</string>
+    
+    <string name="gadget_error_text">Warning on loading widget</string>
+    <string name="activity_not_found">Application isn\'t installed.</string>
+    <string name="uninstall_system_app_text">Unable to uninstall system-level application.</string>
+    <string name="delete_preset_object_text">Unable to delete preset objects.</string>
+    <string name="delete_being_used_desk_text">Unable to delete the table being used.</string>
+    <string name="can_not_put_object_in_room">The object can not be placed in this room</string>
+    <!-- 3D Object strings -->
+    <string name="select_app">Select application</string>
+    <!-- select shortcut dialog -->
+    <string name="title_select_shortcut">Select shortcut</string>
+
+    <!-- Room strings -->
+    <string name="no_room">No more room on the wall of scene.</string>
+    <string name="no_room_desk">No more room on the desktop of scene.</string>
+
+    <!-- app drawer -->
+    <string name="title_select_drawer_sort">Select sort type</string>
+
+    <string name="search_activity_title">Google Search</string>
+    <string name="search_activity_hint_text">Input your search keywords</string>
+    <string name="search_activity_button_text">Search</string>
+
+    <string name="change_icon_dialog_title">Change Icon</string>
+    <string name="change_icon_dialog_select_img">Choose image</string>
+    <string name="change_icon_dialog_reset_img">Reset</string>
+    <string name="change_label_dialog_title">Rename</string>
+    
+    <!-- Folder strings -->
+    <string name="folder_title">Folder</string>
+
+    <!-- Application search -->
+    <string name="app_search_hint">Search</string>
+
+    <!-- Long click object menu icon text -->
+    <string name="long_click_object_menu_delete">Delete</string>
+    <string name="long_click_object_menu_setting">Setting</string>
+    <string name="long_click_object_menu_change_bind">Bind</string>
+    <string name="long_click_object_menu_change_icon">Icon</string>
+    <string name="long_click_object_menu_change_label">Label</string>
+    <string name="long_click_object_menu_uninstall">Uninstall</string>
+    <string name="long_click_object_menu_resize">Resize</string>
+    <string name="long_click_object_menu_change_color">Color</string>
+    <string name="long_click_object_menu_replace">Replace</string>
+
+    <!-- Camera Adjust -->
+    <string name="camera_adjust_settings_summary">Adjust position and FOV of camera</string>
+    <string name="camera_adjust_settings_title">Camera adjustment</string>
+    <string name="camera_adjust_down_up_text">Down/Up</string>
+    <string name="camrea_adjust_setp_in_out_text">Backward/Forward</string>
+    <string name="camera_adjust_camera_location">Camera location</string>
+    <string name="camera_adjust_camera_fov">FOV</string>
+    <string name="camera_adjust_button_reset">Reset</string>
+
+    <!-- Edit color dialog -->
+    <string name="edit_color_red">Red</string>
+    <string name="edit_color_green">Green</string>
+    <string name="edit_color_blue">Blue</string>
+
+    <!-- Settings AD Content -->
+    <string name="ad_content_title">Custom advertising content</string>
+    <string name="ad_content_dialog_title">Set the advertising content</string>
+    <string name="ad_content_summary">Set advertising content for the airship</string>
+    <string name="ad_default_blessings">Good luck!!!</string>
+
+    <!-- addobject -->
+    <string name="addobject_select_to_add_app">Select application</string>
+    <string name="select_app_to_hide">Select application to hide</string>
+    <string name="addobject_select_to_add_folder_no_room">No more room in the folder.</string>
+    <string name="addobject_select_to_add_folder_not_empty">Folder should not be empty.</string>
+    <string name="addobject_select_to_add_app_no_room">No more room.</string>
+    <string name="app_sorting">App sorting</string>
+    <string name="app_hiding">App hiding</string>
+    
+    <!-- app icon decorator begin -->
+    <string name="show_shelf">Show App icons shelves</string>
+    <string name="show_shelf_for_desktop_object">Show small objects shelves</string>
+    <!-- app icon decorator end -->
+
+    <!-- don't need translate below strings -->
+    <string name="show_fps" translatable="false">Frame rate</string>
+    <string name="show_fps_on" translatable="false">Deselect to hide FPS</string>
+    <string name="show_fps_off" translatable="false">Select to show FPS</string>
+    <string name="show_beta_data_title" tanslatable="false">Show beta data</string>
+    <string name="show_beta_data_summary" translatable="false">Select to show beta data</string>
+    <string name="no_info" translatable="false">N/A</string>
+    <string name="temp_symbol_c" translatable="false">°C</string>
+    <string name="temp_symbol_f" translatable="false">°F</string>
+    <string name="start_time_summary" translatable="false">07:00</string>
+    <string name="end_time_summary" translatable="false">21:00</string>
+
+    <string name="about_acknowledgements" translatable="false">Special contributors on the French, Italian, Russian, Polski and Portuguese translations.</string>
+
+    <string name="french_translation" translatable="false">Johan Jaworski</string>
+    <string name="italian_translation" translatable="false">Antonio Guarnaschelli</string>
+    <string name="russian_translation" translatable="false">Кирилл Вавилов</string>
+    <string name="poland_translation" translatable="false">Marcin Kieliszek</string>
+    <string name="portuguesa_translation" translatable="false">Luiz Felipe Coura</string>
+ 	<string name="italian_translation_2" translatable="false">Claudio Baudazzi</string>
+    <!--<string name="about_website_google_plus" translatable="false">Google+: https://plus.google.com/u/1/113601998762232910939 </string>-->
+    <string name="about_website_google_plus" translatable="false">Google+: https://plus.google.com/communities/115452609761145720764 </string>
+
+    <!-- 3DMax file loader begin -->
+    <string name="load_ase_title">Add custom 3D object</string>
+    <string name="load_ase_summary">It can load ASE format file which exported from 3DMax</string>
+    <string name="select_file_btn">Select a zip package with ASE file</string>
+    <string name="add_it_to_house">Add it to house</string>
+    <string name="export_to_sdcard">Export it to SDCARD</string>
+    <string name="edittext_content">Please input file name</string>
+    <string name="ase_reset">Reset</string>
+    <string name="ase_content_describe">It can load ASE format file which exported from 3DMax:\n\n
+        Step 1: Open 3DMax and create an object;\n\n
+        Step 2: Select export ASE file：\nFile->Export...->AscII Scene Export(*ASE);\n\n
+        Step 3: Move the ASE file and all image files to the same directory and compress them to a zip package;\n\n
+        Step 4: Copy the zip package to the sdcard of your phone.\n </string>       
+    <string name="ase_content_describe2">(The zip package can include a preview image named "cover.png", and three detail images named："screenshot1.png"、"screenshot2.png"、"screenshot3.png")</string>
+    <!-- 3DMax file loader end -->
+</resources>

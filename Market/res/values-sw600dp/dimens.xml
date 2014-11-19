@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <dimen name="default_list_item_height">240dip</dimen>
+    
+    <dimen name="title_bar_height">48dip</dimen>
+    <dimen name="title_bar_shadow_height">77dip</dimen>
+    <dimen name="title_bar_action_heigth">48dip</dimen>
+    <dimen name="title_bar_action_width">48dip</dimen>
+    
+    <dimen name="main_padding_top">50dip</dimen>
+    
+    <dimen name="shoot_screen_width_landscape">568dip</dimen>
+    <dimen name="shoot_screen_height_landscape">300dip</dimen>
+    <dimen name="shoot_screen_width_portrait">300dip</dimen>
+    <dimen name="shoot_screen_height_portrait">334dip</dimen>
+    
+    <!-- product list -->
+    <dimen name="product_list_item_height">292dip</dimen>
+    <dimen name="product_textview_width">200dip</dimen>
+    <dimen name="product_textview_height">32dip</dimen>
+    <dimen name="product_progress_width">200dip</dimen>
+    <dimen name="product_progress_height">16dip</dimen>
+    <dimen name="product_list_activity_margin_top">120dip</dimen>
+    
+    <dimen name="product_item_image_landscape_width">400dip</dimen>
+    <dimen name="product_item_image_landscape_height">210dip</dimen>
+    
+    <dimen name="product_item_image_portrait_width">234dip</dimen>
+    <dimen name="product_item_image_portrait_height">260dip</dimen>
+    
+    <dimen name="product_item_image_square">260dip</dimen>
+    
+    <dimen name="recommend_margin">40dip</dimen>
+    
+    <dimen name="detail_activity_margin_top">200dip</dimen>
+</resources>

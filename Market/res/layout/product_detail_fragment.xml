@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id ="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        >
+        
+        <RelativeLayout
+            android:id="@+id/pager_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layerType="software">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/mPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" >
+        <LinearLayout
+            android:id="@+id/pages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pages" >
+
+				<TextView
+				    android:id="@+id/tv_comment"
+			        android:layout_width="fill_parent"
+			        android:layout_height="48dip"
+			        android:paddingLeft="10dip"
+			        android:gravity="left|center_vertical"
+			        android:background="@drawable/resource_detail_info_comment_bg"
+			        style="@style/product_description_style.white"
+			        android:layout_alignParentTop="true"/>
+			<LinearLayout
+                android:id="@+id/opertion_group_view"
+                android:layout_width="fill_parent"
+            	android:background="@drawable/bg_tab"
+                android:layout_height="@dimen/detail_fragment_bottom_height"
+                android:layout_below="@id/tv_comment"
+                android:gravity="center"
+                android:orientation="vertical" >
+                <RelativeLayout
+            		android:id="@+id/delete_or_download"
+            		android:layout_width="match_parent"
+            		android:layout_height="wrap_content">
+                    
+	                <Button
+	                    android:id="@+id/btn_download"
+	                    android:layout_width="180dip"
+	                    android:layout_height="44dip"
+	                    android:layout_centerInParent="true"
+	                    android:text="@string/action_purchase"
+	                    android:background="?attr/buttonSelectableBackground"
+	                    style="@style/product_description_style.blue" />
+	                <ImageView
+	                    android:id="@+id/btn_delete"
+	                    android:layout_width="32dip"
+	                    android:layout_height="32dip"
+	                    android:layout_centerVertical="true"
+	                    android:layout_alignParentRight="true"
+	                    android:layout_toRightOf="@id/btn_download"
+	                    android:layout_marginRight="10dip"
+	                    android:src="@drawable/ic_delete" />
+                </RelativeLayout>
+	            <include android:id="@+id/process_view"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:gravity="center"
+	                layout = "@layout/download_process_view"
+	                android:visibility="gone" 
+	                />
+            </LinearLayout>
+         </RelativeLayout>
+         </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

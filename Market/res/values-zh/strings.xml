@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/Quake/res/strings.xml
+**
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    
+    <string name="themes_market">主题商店</string>
+    <string name="top_navigation_theme">主题</string>
+    <string name="top_navigation_wallpaper">墙纸</string>
+    <string name="title_wallpaper_share">墙纸分享</string>
+    <string name="top_navigation_object">三维物体</string>
+    <string name="bottom_navigation_local">已下载</string>
+    <string name="bottom_navigation_online">在线</string>
+    <string name="theme_loading">加载</string>
+    <string name="local_theme">本地主题</string>
+    <string name="local_object">本地物体</string>
+    <string name="no_local_theme">本地没有主题</string>
+    <string name="no_local_object">本地没有物体</string>
+    <string name="action_purchase">购买</string>
+    <string name="action_prepare_purchase">准备支付...</string>
+    <string name="action_download">下载</string>
+    <string name="action_downloading">下载中</string>
+    <string name="action_downloaded">已下载</string>
+    <string name="action_waiting">等待</string>
+    <string name="action_delete">删除</string>
+    <string name="action_apply">使用</string>
+    <string name="action_install">正在安装...</string>
+    <string name="action_unapply">未使用</string>
+    <string name="action_update">更新</string>
+    <string name="preview">查看</string>
+    <string name="progress_prefix">下载中...</string>
+    <string name="msg_no_sdcard">没有SD卡,不能下载</string>
+    <string name="iab_unavailable">您的google play 不能支付,请更新google play到最新版本</string>
+    <string name="empty_list">暂无数据</string>
+    <string name="tab_online">在线</string>
+    <string name="tab_local">本地</string>
+    <string name="tab_user_share">用户分享</string>
+    
+    <string name="loading">加载中...</string>
+    <string name="purchase_failed">购买失败,请重试</string>
+    <string name="download_failed">下载失败,系统下载管理器存在问题!</string>
+    <string name="download_failed_try_again">下载失败,请重试!</string>
+    
+    <string name="qiupu_exit_title">退出应用</string>
+    <string name="qiupu_exit_message">确定退出应用程序?</string>
+    
+    <string name="label_ok">确定</string>
+    <string name="label_cancel">取消</string>
+    <string name="label_done">完成</string>
+    <string name="label_save">保存</string>
+    <string name="label_skip">跳过</string>
+    
+    <string name="label_process">处理中...</string>
+    <string name="delete_file_message">确定要删除此文件?</string>
+    <string name="update_object_message">房间中的同名物体将会被移除, 确定要更新此物体?</string>
+        
+    <string name="action_refresh">刷新</string>
+    <string name="msg_loadi_failed">加载失败,请稍候再试...</string>
+    <string name="msg_show_paper_failed">分享桌面失败，请检查网络或再试...</string>
+    <string name="dlg_msg_no_active_connectivity">无可用网络. 请检查/设置后重试.</string>
+    <string name="action_setting">设置</string>
+	
+	<string name="product_info_subject">详情</string>
+	<string name="product_info_title">标题:</string>
+    <string name="product_info_size">大小:</string>
+    <string name="product_info_version">版本:</string>
+    <string name="product_info_author">作者:</string>
+    <string name="product_info_download_count">下载量:</string>
+    <string name="product_info_update_time">更新时间:</string>
+    <string name="product_info_desc">描述:</string>
+    <string name="product_info_rating">评分:</string>
+    <string name="none">无</string>
+    <string name="free">免费</string>
+
+	<!-- google account -->
+	<string name="action_login">登录</string>
+	<string name="action_logout">注销</string>
+	<string name="choose_account_title">选择帐户</string>
+	<string name="add_a_google_account">添加 Google 帐户</string>
+	<string name="login_success">登录成功</string>
+	<string name="login_failed">登录失败</string>
+	<string name="lable_being_login">正在登录...</string>
+	<string name="onekey_login">一键登录</string>
+	<string name="onekey_login_message">一键登录需要发送一条普通短信，资费由运营商收取</string>
+    <string name="action_export_wallpaper">秀桌面</string>
+
+
+    <string name="wallpaper_state_applied">当前墙纸</string>
+    <string name="action_wallpaper_setting">正在应用...</string>
+    <string name="state_applied">当前使用</string>
+    
+    <!-- comment -->
+    <string name="resource_comment_edit_text_default">请输入评论信息</string>
+    <string name="resource_comment_publish">发布</string>
+    <string name="resource_comment_edit_comment">添加评论</string>
+    <string name="title_comment">评论</string>
+    <string name="lable_comment_on">评论于</string>
+    <string name="title_edit_comment">撰写评论</string>
+    <string name="send_failed">发送失败,请稍候再试...</string>
+    <string name="send_successed">发送成功,稍后审核通过就会展示出来:)</string>
+    <string name="plase_give_a_score">您还没有评分</string>
+    <string name="comment_not_empty">评论不能为空</string>
+    <string name="label_comment_sending">发送评论中...</string>
+    <string name="action_view_comments">%1$s 人评论, 点击查看</string>
+
+    <string name="publish">分享</string>
+    <string name="publishing">正在分享...</string>
+    <string name="published">已分享</string>
+    <string name="publish_again">重试</string>
+
+    <string name="paper_export_subject">秀我的桌面</string>
+    <string name="user_share">用户分享</string>
+    <string name="user_share_title">分享%1$s</string>
+    <string name="user_share_desc">[%1$s] 大家来围观我正在使用的墙纸!</string>
+
+    <string name="prompt_empty_title">请先输入标题.</string>
+    <string name="press_to_room">长按本地物体拖动到房间</string>
+</resources>

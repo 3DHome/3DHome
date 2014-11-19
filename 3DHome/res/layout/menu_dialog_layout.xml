@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="297dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:splitMotionEvents="true" >
+
+    <ListView
+        android:id="@+id/moremenu_listView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFFFFF"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/menu_divider_line"
+        android:listSelector="#E9F4F5"
+        android:scrollbars="none" />
+
+</LinearLayout>

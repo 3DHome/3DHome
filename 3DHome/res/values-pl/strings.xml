@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">3D Home</string>
+    <string name="description">Bezprecedensowe, prawdziwe doznanie 3D w Twoim ekranie głównym. Prawdziwy świat 3D, w przeciwieństwie do innych ekranów głównych, 3D Home symuluje Twój dom i sposób korzystania z urządzeń takich jak: telefon, TV, kamera, zegar, kalendarz itp. w codziennym życiu. To przynosi świeży i zupełnie nowy sposób korzystania z telefonu.</string>
+
+    <!-- Home setting strings -->
+    <string name="menu_preference">Ustawienia 3D Home</string>
+    <string name="setting_display">Ustawienia wyświetlania</string>
+    <string name="themes">Tematy</string>
+    <string name="theme_summary">Pobierz i zarządzaj tematami</string>
+    <string name="objects">Obiekty 3D</string>
+    <string name="object_summary">Pobierz i zarządzaj obiektami 3D</string>
+    <string name="setting_style">Ustawienia stylu</string>
+    <string name="icon_background_title">Ikona aplikacji w tle</string>
+    <string name="full_screen">Pełny ekran</string>
+    <string name="wall_indicator">wskaźnik ściana</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">Anuluj</string>
+    <string name="enable">Włącz</string>
+    <string name="disable">Wyłącz</string>
+    <string name="weather_settings">Ustawienia pogody</string>
+    <string name="weather_summary">Ustaw swoją lokalizację, jednostki temperatury i odstęp między aktualizacjami</string>
+    <string name="update_settings">Wersja aplikacji</string>
+    <string name="upgrade_title">Sprawdź aktualizację</string>
+    <string name="share">Podziel się</string>
+    <string name="score">Oceń aplikację</string>
+    <string name="feedback">Napisz do nas</string>
+    <string name="help">Pomoc</string>
+    <string name="about">O aplikacji</string>
+
+    <!-- Customize house setting strings  -->
+    <string name="edit_wall_menu_title">Ustaw tapetę</string>
+
+    <!-- delete 3D Objects dialog -->
+    <string name="delete_objects_title">Usuń obiekty 3D</string>
+    <string name="confirm_delete_selected_objects">Usunąć<g id="name" xmlns="urn:oasis:names:tc:xliff:document:1.2">%s</g>?</string>
+
+    <!-- Check update strings -->
+    <string name="network_error">Upewnij się, że Twój telefon jest podłączony do internetu.</string>
+    <string name="no_update">Masz aktualną wersję aplikacji.</string>
+    <string name="check_update_error">Nie udało się sprawdzić i zaktualizować do najnowszej wersji ze względu na chwilowy problem sieci lub serwera, spróbuj ponownie później.</string>
+    <string name="upgrade_dialog_title">Aktualizacja aplikacji</string>
+    <string name="wait_dialog_msg_sw">Sprawdzanie\u2026</string>
+    <string name="upgrade_dialog_msg">Jest nowa wersja aplikacji, pobrać?</string>
+    <string name="upgrade_dialog_current_version">Bieżąca wersja: </string>
+    <string name="upgrade_dialog_latest_version">Najnowsza wersja:</string>
+    <string name="upgrade_dialog_file_size">Rozmiar pliku:</string>
+    <string name="upgrade_dialog_update_changes">Uwaga:</string>
+    <string name="upgrade_dialog_ok">Pobierz</string>
+    <string name="upgrade_dialog_cancel">Anuluj</string>
+
+    <string name="share_content">Zainstalowałem 3D Home, spróbuj i Ty, pobierz z adresu:\n %1$s=%2$s</string>
+
+    <!-- Help strings -->
+    <string name="help_title_00">Pokaż aplikacje</string>
+    <string name="help_title_01">Dodaj aplikację</string>
+    <string name="help_title_02">Usuń obiekt</string>
+    <string name="help_content_00">Kliknij w ikonę z symbolem laptopa, żeby przeglądać wszystkie aplikacje.</string>
+    <string name="help_content_01">Przytrzymaj ikonę aplikacji, żeby dodać ją jako skrót do ekranu głównego</string>
+    <string name="help_content_02">Usuń obiekt ze ściany poprzez przeciągnięcie go do kosza.</string>
+
+    <!-- About strings -->
+    <string name="about_version">Wersja: %s</string>
+    <string name="about_website">Oficjalna strona główna: http://apps.borqs.com/3dhome.html</string>
+
+    <!-- Weather strings -->
+    <string name="no_info_msg">Informacje o pogodzie niedostępne.</string>
+    <string name="day_of_week_short_sunday">Nie</string>
+    <string name="day_of_week_short_monday">Pon</string>
+    <string name="day_of_week_short_tuesday">Wto</string>
+    <string name="day_of_week_short_wednesday">Śro</string>
+    <string name="day_of_week_short_thursday">Czw</string>
+    <string name="day_of_week_short_friday">Pią</string>
+    <string name="day_of_week_short_saturday">Sob</string>
+
+    <string name="gadget_error_text">Błąd przy ładowaniu widgetu</string>
+    <string name="activity_not_found">Aplikacja nie jest zainstalowana.</string>
+    <string name="uninstall_system_app_text">Nie można odinstalować aplikacji z poziomu systemu.</string>
+    <string name="delete_preset_object_text">Nie można usunąć predefiniowanych obiektów.</string>
+    <string name="delete_being_used_desk_text">Nie można usunąć tabeli używanej.</string>
+    <string name="can_not_put_object_in_room">Obiekt nie może być umieszczony w tym pokoju</string>
+    
+    <!-- 3D Object strings -->
+    <string name="select_app">Wybierz aplikację</string>
+
+    <!-- select shortcut dialog -->
+    <string name="title_select_shortcut">Wybierz skrót</string>
+
+    <!-- Room strings -->
+    <string name="no_room">Brak miejsca na tej ścianie.</string>
+    <string name="no_room_desk">Brak miejsca na biurku.</string>
+
+    <!-- app drawer -->
+    <string name="title_select_drawer_sort">Wybierz rodzaj sortowania</string>
+
+    <string name="search_activity_title">Wyszukiwarka Google</string>
+    <string name="search_activity_hint_text">Wpisz słowa kluczowe</string>
+    <string name="search_activity_button_text">Szukaj</string>
+
+    <string name="change_icon_dialog_title">Zmień ikonę</string>
+    <string name="change_icon_dialog_select_img">Wybierz zdjęcie</string>
+    <string name="change_icon_dialog_reset_img">Resetowanie</string>
+    <string name="change_label_dialog_title">Zmień nazwę</string>
+
+    <!-- Folder strings -->
+    <string name="folder_title">Folder</string>
+
+    <!-- Application search -->
+    <string name="app_search_hint">Szukaj</string>
+
+    <!-- Long click object menu icon text -->
+    <string name="long_click_object_menu_delete">Usuń</string>
+    <string name="long_click_object_menu_setting">Ustawianie</string>
+    <string name="long_click_object_menu_change_bind">Zmień aplikację</string>
+    <string name="long_click_object_menu_change_icon">Ikona</string>
+    <string name="long_click_object_menu_change_label">Etykieta</string>
+    <string name="long_click_object_menu_uninstall">Odinstaluj</string>
+    <string name="long_click_object_menu_resize">Zmień rozmiar</string>
+    <string name="long_click_object_menu_change_color">Kolor</string>
+    <string name="long_click_object_menu_replace">Zastąpić</string>
+    
+    <!-- Camera Adjust -->
+    <string name="camera_adjust_settings_summary">Regulacja położenia i FOV z aparatem</string>
+    <string name="camera_adjust_settings_title">regulacja kamery</string>
+    <string name="camera_adjust_down_up_text">Dół/Góra</string>
+    <string name="camrea_adjust_setp_in_out_text">Do tyłu/Do przodu</string>
+    <string name="camera_adjust_camera_location">Kamery lokalizacja</string>
+    <string name="camera_adjust_camera_fov">FOV</string>
+    <string name="camera_adjust_button_reset">Resetowanie</string>
+
+    <!-- Edit color dialog -->
+    <string name="edit_color_red">Czerwony</string>
+    <string name="edit_color_green">Zielony</string>
+    <string name="edit_color_blue">Niebieski</string>
+
+    <!-- Settings AD Content -->
+    <string name="ad_content_title">Indywidualne treści reklamowe</string>
+    <string name="ad_content_dialog_title">Ustaw treści reklamowe</string>
+    <string name="ad_content_summary">Ustaw treść reklamową samolotu</string>
+    <string name="ad_default_blessings">Powodzenia!!!</string>
+
+    <!-- addobject -->
+    <string name="addobject_select_to_add_app">Aplikacje</string>
+    <string name="select_app_to_hide">Wybierz aplikację, aby ukryć</string>
+    <string name="addobject_select_to_add_folder_no_room">Nie ma miejsca.</string>
+    <string name="addobject_select_to_add_folder_not_empty">Folder nie może być puste.</string>
+    <string name="addobject_select_to_add_app_no_room">Brak miejsca.</string>
+    <string name="app_sorting">sortowanie aplikacji</string>
+    <string name="app_hiding">app ukrywanie</string>
+    
+    <!-- app icon decorator begin -->
+    <string name="show_shelf">Pokaż ikony aplikacji półki</string>
+    <string name="show_shelf_for_desktop_object">Pokaż małych obiektów półki</string>
+    <!-- app icon decorator end -->
+    
+    <string name="load_ase_title">Dodaj własny obiekt 3D</string>
+    <string name="load_ase_summary">ASE można załadować plik formatu, który eksportowany z 3dmax</string>
+</resources>

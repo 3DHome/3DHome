@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+android:id/checkbox"
+    android:layout_width="76dp"
+    android:layout_height="wrap_content"
+    android:button="@drawable/weather_c_f_checked_btn"
+    android:clickable="false"
+    android:focusable="false" />

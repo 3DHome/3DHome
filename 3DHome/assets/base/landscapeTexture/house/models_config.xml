@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="house_landscape_theme"
+    basedataFile="hdhome_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,1,1,1"
+    maxPoint="1129.33,1129.79,1460.11"
+    minPoint="-1126.55,-1126.1,0"
+    sceneFile="hdhome_scene.cbf"
+    slotType="house"
+    supportScreen="landscape"
+    type="House" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="hd_home_4mian_ding_zch.jpg@hdhome_basedata.cbf"
+            imagePath="hd_home_4mian_ding_zch.jpg" />
+
+        <imageInfo
+            imageName="home_boli_zch.png@hdhome_basedata.cbf"
+            imagePath="home_boli_zch.png" />
+
+        <imageInfo
+            imageName="hd_bianjiaoxian_zch.jpg@hdhome_basedata.cbf"
+            imagePath="hd_bianjiaoxian_zch.jpg" />
+
+        <imageInfo
+            imageName="hd_home_4mianqiang01_zch.jpg@hdhome_basedata.cbf"
+            imageNewPath="data/data/com.borqs.se/files/landscape/wall_paper_0"
+            imagePath="hd_home_4mianqiang01_zch.jpg" />
+
+        <imageInfo
+            imageName="hd_diban_zch.jpg@hdhome_basedata.cbf"
+            imageNewPath="data/data/com.borqs.se/files/landscape/ground_paper_0"
+            imagePath="hd_diban_zch.jpg" />
+
+        <imageInfo
+            imageName="hd_home_4mianqiang01_zch.jpg@hdhome_basedata.cbf_0"
+            imageNewPath="data/data/com.borqs.se/files/landscape/wall_paper_2"
+            imagePath="hd_home_4mianqiang01_zch.jpg" />
+
+        <imageInfo
+            imageName="hd_wudingdeng01_fhq.png@hdhome_basedata.cbf"
+            imagePath="hd_wudingdeng01_fhq.png" />
+
+        <imageInfo
+            imageName="hd_home_4mianqiang_zch.jpg@hdhome_basedata.cbf"
+            imageNewPath="data/data/com.borqs.se/files/landscape/wall_paper_1"
+            imagePath="hd_home_4mianqiang_zch.jpg" />
+
+        <imageInfo
+            imageName="hd_home_4mianqiang_zch.jpg@hdhome_basedata.cbf_0"
+            imageNewPath="data/data/com.borqs.se/files/landscape/wall_paper_3"
+            imagePath="hd_home_4mianqiang_zch.jpg" />
+
+        <imageInfo
+            imageName="hd_wudingdeng01_fhq.png@hdhome_basedata.cbf_0"
+            imagePath="hd_wudingdeng01_fhq.png" />
+
+        <imageInfo
+            imageName="hd_wudingdeng01_fhq.png@hdhome_basedata.cbf_1"
+            imagePath="hd_wudingdeng01_fhq.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="roof"
+                spatialName="wuding01@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="roof"
+                spatialName="wuding02@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="1064965" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="tijiaoxian01@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_0"
+                spatialName="wall01@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="ground"
+                spatialName="home_ground01@hdhome" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="35669248" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_2"
+                spatialName="wall03@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="light01@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_1"
+                spatialName="wall02@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="wall_face_3"
+                spatialName="wall04@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113536" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="light"
+                spatialName="dengguangpian02@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="7"
+                statusValue="2113541" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="light"
+                spatialName="dengguangpian01@hdhome" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="7"
+                statusValue="2113541" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+</config>

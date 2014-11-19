@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="interval_time_entries">
+        <item>30 分鐘</item>
+        <item>1 小時</item>
+        <item>2 小時</item>
+        <item>3 小時</item>
+        <item>4 小時</item>
+        <item>5 小時</item>
+    </string-array>
+    <!-- below strings have not been translated to other languages -->
+
+</resources>

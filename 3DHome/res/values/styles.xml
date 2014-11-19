@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme" parent="android:Theme"></style>
+
+    <style name="Theme.Black" parent="android:Theme.Black.NoTitleBar">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!--
+         A theme that has a translucent background.  Here we explicitly specify
+         that this theme is to inherit from the system's translucent theme,
+         which sets up various attributes correctly.
+    -->
+    <style name="Theme.Translucent" parent="android:style/Theme.Translucent">
+        <item name="android:windowBackground">@drawable/translucent_background</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Transparent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        <item name="android:windowBackground">@drawable/transparent_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorForeground">#fff</item>
+    </style>
+
+    <style name="ListItemOne" parent="android:style/TextAppearance">
+        <item name="android:textColorLink">?android:textColorLink</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="DefaultActionBarTabStyle" parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/action_bar_tab</item>
+    </style>
+
+    <style name="DefaultActionBarTabTextStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="DefaultActionBarWidgetStyle" parent="@android:style/Theme.Holo.Light">
+        <item name="android:popupMenuStyle">@android:style/Widget.Holo.Light.PopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/ListViewDropdownStyle</item>
+    </style>
+
+    <style name="ListViewDropdownStyle" parent="@android:style/Widget.ListView.DropDown">
+        <item name="android:listSelector">?android:attr/listChoiceBackgroundIndicator</item>
+    </style>
+
+    <style name="customCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_checked_style</item>
+    </style>
+
+    <style name="customListView" parent="@android:style/Widget.Holo.ListView">
+        <item name="android:divider">@drawable/list_divider_holo_light</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+        <item name="android:paddingTop">0dip</item>
+        <item name="android:paddingBottom">0dip</item>
+        <item name="android:padding">0dip</item>
+        <item name="android:dividerHeight">2dip</item>
+    </style>
+
+    <style name="customPreferenceCategoryStyle">
+        <item name="android:layout">@layout/setting_preference_category</item>
+        <item name="android:shouldDisableView">false</item>
+        <item name="android:selectable">false</item>
+    </style>
+
+    <style name="HomeThemeWithActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/HomeActionBarStyle</item>
+        <item name="android:actionBarWidgetTheme">@style/DefaultActionBarWidgetStyle</item>
+        <item name="android:actionBarTabStyle">@style/DefaultActionBarTabStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/DefaultActionBarTabTextStyle</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom</item>
+    </style>
+
+    <style name="HomeSettingStyle" parent="@style/HomeThemeWithActionBar">
+        <item name="android:checkboxStyle">@style/customCheckBox</item>
+        <item name="android:listViewStyle">@style/customListView</item>
+        <item name="android:listPreferredItemHeight">64dip</item>
+        <item name="android:listPreferredItemHeightSmall">64dip</item>
+        <item name="android:textColorPrimary">@color/primary_text_holo_light</item>
+        <item name="android:textColorSecondary">@color/secondary_text_holo_light</item>
+        <item name="android:preferenceCategoryStyle">@style/customPreferenceCategoryStyle</item>
+    </style>
+
+    <style name="WeatherSettingStyle" parent="@style/HomeSettingStyle"></style>
+
+    <style name="HomeActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:titleTextStyle">@style/HomeActionBarTitleTextStyle</item>
+        <item name="android:background">@drawable/ab_solid_dark_holo</item>
+        <item name="android:backgroundStacked">@drawable/ab_solid_dark_holo</item>
+        <item name="android:backgroundSplit">@drawable/application_bottom_panel</item>
+        <item name="android:displayOptions"></item>
+    </style>
+
+    <style name="HomeActionBarTitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse">
+        <item name="android:textColor">#ff2980b9</item>
+    </style>
+
+    <style name="HomeDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.8</item>
+    </style>
+
+    <style name="HomeDialogDimUnableStyle" parent="@style/HomeDialogStyle">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="HelperDialogStyle" parent="@style/HomeDialogStyle">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="WeatherDialogStyle">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="ASEPanelStyle">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="WallIndicatorDialogStyle">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="dialog_win_anim_style">
+        <item name="android:windowEnterAnimation">@anim/dialogshow</item>
+        <item name="android:windowExitAnimation">@anim/dialoghide</item>
+    </style>
+
+    <style name="helper_dialog_anim_style">
+        <item name="android:windowEnterAnimation">@anim/helpershow</item>
+        <item name="android:windowExitAnimation">@anim/helperhide</item>
+    </style>
+
+    <style name="wall_indicator_anim_style">
+        <item name="android:windowEnterAnimation">@anim/wallindicatorshow</item>
+        <item name="android:windowExitAnimation">@anim/wallindicatorhide</item>
+    </style>
+
+    <style name="object_dialog_button_style">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="option_menu_anim_style">
+        <item name="android:windowEnterAnimation">@anim/menushow</item>
+        <item name="android:windowExitAnimation">@anim/menuhide</item>
+    </style>
+
+    <style name="adjust_camera_menu_anim_style">
+        <item name="android:windowEnterAnimation">@anim/adjustcamerashow</item>
+        <item name="android:windowExitAnimation">@anim/adjustcamerahide</item>
+    </style>
+
+    <style name="OptionMenuItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/option_menu_item_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/option_menu_text_size</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:shadowColor">#FF000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:background">@drawable/menu_item</item>
+    </style>
+
+    <style name="OptionMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/option_menu_padding</item>
+        <item name="android:paddingRight">@dimen/option_menu_padding</item>
+        <item name="android:background">@drawable/menu_background</item>
+    </style>
+
+    <style name="OptionMenuWindow">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="AdjustCameraDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ChangeColorDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ObjectMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">@dimen/object_menu_padding</item>
+        <item name="android:paddingRight">@dimen/object_menu_padding</item>
+    </style>
+
+    <style name="ObjectMenuItem">
+        <item name="android:layout_width">@dimen/object_menu_item_width</item>
+        <item name="android:layout_height">@dimen/object_menu_item_height</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">14px</item>
+        <item name="android:textSize">@dimen/object_menu_item_text_size</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="GalleryThemeNOActionBar" parent="@android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:actionModeBackground">@drawable/cab_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom</item>
+    </style>
+
+    <style name="moreMenuDialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="recycle"
+    basedataFile="recycle_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,1.0,1.0,1.0"
+    sceneFile="recycle_scene.cbf"
+    type="Recycle" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="object_delete01_fhq.jpg@recycle_basedata.cbf"
+            imagePath="object_delete01_fhq.jpg" />
+    </imageInfos>
+
+</config>

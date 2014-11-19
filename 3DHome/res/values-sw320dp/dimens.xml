@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- addobject begin -->
+    <dimen name="addobject_settings_w">288dp</dimen>
+    <dimen name="addobject_board_topbottom_w">288dp</dimen>
+    <dimen name="addobject_text_layout_textsize">12dp</dimen>
+
+    <!-- _contentv_item_icon_wh + _contentv_item_padding * 2 = _contentv_object_w -->
+    <dimen name="addobject_dialog_contentv_object_w">58dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_icon_wh">34dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_padding">12dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_checkbox_wh">16dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_checkbox_padding">3dp</dimen>
+
+    <dimen name="addobject_dialog_button_w">100dp</dimen>
+    <dimen name="addobject_dialog_button_h">25dp</dimen>
+    <!-- addobject end-->
+
+</resources>

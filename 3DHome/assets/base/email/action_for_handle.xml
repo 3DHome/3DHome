@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<action>
+    <translate>
+        <start x = "0.0" y = "0.0" z = "0.0" />
+        <end x = "0.0" y = "0.0" z = "0.0" />
+    </translate>
+    <scale>
+        <start x = "1.0" y = "1.0" z = "1.0" />
+        <end x = "1.0" y = "1.0" z = "1.0" />
+    </scale>
+    <rotate>
+        <axis x = "0.0" y = "0.0" z = "1.0" />
+        <!--end = 60 means counter-clockwise rotate, end = -300 means clock wise rotate,degree can greater than 360 -->
+        <degree start = "0.0" end = "60.0" />
+    </rotate>        
+</action>

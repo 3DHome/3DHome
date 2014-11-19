@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<condition code="0" displayName="Tornade" key="tornado" type="4" />
+	<condition code="1" displayName="Tempête Tropicale" key="tropical storm"
+		type="4" />
+	<condition code="2" displayName="Ouragan" key="hurricane"
+		type="4" />
+	<condition code="3" displayName="Orages Violents" key="severe thunderstorms"
+		type="3" />
+	<condition code="4" displayName="Orages" key="thunderstorms"
+		type="3" />
+	<condition code="5" displayName="Pluie et Neige Mélangées" key="mixed rain and snow"
+		type="8" />
+	<condition code="6" displayName="Pluie et Grésil Mélangées" key="mixed rain and sleet"
+		type="10" />
+	<condition code="7" displayName="Neige et Grésil Mélangées" key="mixed snow and sleet"
+		type="8" />
+	<condition code="8" displayName="Bruine Verglaçante" key="freezing drizzle"
+		type="1" />
+	<condition code="9" displayName="Bruine" key="drizzle" type="1" />
+	<condition code="10" displayName="Pluie Verglaçante" key="freezing rain"
+		type="1" />
+	<condition code="11" displayName="Averses" key="showers"
+		type="1" />
+	<condition code="12" displayName="Averses" key="showers"
+		type="1" />
+	<condition code="13" displayName="Tempête de Neige" key="snow flurries"
+		type="2" />
+	<condition code="14" displayName="Averses de Neige" key="light snow showers"
+		type="2" />
+	<condition code="15" displayName="Poudrerie" key="blowing snow"
+		type="2" />
+	<condition code="16" displayName="Neige" key="snow" type="2" />
+	<condition code="17" displayName="Grêle" key="hail" type="9" />
+	<condition code="18" displayName="Grésil" key="sleet" type="10" />
+	<condition code="19" displayName="Poussière" key="dust" type="7" />
+	<condition code="20" displayName="Brouillard" key="foggy" type="6" />
+	<condition code="21" displayName="Brumeux" key="haze" type="6" />
+	<condition code="22" displayName="Fumée" key="smoky" type="6" />
+	<condition code="23" displayName="Vent" key="blustery"
+		type="4" />
+	<condition code="24" displayName="Vent" key="windy" type="4" />
+	<condition code="25" displayName="Froid" key="cold" type="4" />
+	<condition code="26" displayName="Nuageux" key="cloudy" type="5" />
+	<condition code="27" displayName="Partiellement Nuageux" key="mostly cloudy (night)"
+		type="5" />
+	<condition code="28" displayName="Partiellement Nuageux" key="mostly cloudy (day)"
+		type="5" />
+	<condition code="29" displayName="partiellement nuageux" key="partly cloudy (night)"
+		type="0" />
+	<condition code="30" displayName="En Partie Nuageux" key="partly cloudy (day)"
+		type="0" />
+	<condition code="31" displayName="Clair" key="clear (night)"
+		type="4" />
+	<condition code="32" displayName="Ensoleillé" key="sunny" type="4" />
+	<condition code="33" displayName="Beau" key="fair (night)"
+		type="4" />
+	<condition code="34" displayName="Beau" key="fair (day)"
+		type="4" />
+	<condition code="35" displayName="Pluie et Grêle Mélangées" key="mixed rain and hail"
+		type="1" />
+	<condition code="36" displayName="Chaud" key="hot" type="4" />
+	<condition code="37" displayName="Orages Isolés"
+		key="isolated thunderstorms" type="3" />
+	<condition code="38" displayName="Orages Dispersés"
+		key="scattered thunderstorms" type="3" />
+	<condition code="39" displayName="Orages Dispersés"
+		key="scattered thunderstorms" type="3" />
+	<condition code="40" displayName="Averses Eparses" key="scattered showers"
+		type="1" />
+	<condition code="41" displayName="Fortes Chutes de Neige" key="heavy snow"
+		type="2" />
+	<condition code="42" displayName="Chutes de Neige"
+		key="scattered snow showers" type="2" />
+	<condition code="43" displayName="Fortes Chutes de Neige" key="heavy snow"
+		type="2" />
+	<condition code="44" displayName="En Partie Nuageux" key="partly cloudy"
+		type="0" />
+	<condition code="45" displayName="Orages" key="thundershowers"
+		type="3" />
+	<condition code="46" displayName="Averses de Neige" key="snow showers"
+		type="2" />
+	<condition code="47" displayName="Nuageux avec Orages Isolés"
+		key="isolated thundershowers" type="3" />
+	<condition code="3200" displayName="Non Disponible" key="not available"
+		type="-1" />
+	
+	<condition code="100" displayName="Pluie Légère"
+		key="light rain" type="1" />
+	<condition code="101" displayName="Pluie Modérée"
+		key="moderate rain" type="1" />
+	<condition code="102" displayName="Forte Pluie"
+		key="heavy rain" type="1" />
+	<condition code="103" displayName="Pluie Torrentielle"
+		key="rainstorm" type="1" />
+	<condition code="104" displayName="Forte Tempête de Pluie"
+		key="severe rainstorm" type="1" />
+	<condition code="105" displayName="Pluie Torrentielle Supplémentaire"
+		key="extra torrential rainstorm" type="1" />
+	<condition code="106" displayName="Averses avec Tonnerre et Grêle"
+		key="shower with thunder and hail" type="3" />
+	<condition code="107" displayName="Pluie"
+		key="rain" type="1" />
+	<condition code="108" displayName="Tempête de Neige"
+		key="snowstorm" type="2" />
+	<condition code="109" displayName="Neige Modérée"
+		key="moderate snow" type="2" />
+	<condition code="110" displayName="Poussière et Tempête de Sable"
+		key="dust and sand storm" type="7" />
+	<condition code="111" displayName="Vent avec Poussière de Sable"
+		key="wind with dust and sand" type="7" />
+	<condition code="112" displayName="Poussière Sévère et Tempête de Sable"
+		key="severe dust and sand storm" type="7" />
+
+</resources>

@@ -1,0 +1,226 @@
+PLAT_CC  = gcc
+PLAT_CPP = g++
+PLAT_AR  = ar
+RM = rm -f
+SDKDIR = /home/luwei/program/powervr/SDKPackage
+PLATFORM = LinuxPC
+SEENG_DIR = /home/luwei/program/streamserver_git/test-server/SEHome/seengine/src
+OUTNAME = SEDemo
+## X11 lib define
+X11_LIBS = -lX11 -lXau
+WS = X11
+X11_INC = /usr/include/X11
+LIBDIR_FLAGS = -Wl,--rpath-link=$(SDKDIR)/Builds/OGLES2/$(PLATFORM)/Lib \
+               -L$(SDKDIR)/Builds/OGLES2/$(PLATFORM)/Lib
+PLAT_CFLAGS = -DBUILD_OGLES2 -DDEBUG -DGLES_20 -g
+
+PLAT_INC = $(SDKDIR)/Builds/OGLES2/Include \
+	   $(X11_INC) 
+
+PLAT_OBJPATH = $(PLATFORM)/$(WS)
+PLAT_LINK = $(LIBDIR_FLAGS) -lEGL -lGLESv2 $(X11_LIBS)
+INCLUDES += -I$(SDKDIR)/Shell  \
+			-I$(SDKDIR)/Shell/API/KEGL \
+			-I$(SDKDIR)/Shell/OS/LinuxX11 \
+			-I$(SEENG_DIR) \
+			-I$(SEENG_DIR)/export \
+			-I$(SEENG_DIR)/command \
+            -I$(SEENG_DIR)/bullet \
+			-I$(SEENG_DIR)/bullet/BulletCollision/BroadphaseCollision \
+			-I$(SEENG_DIR)/bullet/BulletCollision/CollisionDispatch \
+            -I$(SEENG_DIR)/bullet/BulletCollision/CollisionShapes \
+            -I$(SEENG_DIR)/bullet/BulletCollision/NarrowPhaseCollision \
+            -I$(SEENG_DIR)/bullet/BulletDynamics/ConstraintSolver \
+            -I$(SEENG_DIR)/bullet/BulletDynamics/Dynamics \
+            -I$(SEENG_DIR)/bullet/BulletDynamics/Vehicle \
+            -I$(SEENG_DIR)/bullet/LinearMath \
+			$(addprefix -I, $(PLAT_INC))
+
+VPATH +=  ../ : \
+	  ../command : \
+	  ../export : \
+	  ../bullet/BulletCollision/BroadphaseCollision : \
+	  ../bullet/BulletCollision/CollisionDispatch : \
+	  ../bullet/BulletCollision/CollisionShapes : \
+	  ../bullet/BulletCollision/NarrowPhaseCollision : \
+	  ../bullet/BulletDynamics/ConstraintSolver : \
+	  ../bullet/BulletDynamics/Dynamics : \
+	  ../bullet/BulletDynamics/Vehicle : \
+	  ../bullet/LinearMath : \
+	  $(SDKDIR)/Shell            : \
+	  $(SDKDIR)/Shell/API/KEGL   : \
+	  $(SDKDIR)/Shell/OS/LinuxX11
+DEPEND_FLAG = $(PLAT_CFLAGS) $(INCLUDES)
+##SRC_LUA = lapi.c lauxlib.c lbaselib.c lcode.c ldblib.c ldebug.c ldo.c  ldump.c lfunc.c  lgc.c linit.c liolib.c llex.c \
+##	  lmathlib.c lmem.c loadlib.c lobject.c lopcodes.c loslib.c lparser.c lstate.c lstring.c lstrlib.c ltable.c ltablib.c ltm.c \
+##	  lundump.c lvm.c lzio.c print.c
+SRC_BULLET =  btAlignedAllocator.cpp \
+	          btGeometryUtil.cpp \
+	          btQuickprof.cpp \
+	          btSerializer.cpp \
+	 btAxisSweep3.cpp \
+	 btBroadphaseProxy.cpp \
+	 btCollisionAlgorithm.cpp \
+	 btDispatcher.cpp \
+	 btMultiSapBroadphase.cpp \
+	 btOverlappingPairCache.cpp \
+	 btSimpleBroadphase.cpp \
+	 btDbvtBroadphase.cpp \
+	 btQuantizedBvh.cpp \
+	 btDbvt.cpp \
+	 btCollisionDispatcher.cpp \
+	 btCollisionObject.cpp \
+	 btCollisionWorld.cpp \
+	 btCompoundCollisionAlgorithm.cpp \
+	 btConvexConcaveCollisionAlgorithm.cpp \
+	 btConvexConvexAlgorithm.cpp \
+	 btConvexPlaneCollisionAlgorithm.cpp \
+	 btDefaultCollisionConfiguration.cpp \
+	 btEmptyCollisionAlgorithm.cpp \
+	  btManifoldResult.cpp \
+	  btSimulationIslandManager.cpp \
+	  btSphereBoxCollisionAlgorithm.cpp \
+	  btSphereSphereCollisionAlgorithm.cpp \
+	  btSphereTriangleCollisionAlgorithm.cpp \
+	  btUnionFind.cpp \
+	  SphereTriangleDetector.cpp \
+	  btActivatingCollisionAlgorithm.cpp \
+	  btBoxBoxCollisionAlgorithm.cpp \
+	  btBoxBoxDetector.cpp \
+	  btBoxShape.cpp \
+	  btBvhTriangleMeshShape.cpp \
+	  btCapsuleShape.cpp \
+	  btCollisionShape.cpp \
+	  btCompoundShape.cpp \
+	  btConcaveShape.cpp \
+	  btConeShape.cpp \
+	  btConvexHullShape.cpp \
+	  btConvexInternalShape.cpp \
+	  btConvexShape.cpp \
+	  btConvexTriangleMeshShape.cpp \
+	  btCylinderShape.cpp \
+	  btEmptyShape.cpp \
+	  btHeightfieldTerrainShape.cpp \
+	  btMinkowskiSumShape.cpp \
+	  btMultiSphereShape.cpp \
+	  btOptimizedBvh.cpp \
+	  btPolyhedralConvexShape.cpp \
+	  btSphereShape.cpp \
+	  btStaticPlaneShape.cpp \
+	  btStridingMeshInterface.cpp \
+	  btTetrahedronShape.cpp \
+	  btTriangleBuffer.cpp \
+	  btTriangleCallback.cpp \
+	  btTriangleIndexVertexArray.cpp \
+	  btTriangleMesh.cpp \
+	  btTriangleMeshShape.cpp \
+	  btUniformScalingShape.cpp \
+	 btContinuousConvexCollision.cpp \
+	 btConvexCast.cpp \
+	 btGjkConvexCast.cpp \
+	 btGjkEpaPenetrationDepthSolver.cpp \
+	 btGjkPairDetector.cpp \
+	 btMinkowskiPenetrationDepthSolver.cpp \
+	 btPersistentManifold.cpp \
+	 btRaycastCallback.cpp \
+	 btSubSimplexConvexCast.cpp \
+	 btVoronoiSimplexSolver.cpp \
+	 btGjkEpa2.cpp \
+	btConeTwistConstraint.cpp \
+	btContactConstraint.cpp \
+	btGeneric6DofConstraint.cpp \
+	btHingeConstraint.cpp \
+	btPoint2PointConstraint.cpp \
+	btSequentialImpulseConstraintSolver.cpp \
+	btSolve2LinearConstraint.cpp \
+	btTypedConstraint.cpp \
+	btContinuousDynamicsWorld.cpp \
+	btDiscreteDynamicsWorld.cpp \
+	btRigidBody.cpp \
+	btSimpleDynamicsWorld.cpp \
+	Bullet-C-API.cpp \
+	btRaycastVehicle.cpp \
+	btWheelInfo.cpp 
+
+SRCS_CPP = SE_Buffer.cpp   \
+	SE_DataTransfer.cpp  \
+	SE_ImageData.cpp      \
+	SE_Mesh.cpp           \
+	SE_ResFileHeader.cpp   \
+	SE_Camera.cpp         \
+	SE_File.cpp          \
+	SE_IO.cpp            \
+	SE_MeshSimObject.cpp  \
+	SE_ResourceManager.cpp \
+	SE_TextureCoordData.cpp \
+	SE_Command.cpp         \
+	SE_Geometry3D.cpp    \
+	SE_Log.cpp           \
+	SE_Object.cpp         \
+	SE_SceneManager.cpp    \
+	SE_Texture.cpp          \
+	SE_CommandFactory.cpp  \
+	SE_Geometry.cpp        \
+	SE_MaterialData.cpp    \
+	SE_Quat.cpp   \
+	SE_ShaderProgram.cpp \
+	SE_Time.cpp          \
+	SE_GeometryData.cpp  \
+	SE_Application.cpp    \
+	SE_Common.cpp          \
+	SE_Math.cpp     \
+	SE_RenderManager.cpp  \
+	SE_SimObject.cpp   \
+	SE_Utils.cpp \
+	SE_BoundingVolume.cpp   \
+	SE_CommonNode.cpp    \
+	SE_ID.cpp         \
+	SE_Matrix.cpp     \
+	SE_RenderUnit.cpp  \
+	SE_Spatial.cpp    \
+	SE_Vector.cpp \
+	SE_Ase.cpp \
+	SE_SystemCommand.cpp \
+	SE_SystemCommandFactory.cpp \
+	SE_InputEvent.cpp \
+	SE_InputManager.cpp \
+	SE_MotionEventCamera.cpp \
+	SE_SpatialTravel.cpp \
+	SE_SimObjectState.cpp \
+	SEDemo.cpp \
+	PVRShell.cpp \
+	PVRShellAPI.cpp \
+	PVRShellOS.cpp \
+	$(SRC_BULLET)
+SRCS = $(shell for d in $(SRCS_C) ; do find ../ -name $$d ; done)
+SRCS += $(shell for d in $(SRCS_CPP) ; do find ../ -name $$d ; done)
+OBJ_C = $(SRCS_C:.c=.o)
+OBJ_CPP = $(SRCS_CPP:.cpp=.o)
+OBJECTS += $(OBJ_C)
+OBJECTS += $(OBJ_CPP)
+
+$(OUTNAME): $(OBJ_C) $(OBJ_CPP) depend
+	$(PLAT_CPP) -o $(OUTNAME) $(OBJECTS) $(PLAT_LINK)
+
+%.o: %.c
+	$(PLAT_CC) -c $(PLAT_CFLAGS) $(INCLUDES) $< -o $@
+
+%.o: %.cpp
+	@echo $<
+	@echo $@
+	$(PLAT_CPP) -c $(PLAT_CFLAGS) $(INCLUDES) $< -o $@
+
+depend: 
+	makedepend -- $(DEPEND_FLAG) -- $(SRCS)
+
+print_info:
+	@echo $(OBJECTS)
+	@echo $(OBJ_CPP)
+	@echo $(OUTNAME)
+	@echo $(INCLUDES)
+	@echo $(PLAT_CFLAGS)
+	@echo $(VPATH)
+	@echo $(SRCS)
+clean:
+	$(RM) $(OBJECTS) $(OUTNAME)
+# DO NOT DELETE

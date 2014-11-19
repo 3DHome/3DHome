@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_tv"
+    basedataFile="tv_basedata.cbf"
+    keyWords="video,audio,music"
+    localTrans="0,0,0,0,0,0,1,1.2,1.2,1.2"
+    maxPoint="325,0,200"
+    minPoint="-325,-20,-200"
+    sceneFile="tv_scene.cbf"
+    slotType="wall"
+    spanX="4"
+    spanY="2"
+    type="TV" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="dianshi_01.jpg@tv_basedata.cbf"
+            imagePath="dianshi_01.jpg" />
+
+        <imageInfo
+            imageName="xianguang.png@tv_basedata.cbf"
+            imagePath="xianguang.png" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="dianshi_01@group_tv" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="screen"
+                spatialName="guang@group_tv" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="14"
+                statusValue="1064965" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

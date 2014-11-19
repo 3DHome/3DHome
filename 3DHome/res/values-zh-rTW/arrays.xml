@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="months">
+        <item>一\r\n月</item>
+        <item>二\r\n月</item>
+        <item>三\r\n月</item>
+        <item>四\r\n月</item>
+        <item>五\r\n月</item>
+        <item>六\r\n月</item>
+        <item>七\r\n月</item>
+        <item>八\r\n月</item>
+        <item>九\r\n月</item>
+        <item>十\r\n月</item>
+        <item>十\r\n一\r\n月</item>
+        <item>十\r\n二\r\n月</item>
+    </string-array>
+    <string-array name="weeks">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+    <string-array name="menus">
+        <item>新增</item>
+        <item>主屏設置</item>
+        <item>系統設置</item>
+        <item>管理應用程序</item>
+    </string-array>
+   <string-array name="appicon_background_entries">
+        <item>平均色</item>
+        <item>補色</item>
+    </string-array>
+    <!-- below strings have not been translated to other languages -->
+        <string-array name="edit_wall_menu_item">
+        <item>圖片</item>
+        <item>拍照</item>
+        <item>恢復至默認</item>
+    </string-array>
+
+    <string-array name="edit_wall_menu_item_new">
+        <item>@string/wallpaper_bundle</item>
+        <item>圖片</item>
+        <item>拍照</item>
+        <item>恢復至默認</item>
+    </string-array>
+
+    <string-array name="long_click_wall">
+        <item>主屏設置</item>
+        <item>添加三維物體</item>
+        <item>添加應用</item>
+        <item>添加文件夾</item>
+        <item>添加快捷方式</item>
+        <item>添加小部件</item>
+        <item>切換壁紙</item>
+    </string-array>
+    
+    <string-array name="app_drawer_sort_type">
+        <item>名稱</item>
+        <item>安裝時間</item>
+        <item>運行次數</item>
+    </string-array>
+
+</resources>

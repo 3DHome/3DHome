@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="interval_time_entries">
+        <item>Mezz\'ora</item>
+        <item>1 ora</item>
+        <item>2 ore</item>
+        <item>3 ore</item>
+        <item>4 ore</item>
+        <item>5 ore</item>
+    </string-array>
+</resources>

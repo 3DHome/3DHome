@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation_listeners>
+    <!--if startFrame == endFrame,interpolate will use animation frameNum -->
+    <animation_listener startFrame = "1" endFrame = "1">
+        <!--MESH_ANIMATION = 0,RIGID_ANIMATION ,RIGID_ANIMATION_ROTATE_TO_ZERO-->
+        <listener_type listenertype = "1" />
+        <geometry_id>Box13@email</geometry_id>
+        <action file = "action.xml" />
+        <!--CONST_INTERP = 0,
+            ACCELERATE_INTERP,
+            DECELERATE_INTERP
+            -->
+        <interpolate>
+            <!--CONST_INTERP = 0,
+    ACCELERATE_INTERP,
+    DECELERATE_INTERP-->
+            <interpolate_type interpolate = "5" />
+            <interpolate_factor para = "2.0" />
+        </interpolate>
+    </animation_listener>   
+    
+    <animation_listener startFrame = "1" endFrame = "1">
+        <!--MESH_ANIMATION = 0,RIGID_ANIMATION ,RIGID_ANIMATION_ROTATE_TO_ZERO-->
+        <listener_type listenertype = "1" />
+        <geometry_id>Box15@email</geometry_id>
+        <action file = "action_for_zhi.xml" />
+        <!--CONST_INTERP = 0,
+            ACCELERATE_INTERP,
+            DECELERATE_INTERP
+            -->
+        <interpolate>
+            <!--CONST_INTERP = 0,
+    ACCELERATE_INTERP,
+    DECELERATE_INTERP-->
+            <interpolate_type interpolate = "5" />
+            <interpolate_factor para = "2.0" />
+        </interpolate>
+    </animation_listener>  
+    
+    <animation_listener startFrame = "1" endFrame = "1">
+        <!--MESH_ANIMATION = 0,RIGID_ANIMATION ,RIGID_ANIMATION_ROTATE_TO_ZERO-->
+        <listener_type listenertype = "1" />
+        <geometry_id>Box11@email</geometry_id>
+        <action file = "action_for_zhi.xml" />
+        <!--CONST_INTERP = 0,
+            ACCELERATE_INTERP,
+            DECELERATE_INTERP
+            -->
+        <interpolate>
+            <!--CONST_INTERP = 0,
+    ACCELERATE_INTERP,
+    DECELERATE_INTERP-->
+            <interpolate_type interpolate = "5" />
+            <interpolate_factor para = "2.0" />
+        </interpolate>
+    </animation_listener>
+    
+    <animation_listener startFrame = "1" endFrame = "1">
+        <!--MESH_ANIMATION = 0,RIGID_ANIMATION ,RIGID_ANIMATION_ROTATE_TO_ZERO-->
+        <listener_type listenertype = "1" />
+        <geometry_id>Box12@email</geometry_id>
+        <action file = "action_for_handle.xml" />
+        <!--CONST_INTERP = 0,
+            ACCELERATE_INTERP,
+            DECELERATE_INTERP
+            -->
+        <interpolate>
+            <!--CONST_INTERP = 0,
+    ACCELERATE_INTERP,
+    DECELERATE_INTERP-->
+            <interpolate_type interpolate = "2" />
+            <interpolate_factor para = "2.0" />
+        </interpolate>
+    </animation_listener>       
+    
+</animation_listeners>

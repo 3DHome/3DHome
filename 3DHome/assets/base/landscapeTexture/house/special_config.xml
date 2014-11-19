@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+    <WallpaperImageSizeX value="1024" />
+
+    <WallpaperImageSizeY value="512" />
+
+    <WallpaperImageCropSizeX value="978" />
+
+    <WallpaperImageCropSizeY value="512" />
+
+    <SkyRadius value="488" />
+
+    <WallPaddingLeft value="0" />
+
+    <WallPaddingRight value="0" />
+
+    <WallPaddingTop value="0" />
+
+    <WallPaddingBottom value="25" />
+
+    <WallNum value="4" />
+
+    <WallRadius value="1100" />
+
+    <CellCountX value="8" />
+
+    <CellCountY value="4" />
+
+    <CellWidth value="230" />
+
+    <CellHeight value="265" />
+
+    <WidthGap value="47" />
+
+    <HeightGap value="20" />
+
+    <AppIconPaddingTop value="6" />
+
+    <AppIconPaddingLeft value="18" />
+
+    <AppIconPaddingRight value="18" />
+
+    <AppIconPaddingBottom value="3" />
+
+</config>

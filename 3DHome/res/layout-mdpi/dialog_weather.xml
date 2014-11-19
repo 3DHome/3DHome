@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center|left"
+    android:paddingLeft="18dp" >
+
+    <TextView
+        android:id="@+id/curweather_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beijing"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/curweather_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/curweather_addr"
+        android:paddingLeft="50dp"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/curweather_noinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/curweather_date"
+        android:layout_marginLeft="50dp"
+        android:text="N/A"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/below_zero"
+        android:layout_width="41dp"
+        android:layout_height="90dp"
+        android:layout_below="@id/curweather_addr" />
+
+    <ImageView
+        android:id="@+id/curweather_image3"
+        android:layout_width="41dp"
+        android:layout_height="90dp"
+        android:layout_below="@id/curweather_addr"
+        android:layout_toRightOf="@id/below_zero" />
+
+    <ImageView
+        android:id="@+id/curweather_image2"
+        android:layout_width="41dp"
+        android:layout_height="90dp"
+        android:layout_below="@id/curweather_addr"
+        android:layout_toRightOf="@id/curweather_image3" />
+
+    <ImageView
+        android:id="@+id/curweather_image1"
+        android:layout_width="41dp"
+        android:layout_height="90dp"
+        android:layout_below="@id/curweather_addr"
+        android:layout_toRightOf="@id/curweather_image2" />
+
+    <ImageView
+        android:id="@+id/curweather_imagedu"
+        android:layout_width="41dp"
+        android:layout_height="90dp"
+        android:layout_below="@id/curweather_addr"
+        android:layout_toRightOf="@id/curweather_image1" />
+
+    <TextView
+        android:id="@+id/curweather_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/curweather_image1"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/curweather_temp_range"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@id/curweather_addr"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/curweather_imagedu"
+        android:gravity="bottom"
+        android:paddingBottom="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/weather_settings_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@id/curweather_addr"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/weather_settings_btn"/>
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="network_error">Пожалуйста, убедитесь, что ваш телефон подключен к интернету.</string>
+    <string name="dialog_gls_msg">Это приложение будет работать лучше и интереснее, если вы разрешите ему использовать данные о вашем местоположении. Пожалуйста, включите "Моё местоположение" в настройках своего телефона.</string>
+    <string name="activity_not_found">Приложение не установлено.</string>
+    <string name="enable">Включить</string>
+    <string name="disable">Выключить</string>
+
+    <!-- Weather setting strings -->
+    <string name="weather_settings">Настройки погоды</string>
+    <string name="auto_update_common">Общие настройки</string>
+    <string name="auto_location_title">Использовать моё местоположение</string>
+    <string name="auto_location_summary">Определить местоположение автоматически</string>
+    <string name="set_location_title">Установить местоположение</string>
+    <string name="set_location_msg">Введите название города: </string>
+    <string name="city_name_error">Название города не может быть пустым.</string>
+    <string name="dialog_choose_city">Выберите город</string>
+    <string name="weather_update_success">Местоположение и погода обновлены успешно.</string>
+    <string name="update_now_title">Обновить сейчас!</string>
+    <string name="update_now_summary">Убедитесь, что интернет-соединение исправно.</string>
+  	<string name="switch_units_title">Единиц Термовыключатель</string>
+    <string name="switch_units_summary_celsius">Цельсия</string>
+    <string name="switch_units_summary_fahrenheit">Фаренгейт</string>
+    
+    <string name="auto_update_setting">Настройки автообновления</string>
+    <string name="auto_update_title">Обновлять автоматически</string>
+    <string name="auto_update_summary">Автоматически получать информацию о погоде через интернет.</string>
+    <string name="start_time_title">Со скольки</string>
+    <string name="end_time_title">До скольки</string>
+    <string name="interval_time_title">Интервал обновления</string>
+    <string name="interval_time_summary">3 часа</string>
+    <string name="get_latest_weather_failed">Ошибка в получении последней информации о погоде.</string>
+    <string name="wait_dialog_title">Пожалуйста, подождите\u2026</string>
+    <string name="wait_dialog_msg_weather">Поиск\u2026</string>
+    <string name="req_error">Ошибка в получении прогноза погоды.</string>
+    <string name="locate_error">Ошибка в получении текущего местоположения.</string>
+    <string name="gps_error">Пожалуйста, откройте GPS.</string>
+
+    <string name="wind_n">N</string>
+    <string name="wind_ne">NE</string>
+    <string name="wind_e">E</string>
+    <string name="wind_se">SE</string>
+    <string name="wind_s">S</string>
+    <string name="wind_sw">SW</string>
+    <string name="wind_w">W</string>
+    <string name="wind_nw">NW</string>
+    <string name="wind_var">VAR</string>
+    <string name="wind_condition_1"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_2"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_3"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_4"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_5"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_6"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_7"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_8"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_9"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_10"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_11"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    <string name="wind_condition_hurricane"><xliff:g id="speed" example="4.86">%2$s</xliff:g>km/h 
+        <xliff:g id="direction" example="NE">Yраган</xliff:g></string>
+        
+	<string name="send_weather_log_title">Передать журнал Погода</string>
+    <string name="send_weather_log_des">Передать журнал для разработчика, если погода не так</string>
+	<string name="weather_log_email_title">Мой прогноз не так</string>
+    <string name="weather_log_email_city">Мой город</string>
+    <string name="weather_log_email_description">описание</string>
+</resources>

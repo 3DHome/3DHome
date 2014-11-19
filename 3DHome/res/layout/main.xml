@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.borqs.se.home3d.WorkSpace xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/workspace"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffff0000" >
+
+</com.borqs.se.home3d.WorkSpace>

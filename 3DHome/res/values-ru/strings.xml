@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">3D Home</string>
+    <string name="description">.Беспрецендентный, настоящий 3D домашний экран. Реальный мир в 3D!
+        В отличии, от дизайнов других домашних экранов - этот 3D лаунчер воспроизводит обстановку вашего дома 
+        и то как вы пользуетесь своим телефоном, телевизором, камерой, часами, календарём и т.д. в повседневной жизни!
+        Он дает вам свежий взгляд на управление вашим мобильным устройством.</string>
+
+    <!-- Home setting strings -->
+    <string name="menu_preference">Настройки 3D Home</string>
+    <string name="setting_display">Настройки отображения</string>
+    <string name="themes">Темы</string>
+    <string name="theme_summary">Скачать и установить тему</string>
+    <string name="objects">3D объекты</string>
+    <string name="object_summary">Скачать и управлять 3D объектами</string>
+    <string name="setting_style">Настройки стиля</string>
+    <string name="icon_background_title">Применение значок фон</string>
+    <string name="full_screen">Полный экран</string>
+    <string name="wall_indicator">индикатор Wall</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">Отмена</string>
+    <string name="enable">Включить</string>
+    <string name="disable">Выключить</string>
+    <string name="weather_settings">Настройки погоды</string>
+    <string name="weather_summary">Настройте ваше местоположение, единицы измерения и частоту обновления погоды</string>
+    <string name="update_settings">Версия прошивки</string>
+    <string name="upgrade_title">Проверить обновления</string>
+    <string name="share">Поделиться</string>
+    <string name="score">Оценить</string>
+    <string name="feedback">Отзыв</string>
+    <string name="help">Помощь</string>
+    <string name="about">О программе</string>
+
+    <!-- Customize house setting strings  -->
+    <string name="edit_wall_menu_title">Выберите обои</string>
+
+    <!-- delete 3D Objects dialog -->
+    <string name="delete_objects_title">Удалить 3D Объекты</string>
+    <string name="confirm_delete_selected_objects">Удалить <xliff:g id="name">%s</xliff:g>?</string>
+
+    <!-- Check update strings -->
+    <string name="network_error">Пожалуйста, убедитесь, что ваш телефон подключен к интернету.</string>
+    <string name="no_update">Вы используете самую свежую версию.</string>
+    <string name="check_update_error">Ошибка обновления из-за проблемы с сетью или плохой связи с сервером,
+        пожалуйста, попробуйте позже.</string>
+    <string name="upgrade_dialog_title">Обновление прошивки</string>
+    <string name="wait_dialog_msg_sw">Проверка\u2026</string>
+    <string name="upgrade_dialog_msg">Доступна новая версия, скачать?</string>
+    <string name="upgrade_dialog_current_version">Текущая версия: </string>
+    <string name="upgrade_dialog_latest_version">Последняя версия:</string>
+    <string name="upgrade_dialog_file_size">Размер файла:</string>
+    <string name="upgrade_dialog_update_changes">Последние изменения:</string>
+    <string name="upgrade_dialog_ok">Скачать</string>
+    <string name="upgrade_dialog_cancel">Отмена</string>
+
+    <string name="share_content">Я установил 3D Home, очень советую попробовать) Ссылка на Google Play:\n %1$s=%2$s</string>
+
+
+    <!-- Help strings -->
+    <string name="help_title_00">Показать приложения</string>
+    <string name="help_title_01">Добавить приложение</string>
+    <string name="help_title_02">Удалить объект</string>
+    <string name="help_content_00">Нажатие на ноутбук откроет список всех ваших приложений.</string>
+    <string name="help_content_01">Долгое нажатие на иконку приложения позволит вам поместить ярлык этого приложения на сцену.</string>
+    <string name="help_content_02">Удаляйте объекты со сцены, с помощью переноса их пальцем в появляющуюся корзину.</string>
+
+    <!-- About strings -->
+    <string name="about_version">Версия: %s</string>
+    <string name="about_website">Официальная страница: http://apps.borqs.com/3dhome.html</string>
+
+    <!-- Weather strings -->
+    <string name="no_info_msg">Информация о погоде недоступна.</string>
+    <string name="day_of_week_short_sunday">вс</string>
+    <string name="day_of_week_short_monday">пн</string>
+    <string name="day_of_week_short_tuesday">вт</string>
+    <string name="day_of_week_short_wednesday">ср</string>
+    <string name="day_of_week_short_thursday">чт</string>
+    <string name="day_of_week_short_friday">пт</string>
+    <string name="day_of_week_short_saturday">сб</string>
+
+    <string name="gadget_error_text">Проблема с загрузкой виджета</string>
+    <string name="activity_not_found">Приложение не установлено.</string>
+    <string name="uninstall_system_app_text">Невозможно удалить системное приложение.</string>
+    <string name="delete_preset_object_text">Невозможно удалить предустановленные объекты .</string>
+    <string name="delete_being_used_desk_text">Не удается удалить таблицу которая используется.</string>
+    <string name="can_not_put_object_in_room">Объект не может быть размещен в этой комнате</string>
+    
+    <!-- 3D Object strings -->
+    <string name="select_app">Выберите приложение</string>
+    
+    <!-- select shortcut dialog -->
+    <string name="title_select_shortcut">Выберите ярлык</string>
+
+    <!-- Room strings -->
+    <string name="no_room">Нет больше места на стене.</string>
+    <string name="no_room_desk">Нет больше места на столе.</string>
+
+    <!-- app drawer -->
+    <string name="title_select_drawer_sort">Выберите тип сортировки</string>
+
+    <string name="search_activity_title">Поиск Google</string>
+    <string name="search_activity_hint_text">Введите символы для поиска</string>
+    <string name="search_activity_button_text">Поиск</string>
+
+    <string name="change_icon_dialog_title">Сменить иконку</string>
+    <string name="change_icon_dialog_select_img">Выберите изображение</string>
+    <string name="change_icon_dialog_reset_img">Сброс</string>
+    <string name="change_label_dialog_title">Переименовать</string>
+    
+    <!-- Folder strings -->
+    <string name="folder_title">Папка</string>
+
+    <!-- Application search -->
+    <string name="app_search_hint">Поиск</string>
+
+    <!-- Long click object menu icon text -->
+    <string name="long_click_object_menu_delete">удалять</string>
+    <string name="long_click_object_menu_setting">установка</string>
+    <string name="long_click_object_menu_change_bind">Привязка</string>
+    <string name="long_click_object_menu_change_icon">значок</string>
+    <string name="long_click_object_menu_change_label">этикетка</string>
+    <string name="long_click_object_menu_uninstall">удалить</string>
+    <string name="long_click_object_menu_resize">Изменение размера</string>
+    <string name="long_click_object_menu_change_color">цвет</string>
+    <string name="long_click_object_menu_replace">заменять</string>
+    
+    <!-- Camera Adjust -->
+    <string name="camera_adjust_settings_summary">Отрегулируйте положение и FOV камеры</string>
+    <string name="camera_adjust_settings_title">Настройка камеры</string>
+    <string name="camera_adjust_down_up_text">Вверх / Вниз</string>
+    <string name="camrea_adjust_setp_in_out_text">Назад/вперед</string>
+    <string name="camera_adjust_camera_location">камеры Положение</string>
+    <string name="camera_adjust_camera_fov">FOV</string>
+    <string name="camera_adjust_button_reset">сброс</string>
+    
+    <!-- Edit color dialog -->
+    <string name="edit_color_red">красный</string>
+    <string name="edit_color_green">зеленый</string>
+    <string name="edit_color_blue">синий</string>
+
+    <!-- Settings AD Content -->
+    <string name="ad_content_title">Пользовательский контент рекламы</string>
+    <string name="ad_content_dialog_title">Установить содержание рекламы</string>
+    <string name="ad_content_summary">Установить рекламный контент для дирижабля</string>
+    <string name="ad_default_blessings">Удачи!!!</string>
+
+    <!-- addobject -->
+    <string name="addobject_select_to_add_app">Применения</string>
+    <string name="select_app_to_hide">Выберите приложение, чтобы скрыть</string>
+    <string name="addobject_select_to_add_folder_no_room">Нет свободного места.</string>
+    <string name="addobject_select_to_add_folder_not_empty">Папки не должно быть пустым.</string>
+    <string name="addobject_select_to_add_app_no_room">Нет больше места.</string>
+    <string name="app_sorting">App сортировка</string>
+    <string name="app_hiding">App скрытие</string>
+   
+    <!-- app icon decorator begin -->
+    <string name="show_shelf">Показать App иконки полки</string>
+    <string name="show_shelf_for_desktop_object">Показать небольшие объекты полки</string>
+    <!-- app icon decorator end -->
+    
+    <string name="load_ase_title">Добавить пользовательский 3D объект</string>
+    <string name="load_ase_summary">Он может загружать файл формата ASE, который экспортирован из 3DMax</string>
+</resources>

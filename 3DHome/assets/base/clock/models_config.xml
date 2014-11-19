@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_clock"
+    basedataFile="clock_basedata.cbf"
+    keyWords="clock"
+    localTrans="0,0,25,0,0,0,1,1.7,1.7,1.7"
+    sceneFile="clock_scene.cbf"
+    slotType="wall"
+    spanX="2"
+    spanY="2"
+    type="Clock" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="qiangshangyinying.png@clock_basedata.cbf"
+            imagePath="qiangshangyinying.png" />
+
+        <imageInfo
+            imageName="guabiao.jpg@clock_basedata.cbf"
+            imagePath="guabiao.jpg" />
+
+        <imageInfo
+            imageName="guabiao.jpg@clock_basedata.cbf_0"
+            imagePath="guabiao.jpg" />
+
+        <imageInfo
+            imageName="guabiao.jpg@clock_basedata.cbf_1"
+            imagePath="guabiao.jpg" />
+
+        <imageInfo
+            imageName="guabiao.jpg@clock_basedata.cbf_2"
+            imagePath="guabiao.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="hour_hand"
+                spatialName="clock_hour@group_clock" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="min_hand"
+                spatialName="clock_min@group_clock" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="sec_hand"
+                spatialName="clock_sec@group_clock" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2113664" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry
+                regularName="dial_pad"
+                spatialName="Cylinder05@group_clock" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114693" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

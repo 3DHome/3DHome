@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sceneConfig sceneName="home8" >
+
+    <skyInScene>
+
+        <Object
+            name="group_sky"
+            isNativeObj="1"
+            type="Sky" />
+    </skyInScene>
+
+    <houseInScene>
+
+        <Object
+            name="house_lighten_theme"
+            isNativeObj="1"
+            type="House" />
+    </houseInScene>
+
+    <deskInScene>
+
+        <Object
+            name="group_desk_2"
+            isNativeObj="1"
+            type="DeskPort" />
+    </deskInScene>
+
+    <objectsOnwall>
+
+        <Object
+            name="group_tv"
+            isNativeObj="1"
+            slotIndex="0"
+            slotStartX="0"
+            slotStartY="1"
+            type="TV" />
+    </objectsOnwall>
+
+    <objectsOnDesktop>
+
+        <Object
+            name="group_pc"
+            isNativeObj="1"
+            slotIndex="0"
+            type="Laptop" />
+
+        <Object
+            name="group_contact"
+            isNativeObj="1"
+            slotIndex="1"
+            type="Contact" />
+
+        <Object
+            name="group_sms"
+            isNativeObj="1"
+            slotIndex="2"
+            type="SMS" />
+
+        <Object
+            name="group_s3"
+            isNativeObj="1"
+            slotIndex="3"
+            type="TouchDialer" />
+
+        <Object
+            name="fangdajing"
+            isNativeObj="1"
+            slotIndex="4"
+            type="fangdajing" />
+    </objectsOnDesktop>
+
+</sceneConfig>

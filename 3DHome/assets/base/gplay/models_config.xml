@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_gplay"
+    basedataFile="gplay_basedata.cbf"
+    componentName="com.android.vending/.AssetBrowserActivity"
+    sceneFile="gplay_scene.cbf"
+    slotType="desktop"
+    type="GooglePlayer" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="object_googleplay_zch.jpg@gplay_basedata.cbf_0"
+            imagePath="object_googleplay_zch.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="Object08@group_gplay@gplay_basedata.cbf" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+    </childrenAttribute>
+</config>

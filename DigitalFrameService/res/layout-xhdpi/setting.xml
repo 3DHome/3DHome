@@ -1,0 +1,141 @@
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:background="#e6f0f3">-->
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:background="#e6f0f3">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/digit_setting_bg_light">
+            <TextView
+                android:id="@+id/change_picture"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/change_pic"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:gravity="left|center"
+                android:layout_marginLeft="30dp" />
+            <include layout = "@layout/album"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/linedivider"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/digit_setting_bg_light">
+            <TextView
+                android:id="@+id/interval_time"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/interval_time"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:gravity="left|center"
+                android:layout_marginLeft="30dp" />
+            <include layout = "@layout/interval"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/linedivider"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/digit_setting_bg_light">
+            <TextView
+                android:id="@+id/select_frame_material"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/select_frame_material"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:gravity="left|center"
+                android:layout_marginLeft="30dp"
+                />
+            <include layout = "@layout/frame_meterial"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/linedivider"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/digit_setting_bg_light">
+            <TextView
+                android:id="@+id/picture_num_and_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/photo_count_and_layout"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:gravity="left|center"
+                android:layout_marginLeft="30dp" />
+        </LinearLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpagerLayout"
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:background="#c7d6db"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="13dp"
+            android:gravity="center"
+            android:weightSum="1.0"
+            android:background="#c7d6db" >
+
+            <LinearLayout
+                android:id="@+id/viewpaperLayout_selected"
+                android:layout_width="fill_parent"
+                android:layout_height="13dp"
+                android:gravity="center"
+                android:background="@drawable/digit_setting_bg_dark"
+                >
+
+                <ImageView
+                    android:id="@+id/dot_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dot_selected" />
+
+                <ImageView
+                    android:id="@+id/dot_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dot_normal" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:weightSum="1.0"
+            android:background="#c7d6db" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:background="@drawable/digit_setting_bg_dark"/>
+
+        </LinearLayout>
+    </LinearLayout>
+<!--</ScrollView>-->

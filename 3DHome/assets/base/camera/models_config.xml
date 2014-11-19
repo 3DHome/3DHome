@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_camera"
+    basedataFile="camera_basedata.cbf"
+    keyWords="camera"
+    localTrans="0,0,0,0,0,0,1,1,1,1"
+    sceneFile="camera_scene.cbf"
+    slotType="desktop"
+    type="Camera" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="camera.png@camera_basedata.cbf_0"
+            imagePath="camera.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="camera@group_camera@camera_basedata.cbf" />
+
+            <lights>
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

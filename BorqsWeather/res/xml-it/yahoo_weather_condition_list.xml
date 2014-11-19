@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<condition code="0" displayName="Tornado" key="tornado" type="4" />
+	<condition code="1" displayName="Tempesta tropicale" key="tropical storm"
+		type="4" />
+	<condition code="2" displayName="uragano" key="hurricane"
+		type="4" />
+	<condition code="3" displayName="Temporali violenti" key="severe thunderstorms"
+		type="3" />
+	<condition code="4" displayName="temporali" key="thunderstorms"
+		type="3" />
+	<condition code="5" displayName="Pioggia mista e neve" key="mixed rain and snow"
+		type="8" />
+	<condition code="6" displayName="Pioggia mista e nevischio" key="mixed rain and sleet"
+		type="10" />
+	<condition code="7" displayName="Mista Neve e nevischio" key="mixed snow and sleet"
+		type="8" />
+	<condition code="8" displayName="Drizzle congelamento" key="freezing drizzle"
+		type="1" />
+	<condition code="9" displayName="Drizzle" key="drizzle" type="1" />
+	<condition code="10" displayName="congelamento pioggia" key="freezing rain"
+		type="1" />
+	<condition code="11" displayName="docce" key="showers"
+		type="1" />
+	<condition code="12" displayName="docce" key="showers"
+		type="1" />
+	<condition code="13" displayName="raffiche di neve" key="snow flurries"
+		type="2" />
+	<condition code="14" displayName="Rovesci di neve leggeri" key="light snow showers"
+		type="2" />
+	<condition code="15" displayName="neve di salto" key="blowing snow"
+		type="2" />
+	<condition code="16" displayName="nevicata" key="snow" type="2" />
+	<condition code="17" displayName="grandine" key="hail" type="9" />
+	<condition code="18" displayName="nevischio" key="sleet" type="10" />
+	<condition code="19" displayName="Dust" key="dust" type="7" />
+	<condition code="20" displayName="Foggy" key="foggy" type="6" />
+	<condition code="21" displayName="Haze" key="haze" type="6" />
+	<condition code="22" displayName="Smoky" key="smoky" type="6" />
+	<condition code="23" displayName="blustery" key="blustery"
+		type="4" />
+	<condition code="24" displayName="Windy" key="windy" type="4" />
+	<condition code="25" displayName="freddo" key="cold" type="4" />
+	<condition code="26" displayName="nuvoloso" key="cloudy" type="5" />
+	<condition code="27" displayName="Per lo più nuvoloso" key="mostly cloudy (night)"
+		type="5" />
+	<condition code="28" displayName="Per lo più nuvoloso" key="mostly cloudy (day)"
+		type="5" />
+	<condition code="29" displayName="Parzialmente nuvoloso" key="partly cloudy (night)"
+		type="0" />
+	<condition code="30" displayName="Parzialmente nuvoloso" key="partly cloudy (day)"
+		type="0" />
+	<condition code="31" displayName="Cancella" key="clear (night)"
+		type="4" />
+	<condition code="32" displayName="Soleggiato" key="sunny" type="4" />
+	<condition code="33" displayName="Fiera" key="fair (night)"
+		type="4" />
+	<condition code="34" displayName="Fiera" key="fair (day)"
+		type="4" />
+	<condition code="35" displayName="Pioggia mista e grandine" key="mixed rain and hail"
+		type="1" />
+	<condition code="36" displayName="caldo" key="hot" type="4" />
+	<condition code="37" displayName="Temporali"
+		key="isolated thunderstorms" type="3" />
+	<condition code="38" displayName="Temporali"
+		key="scattered thunderstorms" type="3" />
+	<condition code="39" displayName="Temporali"
+		key="scattered thunderstorms" type="3" />
+	<condition code="40" displayName="Parzialmente nuvoloso" key="scattered showers"
+		type="1" />
+	<condition code="41" displayName="La neve pesante" key="heavy snow"
+		type="2" />
+	<condition code="42" displayName="Nevicate sparse"
+		key="scattered snow showers" type="2" />
+	<condition code="43" displayName="La neve pesante" key="heavy snow"
+		type="2" />
+	<condition code="44" displayName="Parzialmente nuvoloso" key="partly cloudy"
+		type="0" />
+	<condition code="45" displayName="Rovesci temporaleschi" key="thundershowers"
+		type="3" />
+	<condition code="46" displayName="Rovesci di neve" key="snow showers"
+		type="2" />
+	<condition code="47" displayName="isolati Rovesci temporaleschi"
+		key="isolated thundershowers" type="3" />
+	<condition code="3200" displayName="non disponibile" key="not available"
+		type="-1" />
+	
+	<condition code="100" displayName="leggera pioggia"
+		key="light rain" type="1" />
+	<condition code="101" displayName="pioggia"
+		key="moderate rain" type="1" />
+	<condition code="102" displayName="forti piogge"
+		key="heavy rain" type="1" />
+	<condition code="103" displayName="Tempesta di pioggia"
+		key="rainstorm" type="1" />
+	<condition code="104" displayName="temporale grave"
+		key="severe rainstorm" type="1" />
+	<condition code="105" displayName="Extra pioggia torrenziale"
+		key="extra torrential rainstorm" type="1" />
+	<condition code="106" displayName="Doccia con tuoni e grandine"
+		key="shower with thunder and hail" type="3" />
+	<condition code="107" displayName="pioggia"
+		key="rain" type="1" />
+	<condition code="108" displayName="Tempesta di neve"
+		key="snowstorm" type="2" />
+	<condition code="109" displayName="Pioggia"
+		key="moderate snow" type="2" />
+	<condition code="110" displayName="Polvere e sabbia tempesta"
+		key="dust and sand storm" type="7" />
+	<condition code="111" displayName="Vento di polvere e sabbia"
+		key="wind with dust and sand" type="7" />
+	<condition code="112" displayName="Polvere severa e tempesta di sabbia"
+		key="severe dust and sand storm" type="7" />
+
+</resources>

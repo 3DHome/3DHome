@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_edit_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-10dip"
+        android:paddingRight="4dip"
+        android:paddingLeft="4dip"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/search_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dip"
+            android:layout_gravity="top"
+            android:text="@string/search_activity_hint_text"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </LinearLayout>
+
+    <LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5">
+        <EditText
+            android:id="@+id/search_src_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dip"
+            android:layout_marginTop="6dip"
+            android:maxLines="6"
+            android:gravity="top|left">
+        </EditText>
+    </LinearLayout>
+
+    <Button 
+            android:id="@+id/search_go_btn"
+            android:background="@drawable/btn_search_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dip"
+            android:layout_marginBottom="15dip"
+            android:layout_marginLeft="2dip"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/search_activity_button_text"
+        />
+</LinearLayout>

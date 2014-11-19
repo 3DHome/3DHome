@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_ipad"
+    basedataFile="ipad_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,1.3,1.3,1.3"
+    sceneFile="ipad_scene.cbf"
+    slotType="desktop"
+    type="Laptop" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="ipad_black_fhq.jpg@ipad_basedata.cbf"
+            imagePath="ipad_black_fhq.jpg" />
+
+        <imageInfo
+            imageName="ipad_black_fhq.jpg@ipad_basedata.cbf_0"
+            imagePath="ipad_black_fhq.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="Object01@group_ipad" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+
+        <child>
+
+            <geometry spatialName="pad@group_ipad" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

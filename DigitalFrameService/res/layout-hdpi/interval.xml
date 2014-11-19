@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:showDividers="middle" >
+
+    <LinearLayout android:id="@+id/interval0"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:showDividers="middle"
+        android:layout_weight="2.0">
+
+        <ImageButton android:id="@+id/interval_btn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_normal" >
+        </ImageButton>
+
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@string/min_5">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/interval1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:showDividers="middle"
+        android:layout_weight="2.0">
+
+        <ImageButton android:id="@+id/interval_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_normal" >
+        </ImageButton>
+
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@string/min_10">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/interval2"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:showDividers="middle"
+        android:layout_weight="2.0">
+
+        <ImageButton android:id="@+id/interval_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_normal" >
+        </ImageButton>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@string/min_15">
+        </TextView>
+    </LinearLayout>
+</LinearLayout>

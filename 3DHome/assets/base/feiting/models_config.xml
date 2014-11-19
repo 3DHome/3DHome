@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_feiting"
+    basedataFile="feiting_basedata.cbf"
+    localTrans="0,0,0,0,0,0,1,1.2,1.2,1.2"
+    sceneFile="feiting_scene.cbf"
+    slotType="sky"
+    type="Airship" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="ft_01.jpg@feiting_basedata.cbf"
+            imagePath="ft_01.jpg" />
+
+        <imageInfo
+            imageName="shengzi_03.png@feiting_basedata.cbf"
+            imagePath="shengzi_03.png" />
+
+        <imageInfo
+            imageName="ggq_01.jpg@feiting_basedata.cbf"
+            imagePath="ggq_01.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry
+                regularName="banner"
+                spatialName="ggq_01@group_feiting" />
+
+            <lights />
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2179072" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

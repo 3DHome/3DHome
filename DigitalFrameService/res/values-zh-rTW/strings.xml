@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">相冊</string>
+    <string name="action_settings">設置</string>
+
+    <string name="edit_photo_frame">編輯電子相冊</string>
+    <string name="change_pic">更換相冊</string>
+    <string name="select_frame_material">選擇相框材質</string>
+    <string name="photo_count_and_layout">照片數量及佈局</string>
+    <string name="interval_time">間隔時間</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="min_5">5 分鐘</string>
+    <string name="min_10">10 分鐘</string>
+    <string name="min_15">15 分鐘</string>
+    <string name="single">單張</string>
+    <string name="folder">文件夾</string>
+    <string name="all">全部</string>
+</resources>

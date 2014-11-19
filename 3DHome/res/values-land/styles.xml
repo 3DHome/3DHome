@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="OptionMenu">
+        <item name="android:layout_width">@dimen/option_menu_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/option_menu_padding</item>
+        <item name="android:paddingRight">@dimen/option_menu_padding</item>
+        <item name="android:background">@drawable/menu_background</item>
+    </style>
+
+</resources>

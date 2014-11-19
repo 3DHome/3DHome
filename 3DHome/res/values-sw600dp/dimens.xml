@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="workspace_cell_width">96dp</dimen>
+    <dimen name="workspace_cell_height">96dp</dimen>
+
+    <dimen name="helper_title_font">21px</dimen>
+    <dimen name="helper_content_font">15px</dimen>
+    <dimen name="app_menu_title_font">20px</dimen>
+    <dimen name="app_menu_icon_font">14px</dimen>
+    <dimen name="app_menu_body_font">20px</dimen>
+    
+    <!-- Size of icons in workspace -->
+    <dimen name="app_customize_icon_size">72dp</dimen>
+    <dimen name="app_customize_icon_PaddingTop">6dp</dimen>
+    <dimen name="app_customize_icon_Padding">2dp</dimen>
+    <dimen name="app_customize_icon_text_size">20dp</dimen>
+    
+    <!-- AppsCustomize -->
+    <dimen name="apps_customize_cell_width">96dp</dimen>
+    <dimen name="apps_customize_cell_height">140dp</dimen>
+    <dimen name="apps_customize_pageLayoutWidthGap">36dp</dimen>
+    <dimen name="apps_customize_pageLayoutHeightGap">36dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingTop">25dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingBottom">72dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingLeft">10dp</dimen>
+    <dimen name="apps_customize_pageLayoutPaddingRight">10dp</dimen>
+    <dimen name="apps_customize_dock_size">72dp</dimen>
+    
+    <dimen name="object_menu_padding">10dp</dimen>
+    <dimen name="object_menu_item_padding_top">10dp</dimen>
+    <dimen name="object_menu_item_height">95dp</dimen>
+    <dimen name="object_menu_item_width">96dp</dimen>
+    <dimen name="object_menu_item_text_size">15dp</dimen>
+
+    <!-- addobject begin -->
+    <dimen name="addobject_settings_w">500dp</dimen>
+    <dimen name="addobject_settings_h">135dp</dimen>
+    <dimen name="addobject_settings_textsize">28dp</dimen>
+    <dimen name="addobject_glassbg_w">180dp</dimen>
+    <dimen name="addobject_glassbg_h">207dp</dimen>
+    <dimen name="addobject_glassbg_marginleft">16dp</dimen>
+    <dimen name="addobject_icon_padding_top">36dp</dimen>
+    <dimen name="addobject_board_topbottom_w">500dp</dimen>
+    <dimen name="addobject_group_padding_top">44dp</dimen>
+    <dimen name="addobject_text_layout_h">72dp</dimen>
+    <dimen name="addobject_text_layout_textsize">24dp</dimen>
+
+    <dimen name="addobject_dialog_title_textsize">26dp</dimen>
+
+    <!-- _contentv_bluelight_lr_w * 2 + _contentv_default_w = _contentv_default_clear_w -->
+    <!-- _contentv_bluelight_padding = _contentv_bluelight_lr_w - 2 -->
+    <dimen name="addobject_dialog_contentv_default_clear_w">688dp</dimen>
+    <dimen name="addobject_dialog_contentv_default_w">608dp</dimen>
+    <dimen name="addobject_dialog_contentv_default_h">1080dp</dimen>
+    <dimen name="addobject_dialog_contentv_bluelight_lr_w">40dp</dimen>
+    <dimen name="addobject_dialog_contentv_bluelight_btm_h">40dp</dimen>
+    <dimen name="addobject_dialog_contentv_bluelight_padding">38dp</dimen>
+
+    <!-- _contentv_item_icon_wh + _contentv_item_padding * 2 = _contentv_object_w -->
+    <dimen name="addobject_dialog_contentv_object_w">112dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_icon_wh">72dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_padding">20dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_checkbox_padding">10dp</dimen>
+    <dimen name="addobject_dialog_contentv_item_checkbox_wh">26dp</dimen>
+    <dimen name="addobject_dialog_contentv_object_icontext_size">12dp</dimen>
+
+    <dimen name="addobject_dialog_indicator_h">60dp</dimen>
+
+    <dimen name="addobject_dialog_folder_wh">150dp</dimen>
+    <dimen name="addobject_dialog_folder_paddingbottom">12dp</dimen>
+    <dimen name="addobject_dialog_folder_icon_padding">12dp</dimen>
+
+    <dimen name="addobject_dialog_button_w">280px</dimen>
+    <dimen name="addobject_dialog_button_h">80px</dimen>
+    <!-- addobject end-->
+
+</resources>

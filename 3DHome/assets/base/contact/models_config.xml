@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config
+    name="group_contact"
+    basedataFile="book_xiu_basedata.cbf"
+    keyWords="peopleactivity,contact"
+    localTrans="0,0,-2,0,0,0,1,0.82,0.82,0.82"
+    maxPoint="37.2855,26.9321,80.6268"
+    minPoint="-37.2855,-26.9425,0.7989"
+    sceneFile="book_xiu_scene.cbf"
+    slotType="desktop"
+    type="Contact" >
+
+    <imageInfos>
+
+        <imageInfo
+            imageName="object_lianxiren_fhq.jpg@book_xiu_basedata.cbf"
+            imagePath="object_lianxiren_fhq.jpg" />
+    </imageInfos>
+
+    <childrenAttribute>
+
+        <child>
+
+            <geometry spatialName="object_lianxiren_fhq@book_xiu" />
+
+            <lights>
+
+                <light lightName="mainsun" />
+            </lights>
+
+            <geostatus
+                spatialDataValue="15"
+                statusValue="2114592" />
+
+            <alpha alphaValue="1" />
+
+            <effectData
+                effectDataW="0"
+                effectDataX="0"
+                effectDataY="0"
+                effectDataZ="0" />
+        </child>
+    </childrenAttribute>
+
+</config>

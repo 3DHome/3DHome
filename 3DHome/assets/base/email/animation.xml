@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation id = "email">
+    <!--NOT_REPEAT = 0, REPEAT, ONE_FRAME, REVERSE_NOT_REPEAT, REVERSE_REPEAT, REVERSE_ONE_FRAME-->
+    <!--
+    Rigid Animation should NOT set "REVERSE_XXX",if need reverse play,please use 
+    animation->setRunMode(SE_Animation::REVERSE_NOT_REPEAT);
+    animation->run();
+    
+    Mesh Animation CAN set REVERSE_NOT_REPEAT directly!!!!
+    -->
+    <run_mode mode = "0" />
+    
+    <!--REAL = 0, SIMULATE-->
+    <time_mode mode = "1" />
+    
+    <time_per_frame tpf = "1" />
+    <frame_number fn = "60" />
+    
+    <!--timePerFrame * FrameNum = druation,not use for NOW-->
+    <duration d= "0" />
+    
+    <!--the speed of the animation playing, >1 means accelerate, < 1 means decelerate-->
+    <!--timePerFrame * speed = newtimePerFrame-->
+    <!--speed not use now!!!, DO NOT change it!! -->
+    <speed s = "1.0" />
+    
+    <!--default system simulated frame rate is 30,application->framerate = 30-->
+    <system_frame_rate rate = "30" />
+    
+    <listener>animation_listener.xml</listener>    
+</animation>

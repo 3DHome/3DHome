@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+    <!-- 俯视桌面的相机位置78(fov),0,-1000,600(location),0,-0.866,0.5(axisZ) -->
+
+    <observation value="0,-638.452,485.094,0,-0.9398,0.3418,0,0,1,78,10,5000" />
+    <mirrordensity value="0.1" />
+</config>

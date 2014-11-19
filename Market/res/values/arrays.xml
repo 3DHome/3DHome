@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="theme_category">
+        <item>@string/top_navigation_theme</item>
+        <item>@string/top_navigation_object</item>
+    </string-array>
+
+    <string-array name="wallpaper_category">
+        <item>@string/tab_title_local</item>
+        <item>@string/tab_title_stock</item>
+    </string-array>
+
+    <string-array name="wallpaper_category_all">
+        <item>@string/tab_title_stock</item>
+        <item>@string/tab_title_local</item>
+        <item>@string/tab_title_share</item>
+    </string-array>
+
+</resources>

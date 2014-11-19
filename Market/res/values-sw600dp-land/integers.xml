@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<integer name="gridview_number">5</integer>
+	<integer name="object_list_column">4</integer>
+	<integer name="wallpaper_list_column">3</integer>
+</resources>

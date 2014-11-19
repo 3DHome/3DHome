@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/products_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	
+     <ListView
+         android:id="@+id/listview"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:divider="@null"
+         android:cacheColorHint="@android:color/transparent"
+		android:listSelector="@android:color/transparent"
+		android:paddingTop="@dimen/product_item_padding"/>
+    <RelativeLayout android:id="@+id/layout_tips"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:gravity="left|center_vertical"
+        android:background="#ccff6600"
+        android:textSize="16sp"
+        android:paddingLeft="8dp"
+        android:textColor="@android:color/white"
+        android:text="@string/press_to_room"
+        android:visibility="gone">
+        
+		<TextView android:id="@+id/tv_tips"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentLeft="true"
+	        android:textSize="18sp"
+	        android:textColor="@android:color/white"
+	        android:text="@string/press_to_room"/>
+		<LinearLayout android:id="@+id/tv_close"
+	        android:layout_width="48dp"
+	        android:layout_height="48dp"
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+	        android:gravity="center">
+		    
+			<TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/ic_clear_normal"/>
+		</LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/Quake/res/strings.xml
+**
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">3D 홈</string>
+    <string name="description">진실의 세계는 입체입니다. 어떤 기타 메인 모니터와도 같지 않고, 3D 메인 모니터는 당신에게 직접 경험하는 진실체험을 가져다 줄 수 있습니다. 시뮬레이션을 통해 당신이 일상생활 중에서 어떻게 당신의 휴대폰, 텔레비죤 , 일력 등을 사용하고, 3D 메인 모니터는 당신에게 한 가지의 완전히 다르고 새로운 휴대폰과 태블릿 PC 체험을 가져옵니다.</string>
+
+    <!-- Home setting strings -->
+    <string name="menu_preference">3D홈 설정</string>
+    <string name="setting_display">디스플레이설치</string>
+    <string name="themes">테마</string>
+    <string name="theme_summary">테마를 다운로드 및 적용</string>
+    <string name="objects">3D 개체</string>
+    <string name="object_summary">다운로드 및 관리자 3D 개체</string>
+    <string name="setting_style">스타일 설정</string>
+    <string name="icon_background_title">응용 프로그램 아이콘 배경</string>
+    <string name="full_screen">전체 화면</string>
+    <string name="wall_indicator">벽 표시</string>
+    <string name="confirm">OK</string>
+    <string name="cancel">취소</string>
+    <string name="enable">사용개시</string>
+    <string name="disable">사용 금지</string>
+    <string name="weather_settings">날씨 설정</string>
+    <string name="weather_summary">위치, 단위 설정</string>
+    <string name="update_settings">설치 업데이트</string>
+    <string name="upgrade_title">최신버전 검색</string>
+    <string name="share">몫</string>
+    <string name="score">점수</string>
+    <string name="feedback">고객의견 </string>
+    <string name="help">도움</string>
+    <string name="about">사이트소개</string>
+
+    <!-- Customize house setting strings  -->
+    <string name="edit_wall_menu_title">배경 화면을 선택합니다</string>
+
+    <!-- delete 3D Objects dialog -->
+    <string name="delete_objects_title">3D 개체를 삭제</string>
+    <string name="confirm_delete_selected_objects"><xliff:g id="name">%s</xliff:g> 를 삭제 하시겠습니까?</string>
+
+    <!-- Check update strings -->
+    <string name="network_error">휴대폰이 네트워크까지 연결되지 않았습니다.</string>
+    <string name="no_update">현재 최신버전입니다.</string>
+    <string name="check_update_error">네트워크 혹은 서버의 문제 때문에 소프트웨어 버젼 검사와 업그레이드가 실패, 잠시 후 재시도를 하십시오.</string>
+    <string name="upgrade_dialog_title">프로그램 업데이트</string>
+    <string name="wait_dialog_msg_sw">검사 중\u2026</string>
+    <string name="upgrade_dialog_msg">최신버전이 검색되였습니다. \r\n 만약 폰 인테넷 다운로드하면 통신비용이 발생수 있습니다. 다운로드하시겠습니까?</string>
+    <string name="upgrade_dialog_current_version">현재버전：</string>
+    <string name="upgrade_dialog_latest_version">최신버전：</string>
+    <string name="upgrade_dialog_file_size">파일크기：</string>
+    <string name="upgrade_dialog_update_changes">업데이트설명：</string>
+    <string name="upgrade_dialog_ok">다운로드</string>
+    <string name="upgrade_dialog_cancel">포기한다</string>
+
+    <string name="share_content">나는 3D 홈을 설치했습니다, 당신이 그것을 시도 추천합니다, 주소를 다운로드: \n%1$s=%2$s</string>
+
+    <!-- Help strings -->
+    <string name="help_title_00">프로그램을 열람</string>
+    <string name="help_title_01">프로그램을 추가</string>
+    <string name="help_title_02">물체를 삭제</string>
+    <string name="help_content_00">공개석상의 노트북에 이미 설치한 모든 프로그램을 클릭하십시오.</string>
+    <string name="help_content_01">길게 누른상테에서 프로그램을 이동하여 벽에 첨가한다.</string>
+    <string name="help_content_02">수를 던지고 / 쓰레기로 드래그를 통해 현장에서 개체를 삭제합니다.</string>
+
+    <!-- About strings -->
+    <string name="about_version">버전： %s</string>
+    <string name="about_website">공식 홈페이지： http://apps.borqs.com/3dhome.html</string>
+
+    <!-- Weather strings -->
+    <string name="no_info_msg">날씨 정보가 없음.</string>
+    <string name="day_of_week_short_sunday">일</string>
+    <string name="day_of_week_short_monday">월</string>
+    <string name="day_of_week_short_tuesday">화</string>
+    <string name="day_of_week_short_wednesday">수</string>
+    <string name="day_of_week_short_thursday">목</string>
+    <string name="day_of_week_short_friday">금</string>
+    <string name="day_of_week_short_saturday">토</string>
+
+    <string name="gadget_error_text">소형 플러그인이 로드하고 있다 </string>
+    <string name="activity_not_found">"애플리케이션이 설치되어 있지 않았습니다."</string>
+    <string name="uninstall_system_app_text">"이것은 시스템애플리케이션 입니다. 삭제할수 없습니다."</string>
+    <string name="delete_preset_object_text">사전 개체를 삭제할 수 없습니다.</string>
+    <string name="delete_being_used_desk_text">사용중인 테이블을 삭제할 수 없습니다.</string>
+    <string name="can_not_put_object_in_room">개체가이 방에 배치 할 수 없습니다</string>
+    
+    <!-- 3D Object strings -->
+    <string name="select_app">귀속된 프로그램을 선택</string>
+    
+	<!-- select shortcut dialog -->
+    <string name="title_select_shortcut">바로가기 선택</string>
+    
+    <!-- Room strings -->
+    <string name="no_room">추가 공간이 없음.</string>
+    <string name="no_room_desk">추가할 공간이 없음.</string>
+
+    <!-- app drawer -->
+    <string name="title_select_drawer_sort">정렬 유형을 선택</string>
+
+    <string name="search_activity_title">구글 검색</string>
+    <string name="search_activity_hint_text">를 입력하여 검색 키워드</string>
+    <string name="search_activity_button_text">검색</string>
+
+    <string name="change_icon_dialog_title">아이콘 변경</string>
+    <string name="change_icon_dialog_select_img">이미지 선택</string>
+    <string name="change_icon_dialog_reset_img">재설정</string>
+    <string name="change_label_dialog_title">이름 바꾸기</string>
+    
+    <!-- Folder strings -->
+    <string name="folder_title">폴더</string>
+    
+    <!-- Application search -->
+    <string name="app_search_hint">검색</string>
+
+    <!-- Long click object menu icon text -->
+    <string name="long_click_object_menu_delete">삭제</string>
+    <string name="long_click_object_menu_change_bind">제본</string>
+    <string name="long_click_object_menu_change_icon">아이콘</string>
+    <string name="long_click_object_menu_change_label">이름 바꾸기</string>
+    <string name="long_click_object_menu_uninstall">제거</string>
+    <string name="long_click_object_menu_resize">사이즈</string>
+    <string name="long_click_object_menu_change_color">색</string>
+    <string name="long_click_object_menu_replace">교체</string>
+    
+    <!-- Camera Adjust -->
+    <string name="camera_adjust_settings_summary">위치와 카메라의 FOV를 조정</string>
+    <string name="camera_adjust_settings_title">카메라 조정</string>
+    <string name="camera_adjust_down_up_text">의 수직 위치</string>
+    <string name="camrea_adjust_setp_in_out_text">전면 및 후면 위치</string>
+    <string name="camera_adjust_camera_location">카메라 위치</string>
+    <string name="camera_adjust_camera_fov">FOV</string>
+    <string name="camera_adjust_button_reset">재설정</string>
+
+    <!-- Edit color dialog -->
+    <string name="edit_color_red">빨강</string>
+    <string name="edit_color_green">녹색</string>
+    <string name="edit_color_blue">푸른</string>
+
+    <!-- Settings AD Content -->
+    <string name="ad_content_title">사용자 정의 광고 내용</string>
+    <string name="ad_content_dialog_title">광고 콘텐츠를 설정</string>
+    <string name="ad_content_summary">비행선에 대한 광고 콘텐츠를 설정</string>
+    <string name="ad_default_blessings">행운을 빕니다!!!</string>
+
+    <!-- addobject -->
+    <string name="addobject_select_to_add_app">응용 프로그램</string>
+    <string name="select_app_to_hide">숨기려면 응용 프로그램을 선택</string>
+    <string name="addobject_select_to_add_folder_no_room">공간이 없습니다.</string>
+    <string name="addobject_select_to_add_folder_not_empty">폴더가 비어 안된다.</string>
+    <string name="addobject_select_to_add_app_no_room">공간이 더 이상 없습니다.</string>
+    <string name="app_sorting">앱 정렬</string>
+    <string name="app_hiding">앱 숨기기</string>
+    
+    <!-- app icon decorator begin -->
+    <string name="show_shelf">쇼 앱 선반 아이콘</string>
+    <string name="show_shelf_for_desktop_object">작은 물체 선반보기</string>
+    <!-- app icon decorator end -->
+    
+    <string name="load_ase_title">사용자 정의 3D 개체 추가</string>
+    <string name="load_ase_summary">그것은 3DMAX에서 내 보낸 ASE 형식의 파일을로드 할 수 있습니다</string>
+</resources>

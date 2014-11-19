@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gallery</string>
+    <string name="action_settings">설정</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="edit_photo_frame">전자 앨범 편집</string>
+    <string name="change_pic">앨범을 대체</string>
+    <string name="select_frame_material">프레임 소재를 선택</string>
+    <string name="photo_count_and_layout">사진과 레이아웃의 수</string>
+    <string name="interval_time">시간 간격</string>
+    <string name="min_5">5 분</string>
+    <string name="min_10">10 분</string>
+    <string name="min_15">15 분</string>
+    <string name="single">하나의</string>
+    <string name="folder">폴더</string>
+    <string name="all">모든</string>
+</resources>

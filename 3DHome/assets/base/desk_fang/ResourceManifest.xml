@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BorqsResource version="1" defaultLang="en_US">
+<id>com.borqs.se.object.desk_fang</id>
+<app>com.borqs.se</app>
+<category>object</category>
+<name>
+  <langs>
+    <en_US>Square table</en_US>
+    <zh_CN>方桌</zh_CN>
+  </langs>
+</name>
+<authorName>Borqs</authorName>
+<cover>cover.png</cover>
+<screenshot1>cover.png</screenshot1>
+<version>1</version>
+</BorqsResource>

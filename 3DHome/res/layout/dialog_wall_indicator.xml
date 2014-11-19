@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="2dp"
+    android:background="@drawable/wall_indicator_bg_8" >
+
+    <com.borqs.se.home3d.WallIndicatorView
+        android:id="@+id/wall_indicator_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/wall_indicator_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp" />
+
+</FrameLayout>

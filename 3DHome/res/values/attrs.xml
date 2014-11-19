@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpecificProgressBar">
+        <attr name="progressPrefix" format="string" />
+        <attr name="progressTextColor" format="color"/>
+        <attr name="progressTextSize" format="dimension"/>
+    </declare-styleable>
+</resources>

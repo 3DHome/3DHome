@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="network_error">手机没有连接到网络。</string>
+    <string name="dialog_gls_msg">此应用程序将使用您的当前位置，请在系统设置中启用“我的位置”源。</string>
+    <string name="activity_not_found">"未安装该应用程序。"</string>
+    <string name="enable">启用</string>
+    <string name="disable">禁用</string>
+    <!-- Weather setting strings -->
+    <string name="weather_settings">天气设置</string>
+    <string name="auto_update_common">基本设置</string>
+    <string name="auto_location_title">使用“我的位置”</string>
+    <string name="auto_location_summary">自动确定位置</string>
+    <string name="set_location_title">设置位置</string>
+    <string name="set_location_msg">输入城市名称全拼： </string>
+    <string name="city_name_error">城市名称不能为空。</string>
+    <string name="dialog_choose_city">选择城市</string>
+    <string name="weather_update_success">已更新天气位置。</string>
+    <string name="update_now_title">立即更新</string>
+    <string name="update_now_summary">确保手机已经连接到网络</string>
+  	<string name="switch_units_title">切换温度单位</string>
+    <string name="switch_units_summary_celsius">摄氏温度</string>
+    <string name="switch_units_summary_fahrenheit">华氏温度</string>
+    
+    <string name="auto_update_setting">自动更新设置</string>
+    <string name="auto_update_title">开启自动更新</string>
+    <string name="auto_update_summary">通过网络自动获取天气信息</string>
+    <string name="start_time_title">更新开始时间</string>
+    <string name="end_time_title">更新结束时间</string>
+    <string name="interval_time_title">更新间隔时间</string>
+    <string name="interval_time_summary">3 小时</string>
+    <string name="get_latest_weather_failed">未能获取到最新的天气信息。</string>
+    <string name="wait_dialog_title">请稍候\u2026</string>
+    <string name="wait_dialog_msg_weather">正在搜索\u2026</string>
+    <string name="req_error">天气信息获取失败。</string>
+    <string name="locate_error">未能获取当前位置。</string>
+    <string name="gps_error">请打开GPS.</string>
+
+    <string name="wind_n">北风</string>
+    <string name="wind_ne">东北风</string>
+    <string name="wind_e">东风</string>
+    <string name="wind_se">东南风</string>
+    <string name="wind_s">南风</string>
+    <string name="wind_sw">西南风</string>
+    <string name="wind_w">西风</string>
+    <string name="wind_nw">西北风</string>
+    <string name="wind_var">无固定风向</string>
+    <string name="wind_condition_1">微风</string>
+    <string name="wind_condition_2">微风</string>
+    <string name="wind_condition_3"><xliff:g id="direction" example="NE">%1$s</xliff:g>三级</string>
+    <string name="wind_condition_4"><xliff:g id="direction" example="NE">%1$s</xliff:g>四级</string>
+    <string name="wind_condition_5"><xliff:g id="direction" example="NE">%1$s</xliff:g>五级</string>
+    <string name="wind_condition_6"><xliff:g id="direction" example="NE">%1$s</xliff:g>六级</string>
+    <string name="wind_condition_7"><xliff:g id="direction" example="NE">%1$s</xliff:g>七级</string>
+    <string name="wind_condition_8"><xliff:g id="direction" example="NE">%1$s</xliff:g>八级</string>
+    <string name="wind_condition_9"><xliff:g id="direction" example="NE">%1$s</xliff:g>九级</string>
+    <string name="wind_condition_10"><xliff:g id="direction" example="NE">%1$s</xliff:g>十级</string>
+    <string name="wind_condition_11"><xliff:g id="direction" example="NE">%1$s</xliff:g>十一级</string>
+    <string name="wind_condition_hurricane">飓风<xliff:g id="direction" example="NE">%1$s</xliff:g></string>
+    
+    <string name="send_weather_log_title">发送天气日志</string>
+    <string name="send_weather_log_des">假如天气错误发送天气日志给开发者</string>
+	<string name="weather_log_email_title">我的天气是错误的</string>
+    <string name="weather_log_email_city">我的城市</string>
+    <string name="weather_log_email_description">描述</string>
+</resources>

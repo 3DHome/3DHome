@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <resources>
+      <string-array name="picture_selected">
+          <item>單張圖片</item>
+          <item>圖片文件夾</item>
+          <item>全部圖片</item>
+      </string-array>
+      <string-array name="material_selected">
+        <item>沉穩黑色</item>
+        <item>經典白色</item>
+        <item>清新木紋</item>
+        <item>時尚金屬</item>
+    </string-array>
+      <string-array name="interval_time">
+        <item>10分鐘</item>
+        <item>15分鐘</item>
+        <item>30分鐘</item>
+    </string-array>
+  </resources>

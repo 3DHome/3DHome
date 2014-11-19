@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <drawable name="translucent_background">#e0000000</drawable>
+    <drawable name="transparent_background">#00000000</drawable>
+    <drawable name="helper_translucent_background">#99000000</drawable>
+    <drawable name="red_drawable">#ffff0000</drawable>
+    <drawable name="blue_drawable">#ff0000ff</drawable>
+
+    <color name="appwidget_error_color">#FCCC</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="search_hint">#808080</color>
+    <color name="color_searchresult_highlight_blue">#ff379cff</color>
+    <!-- <color name="color_searchresult_highlight_blue">#ff1e90ff</color> -->
+
+    <color name="helper_title">#5E81C8</color>
+    <color name="helper_content">#7A7A7A</color>
+
+    <!-- addobject -->
+    <color name="addobject_touched_general_color">#4c84c7de</color>
+    <color name="addobject_touched_gridview_item_color">#3284c7de</color>
+    <color name="addobject_foldername_color_hint">#eeddff</color>
+    <color name="addobject_select_color_ntransparent_bg">#c0000000</color>
+    <color name="addobject_select_overmax_color">#9f0000</color>
+    
+    <color name="dim_foreground_disabled_holo_light">#ffcccccc</color>
+    <color name="dim_foreground_holo_light">#ff939393</color>
+    <color name="bright_foreground_holo_light">#ff000000</color>
+    <color name="bright_foreground_disabled_holo_light">#ffcccccc</color>
+
+</resources>
