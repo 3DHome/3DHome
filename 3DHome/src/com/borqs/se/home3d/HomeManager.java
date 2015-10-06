@@ -383,6 +383,8 @@ public class HomeManager {
         if (mWeatherService == null) {
             Context context = getContext();
             Intent intent = new Intent("com.borqs.borqsweather.weatherservice");
+            // for android 5.0+
+            intent.setPackage(context.getPackageName());
             context.bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
         }
     }
