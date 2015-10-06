@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.borqs.se"
     android:versionCode="4601"
     android:versionName="2.0.0.4601">
@@ -55,7 +56,7 @@
 
     <supports-screens android:requiresSmallestWidthDp="480" android:smallScreens="false"/>
 
-    <application
+    <application tools:replace="android:icon, android:label, android:theme, android:name"
         android:allowClearUserData="false"
         android:description="@string/description"
         android:icon="@drawable/app_icon"
@@ -203,89 +204,7 @@
             android:label="@string/search_activity_title"
             android:windowSoftInputMode="adjustResize" />
         
-        <!-- borqs market -->
-        <activity
-            android:name="com.borqs.market.MarketHomeActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/themes_market"
-            android:theme="@style/Theme.wallpaper"
-            />
-        <activity
-            android:name="com.borqs.market.ProductListActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
-        <activity
-            android:name="com.borqs.market.UserShareListActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
-        <activity
-            android:name="com.borqs.market.PartitionsListActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
-        <activity
-                android:name="com.borqs.market.wallpaper.WallpaperExportActivity"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:label="@string/tab_tile_wallpaper"
-                android:theme="@style/Theme.wallpaper"
-                >
-        </activity>
 
-        <activity
-            android:name="com.borqs.market.WallPaperProductListActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-            <!-- 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            -->            
-        </activity>
-        <activity
-            android:name="com.borqs.market.ProductTabActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
-
-        <activity
-                android:name="com.borqs.market.ProductLocalDetailActivity"
-                android:configChanges="orientation|keyboardHidden"
-                android:theme="@style/Theme.Sherlock.Custom"
-                />
-        <activity
-                android:name="com.borqs.market.ProductDetailActivity"
-                android:configChanges="orientation|keyboardHidden"
-                android:theme="@style/Theme.Sherlock.Custom"
-                />
-        <activity
-            android:name="com.borqs.market.CommentListActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper"
-        />
-        <activity
-            android:name="com.borqs.market.CreateCommentActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper"
-        />
-        <provider android:name="com.borqs.market.db.DownLoadProvider"
-                  android:exported="false"
-                  android:authorities="com.borqs.se.download"/>
-
-        <receiver android:name="com.borqs.market.service.LocalDataInitReciver">
-            <intent-filter >
-                <action android:name="com.borqs.market.intent.action.Init"/>
-                <action android:name="com.borqs.market.intent.action.Insert"/>
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.borqs.market.service.DownloadReciver">
-            <intent-filter >
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
-            </intent-filter>
-        </receiver>
         <receiver android:name="com.borqs.se.download.DownloadChangeReceiver">
             <intent-filter >
                 <action android:name="com.borqs.se.market.intent.action.DOWNLOAD_COMPLETE"/>

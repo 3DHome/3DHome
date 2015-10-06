@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+    }
+}
+
+ext {
+    compileSdkVersion = 22
+    buildToolsVersion = "23.0.0"
+
+    minSdkVersion = 14
+    targetSdkVersion = 23
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}

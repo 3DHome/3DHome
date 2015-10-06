@@ -1,0 +1,3 @@
+//include ':app', ':domain', ':model', ':common'
+
+include ':3DHome',':3DHomeEngine',':BaiduStatic',':BorqsWeather',':DigitalFrameService',':Market'
