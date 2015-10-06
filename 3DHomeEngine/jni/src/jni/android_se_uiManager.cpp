@@ -245,7 +245,9 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
     }
 
     jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
-    nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    //nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    // for android 5.0+
+    nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
 
     return JNI_TRUE;
 }

@@ -499,7 +499,9 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
     elementSizeShiftID = env->GetFieldID(bufferClass, "_elementSizeShift", "I");
 
     jclass assetManagerClass = env->FindClass("android/content/res/AssetManager");
-    nativeAssetManagerID = env->GetFieldID(assetManagerClass, "mObject", "I");
+    //nativeAssetManagerID = env->GetFieldID(assetManagerClass, "mObject", "I");
+    // for android 5.0+
+    nativeAssetManagerID = env->GetFieldID(assetManagerClass, "mObject", "J");
 
     if (env->RegisterNatives(clazz, gMethods, numMethods) < 0) {
         fprintf(stderr, "RegisterNatives failed for '%s'\n", className);

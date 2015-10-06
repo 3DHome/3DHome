@@ -1302,7 +1302,9 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
     methodInitObject = env->GetMethodID(classObject, "<init>", "(Ljava/lang/String;I)V");
 
     jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
-    nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    //nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    // for android 5.0+
+    nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
     methodGetParentName = env->GetMethodID(clazz, "getParentName", "()Ljava/lang/String;");
     methodGetParentIndex = env->GetMethodID(clazz, "getParentIndex", "()I");
     methodGetSceneName = env->GetMethodID(clazz, "getSceneName", "()Ljava/lang/String;");
