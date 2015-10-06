@@ -47,7 +47,6 @@
 
     <Button 
             android:id="@+id/search_go_btn"
-            android:background="@drawable/btn_search_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dip"

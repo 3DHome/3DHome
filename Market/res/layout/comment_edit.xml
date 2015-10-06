@@ -23,7 +23,6 @@
         android:gravity="left"
         android:padding="10dip"
         android:hint="@string/resource_comment_edit_text_default"
-        android:background="@drawable/comment_edittext_bg"
         android:maxLength="300" />
 
     <Button
