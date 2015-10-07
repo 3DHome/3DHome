@@ -33,15 +33,29 @@
             android:name="com.borqs.borqsweather.weather.WeatherSettings"
             android:title="@string/weather_settings"
             android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!--<activity-->
+            <!--android:theme="@android:style/Theme.Translucent"-->
+            <!--android:label="@string/weather_settings"-->
+            <!--android:name="com.borqs.borqsweather.weather.CheckLocServiceDialogActivity"-->
+            <!--android:title="@string/weather_settings"-->
+            <!--android:configChanges="keyboardHidden|orientation|screenSize" />-->
+        <service android:name="com.borqs.borqsweather.weather.LoopForInfoService" />
+
         <activity
             android:theme="@android:style/Theme.Translucent"
             android:label="@string/weather_settings"
             android:name="com.borqs.borqsweather.weather.CheckLocServiceDialogActivity"
             android:title="@string/weather_settings"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <service android:name="com.borqs.borqsweather.weather.LoopForInfoService" >
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:process=":remote"/>
+
+        <service android:name="com.borqs.borqsweather.weather.WeatherService"
+            android:process=":remote">
+            <intent-filter >
+                <action android:name="com.borqs.borqsweather.weatherservice" />
+            </intent-filter>
         </service>
-        
+
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

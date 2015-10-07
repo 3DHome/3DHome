@@ -145,7 +145,7 @@
 
         <activity
             android:name="com.borqs.digitalframe.Setting"
-            android:configChanges="keyboardHidden|screenSize" 
+            android:configChanges="keyboardHidden|screenSize"
             android:theme="@style/GalleryThemeNOActionBar"
             android:process=":remote">
             <intent-filter >
@@ -158,18 +158,12 @@
             android:theme="@style/GalleryThemeNOActionBar"
             android:label="@string/app_name" >
         </activity>
+
         <activity
             android:label="@string/weather_settings"
             android:theme="@style/WeatherSettingStyle"
             android:name="com.borqs.borqsweather.weather.WeatherSettings"
             android:title="@string/weather_settings"
-            android:process=":remote"/>
-        <activity
-            android:theme="@android:style/Theme.Translucent"
-            android:label="@string/weather_settings"
-            android:name="com.borqs.borqsweather.weather.CheckLocServiceDialogActivity"
-            android:title="@string/weather_settings"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:process=":remote"/>
 
         <receiver
@@ -179,13 +173,6 @@
                 <action android:name="art.appupdate.action.CHANGE_SERVER" />
             </intent-filter>
         </receiver>
-
-        <service android:name="com.borqs.borqsweather.weather.WeatherService" 
-            android:process=":remote">
-            <intent-filter >
-                <action android:name="com.borqs.borqsweather.weatherservice" />
-            </intent-filter>
-        </service>
 
         <provider
             android:authorities="com.borqs.se.settings"

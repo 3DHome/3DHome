@@ -9,22 +9,11 @@
         android:targetSdkVersion="15" />
 
     <application>
-        <service android:name="com.borqs.digitalframe.Setting">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="com.example.testfetchpicture7.StartService"/>
-            </intent-filter>
-        </service>
-        <service android:name="com.borqs.digitalframe.AlbumShowService"/>
         <activity
             android:name="com.borqs.digitalframe.AlbumFolderActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name="com.borqs.digitalframe.Photos"/>
-        <activity android:name="com.borqs.digitalframe.PhotoSelectedActivity"/>
+
     </application>
 
 </manifest>
