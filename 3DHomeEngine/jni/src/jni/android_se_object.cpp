@@ -18,6 +18,8 @@
 #include <algorithm>
 #include <limits>
 #include <assert.h>
+#include <sys/system_properties.h>
+
 #include "SE_DynamicLibType.h"
 
 #include <stdio.h>
@@ -99,6 +101,13 @@ static jmethodID methodgetShadowDensity;
 static jmethodID methodgetStatusValue;
 static jmethodID methodgetLightNames;
 static jmethodID methodgetSpatialDataValue;
+
+static bool isNewBitmapPlatform() {
+    char buf[PROP_VALUE_MAX];
+    __system_property_get("ro.build.version.sdk", buf);
+    int versionCode = atoi(buf);
+    return versionCode >= 21;
+}
 
 SE_Scene* findScene(const char* sceneName);
 static bool isEmpty(const char* str) {
@@ -1304,7 +1313,12 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
     jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
     //nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
     // for android 5.0+
-    nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
+    if (isNewBitmapPlatform()) {
+        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
+    } else {
+        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    }
+
     methodGetParentName = env->GetMethodID(clazz, "getParentName", "()Ljava/lang/String;");
     methodGetParentIndex = env->GetMethodID(clazz, "getParentIndex", "()I");
     methodGetSceneName = env->GetMethodID(clazz, "getSceneName", "()Ljava/lang/String;");

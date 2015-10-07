@@ -5,6 +5,8 @@
 #else
 #include <nativehelper/jni.h>
 #endif
+#include <sys/system_properties.h>
+
 #include "SE_DynamicLibType.h"
 #include "SE_UIManager.h"
 #include "SE_Application.h"
@@ -14,6 +16,13 @@
 #include "SE_ImageData.h"
 
 static jfieldID nativeBitmapID = 0;
+
+static bool isNewBitmapPlatform() {
+    char buf[PROP_VALUE_MAX];
+    __system_property_get("ro.build.version.sdk", buf);
+    int versionCode = atoi(buf);
+    return versionCode >= 21;
+}
 
 static void se_CreateGUI(JNIEnv* env,jobject clazz)
 {
@@ -247,7 +256,11 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
     jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
     //nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
     // for android 5.0+
-    nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
+    if (isNewBitmapPlatform()) {
+        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
+    } else {
+        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    }
 
     return JNI_TRUE;
 }
@@ -266,4 +279,3 @@ int register_com_android_se_uiManager(JNIEnv* env)
 {
     return registerNatives(env);
 }
-

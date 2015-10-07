@@ -12,6 +12,8 @@
 #include <dlfcn.h>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
+#include <sys/system_properties.h>
+
 #include "SE_Application.h"
 #include "SE_Spatial.h"
 #include "SE_CommonNode.h"
@@ -56,7 +58,7 @@ static SE_Application* gApp = NULL;
 static JavaVM* mJvm = 0;
 static jobject mjavaApp;
 static jmethodID method_javaCallback;
-static jfieldID nativeAssetManagerID = 0;
+//static jfieldID nativeAssetManagerID = 0;
 typedef union {
     JNIEnv* env;
     void* venv;
@@ -501,7 +503,7 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
     jclass assetManagerClass = env->FindClass("android/content/res/AssetManager");
     //nativeAssetManagerID = env->GetFieldID(assetManagerClass, "mObject", "I");
     // for android 5.0+
-    nativeAssetManagerID = env->GetFieldID(assetManagerClass, "mObject", "J");
+//    nativeAssetManagerID = env->GetFieldID(assetManagerClass, "mObject", "J");
 
     if (env->RegisterNatives(clazz, gMethods, numMethods) < 0) {
         fprintf(stderr, "RegisterNatives failed for '%s'\n", className);
