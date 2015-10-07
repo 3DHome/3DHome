@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.borqs.se"
-    android:versionCode="4601"
-    android:versionName="2.0.0.4601">
+    android:versionCode="4603"
+    android:versionName="2.0.1.4603p">
 
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
