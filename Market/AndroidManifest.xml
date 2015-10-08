@@ -63,18 +63,6 @@
         </activity>
 
         <activity
-            android:name="com.borqs.market.WallPaperProductListActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            -->
-        </activity>
-        <activity
             android:name="com.borqs.market.ProductTabActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Theme.wallpaper">
