@@ -23,6 +23,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.IntentUtil;
 import com.borqs.market.view.LightProgressDialog;
 
+import butterknife.ButterKnife;
+
 public abstract class BasicDialogFragment extends DialogFragment implements AccountListener{
     private static String TAG = "BasicFragment";
     
@@ -71,8 +73,7 @@ public abstract class BasicDialogFragment extends DialogFragment implements Acco
             Bundle savedInstanceState) {
         AccountObserver.registerAccountListener(this.getClass().getName(), this);
         mConvertView = inflater.inflate(getInflatelayout(), container, false);
-        loading_container = (RelativeLayout) mConvertView
-                .findViewById(R.id.loading_container);
+        loading_container = ButterKnife.findById(mConvertView, R.id.loading_container);
         if (loading_container != null) {
             loading_layout = inflater.inflate(R.layout.loading_layout, null);
             loading_layout.setLayoutParams(new RelativeLayout.LayoutParams(
@@ -80,15 +81,11 @@ public abstract class BasicDialogFragment extends DialogFragment implements Acco
                     RelativeLayout.LayoutParams.MATCH_PARENT));
             loading_container.addView(loading_layout);
 
-            load_content_container = loading_container
-                    .findViewById(R.id.load_content_container);
-            btn_setting = loading_container
-                    .findViewById(R.id.btn_setting);
-            progressView = (ProgressBar) loading_container
-                    .findViewById(R.id.pb_loading);
-            img_empty = (ImageView) loading_container
-                    .findViewById(R.id.empty);
-            load_msg = (TextView) loading_container.findViewById(R.id.load_msg);
+            load_content_container = ButterKnife.findById(loading_container, R.id.load_content_container);
+            btn_setting = ButterKnife.findById(loading_container, R.id.btn_setting);
+            progressView = ButterKnife.findById(loading_container, R.id.pb_loading);
+            img_empty = ButterKnife.findById(loading_container, R.id.empty);
+            load_msg = ButterKnife.findById(loading_container, R.id.load_msg);
         } else {
             BLog.v(TAG, "why I am null, *****************");
         }

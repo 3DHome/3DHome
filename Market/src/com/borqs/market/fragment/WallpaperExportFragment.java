@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import butterknife.ButterKnife;
+
 public class WallpaperExportFragment extends BasicFragment implements View.OnClickListener {
     private static final String TAG = "WallpaperExportFragment";
     protected static int TOTAL_COUNT = 3;
@@ -133,14 +135,14 @@ public class WallpaperExportFragment extends BasicFragment implements View.OnCli
 
     @Override
     protected void initView() {
-        pager_layout = mConvertView.findViewById(R.id.pager_layout);
-        mPager = (ViewPager) mConvertView.findViewById(R.id.mPager);
-        mOpertionGroupView = (LinearLayout) mConvertView.findViewById(R.id.opertion_group_view);
-        mPage = (LinearLayout) mConvertView.findViewById(R.id.pages);
-        mDownloadOrDeleteButton = (Button) mConvertView.findViewById(R.id.delete_or_download);
+        pager_layout = ButterKnife.findById(mConvertView, R.id.pager_layout);
+        mPager = ButterKnife.findById(mConvertView, R.id.mPager);
+        mOpertionGroupView = ButterKnife.findById(mConvertView, R.id.opertion_group_view);
+        mPage = ButterKnife.findById(mConvertView, R.id.pages);
+        mDownloadOrDeleteButton = ButterKnife.findById(mConvertView, R.id.delete_or_download);
         mDownloadOrDeleteButton.setOnClickListener(this);
-        processView = mConvertView.findViewById(R.id.process_view);
-        content_container = mConvertView.findViewById(R.id.content_container);
+        processView = ButterKnife.findById(mConvertView, R.id.process_view);
+        content_container = ButterKnife.findById(mConvertView, R.id.content_container);
 
         PhotoOnPageChangeListener pageChangeListener = new PhotoOnPageChangeListener();
         mPager.setOnPageChangeListener(pageChangeListener);
@@ -531,7 +533,7 @@ public class WallpaperExportFragment extends BasicFragment implements View.OnCli
             mPager.setCurrentItem(0, true);
             showLoadMessage(R.string.prompt_empty_title);
 
-            TextView textView = (TextView) getActivity().findViewById(R.id.tv_title);
+            TextView textView = ButterKnife.findById(getActivity(), R.id.tv_title);
             if (null != textView) {
                 textView.requestFocus();
             }
@@ -540,7 +542,7 @@ public class WallpaperExportFragment extends BasicFragment implements View.OnCli
 
         final String authorName = getAuthorName();
         if (TextUtils.isEmpty(authorName)) {
-            TextView textView = (TextView) getActivity().findViewById(R.id.tv_author);
+            TextView textView = ButterKnife.findById(getActivity(), R.id.tv_author);
             if (null != textView) {
                 textView.requestFocus();
                 return;
@@ -549,7 +551,7 @@ public class WallpaperExportFragment extends BasicFragment implements View.OnCli
 
         final String description = getDescription();
         if (TextUtils.isEmpty(description)) {
-            TextView textView = (TextView) getActivity().findViewById(R.id.tv_desc);
+            TextView textView = ButterKnife.findById(getActivity(), R.id.tv_desc);
             if (null != textView) {
                 textView.requestFocus();
                 return;
@@ -595,7 +597,7 @@ public class WallpaperExportFragment extends BasicFragment implements View.OnCli
     }
 
     private String getSummary() {
-        TextView textView = (TextView) getActivity().findViewById(R.id.tv_title);
+        TextView textView = ButterKnife.findById(getActivity(), R.id.tv_title);
         if (null != textView) {
             String summary = textView.getText().toString();
             return null == summary ? "" : summary;
@@ -604,7 +606,7 @@ public class WallpaperExportFragment extends BasicFragment implements View.OnCli
     }
 
     private String getAuthorName() {
-        TextView textView = (TextView) getActivity().findViewById(R.id.tv_author);
+        TextView textView = ButterKnife.findById(getActivity(), R.id.tv_author);
         if (null != textView) {
             String summary = textView.getText().toString();
             return null == summary ? "" : summary;
@@ -613,7 +615,7 @@ public class WallpaperExportFragment extends BasicFragment implements View.OnCli
     }
 
     private String getDescription() {
-        TextView textView = (TextView) getActivity().findViewById(R.id.tv_desc);
+        TextView textView = ButterKnife.findById(getActivity(), R.id.tv_desc);
         if (null != textView) {
             String summary = textView.getText().toString();
             return null == summary ? "" : summary;

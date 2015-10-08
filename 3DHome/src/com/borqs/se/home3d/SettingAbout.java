@@ -12,22 +12,39 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class SettingAbout extends Activity {
     private int mClickCount = 0;
-    private View mPersonGroup_0;
-    private View mPersonGroup_1;
+
+    @Bind(R.id.person_group_0) View mPersonGroup_0;
+    @Bind(R.id.person_group_1) View mPersonGroup_1;
+
     private Handler mHandler;
     private final int MSG_SWITCH_PERSON = 1;
+
+    @OnClick(R.id.app_name)
+    void onAppNameClick() {
+        mClickCount++;
+        if (mClickCount % 5 == 0) {
+            HomeManager.getInstance().debug(!HomeUtils.DEBUG);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
 
+        ButterKnife.bind(this);
+
         ActionBar bar = getActionBar();
         bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
         bar.setDisplayShowTitleEnabled(true);
-        TextView versionTV = (TextView) findViewById(R.id.version);
+
+        TextView versionTV = ButterKnife.findById(this, R.id.version);
         String packageName = getPackageName();
         String version = "0.1.1(1001)";
         try {
@@ -35,19 +52,9 @@ public class SettingAbout extends Activity {
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
-        versionTV.setText(String.format(SettingAbout.this.getString(R.string.about_version), String.valueOf(version)));
-        View logo = findViewById(R.id.app_name);
 
-        logo.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                mClickCount++;
-                if (mClickCount % 5 == 0) {
-                    HomeManager.getInstance().debug(!HomeUtils.DEBUG);
-                }
-            }
-        });
-        mPersonGroup_0 = findViewById(R.id.person_group_0);
-        mPersonGroup_1 = findViewById(R.id.person_group_1);
+        versionTV.setText(String.format(SettingAbout.this.getString(R.string.about_version), String.valueOf(version)));
+
         if (mPersonGroup_0 != null && mPersonGroup_1 != null) {
             mHandler = new Handler() {
 
@@ -62,9 +69,7 @@ public class SettingAbout extends Activity {
                 }
 
             };
-
         }
-
     }
 
     @Override

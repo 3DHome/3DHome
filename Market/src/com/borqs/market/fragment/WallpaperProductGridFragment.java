@@ -35,6 +35,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import butterknife.ButterKnife;
+
 public class WallpaperProductGridFragment extends BasicFragment implements OnScrollListener {
 
     private static final String TAG = "WallpaperProductGridFragment";
@@ -69,8 +71,8 @@ public class WallpaperProductGridFragment extends BasicFragment implements OnScr
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         BLog.d(TAG, "onCreateView()");
         super.onCreateView(inflater, container, savedInstanceState);
-        mGridView = (GridView) mConvertView.findViewById(R.id.grid_favorite);
-        layout_more = mConvertView.findViewById(R.id.layout_more);
+        mGridView = ButterKnife.findById(mConvertView, R.id.grid_favorite);
+        layout_more = ButterKnife.findById(mConvertView, R.id.layout_more);
         mLocalImageManager = new LocalImageManager( new Handler());
         mLocalImageManager.setThreadNumber(5);
         mLocalImageManager.onResume();

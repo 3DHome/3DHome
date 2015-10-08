@@ -19,6 +19,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.IntentUtil;
 import com.borqs.market.utils.MarketUtils;
 
+import butterknife.ButterKnife;
+
 public class RecommendPhotoFragment extends Fragment {
     public static final String TAG = RecommendPhotoFragment.class.getSimpleName();
     public final static String KEY_DATA = "KEY_DATA";
@@ -50,7 +52,7 @@ public class RecommendPhotoFragment extends Fragment {
         mLocalImageManager = new LocalImageManager(new Handler());
         mLocalImageManager.onResume();
         View view = inflater.inflate(R.layout.recommend_imageview, null);
-        img_recommend = (ImageView) view.findViewById(R.id.img_recommend);
+        img_recommend = ButterKnife.findById(view, R.id.img_recommend);
         return view;
     }
 

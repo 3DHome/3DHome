@@ -31,6 +31,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.DataConnectionUtils;
 import com.borqs.market.utils.IntentUtil;
 
+import butterknife.ButterKnife;
+
 public class ProductGridFragment extends BasicFragment implements OnScrollListener {
 
     private static final String TAG = "ProductGridFragment";
@@ -73,11 +75,8 @@ public class ProductGridFragment extends BasicFragment implements OnScrollListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         BLog.d(TAG, "onCreateView()");
         super.onCreateView(inflater, container, savedInstanceState);
-        // mConvertView = inflater.inflate(R.layout.product_grid_layout,
-        // container, false);
-        // mLoadingLayout = mConvertView.findViewById(R.id.loading_layout);
-        mGridView = (GridView) mConvertView.findViewById(R.id.grid_favorite);
-        layout_more = mConvertView.findViewById(R.id.layout_more);
+        mGridView = ButterKnife.findById(mConvertView, R.id.grid_favorite);
+        layout_more = ButterKnife.findById(mConvertView, R.id.layout_more);
         mLocalImageManager = new LocalImageManager(new Handler());
         mLocalImageManager.setThreadNumber(3);
         mLocalImageManager.onResume();      

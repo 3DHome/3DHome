@@ -18,6 +18,8 @@ import com.borqs.market.R;
 import com.borqs.market.json.Product;
 import com.borqs.market.utils.DownloadUtils;
 
+import butterknife.ButterKnife;
+
 
 public class ProductDescriptionFragment extends Fragment {
     public static final String TAG = ProductDescriptionFragment.class.getSimpleName();
@@ -46,15 +48,15 @@ public class ProductDescriptionFragment extends Fragment {
         Typeface fontFace = Typeface.createFromAsset(ctx.getAssets(),"fonts/Roboto-Regular.ttf");
         view = inflater.inflate(R.layout.product_description, null);
         
-        TextView lable_subject = ((TextView)view.findViewById(R.id.lable_subject));
-        TextView lable_title = ((TextView)view.findViewById(R.id.lable_title));
-        TextView lable_size = ((TextView)view.findViewById(R.id.lable_size));
-        TextView lable_version = ((TextView)view.findViewById(R.id.lable_version));
-        TextView lable_author = ((TextView)view.findViewById(R.id.lable_author));
-        TextView lable_desc = ((TextView)view.findViewById(R.id.lable_desc));
-        lable_update_time = ((TextView)view.findViewById(R.id.lable_update_time));
-        lable_download_count = ((TextView)view.findViewById(R.id.lable_download_count));
-        TextView lable_rating = ((TextView)view.findViewById(R.id.lable_rating));
+        TextView lable_subject = ButterKnife.findById(view, R.id.lable_subject);
+        TextView lable_title = ButterKnife.findById(view,R.id.lable_title);
+        TextView lable_size = ButterKnife.findById(view, R.id.lable_size);
+        TextView lable_version = ButterKnife.findById(view, R.id.lable_version);
+        TextView lable_author = ButterKnife.findById(view, R.id.lable_author);
+        TextView lable_desc = ButterKnife.findById(view, R.id.lable_desc);
+        lable_update_time = ButterKnife.findById(view, R.id.lable_update_time);
+        lable_download_count = ButterKnife.findById(view, R.id.lable_download_count);
+        TextView lable_rating = ButterKnife.findById(view, R.id.lable_rating);
         
         lable_subject.setTypeface(fontFaceLight);
         lable_title.setTypeface(fontFaceLight);
@@ -67,15 +69,14 @@ public class ProductDescriptionFragment extends Fragment {
         lable_rating.setTypeface(fontFaceLight);
         
         
-        tv_title = ((TextView)view.findViewById(R.id.tv_title));
-        tv_size = ((TextView)view.findViewById(R.id.tv_size));
-        tv_version = ((TextView)view.findViewById(R.id.tv_version));
-        tv_author = ((TextView)view.findViewById(R.id.tv_author));
-        tv_desc = ((TextView)view.findViewById(R.id.tv_desc));
-        tv_update_time = ((TextView)view.findViewById(R.id.tv_update_time));
-        tv_download_count = ((TextView)view.findViewById(R.id.tv_download_count));
-        id_rating = ((RatingBar)view.findViewById(R.id.id_rating));
-//        tv_comment = ((TextView)view.findViewById(R.id.tv_comment));
+        tv_title = ButterKnife.findById(view, R.id.tv_title);
+        tv_size = ButterKnife.findById(view,  R.id.tv_size);
+        tv_version = ButterKnife.findById(view, R.id.tv_version);
+        tv_author = ButterKnife.findById(view, R.id.tv_author);
+        tv_desc = ButterKnife.findById(view, R.id.tv_desc);
+        tv_update_time = ButterKnife.findById(view, R.id.tv_update_time);
+        tv_download_count = ButterKnife.findById(view, R.id.tv_download_count);
+        id_rating = ButterKnife.findById(view, R.id.id_rating);
         
         tv_title.setTypeface(fontFace);
         tv_size.setTypeface(fontFace);

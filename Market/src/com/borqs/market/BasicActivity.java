@@ -30,6 +30,8 @@ import com.iab.engine.MarketBilling;
 import com.iab.engine.MarketBillingFactory;
 import com.iab.engine.MarketPurchaseListener;
 
+import butterknife.ButterKnife;
+
 public class BasicActivity extends FragmentActivity implements AccountListener{
     
     private static final String TAG = "BasicActivity";
@@ -58,7 +60,7 @@ public class BasicActivity extends FragmentActivity implements AccountListener{
     
     protected LinearLayout title_container;
     protected void setTitleResource(View parent, int resId) {
-        title_container = (LinearLayout) parent.findViewById(R.id.titlebar_container);
+        title_container = findById(parent, R.id.titlebar_container);
         if (title_container != null) {
             View content = LayoutInflater.from(this).inflate(resId, null);
             content.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
@@ -77,11 +79,11 @@ public class BasicActivity extends FragmentActivity implements AccountListener{
     protected void initHeadViews(View parent) {
         BLog.v(TAG, "initHeadViews");
 
-        action_back = (ImageView) parent.findViewById(R.id.action_back);
-        action_right =  (ImageView)parent.findViewById(R.id.action_right);
-        title = (TextView) parent.findViewById(R.id.title_bar_title);
-        layout_right = parent.findViewById(R.id.layout_right);
-        layout_back = parent.findViewById(R.id.layout_back);
+        action_back = findById(parent, R.id.action_back);
+        action_right =  findById(parent, R.id.action_right);
+        title = findById(parent, R.id.title_bar_title);
+        layout_right = findById(parent, R.id.layout_right);
+        layout_back = findById(parent, R.id.layout_back);
         
         setActionBack(new View.OnClickListener() {
             
@@ -307,7 +309,12 @@ public class BasicActivity extends FragmentActivity implements AccountListener{
       if(loginProgressDialog != null) {
           loginProgressDialog.show();
       }
-        
    }
-  
+
+    protected <T extends View> T  findById(int id) {
+        return ButterKnife.findById(this, id);
+    }
+    protected static <T extends View> T findById(View view, int id) {
+        return ButterKnife.findById(view, id);
+    }
 }

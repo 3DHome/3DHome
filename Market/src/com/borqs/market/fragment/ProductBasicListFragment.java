@@ -29,6 +29,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.DataConnectionUtils;
 import com.borqs.market.utils.IntentUtil;
 
+import butterknife.ButterKnife;
+
 public abstract class ProductBasicListFragment extends BasicFragment implements OnScrollListener {
 
     private static final String TAG = ProductBasicListFragment.class.getSimpleName();
@@ -82,9 +84,9 @@ public abstract class ProductBasicListFragment extends BasicFragment implements 
         mLocalImageManager = new LocalImageManager(new Handler());
         mLocalImageManager.setThreadNumber(5);
         mLocalImageManager.onResume();
-        mListView = (ListView) mConvertView.findViewById(R.id.listview);
+        mListView = ButterKnife.findById(mConvertView, R.id.listview);
         load_more_item = inflater.inflate(R.layout.load_more_item, null);
-        layout_more = load_more_item.findViewById(R.id.layout_more);
+        layout_more = ButterKnife.findById(load_more_item, R.id.layout_more);
         mListView.addFooterView(load_more_item);
         mAdapter = new ProductListAdapter(mActivity, mLocalImageManager, mDatas, true, isportrait);
         if (showRecommend) {

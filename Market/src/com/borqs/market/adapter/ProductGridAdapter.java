@@ -19,6 +19,8 @@ import com.borqs.market.LocalImageManager.ImageUpdateListener;
 import com.borqs.market.json.Product;
 import com.borqs.market.utils.BLog;
 
+import butterknife.ButterKnife;
+
 public class ProductGridAdapter extends BaseAdapter {
 
     private ArrayList<Product> mDatas;
@@ -58,9 +60,9 @@ public class ProductGridAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.product_item_view, null);
             holder = new ViewHolder();
-            holder.imageCover = (ImageView) convertView.findViewById(R.id.img_cover);
+            holder.imageCover = ButterKnife.findById(convertView, R.id.img_cover);
             holder.imageCover.setLayoutParams(new RelativeLayout.LayoutParams(image_width, image_height));
-            holder.textName = (TextView) convertView.findViewById(R.id.tv_name);
+            holder.textName = ButterKnife.findById(convertView, R.id.tv_name);
 
             convertView.setTag(holder);
         } else {

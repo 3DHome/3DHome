@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.borqs.market.R;
 import com.borqs.market.json.Comment;
 
+import butterknife.ButterKnife;
+
 public class CommentItemView {
     public static final String TAG = CommentItemView.class.getSimpleName();
     public View convertView;
@@ -37,10 +39,10 @@ public class CommentItemView {
         lable_comment_on = context.getString(R.string.lable_comment_on);
         fmt=new SimpleDateFormat("yyyy-MM-dd HH:mm"); 
         convertView = inflater.inflate(R.layout.comment_list_item, null);
-        content = (TextView)convertView.findViewById(R.id.comment_content);
-        version = (TextView)convertView.findViewById(R.id.version);
-        description = (TextView)convertView.findViewById(R.id.resource_comment_description);
-        ratingBar = (RatingBar)convertView.findViewById(R.id.resource_comment_ratingbar);
+        content = ButterKnife.findById(convertView, R.id.comment_content);
+        version = ButterKnife.findById(convertView, R.id.version);
+        description = ButterKnife.findById(convertView, R.id.resource_comment_description);
+        ratingBar = ButterKnife.findById(convertView, R.id.resource_comment_ratingbar);
         
         convertView.setTag(this);
     }

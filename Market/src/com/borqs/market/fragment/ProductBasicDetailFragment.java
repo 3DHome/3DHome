@@ -64,6 +64,8 @@ import com.borqs.market.utils.QiupuHelper;
 import com.iab.engine.MarketBillingResult;
 import com.iab.engine.MarketPurchaseListener;
 
+import butterknife.ButterKnife;
+
 public class ProductBasicDetailFragment extends BasicFragment implements
         OnClickListener, DownloadListener {
 
@@ -133,28 +135,28 @@ public class ProductBasicDetailFragment extends BasicFragment implements
     @Override
     protected void initView() {
         action_view_comments = mContext.getString(R.string.action_view_comments);
-        fontFace = Typeface.createFromAsset(mContext.getAssets(),"fonts/Roboto-Light.ttf");
-        pager_layout = mConvertView.findViewById(R.id.pager_layout);
-        mPager = (ViewPager) mConvertView.findViewById(R.id.mPager);
+        fontFace = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Light.ttf");
+        pager_layout = ButterKnife.findById(mConvertView, R.id.pager_layout);
+        mPager = ButterKnife.findById(mConvertView, R.id.mPager);
         mPager.setOffscreenPageLimit(TOTAL_COUNT);
 //        mPager.setPageMargin(20);
-        mOpertionGroupView = (LinearLayout) mConvertView.findViewById(R.id.opertion_group_view);
-        mPage = (LinearLayout) mConvertView.findViewById(R.id.pages);
-        mDownloadOrDeleteLayout = mConvertView.findViewById(R.id.delete_or_download);
-        btn_download = (Button) mConvertView.findViewById(R.id.btn_download);
-        btn_delete = (ImageView) mConvertView.findViewById(R.id.btn_delete);
+        mOpertionGroupView = ButterKnife.findById(mConvertView, R.id.opertion_group_view);
+        mPage = ButterKnife.findById(mConvertView, R.id.pages);
+        mDownloadOrDeleteLayout = ButterKnife.findById(mConvertView, R.id.delete_or_download);
+        btn_download = ButterKnife.findById(mConvertView, R.id.btn_download);
+        btn_delete = ButterKnife.findById(mConvertView, R.id.btn_delete);
         btn_download.setOnClickListener(this);
         btn_delete.setOnClickListener(this);
 
-        downloadCancel = mConvertView.findViewById(R.id.download_cancel);
-        downloadProgress = (ProgressBar)mConvertView.findViewById(R.id.download_progress);
-        downloadSize = (TextView)mConvertView.findViewById(R.id.download_size);
-        downloadPrecent = (TextView)mConvertView.findViewById(R.id.download_precent);
-        processView = mConvertView.findViewById(R.id.process_view);
-        content_container = mConvertView.findViewById(R.id.content_container);
-        bottomLayout = mConvertView.findViewById(R.id.bottom);
+        downloadCancel = ButterKnife.findById(mConvertView, R.id.download_cancel);
+        downloadProgress = ButterKnife.findById(mConvertView, R.id.download_progress);
+        downloadSize = ButterKnife.findById(mConvertView, R.id.download_size);
+        downloadPrecent = ButterKnife.findById(mConvertView, R.id.download_precent);
+        processView = ButterKnife.findById(mConvertView, R.id.process_view);
+        content_container = ButterKnife.findById(mConvertView, R.id.content_container);
+        bottomLayout = ButterKnife.findById(mConvertView, R.id.bottom);
         
-        tv_comment = ((TextView)mConvertView.findViewById(R.id.tv_comment));
+        tv_comment = ButterKnife.findById(mConvertView, R.id.tv_comment);
         tv_comment.setTypeface(fontFace);
         btn_download.setTypeface(fontFace);
         downloadSize.setTypeface(fontFace);

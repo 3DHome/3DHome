@@ -85,7 +85,6 @@ dependencies {
     compile project(':BorqsWeather')
     compile project(':DigitalFrameService')
     compile project(':Market')
-
     // Google libraries
     //compile 'com.android.support:cardview-v7:21.0.3'
     //compile 'com.android.support:appcompat-v7:22.0.0'
@@ -95,22 +94,17 @@ dependencies {
     //compile 'com.android.support:support-v4:22.0.0'
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
-
     // Dagger compiler
     //apt 'com.google.dagger:dagger-compiler:2.0'
-
     //androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
     //androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
     //androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.0') {
     //    exclude module: 'support-annotations'
     //}
-
     // Square libraries
     //compile 'com.squareup.picasso:picasso:2.4.0'
     //compile 'com.jakewharton:butterknife:6.0.0'
-
     // Third party libraries
     //compile 'com.nispok:snackbar:2.9.1'
-
-
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

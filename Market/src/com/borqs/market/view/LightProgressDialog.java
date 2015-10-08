@@ -28,6 +28,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import butterknife.ButterKnife;
+
 /**
  * Progress dialog in Holo Light theme
  */
@@ -71,7 +75,8 @@ public class LightProgressDialog extends ProgressDialog {
             dialog.setInverseBackgroundForced(true);
             View view = LayoutInflater.from(context).inflate(
                     R.layout.progress_dialog, null);
-            ((TextView) view.findViewById(R.id.tv_loading)).setText(message);
+            TextView textView = ButterKnife.findById(view, R.id.tv_loading);
+            textView.setText(message);
             dialog.setView(view);
             return dialog;
         }

@@ -33,6 +33,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.MarketConfiguration;
 import com.borqs.market.view.ViewPagerInListView;
 
+import butterknife.ButterKnife;
+
 public class ProductListFragment extends ProductBasicListFragment {
 
     private static final String TAG = ProductListFragment.class.getSimpleName();
@@ -51,10 +53,10 @@ public class ProductListFragment extends ProductBasicListFragment {
         super.initHeaderView(inflater);
 
         recommend_header_view = inflater.inflate(R.layout.recommend_header_view, null);
-        recommend_container = recommend_header_view.findViewById(R.id.recommend_container);
-        mPager = (ViewPagerInListView) recommend_header_view.findViewById(R.id.mPager);
-        mPagesNumber = (LinearLayout) recommend_header_view.findViewById(R.id.pages_number);
-        tv_recommend_name = (TextView) recommend_header_view.findViewById(R.id.tv_recommend_name);
+        recommend_container = ButterKnife.findById(recommend_header_view, R.id.recommend_container);
+        mPager = ButterKnife.findById(recommend_header_view, R.id.mPager);
+        mPagesNumber = ButterKnife.findById(recommend_header_view, R.id.pages_number);
+        tv_recommend_name = ButterKnife.findById(recommend_header_view, R.id.tv_recommend_name);
         PhotoOnPageChangeListener pageChangeListener = new PhotoOnPageChangeListener();
         mPager.setOnPageChangeListener(pageChangeListener);
         mPagesNumber.removeAllViews();

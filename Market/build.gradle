@@ -110,7 +110,7 @@ dependencies {
     // Third party libraries
     //compile 'com.nispok:snackbar:2.9.1'
 
-
+    compile 'com.jakewharton:butterknife:7.0.1'
 }
 
   android {

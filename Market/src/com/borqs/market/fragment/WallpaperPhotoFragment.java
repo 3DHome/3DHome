@@ -16,6 +16,8 @@ import com.borqs.market.LocalImageManager;
 import com.borqs.market.R;
 import com.borqs.market.LocalImageManager.ImageUpdateListener;
 
+import butterknife.ButterKnife;
+
 public class WallpaperPhotoFragment extends Fragment {
     public static final String TAG = "PhotoFragment";
     private static final String TAG_URL = "TAG_URL";
@@ -51,7 +53,7 @@ public class WallpaperPhotoFragment extends Fragment {
         mLocalImageManager = new LocalImageManager(new Handler());
         mLocalImageManager.onResume();
         View view = inflater.inflate(R.layout.wallpaper_photo_fragment, null);
-        img_shoot = (ImageView) view.findViewById(R.id.img_shoot);
+        img_shoot = ButterKnife.findById(view, R.id.img_shoot);
         if (!TextUtils.isEmpty(url)) {
             downloadPhoto(url, img_shoot);
         }

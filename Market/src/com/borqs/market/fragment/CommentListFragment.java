@@ -32,6 +32,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.DataConnectionUtils;
 import com.borqs.market.utils.IntentUtil;
 
+import butterknife.ButterKnife;
+
 public class CommentListFragment extends BasicFragment implements OnScrollListener {
 
     private static final String TAG = CommentListFragment.class.getSimpleName();
@@ -75,11 +77,11 @@ public class CommentListFragment extends BasicFragment implements OnScrollListen
         super.onCreateView(inflater, container, savedInstanceState);
         
         
-        mListView = (ListView) mConvertView.findViewById(R.id.comment_list);
-        layout_more = mConvertView.findViewById(R.id.comment_loadingprogressbar);
-        btn_edit = mConvertView.findViewById(R.id.comment_edit);
-        comment_total = (TextView) mConvertView.findViewById(R.id.comment_total);
-        ratingBar = (RatingBar) mConvertView.findViewById(R.id.comment_ratingbar);
+        mListView = ButterKnife.findById(mConvertView, R.id.comment_list);
+        layout_more = ButterKnife.findById(mConvertView, R.id.comment_loadingprogressbar);
+        btn_edit = ButterKnife.findById(mConvertView, R.id.comment_edit);
+        comment_total = ButterKnife.findById(mConvertView, R.id.comment_total);
+        ratingBar = ButterKnife.findById(mConvertView, R.id.comment_ratingbar);
         mAdapter = new CommentListAdapter(mApplicationContext, mDatas);
         mListView.setAdapter(mAdapter);
         mListView.setOnScrollListener(this);

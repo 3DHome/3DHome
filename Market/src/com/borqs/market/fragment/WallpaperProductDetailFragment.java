@@ -59,6 +59,8 @@ import com.iab.engine.MarketBillingResult;
 import com.iab.engine.MarketPurchaseListener;
 import com.support.StaticUtil;
 
+import butterknife.ButterKnife;
+
 public class WallpaperProductDetailFragment extends BasicFragment implements
         OnClickListener, DownloadListener {
 
@@ -115,20 +117,20 @@ public class WallpaperProductDetailFragment extends BasicFragment implements
 
     @Override
     protected void initView() {
-        pager_layout = mConvertView.findViewById(R.id.pager_layout);
-        mPager = (ViewPager) mConvertView.findViewById(R.id.mPager);
+        pager_layout = ButterKnife.findById(mConvertView, R.id.pager_layout);
+        mPager = ButterKnife.findById(mConvertView, R.id.mPager);
         mPager.setOffscreenPageLimit(TOTAL_COUNT);
         mPager.setPageMargin(20);
-        mOpertionGroupView = (LinearLayout) mConvertView.findViewById(R.id.opertion_group_view);
-        mPage = (LinearLayout) mConvertView.findViewById(R.id.pages);
-        mDownloadOrDeleteButton = (Button) mConvertView.findViewById(R.id.delete_or_download);
+        mOpertionGroupView = ButterKnife.findById(mConvertView, R.id.opertion_group_view);
+        mPage = ButterKnife.findById(mConvertView, R.id.pages);
+        mDownloadOrDeleteButton = ButterKnife.findById(mConvertView, R.id.delete_or_download);
         mDownloadOrDeleteButton.setOnClickListener(this);
 
-        downloadCancel = mConvertView.findViewById(R.id.download_cancel);
-        downloadProgress = (ProgressBar)mConvertView.findViewById(R.id.download_progress);
-        downloadSize = (TextView)mConvertView.findViewById(R.id.download_size);
-        downloadPercent = (TextView)mConvertView.findViewById(R.id.download_precent);
-        processView = mConvertView.findViewById(R.id.process_view);
+        downloadCancel = ButterKnife.findById(mConvertView, R.id.download_cancel);
+        downloadProgress = ButterKnife.findById(mConvertView, R.id.download_progress);
+        downloadSize = ButterKnife.findById(mConvertView, R.id.download_size);
+        downloadPercent = ButterKnife.findById(mConvertView, R.id.download_precent);
+        processView = ButterKnife.findById(mConvertView, R.id.process_view);
 
         PhotoOnPageChangeListener pageChangeListener = new PhotoOnPageChangeListener();
         mPager.setOnPageChangeListener(pageChangeListener);

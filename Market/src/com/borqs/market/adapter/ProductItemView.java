@@ -18,6 +18,8 @@ import com.borqs.market.LocalImageManager.ImageUpdateListener;
 import com.borqs.market.json.Product;
 import com.borqs.market.utils.IntentUtil;
 
+import butterknife.ButterKnife;
+
 public class ProductItemView {
     public static final String TAG = ProductItemView.class.getSimpleName();
     public View convertView;
@@ -44,7 +46,7 @@ public class ProductItemView {
         calculateWidth(itemMinWidth);
 
         convertView = inflater.inflate(R.layout.list_item_view, null);
-        itemContainer = (LinearLayout) convertView.findViewById(R.id.item_container);
+        itemContainer = ButterKnife.findById(convertView, R.id.item_container);
         convertView.setTag(this);
     }
 
@@ -74,10 +76,10 @@ public class ProductItemView {
                 if (child == null) {
                     child = inflater.inflate(R.layout.product_view, null);
                     holder = new Holder();
-                    holder.layout_bottom = child.findViewById(R.id.layout_bottom);
-                    holder.imageCover = (ImageView) child.findViewById(R.id.img_cover);
-                    holder.layout_product_view = child.findViewById(R.id.layout_product_view);
-                    holder.textName = (TextView) child.findViewById(R.id.tv_name);
+                    holder.layout_bottom = ButterKnife.findById(child, R.id.layout_bottom);
+                    holder.imageCover = ButterKnife.findById(child, R.id.img_cover);
+                    holder.layout_product_view = ButterKnife.findById(child, R.id.layout_product_view);
+                    holder.textName = ButterKnife.findById(child, R.id.tv_name);
 
                     child.setTag(holder);
                     itemContainer.addView(child, i, new LinearLayout.LayoutParams(image_portrait_width, height, 0));

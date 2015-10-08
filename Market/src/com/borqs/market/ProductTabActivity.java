@@ -63,7 +63,7 @@ public class ProductTabActivity extends BasicActivity implements ActionBar.TabLi
         }
         mAdapter = new MyAdapter(getSupportFragmentManager());
 
-        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager = findById(R.id.pager);
         mPager.setAdapter(mAdapter);
 
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

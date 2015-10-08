@@ -66,7 +66,7 @@ public class MarketHomeActivity extends BasicActivity implements
 
         mAdapter = new MyAdapter(getSupportFragmentManager());
 
-        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager = findById(R.id.pager);
         mPager.setAdapter(mAdapter);
         mPager.setCurrentItem(tab_index);
 

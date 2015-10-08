@@ -22,6 +22,8 @@ import com.borqs.market.R;
 import com.borqs.market.json.Product.ProductType;
 import com.borqs.market.utils.MarketUtils;
 
+import butterknife.ButterKnife;
+
 public class ProductsDialog extends BasicDialogFragment implements View.OnClickListener{
     private final int FRAGMENT_COUNT = 2;
     private final int POSITION_ONLINE = 0;
@@ -63,14 +65,14 @@ public class ProductsDialog extends BasicDialogFragment implements View.OnClickL
 
     @Override
     protected void initView(LayoutInflater inflater) {
-        mPager = (ViewPager) mConvertView.findViewById(R.id.pager);
-        lableOnline = (TextView) mConvertView.findViewById(R.id.lable_online);
-        lableLocal = (TextView) mConvertView.findViewById(R.id.lable_local);
-        title_bar_title = (TextView) mConvertView.findViewById(R.id.title_bar_title);
-        tabOnline = mConvertView.findViewById(R.id.tab_online);
-        tabLocal = mConvertView.findViewById(R.id.tab_local);
-        layout_back = mConvertView.findViewById(R.id.layout_back);
-        layout_right = mConvertView.findViewById(R.id.layout_right);
+        mPager = ButterKnife.findById(mConvertView, R.id.pager);
+        lableOnline = ButterKnife.findById(mConvertView, R.id.lable_online);
+        lableLocal = ButterKnife.findById(mConvertView, R.id.lable_local);
+        title_bar_title = ButterKnife.findById(mConvertView, R.id.title_bar_title);
+        tabOnline = ButterKnife.findById(mConvertView, R.id.tab_online);
+        tabLocal = ButterKnife.findById(mConvertView, R.id.tab_local);
+        layout_back = ButterKnife.findById(mConvertView, R.id.layout_back);
+        layout_right = ButterKnife.findById(mConvertView, R.id.layout_right);
         tabOnline.setOnClickListener(this);
         tabLocal.setOnClickListener(this);
         layout_back.setOnClickListener(this);

@@ -31,6 +31,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.MarketConfiguration;
 import com.borqs.market.utils.QiupuHelper;
 
+import butterknife.ButterKnife;
+
 public class ProductLocalListFragment extends BasicFragment implements DownloadListener {
 
     private static final String TAG = ProductLocalListFragment.class.getSimpleName();
@@ -84,9 +86,9 @@ public class ProductLocalListFragment extends BasicFragment implements DownloadL
                 DownLoadProvider.getContentURI(getActivity().getApplicationContext(), DownLoadProvider.TABLE_PLUGIN),
                 true, plugInObserver);
 
-        mListView = (ListView) mConvertView.findViewById(R.id.listview);
+        mListView = ButterKnife.findById(mConvertView, R.id.listview);
 
-        products_layout = (FrameLayout) mConvertView.findViewById(R.id.products_layout);
+        products_layout = ButterKnife.findById(mConvertView, R.id.products_layout);
         if (!Product.isSupportApply(product_type)) {
             products_layout.setBackgroundResource(R.drawable.local_fragment_bg_repeat);
         }
@@ -157,8 +159,8 @@ public class ProductLocalListFragment extends BasicFragment implements DownloadL
         if (ProductType.OBJECT.equals(product_type) && !hasShowTips
                 && !MarketConfiguration.hasShowedObjectUserTips(mContext)) {
             if (layout_tips == null) {
-                layout_tips = mConvertView.findViewById(R.id.layout_tips);
-                View layout_tips_close = mConvertView.findViewById(R.id.tv_close);
+                layout_tips = ButterKnife.findById(mConvertView, R.id.layout_tips);
+                View layout_tips_close = ButterKnife.findById(mConvertView, R.id.tv_close);
                 layout_tips_close.setOnClickListener(new View.OnClickListener() {
 
                     @Override

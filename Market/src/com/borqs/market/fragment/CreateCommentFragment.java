@@ -29,6 +29,8 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.DataConnectionUtils;
 import com.borqs.market.view.LightProgressDialog;
 
+import butterknife.ButterKnife;
+
 public class CreateCommentFragment extends BasicFragment {
 
     private static final String TAG = CreateCommentFragment.class.getSimpleName();
@@ -63,9 +65,9 @@ public class CreateCommentFragment extends BasicFragment {
             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         
-        ratingBar = (RatingBar) mConvertView.findViewById(R.id.comment_ratingbar);
-        comment_edit = (EditText) mConvertView.findViewById(R.id.comment_edit);
-        comment_publish = mConvertView.findViewById(R.id.comment_publish);
+        ratingBar = ButterKnife.findById(mConvertView, R.id.comment_ratingbar);
+        comment_edit = ButterKnife.findById(mConvertView, R.id.comment_edit);
+        comment_publish = ButterKnife.findById(mConvertView, R.id.comment_publish);
         
         comment_publish.setOnClickListener(new View.OnClickListener() {
             
