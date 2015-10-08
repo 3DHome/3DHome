@@ -46,6 +46,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 
+import butterknife.ButterKnife;
+
 public class Setting extends Activity{
 
     public static final int REQUEST_CODE_IMAGE = 10001;
@@ -185,14 +187,14 @@ public class Setting extends Activity{
     }
 
     private void initAlbum(){
-        mChangeAlbum = (TextView) findViewById(R.id.change_picture);
+        mChangeAlbum = ButterKnife.findById(this, R.id.change_picture);
 
-        mAlbumSetting0 = (LinearLayout)this.findViewById(R.id.album0);
-        mAlbumSetting1 = (LinearLayout)this.findViewById(R.id.album1);
-        mAlbumSetting2 = (LinearLayout)this.findViewById(R.id.album2);
-        mAlbumSelected0 = (ImageButton)this.findViewById(R.id.album_btn0);
-        mAlbumSelected1 = (ImageButton)this.findViewById(R.id.album_btn1);
-        mAlbumSelected2 = (ImageButton)this.findViewById(R.id.album_btn2);
+        mAlbumSetting0 = ButterKnife.findById(this, R.id.album0);
+        mAlbumSetting1 = ButterKnife.findById(this, R.id.album1);
+        mAlbumSetting2 = ButterKnife.findById(this, R.id.album2);
+        mAlbumSelected0 = ButterKnife.findById(this, R.id.album_btn0);
+        mAlbumSelected1 = ButterKnife.findById(this, R.id.album_btn1);
+        mAlbumSelected2 = ButterKnife.findById(this, R.id.album_btn2);
 
         mAlbumSetting0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -251,7 +253,7 @@ public class Setting extends Activity{
     }
 
     private void initLayoutSetting(){
-        mFrameLayout = (TextView) findViewById(R.id.picture_num_and_layout);
+        mFrameLayout = ButterKnife.findById(this, R.id.picture_num_and_layout);
 
         mListViews = new ArrayList<View>();
         mInflater = getLayoutInflater();
@@ -261,10 +263,10 @@ public class Setting extends Activity{
         mListViews.add(layout1);
         mListViews.add(layout2);
 
-        mLayoutSetting0 = (ImageView) layout1.findViewById(R.id.layout1_white_1);
-        mLayoutSetting1 = (ImageView) layout1.findViewById(R.id.layout1_white_2);
-        mLayoutSetting2 = (ImageView) layout2.findViewById(R.id.layout1_white_3);
-        mLayoutSetting3 = (ImageView) layout2.findViewById(R.id.layout1_white_4);
+        mLayoutSetting0 = ButterKnife.findById(this, R.id.layout1_white_1);
+        mLayoutSetting1 = ButterKnife.findById(this, R.id.layout1_white_2);
+        mLayoutSetting2 = ButterKnife.findById(this, R.id.layout1_white_3);
+        mLayoutSetting3 = ButterKnife.findById(this, R.id.layout1_white_4);
 
 
         mFrameLayoutList.add(mLayoutSetting0);
@@ -293,15 +295,15 @@ public class Setting extends Activity{
         }
 
         mLayoutAndNumPagerAdapter = new LayoutAndNumPagerAdapter();
-        mLayoutAndNumViewPager = (ViewPager) findViewById(R.id.viewpagerLayout);
+        mLayoutAndNumViewPager = ButterKnife.findById(this, R.id.viewpagerLayout);
         mLayoutAndNumViewPager.setAdapter(mLayoutAndNumPagerAdapter);
         mLayoutAndNumViewPager
                 .setOnPageChangeListener(new OnPageChangeListener() { 
 
                     @Override
                     public void onPageSelected(int arg0) {
-                        mDot1 = (ImageView) findViewById(R.id.dot_0);
-                        mDot2 = (ImageView) findViewById(R.id.dot_1);
+                        mDot1 = ButterKnife.findById(Setting.this, R.id.dot_0);
+                        mDot2 = ButterKnife.findById(Setting.this, R.id.dot_1);
                         if (arg0 == 0) {
                             mDot1.setBackgroundResource(R.drawable.dot_selected);
                             mDot2.setBackgroundResource(R.drawable.dot_normal);
@@ -333,12 +335,12 @@ public class Setting extends Activity{
     }
 
     private void initFrameMeterial(){
-        mFrameMeterial = (TextView) findViewById(R.id.select_frame_material);
+        mFrameMeterial = ButterKnife.findById(this, R.id.select_frame_material);
 
-        mFrameMeterial0 = (ImageButton)this.findViewById(R.id.material_black);
-        mFrameMeterial1 = (ImageButton)this.findViewById(R.id.material_white);
-        mFrameMeterial2 = (ImageButton)this.findViewById(R.id.material_wood);
-        mFrameMeterial3 = (ImageButton)this.findViewById(R.id.material_metal);
+        mFrameMeterial0 = ButterKnife.findById(this, R.id.material_black);
+        mFrameMeterial1 = ButterKnife.findById(this, R.id.material_white);
+        mFrameMeterial2 = ButterKnife.findById(this, R.id.material_wood);
+        mFrameMeterial3 = ButterKnife.findById(this, R.id.material_metal);
         if(mMeterialDrawable.size()==MATERIAL_LIST_SIZE){
             mFrameMeterial0.setBackgroundDrawable(mMeterialDrawable.get(0));
             mFrameMeterial1.setBackgroundDrawable(mMeterialDrawable.get(1));
@@ -346,10 +348,10 @@ public class Setting extends Activity{
             mFrameMeterial3.setBackgroundDrawable(mMeterialDrawable.get(3));
         }
 
-        mFrameMeterialSelected0 = (ImageButton)this.findViewById(R.id.material_black_selected);
-        mFrameMeterialSelected1 = (ImageButton)this.findViewById(R.id.material_white_selected);
-        mFrameMeterialSelected2 = (ImageButton)this.findViewById(R.id.material_wood_selected);
-        mFrameMeterialSelected3 = (ImageButton)this.findViewById(R.id.material_metal_selected);
+        mFrameMeterialSelected0 = ButterKnife.findById(this, R.id.material_black_selected);
+        mFrameMeterialSelected1 = ButterKnife.findById(this, R.id.material_white_selected);
+        mFrameMeterialSelected2 = ButterKnife.findById(this, R.id.material_wood_selected);
+        mFrameMeterialSelected3 = ButterKnife.findById(this, R.id.material_metal_selected);
 
         mFrameMeterial0.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -422,14 +424,14 @@ public class Setting extends Activity{
     }
 
     private void initInterval(){
-        mInterval = (TextView) findViewById(R.id.interval_time);
+        mInterval = ButterKnife.findById(this, R.id.interval_time);
 
-        mIntervalSetting0 = (LinearLayout)this.findViewById(R.id.interval0);
-        mIntervalSetting1 = (LinearLayout)this.findViewById(R.id.interval1);
-        mIntervalSetting2 = (LinearLayout)this.findViewById(R.id.interval2);
-        mIntervalSelected0 = (ImageButton)this.findViewById(R.id.interval_btn0);
-        mIntervalSelected1 = (ImageButton)this.findViewById(R.id.interval_btn1);
-        mIntervalSelected2 = (ImageButton)this.findViewById(R.id.interval_btn2);
+        mIntervalSetting0 = ButterKnife.findById(this, R.id.interval0);
+        mIntervalSetting1 = ButterKnife.findById(this, R.id.interval1);
+        mIntervalSetting2 = ButterKnife.findById(this, R.id.interval2);
+        mIntervalSelected0 = ButterKnife.findById(this, R.id.interval_btn0);
+        mIntervalSelected1 = ButterKnife.findById(this, R.id.interval_btn1);
+        mIntervalSelected2 = ButterKnife.findById(this, R.id.interval_btn2);
 
         mIntervalSetting0.setOnClickListener(new View.OnClickListener() {
             @Override

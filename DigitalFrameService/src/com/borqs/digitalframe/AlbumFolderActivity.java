@@ -34,6 +34,8 @@ import java.util.Map.Entry;
 
 import com.borqs.digitalframe.R;
 
+import butterknife.ButterKnife;
+
 public class AlbumFolderActivity extends FragmentActivity implements
         LoaderCallbacks<Cursor> {
 
@@ -57,7 +59,7 @@ public class AlbumFolderActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.photo_albums);
         getSupportLoaderManager().initLoader(0, null, this);
-        mGridView = (GridView) findViewById(R.id.photo_albums);
+        mGridView = ButterKnife.findById(this, R.id.photo_albums);
 
         getSupportLoaderManager().initLoader(0, null, this);
 
@@ -297,9 +299,8 @@ public class AlbumFolderActivity extends FragmentActivity implements
                 v = convertView;
             }
 
-            TextView titleView = (TextView) v.findViewById(R.id.title);
-
-            PhotoAlbumItem iv = (PhotoAlbumItem) v.findViewById(R.id.thumbnail);
+            TextView titleView = ButterKnife.findById(v, R.id.title);
+            PhotoAlbumItem iv = ButterKnife.findById(v, R.id.thumbnail);
             HashMap map = mFolderListItem.get(position);
             if (map.get("itemIcon") != null) {
                 iv.setImageBitmap((Bitmap) map.get("itemIcon"));
