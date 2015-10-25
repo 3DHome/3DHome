@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.borqs.se"
-    android:versionCode="4603"
-    android:versionName="2.0.1.4603p">
+    android:versionCode="4604"
+    android:versionName="2.0.1.4604p">
 
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -63,7 +63,6 @@
         android:label="@string/app_name"
         android:name="com.borqs.se.home3d.HomeApplication"
         android:theme="@style/HomeThemeWithActionBar"
-        android:debuggable="false"
         android:largeHeap="true" >
         
         <!-- 您从百度网站获取的APP KEY -->
@@ -142,22 +141,6 @@
             android:label="@string/about"
             android:name="com.borqs.se.home3d.SettingAbout"
             android:title="@string/about" />
-
-        <activity
-            android:name="com.borqs.digitalframe.Setting"
-            android:configChanges="keyboardHidden|screenSize"
-            android:theme="@style/GalleryThemeNOActionBar"
-            android:process=":remote">
-            <intent-filter >
-                <action android:name="com.borqs.gallery.EditPhoto" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.borqs.digitalframe.AlbumFolderActivity"
-            android:theme="@style/GalleryThemeNOActionBar"
-            android:label="@string/app_name" >
-        </activity>
 
         <activity
             android:label="@string/weather_settings"

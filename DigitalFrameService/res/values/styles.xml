@@ -17,4 +17,9 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="GalleryThemeNOActionBar" parent="@android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:actionModeBackground">@drawable/cab_background_top</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom</item>
+    </style>
+
 </resources>

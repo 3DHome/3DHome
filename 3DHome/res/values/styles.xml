@@ -239,11 +239,6 @@
         <item name="android:ellipsize">end</item>
     </style>
 
-    <style name="GalleryThemeNOActionBar" parent="@android:style/Theme.Holo.Light.NoActionBar">
-        <item name="android:actionModeBackground">@drawable/cab_background_top</item>
-        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom</item>
-    </style>
-
     <style name="moreMenuDialogTheme" parent="android:Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
     </style>

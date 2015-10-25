@@ -1,5 +1,6 @@
 package com.borqs.se.home3d;
 
+import com.borqs.se.OsUtils;
 import com.borqs.se.R;
 import com.borqs.se.engine.SECommand;
 import com.borqs.se.engine.SESceneManager;
@@ -212,7 +213,7 @@ public class LongClickObjectDialog extends Dialog {
             layout.addView(uninstallView);
 
         }
-        if (selectedObject.canBeResized()) {
+        if (OsUtils.isObjectResizeEnabled() && selectedObject.canBeResized()) {
             TextView resizeView = (TextView) context.getLayoutInflater().inflate(R.layout.object_menu_item, null);
             Drawable iconResize = context.getResources().getDrawable(R.drawable.long_click_object_resize);
             setButtonProperties(resizeView, iconResize, R.string.long_click_object_menu_resize);
