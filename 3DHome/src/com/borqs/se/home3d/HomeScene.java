@@ -1,8 +1,5 @@
 package com.borqs.se.home3d;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -10,9 +7,9 @@ import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.content.DialogInterface.OnKeyListener;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -34,38 +31,6 @@ import com.borqs.market.json.Product.ProductType;
 import com.borqs.market.utils.MarketUtils;
 import com.borqs.market.wallpaper.RawPaperItem;
 import com.borqs.se.R;
-import com.borqs.se.download.Utils;
-import com.borqs.se.download.WallPaperItem;
-import com.borqs.se.engine.SECameraData;
-import com.borqs.se.engine.SEEmptyAnimation;
-import com.borqs.se.engine.SELoadResThread;
-import com.borqs.se.engine.SEScene;
-import com.borqs.se.engine.SEAnimFinishListener;
-import com.borqs.se.engine.SECommand;
-import com.borqs.se.engine.SEObject;
-import com.borqs.se.engine.SESceneManager;
-import com.borqs.se.engine.SETransParas;
-import com.borqs.se.engine.SEVector.SERay;
-import com.borqs.se.engine.SEVector.SEVector2i;
-import com.borqs.se.engine.SEVector.SEVector3f;
-import com.borqs.se.home3d.HomeUtils.CropImageInfo;
-import com.borqs.se.home3d.ProviderUtils.ObjectInfoColumns;
-import com.borqs.se.home3d.ProviderUtils.VesselColumns;
-import com.borqs.se.home3d.HomeManager.ModelChangeCallBack;
-import com.borqs.se.shortcut.LauncherModel;
-import com.borqs.se.shortcut.LauncherModel.LoadAppFinishedListener;
-import com.borqs.se.widget3d.ADViewController;
-import com.borqs.se.widget3d.Cloud;
-import com.borqs.se.widget3d.Desk;
-import com.borqs.se.widget3d.DragLayer;
-import com.borqs.se.widget3d.House;
-import com.borqs.se.widget3d.NormalObject;
-import com.borqs.se.widget3d.ObjectInfo;
-import com.borqs.se.shortcut.ItemInfo;
-import com.borqs.se.shortcut.AppItemInfo;
-import com.borqs.se.widget3d.AppObject;
-import com.borqs.se.widget3d.VesselLayer;
-import com.borqs.se.widget3d.Folder;
 import com.borqs.se.addobject.AddAppDialog;
 import com.borqs.se.addobject.AddAppDialog.OnAppSelectedListener;
 import com.borqs.se.addobject.AddFolderDialog;
@@ -73,10 +38,45 @@ import com.borqs.se.addobject.AddFolderDialog.OnFolderCreatedListener;
 import com.borqs.se.addobject.AddObjectComponentNameExtend;
 import com.borqs.se.addobject.AddObjectItemInfo;
 import com.borqs.se.addobject.AddRemoveAppDialog;
+import com.borqs.se.download.Utils;
+import com.borqs.se.download.WallPaperItem;
+import com.borqs.se.engine.SEAnimFinishListener;
+import com.borqs.se.engine.SECameraData;
+import com.borqs.se.engine.SECommand;
+import com.borqs.se.engine.SEEmptyAnimation;
+import com.borqs.se.engine.SELoadResThread;
+import com.borqs.se.engine.SEObject;
+import com.borqs.se.engine.SEScene;
+import com.borqs.se.engine.SESceneManager;
+import com.borqs.se.engine.SETransParas;
+import com.borqs.se.engine.SEVector.SERay;
+import com.borqs.se.engine.SEVector.SEVector2i;
+import com.borqs.se.engine.SEVector.SEVector3f;
+import com.borqs.se.home3d.HomeManager.ModelChangeCallBack;
+import com.borqs.se.home3d.HomeUtils.CropImageInfo;
+import com.borqs.se.home3d.ProviderUtils.ObjectInfoColumns;
+import com.borqs.se.home3d.ProviderUtils.VesselColumns;
+import com.borqs.se.shortcut.AppItemInfo;
+import com.borqs.se.shortcut.ItemInfo;
+import com.borqs.se.shortcut.LauncherModel;
+import com.borqs.se.shortcut.LauncherModel.LoadAppFinishedListener;
+import com.borqs.se.widget3d.ADViewController;
+import com.borqs.se.widget3d.AppObject;
+import com.borqs.se.widget3d.Cloud;
+import com.borqs.se.widget3d.Desk;
+import com.borqs.se.widget3d.DragLayer;
+import com.borqs.se.widget3d.Folder;
+import com.borqs.se.widget3d.House;
+import com.borqs.se.widget3d.NormalObject;
+import com.borqs.se.widget3d.ObjectInfo;
+import com.borqs.se.widget3d.ObjectInfo.ObjectSlot;
+import com.borqs.se.widget3d.VesselLayer;
 import com.borqs.se.widget3d.VesselObject;
 import com.borqs.se.widget3d.WallCellLayer;
 import com.borqs.se.widget3d.WallLayer;
-import com.borqs.se.widget3d.ObjectInfo.ObjectSlot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeScene extends SEScene implements ModelChangeCallBack, OnAppSelectedListener,
         OnFolderCreatedListener, MarketUtils.OnDragListener {
@@ -146,7 +146,7 @@ public class HomeScene extends SEScene implements ModelChangeCallBack, OnAppSele
     private OptionMenu mOptionMenu;
     private IWeatherService mWeatherSevice;
     private Folder mEditFolder;
-    private ArrayList<AppItemInfo> mPrefaceApps;
+//    private ArrayList<AppItemInfo> mPrefaceApps;
     public static final String MSG_CONTENT_IMAGE = "image";
     public static final String MSG_CONTENT_IMAGE_SIZE_X = "imgSizeX";
     public static final String MSG_CONTENT_IMAGE_SIZE_Y = "imgSizeY";
@@ -230,10 +230,7 @@ public class HomeScene extends SEScene implements ModelChangeCallBack, OnAppSele
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (!super.dispatchTouchEvent(event)) {
-            return mDraglayer.dispatchTouchEvent(event);
-        }
-        return true;
+        return super.dispatchTouchEvent(event) || mDraglayer.dispatchTouchEvent(event);
     }
 
     @Override
@@ -712,8 +709,8 @@ public class HomeScene extends SEScene implements ModelChangeCallBack, OnAppSele
     }
 
     private Dialog createAddRemoveAppDialog() {
-        mPrefaceApps = HomeUtils.getSortedAppsByName();
-        ArrayList<AppItemInfo> sortedApps = new ArrayList<AppItemInfo>();
+        List<AppItemInfo> mPrefaceApps = HomeUtils.getSortedAppsByName();
+        List<AppItemInfo> sortedApps = new ArrayList<AppItemInfo>();
         for (int i = 0; i < mPrefaceApps.size(); i++) {
             if (!mPrefaceApps.get(i).isShowInPreface()) {
                 sortedApps.add(mPrefaceApps.get(i));
@@ -1587,10 +1584,7 @@ public class HomeScene extends SEScene implements ModelChangeCallBack, OnAppSele
     }
 
     public boolean switchDesk(Desk newDesk) {
-        if (null != mDesk) {
-            return mDesk.switchDesk(newDesk);
-        }
-        return false;
+        return null != mDesk && mDesk.switchDesk(newDesk);
     }
 
     public void showDesk(SEAnimFinishListener listener) {

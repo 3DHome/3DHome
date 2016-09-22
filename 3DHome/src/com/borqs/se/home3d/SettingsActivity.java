@@ -1,13 +1,16 @@
 package com.borqs.se.home3d;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.*;
+import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -38,6 +41,9 @@ import com.borqs.se.R;
 import com.borqs.se.download.Utils;
 import com.borqs.se.engine.SESceneManager;
 import com.borqs.se.upgrade.UpgradeTest;
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class SettingsActivity extends PreferenceActivity implements OnPreferenceClickListener,
         Preference.OnPreferenceChangeListener {
@@ -88,65 +94,65 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
-            case MSG_SHOW_DIALOG_UPGRADE:
-                if (!isFinishing()) {
-                    removeDialog(PROGRESS_DIALOG_UPDATE_SW);
-                }
-                Bundle data = msg.getData();
-                int curVersion = data.getInt("cur_version");
-                int latestVersion = data.getInt("latest_version");
-                long size = data.getLong("size");
-                DecimalFormat formater = new DecimalFormat();
-                formater.setMaximumFractionDigits(2);
-                formater.setGroupingSize(0);
-                formater.setRoundingMode(RoundingMode.FLOOR);
-                String fileSize = formater.format(size / (1024f * 1024f)) + "MB";
-                mUpgradeUrl = data.getString("url");
-                String releaseNotes = data.getString("release_note");
-                mReleaseNode = new StringBuilder();
-                Resources res = getResources();
-                mReleaseNode.append(res.getString(R.string.upgrade_dialog_msg));
-                mReleaseNode.append("\r\n\r\n");
-                mReleaseNode.append(res.getString(R.string.upgrade_dialog_current_version));
-                mReleaseNode.append(curVersion);
-                mReleaseNode.append("\r\n");
-                mReleaseNode.append(res.getString(R.string.upgrade_dialog_latest_version));
-                mReleaseNode.append(latestVersion);
-                mReleaseNode.append("\r\n");
-                mReleaseNode.append(res.getString(R.string.upgrade_dialog_file_size));
-                mReleaseNode.append(fileSize);
-                mReleaseNode.append("\r\n");
-                mReleaseNode.append(res.getString(R.string.upgrade_dialog_update_changes));
-                mReleaseNode.append("\r\n");
-                mReleaseNode.append(releaseNotes);
-                if (!isFinishing()) {
-                    showDialog(ALERT_DIALOG_UPDATE_SW);
-                }
-                break;
-            case MSG_START_UPGRADE:
-                if (!isFinishing()) {
-                    showDialog(PROGRESS_DIALOG_UPDATE_SW);
-                }
-                if (mUpgradeDetector != null) {
-                    mUpgradeDetector.stopUpgrade();
-                }
-                mUpgradeDetector = new UpgradeTest(SettingsActivity.this, this, UpgradeTest.TEST_TYPE_SETTINGS);
-                mUpgradeDetector.start();
-                break;
-            case MSG_LATEST_REMOVE_UPGRADE_PD:
-                if (!isFinishing()) {
-                    removeDialog(PROGRESS_DIALOG_UPDATE_SW);
-                }
-                Toast.makeText(HomeManager.getInstance().getContext(), R.string.no_update, Toast.LENGTH_SHORT)
-                        .show();
-                break;
-            case MSG_ERROR_REMOVE_UPGRADE_PD:
-                if (!isFinishing()) {
-                    removeDialog(PROGRESS_DIALOG_UPDATE_SW);
-                }
-                Toast.makeText(HomeManager.getInstance().getContext(), R.string.check_update_error,
-                        Toast.LENGTH_SHORT).show();
-                break;
+                case MSG_SHOW_DIALOG_UPGRADE:
+                    if (!isFinishing()) {
+                        removeDialog(PROGRESS_DIALOG_UPDATE_SW);
+                    }
+                    Bundle data = msg.getData();
+                    int curVersion = data.getInt("cur_version");
+                    int latestVersion = data.getInt("latest_version");
+                    long size = data.getLong("size");
+                    DecimalFormat formater = new DecimalFormat();
+                    formater.setMaximumFractionDigits(2);
+                    formater.setGroupingSize(0);
+                    formater.setRoundingMode(RoundingMode.FLOOR);
+                    String fileSize = formater.format(size / (1024f * 1024f)) + "MB";
+                    mUpgradeUrl = data.getString("url");
+                    String releaseNotes = data.getString("release_note");
+                    mReleaseNode = new StringBuilder();
+                    Resources res = getResources();
+                    mReleaseNode.append(res.getString(R.string.upgrade_dialog_msg));
+                    mReleaseNode.append("\r\n\r\n");
+                    mReleaseNode.append(res.getString(R.string.upgrade_dialog_current_version));
+                    mReleaseNode.append(curVersion);
+                    mReleaseNode.append("\r\n");
+                    mReleaseNode.append(res.getString(R.string.upgrade_dialog_latest_version));
+                    mReleaseNode.append(latestVersion);
+                    mReleaseNode.append("\r\n");
+                    mReleaseNode.append(res.getString(R.string.upgrade_dialog_file_size));
+                    mReleaseNode.append(fileSize);
+                    mReleaseNode.append("\r\n");
+                    mReleaseNode.append(res.getString(R.string.upgrade_dialog_update_changes));
+                    mReleaseNode.append("\r\n");
+                    mReleaseNode.append(releaseNotes);
+                    if (!isFinishing()) {
+                        showDialog(ALERT_DIALOG_UPDATE_SW);
+                    }
+                    break;
+                case MSG_START_UPGRADE:
+                    if (!isFinishing()) {
+                        showDialog(PROGRESS_DIALOG_UPDATE_SW);
+                    }
+                    if (mUpgradeDetector != null) {
+                        mUpgradeDetector.stopUpgrade();
+                    }
+                    mUpgradeDetector = new UpgradeTest(SettingsActivity.this, this, UpgradeTest.TEST_TYPE_SETTINGS);
+                    mUpgradeDetector.start();
+                    break;
+                case MSG_LATEST_REMOVE_UPGRADE_PD:
+                    if (!isFinishing()) {
+                        removeDialog(PROGRESS_DIALOG_UPDATE_SW);
+                    }
+                    Toast.makeText(HomeManager.getInstance().getContext(), R.string.no_update, Toast.LENGTH_SHORT)
+                            .show();
+                    break;
+                case MSG_ERROR_REMOVE_UPGRADE_PD:
+                    if (!isFinishing()) {
+                        removeDialog(PROGRESS_DIALOG_UPDATE_SW);
+                    }
+                    Toast.makeText(HomeManager.getInstance().getContext(), R.string.check_update_error,
+                            Toast.LENGTH_SHORT).show();
+                    break;
             }
         }
     };
@@ -207,53 +213,53 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
     @Override
     protected Dialog onCreateDialog(int id) {
         switch (id) {
-        case ALERT_DIALOG_UPDATE_SW:
-            AlertDialog alertDialog = new AlertDialog.Builder(SettingsActivity.this).setTitle(R.string.upgrade_dialog_title)
-                    .setPositiveButton(R.string.upgrade_dialog_ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, final int whichButton) {
-                            dialog.dismiss();
-                            if (mUpgradeUrl != null) {
-                                try {
-                                    Uri uri = Uri.parse(mUpgradeUrl);
-                                    Intent it = new Intent(Intent.ACTION_VIEW, uri);
-                                    startActivity(it);
-                                } catch (ActivityNotFoundException e) {
-                                    Toast.makeText(HomeManager.getInstance().getContext(), R.string.activity_not_found,
-                                            Toast.LENGTH_SHORT).show();
+            case ALERT_DIALOG_UPDATE_SW:
+                AlertDialog alertDialog = new AlertDialog.Builder(SettingsActivity.this).setTitle(R.string.upgrade_dialog_title)
+                        .setPositiveButton(R.string.upgrade_dialog_ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, final int whichButton) {
+                                dialog.dismiss();
+                                if (mUpgradeUrl != null) {
+                                    try {
+                                        Uri uri = Uri.parse(mUpgradeUrl);
+                                        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+                                        startActivity(it);
+                                    } catch (ActivityNotFoundException e) {
+                                        Toast.makeText(HomeManager.getInstance().getContext(), R.string.activity_not_found,
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
-                        }
-                    }).setNegativeButton(R.string.upgrade_dialog_cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, final int whichButton) {
-                            dialog.dismiss();
-                        }
-                    }).create();
-            if (mReleaseNode != null) {
-                alertDialog.setMessage(mReleaseNode);
-            }
-            return alertDialog;
-        case PROGRESS_DIALOG_UPDATE_SW:
-            if (mUpdateSwPD == null) {
-                mUpdateSwPD = new ProgressDialog(SettingsActivity.this);
-                mUpdateSwPD.setTitle(R.string.wait_dialog_title);
-                mUpdateSwPD.setMessage(getString(R.string.wait_dialog_msg_sw));
-                mUpdateSwPD.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    public void onDismiss(DialogInterface dialog) {
-                        mHandler.removeMessages(MSG_START_UPGRADE);
-                        mHandler.removeMessages(MSG_SHOW_DIALOG_UPGRADE);
-                        if (mUpgradeDetector != null) {
-                            mUpgradeDetector.stopUpgrade();
+                        }).setNegativeButton(R.string.upgrade_dialog_cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, final int whichButton) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                if (mReleaseNode != null) {
+                    alertDialog.setMessage(mReleaseNode);
+                }
+                return alertDialog;
+            case PROGRESS_DIALOG_UPDATE_SW:
+                if (mUpdateSwPD == null) {
+                    mUpdateSwPD = new ProgressDialog(SettingsActivity.this);
+                    mUpdateSwPD.setTitle(R.string.wait_dialog_title);
+                    mUpdateSwPD.setMessage(getString(R.string.wait_dialog_msg_sw));
+                    mUpdateSwPD.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                        public void onDismiss(DialogInterface dialog) {
+                            mHandler.removeMessages(MSG_START_UPGRADE);
+                            mHandler.removeMessages(MSG_SHOW_DIALOG_UPGRADE);
+                            if (mUpgradeDetector != null) {
+                                mUpgradeDetector.stopUpgrade();
 
+                            }
                         }
-                    }
-                });
-            }
-            if (!mUpdateSwPD.isShowing()) {
-                return mUpdateSwPD;
-            }
-            break;
-        default:
-            break;
+                    });
+                }
+                if (!mUpdateSwPD.isShowing()) {
+                    return mUpdateSwPD;
+                }
+                break;
+            default:
+                break;
         }
         return null;
     }
@@ -261,12 +267,12 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
     @Override
     public void onPrepareDialog(int id, Dialog dialog) {
         switch (id) {
-        case ALERT_DIALOG_UPDATE_SW:
-            AlertDialog alertDialog = (AlertDialog) dialog;
-            if (mReleaseNode != null) {
-                alertDialog.setMessage(mReleaseNode.toString());
-            }
-            break;
+            case ALERT_DIALOG_UPDATE_SW:
+                AlertDialog alertDialog = (AlertDialog) dialog;
+                if (mReleaseNode != null) {
+                    alertDialog.setMessage(mReleaseNode.toString());
+                }
+                break;
         }
     }
 
@@ -280,19 +286,19 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
             getListView().setPadding(0, 0, 0, 0);
         }
 
-    	mDisplay = (PreferenceGroup) getPreferenceScreen().findPreference(KEY_DISPLAYSETTING);
+        mDisplay = (PreferenceGroup) getPreferenceScreen().findPreference(KEY_DISPLAYSETTING);
         mPrefFPS = (CheckBoxPreference) findPreference(KEY_FPS);
         mPrefFPS.setChecked(getFPSSetting(this));
         mPrefFPS.setOnPreferenceChangeListener(this);
         if (!HomeUtils.DEBUG) {
-        	mDisplay.removePreference(mPrefFPS);
+            mDisplay.removePreference(mPrefFPS);
         }
         mPrefBetaData = (CheckBoxPreference) findPreference(KEY_BETA_DATA);
         mPrefBetaData.setChecked(getShowBetaDataSettings(this));
         mPrefBetaData.setOnPreferenceChangeListener(this);
         if (!HomeUtils.DEBUG) {
             mDisplay.removePreference(mPrefBetaData);
-        } else if(getShowBetaDataSettings(this)) {
+        } else if (getShowBetaDataSettings(this)) {
             MarketConfiguration.setIS_DEBUG_BETA_REQUEST(mPrefBetaData.isChecked());
         }
 
@@ -300,12 +306,12 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         mFullScreen.setChecked(isEnableFullScreen(this));
         mFullScreen.setOnPreferenceChangeListener(this);
         if (HomeUtils.isPad(this)) {
-        	mDisplay.removePreference(mFullScreen);
+            mDisplay.removePreference(mFullScreen);
         }
         mShowWallIndicator = (CheckBoxPreference) findPreference(KEY_SHOW_WALL_INDICATOR);
         mShowWallIndicator.setChecked(isEnableWallIndicator(this));
         mShowWallIndicator.setOnPreferenceChangeListener(this);
-        
+
         mPrefUpgrade = (PreferenceScreen) findPreference(KEY_UPGRADE_VIEW);
         String summary = this.getResources().getString(R.string.upgrade_dialog_current_version);
         String packageName = getPackageName();
@@ -334,14 +340,14 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 
         mADContent = (EditTextPreference) findPreference(KEY_AD_CONTENT);
         mADContent.setOnPreferenceChangeListener(this);
-        
+
         Preference downloadObjPre = findPreference(DOWNLOAD_OBJECT_KEY);
-        if(downloadObjPre != null) {
+        if (downloadObjPre != null) {
             downloadObjPre.setOnPreferenceClickListener(this);
         }
-        
+
         Preference themeKeyPre = findPreference(THEME_KEY);
-        if(themeKeyPre != null) {
+        if (themeKeyPre != null) {
             themeKeyPre.setOnPreferenceClickListener(this);
         }
 
@@ -380,7 +386,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             try {
                 startActivity(intent);
-            }catch (ActivityNotFoundException e) {
+            } catch (ActivityNotFoundException e) {
                 Toast.makeText(HomeManager.getInstance().getContext(), R.string.activity_not_found,
                         Toast.LENGTH_SHORT).show();
             }
@@ -391,7 +397,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             try {
                 startActivity(intent);
-            }catch (ActivityNotFoundException e) {
+            } catch (ActivityNotFoundException e) {
                 Toast.makeText(SESceneManager.getInstance().getContext(), R.string.activity_not_found,
                         Toast.LENGTH_SHORT).show();
             }
@@ -401,11 +407,11 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
             SESceneManager.getInstance().handleMessage(HomeScene.MSG_TYPE_SHOW_CAMERA_ADJUST_DIALOG, null);
         } else if (onWallpaperOrUserSharePreference(preference.getKey())) {
             return true;
-        } else if(DOWNLOAD_OBJECT_KEY.equals(preference.getKey())) {
+        } else if (DOWNLOAD_OBJECT_KEY.equals(preference.getKey())) {
             finish();
             SESceneManager.getInstance().removeMessage(HomeScene.MSG_TYPE_SHOW_OBJECT_VIEW);
             SESceneManager.getInstance().handleMessage(HomeScene.MSG_TYPE_SHOW_OBJECT_VIEW, null);
-        } else if(THEME_KEY.equals(preference.getKey())) {
+        } else if (THEME_KEY.equals(preference.getKey())) {
             Utils.showThemes(this);
         }
         return false;
@@ -443,9 +449,9 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         } else if (KEY_BETA_DATA.equals(preference.getKey())) {
             SharedPreferences settings = getSharedPreferences(PREFS_SETTING_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();
-            editor.putBoolean(KEY_DEBUG_BETA_DATA, (Boolean)objValue);
+            editor.putBoolean(KEY_DEBUG_BETA_DATA, (Boolean) objValue);
             editor.commit();
-            MarketConfiguration.setIS_DEBUG_BETA_REQUEST((Boolean)objValue);
+            MarketConfiguration.setIS_DEBUG_BETA_REQUEST((Boolean) objValue);
         } else if (KEY_SHELF_LABEL.equalsIgnoreCase(preference.getKey())) {
             boolean state = (Boolean) objValue;
             setShowShelfSetting(state);
@@ -511,27 +517,27 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         return settings.getBoolean(KEY_SHOW_WALL_INDICATOR, false);
     }
 
-    public static void saveEnableWallIndicator(Context context, boolean enable){
+    public static void saveEnableWallIndicator(Context context, boolean enable) {
         SharedPreferences settings = context.getSharedPreferences(SettingsActivity.PREFS_SETTING_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean(KEY_SHOW_WALL_INDICATOR, enable);
         editor.commit();
     }
 
-	public static boolean hasUpdatedLocalRes(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(
-				PREFS_SETTING_NAME, 0);
-		return settings.getBoolean(KEY_UPDATE_LOCAL_RESOURCE_FINISHED, false);
-	}
+    public static boolean hasUpdatedLocalRes(Context context) {
+        SharedPreferences settings = context.getSharedPreferences(
+                PREFS_SETTING_NAME, 0);
+        return settings.getBoolean(KEY_UPDATE_LOCAL_RESOURCE_FINISHED, false);
+    }
 
-	public static void setUpdateLocalResFinished(Context context,
-			boolean finished) {
-		SharedPreferences settings = context.getSharedPreferences(
-				SettingsActivity.PREFS_SETTING_NAME, 0);
-		SharedPreferences.Editor editor = settings.edit();
-		editor.putBoolean(KEY_UPDATE_LOCAL_RESOURCE_FINISHED, finished);
-		editor.commit();
-	}
+    public static void setUpdateLocalResFinished(Context context,
+                                                 boolean finished) {
+        SharedPreferences settings = context.getSharedPreferences(
+                SettingsActivity.PREFS_SETTING_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean(KEY_UPDATE_LOCAL_RESOURCE_FINISHED, finished);
+        editor.commit();
+    }
 
     public static String getAdContent(Context context) {
         SharedPreferences settings = context.getSharedPreferences(PREFS_SETTING_NAME, 0);
@@ -579,7 +585,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         SharedPreferences settings = context.getSharedPreferences(PREFS_SETTING_NAME, 0);
         return settings.getBoolean(KEY_DEBUG_BETA_DATA, false);
     }
-    
+
     public static boolean hasGivenMoneyToUs(Context context) {
         SharedPreferences settings = context.getSharedPreferences(PREFS_SETTING_NAME, 0);
         return settings.getBoolean(KEY_HAS_GIVEN_MONEY_TO_US, false);
@@ -594,20 +600,22 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 
     public static int getAppIconBackgroundType(Context context) {
         SharedPreferences settings = context.getSharedPreferences(PREFS_SETTING_NAME, 0);
-        String type= settings.getString(KEY_APPICON_BACKGROUND, "0");
+        String type = settings.getString(KEY_APPICON_BACKGROUND, "0");
         return Integer.parseInt(type);
     }
 
     public static void setAppIconBackgroundType(Context context, int type) {
         SharedPreferences settings = context.getSharedPreferences(PREFS_SETTING_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString(KEY_APPICON_BACKGROUND,Integer.toString(type));
+        editor.putString(KEY_APPICON_BACKGROUND, Integer.toString(type));
         editor.commit();
     }
+
     /// wallpaper and user share begin
     private static final boolean ENABLED_WALLPAPER = true;
     private static final String KEY_WALLPAPER = "wallpaper_key";
     private static final String KEY_USER_SHARE = "user_share_key";
+
     private void initWallpaperAndUserShareSettings() {
         Preference wallpaper = findPreference(KEY_WALLPAPER);
         if (null != wallpaper) {
@@ -657,6 +665,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
     }
 
     private BroadcastReceiver mReceiver;
+
     private void cancelListenBackToScene() {
         if (mReceiver != null) {
             unregisterReceiver(mReceiver);
@@ -701,7 +710,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         return settings.getString(key, defValue);
     }
 
-   
+
     private static int getIntSettings(Context context, String key, int defValue) {
         SharedPreferences settings = context.getSharedPreferences(SettingsActivity.PREFS_SETTING_NAME, 0);
         return settings.getInt(key, defValue);
@@ -715,8 +724,9 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         editor.commit();
     }
 
-    
+
     private static final String PREF_KEY_PAPER_SIZE = "wallpaper_max_size";
+
     public static void setPreferredWallpaperSize(Context context, int value) {
         setIntSettings(context, PREF_KEY_PAPER_SIZE, value);
     }
@@ -725,11 +735,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         return getIntSettings(context, PREF_KEY_PAPER_SIZE, defVal);
     }
 
-    
-    
-    
-    
-    
+
     // setting methods of wall shelf for desk object begin
     private static final String KEY_SHELF_LABEL = "show_shelf";
     private static final String KEY_SHELF_DESK_OBJECT = "show_shelf_for_desktop_object";

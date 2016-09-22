@@ -1,20 +1,20 @@
 package com.borqs.market.json;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
-import com.borqs.market.account.AccountSession;
-import com.borqs.market.utils.MarketConfiguration;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
+import com.borqs.market.account.AccountSession;
+import com.borqs.market.utils.MarketConfiguration;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
 public class Product implements Serializable, Comparable<Product>, Parcelable {
 
     /**
-	 * 
-	 */
+     *
+     */
     private static final long serialVersionUID = 1L;
 
     public String product_id;
@@ -39,7 +39,7 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
     public int downloads_count;
     public String localUrl;
     public boolean isApplyed;
-//    public boolean isInstalled;
+    //    public boolean isInstalled;
     public boolean isFree;
     public String mm_paycode;
     public int mm_paycode_count;
@@ -53,9 +53,11 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
     public ArrayList<String> screenshots;
 
     protected String mGoogleSku;
+
     public String getSku() {
         return mGoogleSku;
     }
+
     public String getPayload() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("product_id").append("=").append(product_id).append(",")
@@ -66,32 +68,33 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
                 .append("mGoogleSku").append("=").append(mGoogleSku).append(",");
         return stringBuilder.toString();
     }
+
     public static String getProductIdFromPayload(String payload) {
-        if(TextUtils.isEmpty(payload)) return null;
+        if (TextUtils.isEmpty(payload)) return null;
         return getValue(payload, "product_id");
     }
-    
+
     public static String getUserIdFromPayload(String payload) {
-        if(TextUtils.isEmpty(payload)) return null;
+        if (TextUtils.isEmpty(payload)) return null;
         return getValue(payload, "user_id");
     }
-    
+
     public static int getVersionCodeFromPayload(String payload) {
-        if(!TextUtils.isEmpty(payload)) {
-            String value =  getValue(payload, "version_code");
-            if(!TextUtils.isEmpty(value)) {
+        if (!TextUtils.isEmpty(payload)) {
+            String value = getValue(payload, "version_code");
+            if (!TextUtils.isEmpty(value)) {
                 return Integer.valueOf(value);
             }
         }
         return 1;
     }
-    
+
     private static String getValue(String payload, String key) {
         String[] pStrs = payload.split(",");
         String value = null;
-        for(String str : pStrs) {
-            if(str.contains(key)) {
-                value = str.substring(key.length()+1, str.length());
+        for (String str : pStrs) {
+            if (str.contains(key)) {
+                value = str.substring(key.length() + 1, str.length());
                 break;
             }
         }
@@ -135,7 +138,7 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
         public static final String OBJECT = "object";
         public static final String WALL_PAPER = "wallpaper";
         public static final String SCENE = "scene";
-        
+
         public static String getProductType(int position) {
             if (position == 1) {
                 return OBJECT;
@@ -143,17 +146,18 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
                 return SCENE;
             } else if (position == 3) {
                 return WALL_PAPER;
-            }else {
+            } else {
                 return THEME;
             }
         }
     }
-    
-    
+
+
     public static class SupportedMod {
         public static final String LANDSCAPE = "landscape";
         public static final String PORTRAIT = "portrait";
     }
+
     public static boolean isSupportApply(String category) {
         return !ProductType.OBJECT.equals(category);
     }
@@ -251,14 +255,14 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
             return new Product[size];
         }
     };
-    
+
     public static boolean isBelongSystem(String installed_file_path) {
         boolean isBelongSystem = false;
-        if(MarketConfiguration.getSystemThemeDir() != null) {
+        if (MarketConfiguration.getSystemThemeDir() != null) {
             String dir = MarketConfiguration.getSystemThemeDir().getPath();
             isBelongSystem = !TextUtils.isEmpty(installed_file_path) && installed_file_path.startsWith(dir);
         }
-        
+
         return isBelongSystem;
     }
 

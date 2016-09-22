@@ -647,10 +647,7 @@ public class ModelInfo {
     private LoadingModelTask mLoadingModelTask;
 
     public boolean isOnLoading() {
-        if (mLoadingModelTask != null) {
-            return mLoadingModelTask.isOnLoading();
-        }
-        return false;
+        return mLoadingModelTask != null && mLoadingModelTask.isOnLoading();
     }
 
     public void stopLoading() {

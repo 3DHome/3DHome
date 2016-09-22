@@ -1,16 +1,5 @@
 package com.borqs.se.home3d;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.borqs.borqsweather.weather.yahoo.PinYinUtil;
-import com.borqs.se.R;
-import com.borqs.se.engine.SESceneManager;
-import com.borqs.se.shortcut.AppItemInfo;
-import com.borqs.se.shortcut.ItemInfo;
-import com.borqs.se.shortcut.LauncherModel;
-import com.borqs.se.shortcut.LauncherModel.AppCallBack;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,14 +19,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
+
+import com.borqs.borqsweather.weather.yahoo.PinYinUtil;
+import com.borqs.se.R;
+import com.borqs.se.engine.SESceneManager;
+import com.borqs.se.shortcut.AppItemInfo;
+import com.borqs.se.shortcut.ItemInfo;
+import com.borqs.se.shortcut.LauncherModel;
+import com.borqs.se.shortcut.LauncherModel.AppCallBack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppSearchPane extends FrameLayout implements AppCallBack {
     public int DEFAULT_HIGH_LIGHT_DISPLAY_COLOR = R.color.color_searchresult_highlight_blue;
@@ -46,7 +46,7 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
     private GridView mAppGridView;
     private List<Item> mFullAppsList;
     private boolean mQueryWasEmpty = true;
-    private int mScreenWidth;
+//    private int mScreenWidth;
     //private int mScreenHeight;
     private OnAppSearchItemLongClickListener mItemLongClickListener;
 
@@ -96,9 +96,9 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
         mAppGridView.setGravity(Gravity.CENTER);
         DisplayMetrics displaymetrics = new DisplayMetrics();
         displaymetrics = mContext.getResources().getDisplayMetrics();
-        mScreenWidth = displaymetrics.widthPixels;
+        int widthPixels = displaymetrics.widthPixels;
         //mScreenHeight= displaymetrics.heightPixels;
-        mAppGridView.setPadding(mScreenWidth / 40, 5, mScreenWidth / 40, 0);
+        mAppGridView.setPadding(widthPixels / 40, 5, widthPixels / 40, 0);
         //mAppGridView.setHorizontalSpacing(mScreenWidth / 15);
         //mAppGridView.setVerticalSpacing(mScreenWidth / 15);
         mAppGridView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);

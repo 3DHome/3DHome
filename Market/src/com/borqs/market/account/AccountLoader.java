@@ -178,9 +178,6 @@ public abstract class AccountLoader {
     }
 
     protected boolean isFinishing() {
-        if (null == mActivity) {
-            return true;
-        }
-        return mActivity.isFinishing();
+        return null == mActivity || mActivity.isFinishing();
     }
 }

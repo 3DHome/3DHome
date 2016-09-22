@@ -1,14 +1,12 @@
 package com.borqs.market.utils;
 
 import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
 import android.graphics.BitmapFactory;
-import android.graphics.Rect;
 
 public final class BitmapHelper {
 

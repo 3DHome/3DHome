@@ -71,13 +71,13 @@ public class BasicActivity extends FragmentActivity implements AccountListener{
     
     private View layout_right;
     private View layout_back;
-    private ImageView action_back;
+//    private ImageView action_back;
     private ImageView action_right;
     private TextView title;
     protected void initHeadViews(View parent) {
         BLog.v(TAG, "initHeadViews");
 
-        action_back = (ImageView) parent.findViewById(R.id.action_back);
+//        action_back = (ImageView) parent.findViewById(action_back);
         action_right =  (ImageView)parent.findViewById(R.id.action_right);
         title = (TextView) parent.findViewById(R.id.title_bar_title);
         layout_right = parent.findViewById(R.id.layout_right);

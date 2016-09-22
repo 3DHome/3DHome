@@ -1,13 +1,5 @@
 package com.borqs.se.widget3d;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
@@ -26,21 +18,36 @@ import android.view.animation.DecelerateInterpolator;
 import com.borqs.market.wallpaper.RawPaperItem;
 import com.borqs.market.wallpaper.WallpaperUtils;
 import com.borqs.se.download.WallPaperItem;
-import com.borqs.se.engine.*;
+import com.borqs.se.engine.SEAnimFinishListener;
+import com.borqs.se.engine.SECommand;
+import com.borqs.se.engine.SEEmptyAnimation;
+import com.borqs.se.engine.SELoadResThread;
+import com.borqs.se.engine.SEObject;
 import com.borqs.se.engine.SEScene.SCENE_CHANGED_TYPE;
+import com.borqs.se.engine.SESceneManager;
+import com.borqs.se.engine.SETransParas;
+import com.borqs.se.engine.SEVector;
 import com.borqs.se.engine.SEVector.SERotate;
 import com.borqs.se.engine.SEVector.SEVector2f;
-import com.borqs.se.home3d.HomeUtils.CropImageInfo;
-import com.borqs.se.home3d.HomeUtils.OnCropImageFinishedListener;
-import com.borqs.se.home3d.ModelInfo.ImageItem;
-import com.borqs.se.home3d.ModelInfo;
+import com.borqs.se.home3d.HomeManager;
 import com.borqs.se.home3d.HomeScene;
 import com.borqs.se.home3d.HomeUtils;
-import com.borqs.se.home3d.HomeManager;
+import com.borqs.se.home3d.HomeUtils.CropImageInfo;
+import com.borqs.se.home3d.HomeUtils.OnCropImageFinishedListener;
+import com.borqs.se.home3d.ModelInfo;
+import com.borqs.se.home3d.ModelInfo.ImageItem;
 import com.borqs.se.home3d.ThemeInfo;
 import com.borqs.se.shortcut.LauncherModel;
 import com.borqs.se.shortcut.LauncherModel.ShortcutCallBack;
 import com.borqs.se.widget3d.ObjectInfo.ObjectSlot;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class House extends VesselObject implements ShortcutCallBack,OnCropImageFinishedListener{
     public float mSkyRadius = 0;
@@ -90,7 +97,7 @@ public class House extends VesselObject implements ShortcutCallBack,OnCropImageF
     private Map<Integer, Wall> mAllWall;
     private boolean mHasBeenLoadedFinish = false;
     private ShelfManager mShelfManager;
-    private boolean mIsLandScape;
+//    private boolean mIsLandScape;
     private boolean mShowDeskObjectShef = true;
     private boolean mShowAppShef = false;
     
@@ -117,7 +124,7 @@ public class House extends VesselObject implements ShortcutCallBack,OnCropImageF
         setOnClickListener(null);
         setOnLongClickListener(null);
         getSpecialConfigFromXML();
-        mIsLandScape = HomeManager.getInstance().isLandscapeOrientation();
+//        mIsLandScape = HomeManager.getInstance().isLandscapeOrientation();
         mCurrentTheme = HomeManager.getInstance().getCurrentThemeInfo().mThemeName;
         mPerFaceAngle = 360.0f / mWallNum;
         mOnMoveSight = false;

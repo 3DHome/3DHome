@@ -1,8 +1,6 @@
 package com.borqs.se.widget3d;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +22,6 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.MotionEvent;
 
 import com.borqs.digitalframe.FrameSettingPrefManager;

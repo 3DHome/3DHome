@@ -16,15 +16,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -32,15 +31,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import com.borqs.digitalframe.R;
-
 public class AlbumFolderActivity extends FragmentActivity implements
         LoaderCallbacks<Cursor> {
 
     private ArrayList<ImageFileItemInfo> mImageFileList = new ArrayList<ImageFileItemInfo>();
     ArrayList<HashMap<String, Object>> mFolderListItem = new ArrayList<HashMap<String, Object>>();
     private GridView mGridView;
-    private int mMode; // 0, file; 1, folder
+//    private int mMode; // 0, file; 1, folder
     private Cursor mCursor;
     public static final int REQUEST_CODE_SELECT_FILE = 11111;
 
@@ -61,9 +58,9 @@ public class AlbumFolderActivity extends FragmentActivity implements
 
         getSupportLoaderManager().initLoader(0, null, this);
 
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        mMode = bundle.getInt("mode");
+//        Intent intent = getIntent();
+//        Bundle bundle = intent.getExtras();
+//        mMode = bundle.getInt("mode");
     }
 
     @Override

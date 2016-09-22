@@ -8,8 +8,6 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.util.Log;
-import android.view.WindowManager;
 
 public class WeatherService extends Service{
     private LoopForInfoService mLoopForWeatherInfo;

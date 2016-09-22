@@ -231,10 +231,7 @@ public class ASELoaderActivity extends Activity implements OnTouchListener {
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             SESceneManager.getInstance().handleMenuKey();
         }
-        if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-            return false;
-        }
-        return super.onKeyUp(keyCode, event);
+        return keyCode != KeyEvent.KEYCODE_SEARCH && super.onKeyUp(keyCode, event);
 
     }
 

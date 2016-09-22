@@ -229,10 +229,7 @@ public  class DataConvertUtils {
         }
     }
     public static boolean isWallpaperProduct(Product product) {
-        if (null != product) {
-            return Product.ProductType.WALL_PAPER.equalsIgnoreCase(product.type);
-        }
-        return false;
+        return null != product && Product.ProductType.WALL_PAPER.equalsIgnoreCase(product.type);
     }
     public static List<Product> parseXML(String parentPath) {
         List<Product> result = new ArrayList<Product>();

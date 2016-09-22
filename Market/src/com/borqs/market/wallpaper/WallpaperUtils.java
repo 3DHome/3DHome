@@ -13,11 +13,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.borqs.market.api.ApiUtil;
-import com.borqs.market.db.DownLoadProvider;
-import com.borqs.market.db.PlugInColumns;
 import com.borqs.market.json.Product;
 import com.borqs.market.net.RequestListener;
 import com.borqs.market.net.WutongException;

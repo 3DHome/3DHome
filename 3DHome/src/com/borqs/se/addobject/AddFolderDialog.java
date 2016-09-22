@@ -17,7 +17,6 @@ package com.borqs.se.addobject;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
 import android.widget.ImageView;
 import android.graphics.drawable.Drawable;
@@ -28,7 +27,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.Animation.AnimationListener;
 
-import com.borqs.se.shortcut.ItemInfo;
 import com.borqs.se.shortcut.AppItemInfo;
 
 import com.borqs.se.R;

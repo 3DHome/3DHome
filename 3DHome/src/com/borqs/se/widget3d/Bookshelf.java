@@ -83,10 +83,7 @@ public class Bookshelf extends NormalObject {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (mDisableTouch) {
-            return true;
-        }
-        return super.dispatchTouchEvent(event);
+        return mDisableTouch || super.dispatchTouchEvent(event);
     }
 
     private void show() {
@@ -170,10 +167,7 @@ public class Bookshelf extends NormalObject {
 
         @Override
         public boolean dispatchTouchEvent(MotionEvent event) {
-            if (mDisableTouch) {
-                return false;
-            }
-            return super.dispatchTouchEvent(event);
+            return !mDisableTouch && super.dispatchTouchEvent(event);
         }
 
         @Override

@@ -377,10 +377,7 @@ public class AppObject extends NormalObject {
             return true;
         }
         ItemInfo itemInfo = LauncherModel.getInstance().findAppItem(componentName);
-        if (itemInfo != null) {
-            return itemInfo.mIsSysApp;
-        }
-        return false;
+        return itemInfo != null && itemInfo.mIsSysApp;
     }
 
     private boolean mOnCreateIcon = false;

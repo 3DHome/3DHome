@@ -1,9 +1,7 @@
 package com.borqs.se.home3d;
 
-import com.borqs.se.R;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
@@ -11,14 +9,14 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.borqs.se.R;
+
 public class ChangeLabelDialog extends Dialog implements android.view.View.OnClickListener {
     private Context mContext;
-    private LayoutInflater inflater;
+//    private LayoutInflater inflater;
     private EditText mEdtLabel;
     private Button mBtnOK;
     private Button mBtnCancel;
@@ -55,7 +53,7 @@ public class ChangeLabelDialog extends Dialog implements android.view.View.OnCli
 
     private void init(Context context) {
         getWindow().setTitle(mContext.getResources().getString(R.string.change_label_dialog_title));
-        inflater = LayoutInflater.from(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.dialog_change_label, null);
         mBtnOK = (Button) v.findViewById(R.id.change_label_dialog_btnOK);
         mBtnCancel = (Button) v.findViewById(R.id.change_label_dialog_btnCancel);

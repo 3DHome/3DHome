@@ -192,10 +192,8 @@ public class Utility {
 	  }
 
 
-	  private static boolean deleteDependon(String filepath, int maxRetryCount)
-	  {
-	    if (TextUtils.isEmpty(filepath)) return false;
-	    return deleteDependon(new File(filepath), maxRetryCount);
+	  private static boolean deleteDependon(String filepath, int maxRetryCount) {
+		  return !TextUtils.isEmpty(filepath) && deleteDependon(new File(filepath), maxRetryCount);
 	  }
 
 	private static boolean deleteDependon(String filepath)
@@ -209,10 +207,8 @@ public class Utility {
 	    return ((file != null) && (file.exists()));
 	  }
 
-	  private static boolean doesExisted(String filepath)
-	  {
-	    if (TextUtils.isEmpty(filepath)) return false;
-	    return doesExisted(new File(filepath));
+	  private static boolean doesExisted(String filepath) {
+		  return !TextUtils.isEmpty(filepath) && doesExisted(new File(filepath));
 	  }
 	  private static void makesureParentExist(File file_)
 	  {

@@ -1,7 +1,6 @@
 package com.borqs.market.utils;
 
 import java.io.File;
-import java.util.List;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,7 +11,6 @@ import android.database.Cursor;
 import com.borqs.market.account.AccountSession;
 import com.borqs.market.db.DownLoadHelper;
 import com.borqs.market.db.DownloadInfoColumns;
-import com.borqs.market.json.Product;
 import com.iab.engine.MarketBillingResult;
 
 public final class MarketConfiguration {

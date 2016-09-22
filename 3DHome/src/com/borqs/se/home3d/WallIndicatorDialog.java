@@ -5,7 +5,6 @@ import java.util.HashMap;
 import com.borqs.se.R;
 import com.borqs.se.engine.SESceneManager;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;

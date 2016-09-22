@@ -24,7 +24,7 @@ import com.borqs.market.utils.IntentUtil;
 import com.borqs.market.view.LightProgressDialog;
 
 public abstract class BasicDialogFragment extends DialogFragment implements AccountListener{
-    private static String TAG = "BasicFragment";
+    private final static String TAG = "BasicDialogFragment";
     
     protected static String ARGUMENTS_KEY_MOD = "ARGUMENTS_KEY_MOD";
     protected static String ARGUMENTS_KEY_TYPE = "ARGUMENTS_KEY_TYPE";

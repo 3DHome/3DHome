@@ -1,8 +1,5 @@
 package com.borqs.se.home3d;
 
-import com.borqs.se.R;
-import com.borqs.se.engine.SESceneManager;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -20,22 +17,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.borqs.se.R;
+import com.borqs.se.engine.SESceneManager;
+
 public class HelperDialog extends Dialog {
-    private Context mContext;
+//    private Context mContext;
     private int mScreenW;
-    private MyLayout mMyLayout;
+//    private MyLayout mMyLayout;
 
     public HelperDialog(Context context) {
         super(context, R.style.HelperDialogStyle);
-        mContext = context;
+//        mContext = context;
         Configuration config = new Configuration();
-        android.provider.Settings.System.getConfiguration(mContext.getContentResolver(), config);
+        android.provider.Settings.System.getConfiguration(context.getContentResolver(), config);
         mScreenW = context.getResources().getDisplayMetrics().widthPixels;
-        mMyLayout = new MyLayout(context);
+        MyLayout myLayout = new MyLayout(context);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.FILL_PARENT,
                 FrameLayout.LayoutParams.FILL_PARENT);
-        mMyLayout.setLayoutParams(layoutParams);
-        setContentView(mMyLayout);
+        myLayout.setLayoutParams(layoutParams);
+        setContentView(myLayout);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
         float pixDensity = context.getResources().getDisplayMetrics().density;
@@ -60,7 +60,7 @@ public class HelperDialog extends Dialog {
         dot = new ImageView(context);
         dot.setBackgroundResource(R.drawable.dot_invisible);
         page0.addView(dot, params);
-        mMyLayout.addView(view0);
+        myLayout.addView(view0);
 
         LinearLayout view1 = (LinearLayout) getLayoutInflater().inflate(R.layout.helper_view_layout, null);
         view1.setBackgroundResource(R.drawable.help_bg_01);
@@ -80,7 +80,7 @@ public class HelperDialog extends Dialog {
         dot = new ImageView(context);
         dot.setBackgroundResource(R.drawable.dot_invisible);
         page1.addView(dot, params);
-        mMyLayout.addView(view1);
+        myLayout.addView(view1);
         view1.setTranslationX(mScreenW);
 
         LinearLayout view2 = (LinearLayout) getLayoutInflater().inflate(R.layout.helper_view_layout, null);
@@ -101,7 +101,7 @@ public class HelperDialog extends Dialog {
         dot = new ImageView(context);
         dot.setBackgroundResource(R.drawable.dot_visible);
         page2.addView(dot, params);
-        mMyLayout.addView(view2);
+        myLayout.addView(view2);
         view2.setTranslationX(mScreenW * 2);
         getWindow().setWindowAnimations(R.style.helper_dialog_anim_style);
     }

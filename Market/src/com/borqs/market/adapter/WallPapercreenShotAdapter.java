@@ -29,7 +29,7 @@ public class WallPapercreenShotAdapter  extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position == 0) {
-            return new ProductDescriptionFragment(mData);
+            return ProductDescriptionFragment.newInstance(mData);
         }else {
             WallpaperPhotoFragment f = new WallpaperPhotoFragment();
             f.setArguments(WallpaperPhotoFragment.getArguments(mData.screenshots.get(position - 1)));

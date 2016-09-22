@@ -259,10 +259,7 @@ public class WallpaperProductDetailFragment extends BasicFragment implements
     }
     
     private boolean isSupportApply(String category) {
-        if(Product.ProductType.THEME.equals(category)) {
-            return true;
-        }
-        return Product.ProductType.WALL_PAPER.equals(category);
+        return Product.ProductType.THEME.equals(category) || Product.ProductType.WALL_PAPER.equals(category);
     }
 
     protected void refreshUI() {

@@ -16,13 +16,13 @@
 
 package com.borqs.se.home3d;
 
-import java.text.Collator;
-import java.util.Locale;
+import android.text.TextUtils;
+import android.util.Log;
 
 import com.borqs.borqsweather.weather.WeatherController;
 
-import android.text.TextUtils;
-import android.util.Log;
+import java.text.Collator;
+import java.util.Locale;
 
 
 /**
@@ -418,7 +418,7 @@ public class HanziToPinyin {
         return token;
     }
 
-    private final Token handleSpecial(final char character) {
+    private Token handleSpecial(final char character) {
         Token token = new Token();
         token.type = Token.PINYIN;
         token.source = Character.toString(character);

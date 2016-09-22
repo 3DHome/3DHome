@@ -1,17 +1,11 @@
 package com.borqs.market.service;
 
-import java.io.IOException;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.AlarmManager;
 import android.app.IntentService;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.borqs.market.api.ApiUtil;
 import com.borqs.market.json.Product.ProductType;
@@ -19,6 +13,11 @@ import com.borqs.market.net.RequestListener;
 import com.borqs.market.net.WutongException;
 import com.borqs.market.utils.DataConnectionUtils;
 import com.borqs.market.utils.IntentUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 public class QueryUpdateServices extends IntentService {
     private static final String TAG = QueryUpdateServices.class.getSimpleName();
@@ -29,7 +28,7 @@ public class QueryUpdateServices extends IntentService {
     public static final String SP_EXTRAS_WALLPAPER_UPDATE_TIME = "wallpaper_update_time";
     public static final String SP_EXTRAS_ERROR_COUNT = "SP_EXTRAS_ERROR_COUNT";
     
-    private final long WEEK = 7 * 24 * 60 * 60 * 1000L;
+    private final static long WEEK = 7 * 24 * 60 * 60 * 1000L;
     
     private ApiUtil mApiUtil = null;
 //    private int nErrorCount = 0;

@@ -10,7 +10,6 @@ import android.view.animation.AnimationUtils;
 import com.borqs.market.fragment.ProductDetailFragment;
 import com.borqs.market.fragment.ProductDetailFragment.RefreshListener;
 import com.borqs.market.listener.ViewListener;
-import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.IntentUtil;
 
 public class ProductDetailActivity extends BasicActivity implements RefreshListener,ViewListener {

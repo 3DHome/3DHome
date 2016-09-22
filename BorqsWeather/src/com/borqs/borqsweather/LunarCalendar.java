@@ -5,11 +5,11 @@
  */
 package com.borqs.borqsweather;
 
+import android.text.format.Time;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
-import android.text.format.Time;
 
 /**
  * 农历的一些方法
@@ -56,7 +56,7 @@ public class LunarCalendar {
      * @param y
      * @return
      */
-    final private static int lYearDays(int y){
+    private static int lYearDays(int y){
         int i, sum = 348;
         for (i = 0x8000; i > 0x8; i >>= 1) {
             if ((lunarInfo[y - 1900] & i) != 0)
@@ -70,7 +70,7 @@ public class LunarCalendar {
      * @param y
      * @return
      */
-    final private static int leapDays(int y){
+    private static int leapDays(int y){
         if (leapMonth(y) != 0) {
             if ((lunarInfo[y - 1900] & 0x10000) != 0)
                 return 30;
@@ -85,7 +85,7 @@ public class LunarCalendar {
      * @param y
      * @return
      */
-    final private static int leapMonth(int y){
+    private static int leapMonth(int y){
         return (int) (lunarInfo[y - 1900] & 0xf);
     }
 
@@ -95,7 +95,7 @@ public class LunarCalendar {
      * @param m
      * @return
      */
-    final private static int monthDays(int y, int m){
+    private static int monthDays(int y, int m){
         if ((lunarInfo[y - 1900] & (0x10000 >> m)) == 0)
             return 29;
         else
@@ -107,7 +107,7 @@ public class LunarCalendar {
      * @param y
      * @return
      */
-    final public static String AnimalsYear(int y){
+    public static String AnimalsYear(int y){
         return Animals[(y - 4) % 12];
     }
 
@@ -116,7 +116,7 @@ public class LunarCalendar {
      * @param num
      * @return
      */
-    final private static String cyclicalm(int num)
+    private static String cyclicalm(int num)
     {
         return (Gan[num % 10] + Zhi[num % 12]);
     }
@@ -126,7 +126,7 @@ public class LunarCalendar {
      * @param y
      * @return
      */
-    final public static String cyclical(int y){
+    public static String cyclical(int y){
         int num = y - 1900 + 36;
         return (cyclicalm(num));
     }
@@ -213,7 +213,7 @@ public class LunarCalendar {
      * @param d
      * @return
      */
-    final public static long[] calElement(int y, int m, int d)
+    public static long[] calElement(int y, int m, int d)
     {
         long[] nongDate = new long[7];
         int i = 0, temp = 0, leap = 0;

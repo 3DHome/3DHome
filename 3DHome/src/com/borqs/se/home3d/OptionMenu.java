@@ -11,10 +11,9 @@ import android.view.View.OnKeyListener;
 import android.view.WindowManager.LayoutParams;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
-import android.view.animation.Transformation;
 import android.view.animation.Animation.AnimationListener;
+import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -25,7 +24,7 @@ import com.borqs.se.engine.SESceneManager;
 public class OptionMenu extends PopupWindow {
     private TextView mMenu0, mMenu1, mMenu2, mMenu3;
     private Rotate3d mAnimation0, mAnimation1, mAnimation2, mAnimation3;
-    private RotateListener mListener0, mListener1, mListener2, mListener3;
+//    private RotateListener mListener0, mListener1, mListener2, mListener3;
 
     public OptionMenu(Context context) {
         super(context, null, R.style.OptionMenuWindow);
@@ -62,28 +61,28 @@ public class OptionMenu extends PopupWindow {
         mAnimation0.setDuration(700);
         mAnimation0.setFillAfter(false);
         mAnimation0.setInterpolator(new AccelerateInterpolator());
-        mListener0 = new RotateListener(mMenu0);
+        RotateListener mListener0 = new RotateListener(mMenu0);
         mAnimation0.setAnimationListener(mListener0);
         
         mAnimation1 = new Rotate3d(180, 0, mMenu1);
         mAnimation1.setDuration(700);
         mAnimation1.setFillAfter(false);
         mAnimation1.setInterpolator(new AccelerateInterpolator());
-        mListener1 = new RotateListener(mMenu1);
+        RotateListener mListener1 = new RotateListener(mMenu1);
         mAnimation1.setAnimationListener(mListener1);
         
         mAnimation2 = new Rotate3d(180, 0, mMenu2);
         mAnimation2.setDuration(700);
         mAnimation2.setFillAfter(false);
         mAnimation2.setInterpolator(new AccelerateInterpolator());
-        mListener2 = new RotateListener(mMenu2);
+        RotateListener mListener2 = new RotateListener(mMenu2);
         mAnimation2.setAnimationListener(mListener2);
         
         mAnimation3 = new Rotate3d(180, 0, mMenu3);
         mAnimation3.setDuration(700);
         mAnimation3.setFillAfter(false);
         mAnimation3.setInterpolator(new AccelerateInterpolator());
-        mListener3 = new RotateListener(mMenu3);
+        RotateListener mListener3 = new RotateListener(mMenu3);
         mAnimation3.setAnimationListener(mListener3);
 
         // 只有设置背景后点击空白区Window才能消失（即点击无背景区Window消失）
@@ -148,7 +147,7 @@ public class OptionMenu extends PopupWindow {
         }
     }
     
-    private OnClickListener mClickListener = new View.OnClickListener() {
+    private final OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
@@ -181,7 +180,7 @@ public class OptionMenu extends PopupWindow {
         }
     };
 
-    private OnKeyListener mOnKeyListener = new OnKeyListener() {
+    private final OnKeyListener mOnKeyListener = new OnKeyListener() {
 
         @Override
         public boolean onKey(View v, int keyCode, KeyEvent event) {

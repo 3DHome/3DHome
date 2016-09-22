@@ -45,6 +45,13 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.support.v4.os.ParcelableCompat;
 import android.support.v4.os.ParcelableCompatCreatorCallbacks;
+import android.support.v4.view.AccessibilityDelegateCompat;
+import android.support.v4.view.KeyEventCompat;
+import android.support.v4.view.MotionEventCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.VelocityTrackerCompat;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.view.accessibility.AccessibilityEventCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityRecordCompat;
@@ -68,14 +75,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.KeyEventCompat;
-import android.support.v4.view.AccessibilityDelegateCompat;
-import android.support.v4.view.VelocityTrackerCompat;
 
 
 /**
@@ -175,8 +174,8 @@ public class AddObjectViewPager extends ViewGroup {
     private float mFirstOffset = -Float.MAX_VALUE;
     private float mLastOffset = Float.MAX_VALUE;
 
-    private int mChildWidthMeasureSpec;
-    private int mChildHeightMeasureSpec;
+//    private int mChildWidthMeasureSpec;
+//    private int mChildHeightMeasureSpec;
     private boolean mInLayout;
 
     private boolean mScrollingCacheEnabled;
@@ -186,7 +185,7 @@ public class AddObjectViewPager extends ViewGroup {
 
     private boolean mIsBeingDragged;
     private boolean mIsUnableToDrag;
-    private boolean mIgnoreGutter;
+//    private boolean mIgnoreGutter;
     private int mDefaultGutterSize;
     private int mGutterSize;
     private int mTouchSlop;
@@ -1430,8 +1429,8 @@ public class AddObjectViewPager extends ViewGroup {
             }
         }
 
-        mChildWidthMeasureSpec = MeasureSpec.makeMeasureSpec(childWidthSize, MeasureSpec.EXACTLY);
-        mChildHeightMeasureSpec = MeasureSpec.makeMeasureSpec(childHeightSize, MeasureSpec.EXACTLY);
+//        mChildWidthMeasureSpec = MeasureSpec.makeMeasureSpec(childWidthSize, MeasureSpec.EXACTLY);
+        int childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(childHeightSize, MeasureSpec.EXACTLY);
 
         // Make sure we have created all fragments that we need to have shown.
         mInLayout = true;
@@ -1447,7 +1446,7 @@ public class AddObjectViewPager extends ViewGroup {
                 if (lp == null || !lp.isDecor) {
                     final int widthSpec = MeasureSpec.makeMeasureSpec(
                             (int) (childWidthSize * lp.widthFactor), MeasureSpec.EXACTLY);
-                    child.measure(widthSpec, mChildHeightMeasureSpec);
+                    child.measure(widthSpec, childHeightMeasureSpec);
                 }
             }
         }
@@ -2389,11 +2388,8 @@ public class AddObjectViewPager extends ViewGroup {
         final int scrollX = getScrollX();
         if (direction < 0) {
             return (scrollX > (int) (width * mFirstOffset));
-        } else if (direction > 0) {
-            return (scrollX < (int) (width * mLastOffset));
-        } else {
-            return false;
-        }
+        } else
+            return direction > 0 && (scrollX < (int) (width * mLastOffset));
     }
 
     /**

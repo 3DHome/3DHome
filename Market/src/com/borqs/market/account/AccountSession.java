@@ -2,7 +2,6 @@ package com.borqs.market.account;
 
 import com.borqs.information.IabManager;
 import com.borqs.information.InformationDownloadService;
-import com.borqs.information.util.InformationConstant;
 
 import android.content.Context;
 import android.content.Intent;

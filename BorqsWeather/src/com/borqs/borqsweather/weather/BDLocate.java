@@ -1,8 +1,5 @@
 package com.borqs.borqsweather.weather;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,6 +11,9 @@ import com.baidu.location.LocationClientOption;
 import com.borqs.borqsweather.WeatherApplication;
 import com.borqs.borqsweather.weather.LocationState.Locate;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class BDLocate implements Locate {
     private static final String TAG = "Weather_LocationState";
     private static boolean DEBUG = WeatherController.DEBUG;
@@ -22,7 +22,7 @@ public class BDLocate implements Locate {
     private LocationState mState;
     private LocationClient mBDLocationClient;
     private BDLocationListener mBDLocationListener;
-    private LocationClientOption mBDLocationClientOption;
+//    private LocationClientOption mBDLocationClientOption;
     private String mCountry = "China";
     private String mProvince;
     private String mCity;
@@ -92,13 +92,13 @@ public class BDLocate implements Locate {
             }
         };
         mBDLocationClient.registerLocationListener(mBDLocationListener);
-        mBDLocationClientOption = new LocationClientOption();
-        mBDLocationClientOption.setAddrType("all");
-        mBDLocationClientOption.setTimeOut(15);
-        mBDLocationClientOption.setProdName("3DHome");
-        mBDLocationClientOption.setCoorType("bd09ll");
-        mBDLocationClientOption.setPriority(mRequestPriority);
-        mBDLocationClient.setLocOption(mBDLocationClientOption);
+        LocationClientOption locationClientOption = new LocationClientOption();
+        locationClientOption.setAddrType("all");
+        locationClientOption.setTimeOut(15);
+        locationClientOption.setProdName("3DHome");
+        locationClientOption.setCoorType("bd09ll");
+        locationClientOption.setPriority(mRequestPriority);
+        mBDLocationClient.setLocOption(locationClientOption);
         mBDLocationClient.start();
         mBDLocationClient.requestLocation();
     }

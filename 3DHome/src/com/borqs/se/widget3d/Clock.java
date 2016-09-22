@@ -217,10 +217,7 @@ public class Clock extends NormalObject implements TimeChangeCallBack {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (mDisableTouch) {
-            return true;
-        }
-        return super.dispatchTouchEvent(event);
+        return mDisableTouch || super.dispatchTouchEvent(event);
     }
 
     @Override
@@ -315,10 +312,7 @@ public class Clock extends NormalObject implements TimeChangeCallBack {
 
         @Override
         public boolean dispatchTouchEvent(MotionEvent event) {
-            if (mDisableTouch) {
-                return true;
-            }
-            return super.dispatchTouchEvent(event);
+            return mDisableTouch || super.dispatchTouchEvent(event);
         }
 
         public void stopWork() {

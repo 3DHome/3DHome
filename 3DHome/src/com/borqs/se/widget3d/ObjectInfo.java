@@ -23,7 +23,6 @@ import com.borqs.se.engine.SESceneManager;
 import com.borqs.se.engine.SEVector.SEVector3f;
 import com.borqs.se.home3d.HomeScene;
 import com.borqs.se.home3d.ModelInfo;
-import com.borqs.se.home3d.HomeManager;
 import com.borqs.se.home3d.SearchActivity;
 import com.borqs.se.home3d.UpdateDBThread;
 import com.borqs.se.home3d.ProviderUtils.ObjectInfoColumns;

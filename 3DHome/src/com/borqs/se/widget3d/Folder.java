@@ -425,10 +425,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (mDisableTouch) {
-            return true;
-        }
-        return super.dispatchTouchEvent(event);
+        return mDisableTouch || super.dispatchTouchEvent(event);
     }
 
     @Override
@@ -569,10 +566,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
     }
 
     public boolean isShortcutOrUserUpdate(ObjectInfo objectInfo) {
-        if (objectInfo == null) {
-            return false;
-        }
-        return (objectInfo.isShortcut()) || (objectInfo.isAppUserUpdate());
+        return objectInfo != null && ((objectInfo.isShortcut()) || (objectInfo.isAppUserUpdate()));
     }
 
     private class FolderExpandDialog extends VesselObject {
@@ -751,10 +745,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
                     movePositionAnimation.execute();
                 }
             }
-            if (mDisableTouch) {
-                return true;
-            }
-            return super.dispatchTouchEvent(event);
+            return mDisableTouch || super.dispatchTouchEvent(event);
         }
 
         @Override
@@ -871,10 +862,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
                 conflictAnimationTask.mMoveSlot = moveSlot;
                 tasks.add(conflictAnimationTask);
                 NormalObject newConflictIcon = getConflictIcon(moveSlot);
-                if (newConflictIcon != null) {
-                    return (canPlaceToLeft(tasks, newConflictIcon));
-                }
-                return true;
+                return newConflictIcon == null || (canPlaceToLeft(tasks, newConflictIcon));
             } else {
                 return false;
             }
@@ -889,10 +877,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
                 conflictAnimationTask.mMoveSlot = moveSlot;
                 tasks.add(conflictAnimationTask);
                 NormalObject newConflictIcon = getConflictIcon(moveSlot);
-                if (newConflictIcon != null) {
-                    return (canPlaceToRight(tasks, newConflictIcon));
-                }
-                return true;
+                return newConflictIcon == null || (canPlaceToRight(tasks, newConflictIcon));
             } else {
                 return false;
             }
@@ -940,10 +925,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
             if (objectSlot1 == null && objectSlot2 == null) {
                 return true;
             }
-            if ((objectSlot1 != null && objectSlot2 == null) || (objectSlot1 == null && objectSlot2 != null)) {
-                return false;
-            }
-            return objectSlot1.equals(objectSlot2);
+            return !((objectSlot1 != null && objectSlot2 == null) || (objectSlot1 == null && objectSlot2 != null)) && objectSlot1.equals(objectSlot2);
         }
 
         private class MovePositionAnimation extends CountAnimation {

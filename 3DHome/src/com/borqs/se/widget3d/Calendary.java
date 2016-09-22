@@ -321,10 +321,7 @@ public class Calendary extends NormalObject implements TimeChangeCallBack, Langu
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (mDisableTouch) {
-            return true;
-        }
-        return super.dispatchTouchEvent(event);
+        return mDisableTouch || super.dispatchTouchEvent(event);
     }
 
     public void showMonth() {

@@ -1,9 +1,7 @@
 package com.borqs.market.fragment;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,22 +16,32 @@ import com.borqs.market.R;
 import com.borqs.market.json.Product;
 import com.borqs.market.utils.DownloadUtils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class ProductDescriptionFragment extends Fragment {
     public static final String TAG = ProductDescriptionFragment.class.getSimpleName();
     private Product mData;
     private View view;
-    private Context ctx;
+//    private Context ctx;
     public interface ClickListener {
         void onclick();
     }
 
     public ProductDescriptionFragment() {
         super();
+
+        this.mData = (Product) getArguments().getSerializable(Intent.EXTRA_STREAM);
     }
-    public ProductDescriptionFragment(Product data) {
-        super();
-        this.mData = data;
+
+    public static ProductDescriptionFragment newInstance(Product data) {
+        Bundle args = new Bundle();
+        args.putSerializable(Intent.EXTRA_STREAM, data);
+        ProductDescriptionFragment fragment = new ProductDescriptionFragment();
+        //将Bundle设置为fragment的参数
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -41,7 +49,8 @@ public class ProductDescriptionFragment extends Fragment {
         if(savedInstanceState != null) {
             this.mData = savedInstanceState.getParcelable("FLAG_DATA");
         }
-        ctx = getActivity().getApplicationContext();
+
+        Context ctx = getActivity().getApplicationContext();
         Typeface fontFaceLight = Typeface.createFromAsset(ctx.getAssets(),"fonts/Roboto-Light.ttf");
         Typeface fontFace = Typeface.createFromAsset(ctx.getAssets(),"fonts/Roboto-Regular.ttf");
         view = inflater.inflate(R.layout.product_description, null);

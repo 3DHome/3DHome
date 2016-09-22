@@ -1,17 +1,8 @@
 package com.borqs.market.utils;
 
-import java.util.HashMap;
-
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
-import android.util.Log;
-
-import com.borqs.market.R;
 
 /**
  * Created by IntelliJ IDEA. User: b608 Date: 11-10-17 Time: 下午12:23 To change

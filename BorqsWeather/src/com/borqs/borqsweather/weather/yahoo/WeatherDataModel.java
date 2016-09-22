@@ -1,6 +1,5 @@
 package com.borqs.borqsweather.weather.yahoo;
 
-import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
 

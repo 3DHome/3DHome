@@ -1,9 +1,5 @@
 package com.borqs.se.home3d;
 
-import java.util.List;
-
-import com.borqs.se.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.borqs.se.R;
+
+import java.util.List;
+
 
 public class IconTextListAdapter extends ArrayAdapter<IconTextListAdapter.IconListItem> {
 
     protected LayoutInflater mInflater;
     private static final int mResource = R.layout.icon_list_item;
-    private ViewHolder mViewHolder;
+//    private ViewHolder mViewHolder;
 
     static class ViewHolder {
         private View mView;
@@ -53,21 +53,22 @@ public class IconTextListAdapter extends ArrayAdapter<IconTextListAdapter.IconLi
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view;
+        ViewHolder viewHolder;
         if (convertView == null) {
             view = mInflater.inflate(mResource, parent, false);
-            mViewHolder = new ViewHolder(view);
-            view.setTag(mViewHolder);
+            viewHolder = new ViewHolder(view);
+            view.setTag(viewHolder);
         } else {
             view = convertView;
-            mViewHolder = (ViewHolder) view.getTag();
+            viewHolder = (ViewHolder) view.getTag();
         }
 
         // Set text field
-        TextView text = mViewHolder.getTextView();
+        TextView text = viewHolder.getTextView();
         text.setText(getItem(position).getTitle());
 
         // Set resource icon
-        ImageView image = mViewHolder.getImageView();
+        ImageView image = viewHolder.getImageView();
         image.setImageResource(getItem(position).getResource());
 
         return view;

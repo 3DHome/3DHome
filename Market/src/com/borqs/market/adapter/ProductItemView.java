@@ -1,7 +1,5 @@
 package com.borqs.market.adapter;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -13,23 +11,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.borqs.market.LocalImageManager;
-import com.borqs.market.R;
 import com.borqs.market.LocalImageManager.ImageUpdateListener;
+import com.borqs.market.R;
 import com.borqs.market.json.Product;
 import com.borqs.market.utils.IntentUtil;
+
+import java.util.ArrayList;
 
 public class ProductItemView {
     public static final String TAG = ProductItemView.class.getSimpleName();
     public View convertView;
     public LinearLayout itemContainer;
-    public int childCount;
+//    public int childCount;
 
     public int image_portrait_width;
     public int image_portrait_height;
     public int height;
     public int mColumn;
     private Activity mActivity;
-    private Context mContext;
+//    private Context mContext;
     private LayoutInflater inflater;
     private LocalImageManager mLocalImageManager;
 
@@ -37,9 +37,9 @@ public class ProductItemView {
         super();
         mActivity = activity;
         mLocalImageManager = localImageManager;
-        mContext = mActivity.getBaseContext();
+        Context context = mActivity.getBaseContext();
         mColumn = column;
-        inflater = LayoutInflater.from(mContext);
+        inflater = LayoutInflater.from(context);
 
         calculateWidth(itemMinWidth);
 

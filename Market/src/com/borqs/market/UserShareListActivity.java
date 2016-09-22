@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.view.MenuItem;
 
-import com.borqs.market.fragment.ProductListFragment;
 import com.borqs.market.fragment.UserShareListFragment;
-import com.borqs.market.json.Product.ProductType;
 import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.MarketUtils;
 

@@ -48,7 +48,7 @@ public class XmlUtils {
         }
     }
 
-    public static final int convertValueToList(CharSequence value, String[] options, int defaultValue) {
+    public static int convertValueToList(CharSequence value, String[] options, int defaultValue) {
         if (null != value) {
             for (int i = 0; i < options.length; i++) {
                 if (value.equals(options[i]))
@@ -59,7 +59,7 @@ public class XmlUtils {
         return defaultValue;
     }
 
-    public static final boolean convertValueToBoolean(CharSequence value, boolean defaultValue) {
+    public static boolean convertValueToBoolean(CharSequence value, boolean defaultValue) {
         boolean result = false;
 
         if (null == value)
@@ -71,7 +71,7 @@ public class XmlUtils {
         return result;
     }
 
-    public static final int convertValueToInt(CharSequence charSeq, int defaultValue) {
+    public static int convertValueToInt(CharSequence charSeq, int defaultValue) {
         if (null == charSeq)
             return defaultValue;
 
@@ -112,14 +112,14 @@ public class XmlUtils {
         return Integer.parseInt(nm.substring(index), base) * sign;
     }
 
-    public static final int convertValueToUnsignedInt(String value, int defaultValue) {
+    public static int convertValueToUnsignedInt(String value, int defaultValue) {
         if (null == value)
             return defaultValue;
 
         return parseUnsignedIntAttribute(value);
     }
 
-    public static final int parseUnsignedIntAttribute(CharSequence charSeq) {
+    public static int parseUnsignedIntAttribute(CharSequence charSeq) {
         String value = charSeq.toString();
 
         int index = 0;
@@ -185,7 +185,7 @@ public class XmlUtils {
      * @see #writeValueXml
      * @see #readListXml
      */
-    public static final void writeListXml(List val, OutputStream out) throws XmlPullParserException,
+    public static void writeListXml(List val, OutputStream out) throws XmlPullParserException,
             java.io.IOException {
         XmlSerializer serializer = Xml.newSerializer();
         serializer.setOutput(out, "utf-8");
@@ -212,7 +212,7 @@ public class XmlUtils {
      * @see #writeValueXml
      * @see #readMapXml
      */
-    public static final void writeMapXml(Map val, String name, XmlSerializer out) throws XmlPullParserException,
+    public static void writeMapXml(Map val, String name, XmlSerializer out) throws XmlPullParserException,
             java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
@@ -253,7 +253,7 @@ public class XmlUtils {
      * @see #writeValueXml
      * @see #readListXml
      */
-    public static final void writeListXml(List val, String name, XmlSerializer out) throws XmlPullParserException,
+    public static void writeListXml(List val, String name, XmlSerializer out) throws XmlPullParserException,
             java.io.IOException {
         if (val == null) {
             out.startTag(null, "null");
@@ -291,7 +291,7 @@ public class XmlUtils {
      * @see #writeMapXml
      * @see #writeValueXml
      */
-    public static final void writeByteArrayXml(byte[] val, String name, XmlSerializer out)
+    public static void writeByteArrayXml(byte[] val, String name, XmlSerializer out)
             throws XmlPullParserException, java.io.IOException {
 
         if (val == null) {
@@ -338,7 +338,7 @@ public class XmlUtils {
      * @see #writeValueXml
      * @see #readThisIntArrayXml
      */
-    public static final void writeIntArrayXml(int[] val, String name, XmlSerializer out) throws XmlPullParserException,
+    public static void writeIntArrayXml(int[] val, String name, XmlSerializer out) throws XmlPullParserException,
             java.io.IOException {
 
         if (val == null) {
@@ -383,7 +383,7 @@ public class XmlUtils {
      * @see #writeListXml
      * @see #readValueXml
      */
-    public static final void writeValueXml(Object v, String name, XmlSerializer out) throws XmlPullParserException,
+    public static void writeValueXml(Object v, String name, XmlSerializer out) throws XmlPullParserException,
             java.io.IOException {
         String typeStr;
         if (v == null) {
@@ -459,7 +459,7 @@ public class XmlUtils {
      * @see #readValueXml
      * @see #readThisMapXml #see #writeMapXml
      */
-    public static final HashMap readMapXml(InputStream in) throws XmlPullParserException, java.io.IOException {
+    public static HashMap readMapXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser parser = Xml.newPullParser();
         parser.setInput(in, null);
         return (HashMap) readValueXml(parser, new String[1]);
@@ -479,7 +479,7 @@ public class XmlUtils {
      * @see #readThisListXml
      * @see #writeListXml
      */
-    public static final ArrayList readListXml(InputStream in) throws XmlPullParserException, java.io.IOException {
+    public static ArrayList readListXml(InputStream in) throws XmlPullParserException, java.io.IOException {
         XmlPullParser parser = Xml.newPullParser();
         parser.setInput(in, null);
         return (ArrayList) readValueXml(parser, new String[1]);
@@ -502,7 +502,7 @@ public class XmlUtils {
      * 
      * @see #readMapXml
      */
-    public static final HashMap readThisMapXml(XmlPullParser parser, String endTag, String[] name)
+    public static HashMap readThisMapXml(XmlPullParser parser, String endTag, String[] name)
             throws XmlPullParserException, java.io.IOException {
         HashMap map = new HashMap();
 
@@ -546,7 +546,7 @@ public class XmlUtils {
      * 
      * @see #readListXml
      */
-    public static final ArrayList readThisListXml(XmlPullParser parser, String endTag, String[] name)
+    public static ArrayList readThisListXml(XmlPullParser parser, String endTag, String[] name)
             throws XmlPullParserException, java.io.IOException {
         ArrayList list = new ArrayList();
 
@@ -585,7 +585,7 @@ public class XmlUtils {
      * 
      * @see #readListXml
      */
-    public static final int[] readThisIntArrayXml(XmlPullParser parser, String endTag, String[] name)
+    public static int[] readThisIntArrayXml(XmlPullParser parser, String endTag, String[] name)
             throws XmlPullParserException, java.io.IOException {
 
         int num;
@@ -647,7 +647,7 @@ public class XmlUtils {
      * @see #readListXml
      * @see #writeValueXml
      */
-    public static final Object readValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException,
+    public static Object readValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException,
             java.io.IOException {
         int eventType = parser.getEventType();
         do {
@@ -664,7 +664,7 @@ public class XmlUtils {
         throw new XmlPullParserException("Unexpected end of document");
     }
 
-    private static final Object readThisValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException,
+    private static Object readThisValueXml(XmlPullParser parser, String[] name) throws XmlPullParserException,
             java.io.IOException {
         final String valueName = parser.getAttributeValue(null, "name");
         final String tagName = parser.getName();
@@ -750,7 +750,7 @@ public class XmlUtils {
         throw new XmlPullParserException("Unexpected end of document in <" + tagName + ">");
     }
 
-    public static final void beginDocument(XmlPullParser parser, String firstElementName)
+    public static void beginDocument(XmlPullParser parser, String firstElementName)
             throws XmlPullParserException, IOException {
         int type;
         while ((type = parser.next()) != XmlPullParser.START_TAG && type != XmlPullParser.END_DOCUMENT) {
@@ -766,7 +766,7 @@ public class XmlUtils {
         }
     }
 
-    public static final void nextElement(XmlPullParser parser) throws XmlPullParserException, IOException {
+    public static void nextElement(XmlPullParser parser) throws XmlPullParserException, IOException {
         int type;
         while ((type = parser.next()) != XmlPullParser.START_TAG && type != XmlPullParser.END_DOCUMENT) {
         }

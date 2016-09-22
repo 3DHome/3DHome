@@ -8,7 +8,6 @@ import com.borqs.borqsweather.weather.yahoo.WeatherPreferences;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;

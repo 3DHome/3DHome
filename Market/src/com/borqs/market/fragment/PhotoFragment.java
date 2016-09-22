@@ -7,15 +7,14 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.borqs.market.LocalImageManager;
-import com.borqs.market.R;
 import com.borqs.market.LocalImageManager.ImageUpdateListener;
+import com.borqs.market.R;
 import com.borqs.market.json.Product.ProductType;
 import com.borqs.market.listener.ViewListener;
 
@@ -30,7 +29,7 @@ public class PhotoFragment extends Fragment {
     private String url;
     private String category;
     private int width;
-    private int height;
+//    private int height;
     private LocalImageManager mLocalImageManager;
 
     public interface ClickListener {
@@ -61,7 +60,7 @@ public class PhotoFragment extends Fragment {
         int h = dm.heightPixels;
         int w = dm.widthPixels;
         width = w;
-        height = h;
+//        height = h;
     }
 
     public ImageView img_shoot;

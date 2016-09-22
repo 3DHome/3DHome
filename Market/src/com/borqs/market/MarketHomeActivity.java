@@ -1,9 +1,5 @@
 package com.borqs.market;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.os.Bundle;
@@ -18,6 +14,10 @@ import com.borqs.market.json.Product.ProductType;
 import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.MarketUtils;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class MarketHomeActivity extends BasicActivity implements
         ActionBar.TabListener {
     private final String TAG = "MarketHomeActivity";
@@ -26,7 +26,7 @@ public class MarketHomeActivity extends BasicActivity implements
     static final String TAG_THEME = "TAG_THEME";
     static final String TAG_OBJECT = "TAG_OBJECT";
 
-    private MyAdapter mAdapter;
+//    private MyAdapter mAdapter;
     private ViewPager mPager;
     // private ActionBar.Tab tabTheme = null;
     // private ActionBar.Tab tabObj = null;
@@ -64,10 +64,10 @@ public class MarketHomeActivity extends BasicActivity implements
         // getSupportActionBar().addTab(tabObj, Category.OBJECT.ordinal());
         getActionBar().setSelectedNavigationItem(tab_index);
 
-        mAdapter = new MyAdapter(getSupportFragmentManager());
+        MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
 
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPager.setAdapter(mAdapter);
+        mPager.setAdapter(adapter);
         mPager.setCurrentItem(tab_index);
 
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

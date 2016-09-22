@@ -2,11 +2,9 @@ package com.borqs.market;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.borqs.market.fragment.WallpaperProductDetailFragment;
-import com.borqs.market.fragment.WallpaperProductGridFragment;
 import com.borqs.market.utils.IntentUtil;
 
 public class WallpaperProductDetailActivity extends BasicActivity {

@@ -1,12 +1,5 @@
 package com.borqs.market.fragment;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
@@ -17,13 +10,11 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -64,18 +55,25 @@ import com.borqs.market.utils.QiupuHelper;
 import com.iab.engine.MarketBillingResult;
 import com.iab.engine.MarketPurchaseListener;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+
 public class ProductDetailFragment extends BasicFragment implements
         OnClickListener, DownloadListener {
 
     private static final String TAG = "ProductDetailFragment";
     private static final String FLAG_DATA = "FLAG_DATA";
     private static final String BOTTOM_LAYOUT_VISABLE = "BOTTOM_LAYOUT_VISABLE";
-    private static int     TOTAL_COUNT = 3;
+    private static final int TOTAL_COUNT = 3;
 
     protected View pager_layout;
     private ScreenShotAdapter mAdapter;
     private Product mData = null;
-    private boolean isBottomVisable = true;
+    //    private boolean isBottomVisable = true;
     private ApiUtil mApiUtil;
     private RefreshListener refreshListener;
 
@@ -94,7 +92,7 @@ public class ProductDetailFragment extends BasicFragment implements
     private View bottomLayout;
     private View bottom;
     private TextView tv_comment;
-    
+
     protected DownloadManager dm;
     protected DownLoadHelper downLoadHelper;
     private String product_id = null;
@@ -118,27 +116,28 @@ public class ProductDetailFragment extends BasicFragment implements
 
     private boolean mIsFristLoad = true;
     private boolean isBelongSystem = false;
-    
+
     public static Bundle getArguments(String supported_mod) {
         Bundle args = new Bundle();
         args.putString(ARGUMENTS_KEY_MOD, supported_mod);
         return args;
     }
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
-        supported_mod = args.getString(ARGUMENTS_KEY_MOD,Product.SupportedMod.PORTRAIT);
+        supported_mod = args.getString(ARGUMENTS_KEY_MOD, Product.SupportedMod.PORTRAIT);
     }
 
     String action_view_comments;
     Typeface fontFace;
+
     @Override
     protected void initView() {
         action_view_comments = mContext.getString(R.string.action_view_comments);
-        fontFace = Typeface.createFromAsset(mContext.getAssets(),"fonts/Roboto-Light.ttf");
-        
+        fontFace = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Light.ttf");
+
         pager_layout = mConvertView.findViewById(R.id.pager_layout);
         mPager = (ViewPager) mConvertView.findViewById(R.id.mPager);
         mPager.setOffscreenPageLimit(TOTAL_COUNT);
@@ -152,19 +151,19 @@ public class ProductDetailFragment extends BasicFragment implements
         btn_delete.setOnClickListener(this);
 
         downloadCancel = mConvertView.findViewById(R.id.download_cancel);
-        downloadProgress = (ProgressBar)mConvertView.findViewById(R.id.download_progress);
-        downloadSize = (TextView)mConvertView.findViewById(R.id.download_size);
-        downloadPrecent = (TextView)mConvertView.findViewById(R.id.download_precent);
+        downloadProgress = (ProgressBar) mConvertView.findViewById(R.id.download_progress);
+        downloadSize = (TextView) mConvertView.findViewById(R.id.download_size);
+        downloadPrecent = (TextView) mConvertView.findViewById(R.id.download_precent);
         bottomLayout = mConvertView.findViewById(R.id.bottom_layout);
         bottom = mConvertView.findViewById(R.id.bottom);
         processView = mConvertView.findViewById(R.id.process_view);
         content_container = mConvertView.findViewById(R.id.content_container);
-        tv_comment = ((TextView)mConvertView.findViewById(R.id.tv_comment));
+        tv_comment = ((TextView) mConvertView.findViewById(R.id.tv_comment));
         tv_comment.setTypeface(fontFace);
         btn_download.setTypeface(fontFace);
         downloadSize.setTypeface(fontFace);
         downloadPrecent.setTypeface(fontFace);
-        
+
         PhotoOnPageChangeListener pageChangeListener = new PhotoOnPageChangeListener();
         mPager.setOnPageChangeListener(pageChangeListener);
 
@@ -176,52 +175,52 @@ public class ProductDetailFragment extends BasicFragment implements
             }
         });
         downloadCancel.setOnClickListener(new View.OnClickListener() {
-            
+
             @Override
             public void onClick(View v) {
-                if((PRODUCT_STATUS == PRODUCT_STATUS_DOWNLOADING) && downLoadID != -1) {
-                    DownloadUtils.cancleDownload(mActivity, downLoadID,mData.product_id);
+                if ((PRODUCT_STATUS == PRODUCT_STATUS_DOWNLOADING) && downLoadID != -1) {
+                    DownloadUtils.cancleDownload(mActivity, downLoadID, mData.product_id);
                     downLoadHelper.cancleDownloadFile(mData.product_id);
                     refreshProductStatus(queryProductStatus(mData.product_id));
                 }
-                
+
             }
         });
     }
-    
+
     @Override
     protected void begin() {
         super.begin();
         content_container.setVisibility(View.GONE);
     }
-    
+
     @Override
     protected void end() {
         super.end();
         content_container.setVisibility(View.VISIBLE);
     }
-    
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         parseIntent(activity.getIntent());
         downLoadHelper = DownLoadHelper.getInstance(activity.getApplicationContext());
         dm = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
-        if(activity != null && RefreshListener.class.isInstance(activity)) {
-            refreshListener = (RefreshListener)activity;
+        if (activity != null && RefreshListener.class.isInstance(activity)) {
+            refreshListener = (RefreshListener) activity;
         }
     }
 
     private void parseIntent(Intent intent) {
         product_id = intent.getStringExtra(IntentUtil.EXTRA_KEY_ID);
-        version_code = intent.getIntExtra(IntentUtil.EXTRA_KEY_VERSION,0);
+        version_code = intent.getIntExtra(IntentUtil.EXTRA_KEY_VERSION, 0);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        if(loading_layout != null) loading_layout.setBackgroundResource(R.color.transparent);
+        if (loading_layout != null) loading_layout.setBackgroundResource(R.color.transparent);
         plugInObserver = new PlugInObserver(new Handler());
         registerContentObserver(DownLoadProvider.getContentURI(getActivity().getApplicationContext(), DownLoadProvider.TABLE_PLUGIN), true, plugInObserver);
         QiupuHelper.registerDownloadListener(ProductDetailFragment.class.getName(), this);
@@ -229,23 +228,19 @@ public class ProductDetailFragment extends BasicFragment implements
         if (savedInstanceState != null) {
             mData = savedInstanceState.getParcelable(FLAG_DATA);
             current_position = savedInstanceState.getInt("current_position");
-            isBottomVisable = savedInstanceState.getBoolean(BOTTOM_LAYOUT_VISABLE);
-            if(isBottomVisable) {
-                ((ViewListener)getActivity()).show(false);
+            boolean isBottomVisable = savedInstanceState.getBoolean(BOTTOM_LAYOUT_VISABLE);
+            if (isBottomVisable) {
+                ((ViewListener) getActivity()).show(false);
                 bottom.setVisibility(View.VISIBLE);
-            }else {
-                ((ViewListener)getActivity()).hide(false);
+            } else {
+                ((ViewListener) getActivity()).hide(false);
                 bottom.setVisibility(View.GONE);
             }
-        }else {
+        } else {
             mData = DownLoadHelper.queryLocalProductInfo(mActivity.getApplicationContext(), product_id);
         }
-        
-        if(mData != null) {
-            isBelongSystem = Product.isBelongSystem(mData.installed_file_path);
-        } else {
-            isBelongSystem = false;
-        }
+
+        isBelongSystem = mData != null && Product.isBelongSystem(mData.installed_file_path);
 
         return mConvertView;
     }
@@ -256,24 +251,24 @@ public class ProductDetailFragment extends BasicFragment implements
         downLoadObserver = new DownloadOberserver();
         registerContentObserver(DownloadUtils.CONTENT_URI, true, downLoadObserver);
         if (mData != null) {
-        	refreshUI();
-        	if(mIsFristLoad) {
-        		getProductDetail(false);
-        	}
+            refreshUI();
+            if (mIsFristLoad) {
+                getProductDetail(false);
+            }
         } else {
             getProductDetail(true);
         }
     }
-    
+
     @Override
     public void onPause() {
         super.onPause();
-        if(downLoadObserver != null) {
+        if (downLoadObserver != null) {
             unregisterContentObserver(downLoadObserver);
-            downLoadObserver = null; 
+            downLoadObserver = null;
         }
     }
- 
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putParcelable(FLAG_DATA, mData);
@@ -281,24 +276,24 @@ public class ProductDetailFragment extends BasicFragment implements
         outState.putBoolean(BOTTOM_LAYOUT_VISABLE, bottom.getVisibility() == View.VISIBLE);
         super.onSaveInstanceState(outState);
     }
-    
+
     private void initDownloadProgress() {
         PRODUCT_STATUS = PRODUCT_STATUS_DOWNLOADING;
-        updateView(0, (int)mData.size, DownloadManager.STATUS_PENDING);
+        updateView(0, (int) mData.size, DownloadManager.STATUS_PENDING);
         mDownloadOrDeleteLayout.setVisibility(View.GONE);
         processView.setVisibility(View.VISIBLE);
     }
-    
+
     private void refreshProductStatus(int status) {
         PRODUCT_STATUS = status;
-        btn_download.setEnabled(true);        
-        if(!isBelongSystem &&
+        btn_download.setEnabled(true);
+        if (!isBelongSystem &&
                 (PRODUCT_STATUS == PRODUCT_STATUS_INSTALLED ||
-                PRODUCT_STATUS == PRODUCT_STATUS_NEED_UPDATE ||
-                PRODUCT_STATUS == PRODUCT_STATUS_APPLYED)
-           ) {
+                        PRODUCT_STATUS == PRODUCT_STATUS_NEED_UPDATE ||
+                        PRODUCT_STATUS == PRODUCT_STATUS_APPLYED)
+                ) {
             btn_delete.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             btn_delete.setVisibility(View.GONE);
         }
         if (PRODUCT_STATUS == PRODUCT_STATUS_PURCHASE) {
@@ -313,16 +308,16 @@ public class ProductDetailFragment extends BasicFragment implements
             btn_download.setText(R.string.action_downloading);
             mDownloadOrDeleteLayout.setVisibility(View.GONE);
             processView.setVisibility(View.VISIBLE);
-            int[] bytesAndStatus = DownloadUtils.getBytesAndStatus(mActivity,downLoadID);
-            updateView(bytesAndStatus[0], (int)mData.size, bytesAndStatus[2]);
+            int[] bytesAndStatus = DownloadUtils.getBytesAndStatus(mActivity, downLoadID);
+            updateView(bytesAndStatus[0], (int) mData.size, bytesAndStatus[2]);
             return;
         } else if (PRODUCT_STATUS == PRODUCT_STATUS_DOWNLOADED) {
             btn_download.setText(R.string.action_install);
             btn_download.setEnabled(false);
         } else if (PRODUCT_STATUS == PRODUCT_STATUS_INSTALLED) {
-            if(Product.isSupportApply(mData.type)) {
+            if (Product.isSupportApply(mData.type)) {
                 btn_download.setText(R.string.action_apply);
-            }else {
+            } else {
                 btn_download.setText(R.string.action_downloaded);
                 btn_download.setEnabled(false);
             }
@@ -337,24 +332,24 @@ public class ProductDetailFragment extends BasicFragment implements
     }
 
     protected void refreshUI() {
-        if(isDetached()) {
+        if (isDetached()) {
             BLog.d(TAG, "fragment is detached!");
             return;
-        } 
+        }
         if (mData == null) {
             getProductDetail(true);
             return;
         }
-        if(refreshListener != null) {
+        if (refreshListener != null) {
             refreshListener.refreshTitle(mData.name);
         }
         if (mAdapter == null) {
-            mAdapter = new ScreenShotAdapter(getChildFragmentManager(),mData);
+            mAdapter = new ScreenShotAdapter(getChildFragmentManager(), mData);
             mPager.setAdapter(mAdapter);
         } else {
             mAdapter.alertData(mData);
         }
-        BLog.d(TAG,"page count = "+mAdapter.getCount());
+        BLog.d(TAG, "page count = " + mAdapter.getCount());
         refreshProductStatus(queryProductStatus(product_id));
 
         mPage.removeAllViews();
@@ -370,15 +365,15 @@ public class ProductDetailFragment extends BasicFragment implements
             }
             mPage.addView(dot, params);
         }
-        
+
         String commentStr = String.format(action_view_comments, String.valueOf(mData.comment_count));
         tv_comment.setText(commentStr);
         tv_comment.setOnClickListener(new View.OnClickListener() {
-            
+
             @Override
             public void onClick(View v) {
                 IntentUtil.startCommentListIntent(getActivity(), mData.product_id, mData.rating, mData.version_code);
-                
+
             }
         });
     }
@@ -400,13 +395,13 @@ public class ProductDetailFragment extends BasicFragment implements
                         downLoadID = cursor.getLong(cursor.getColumnIndex(DownloadInfoColumns.DOWNLOAD_ID));
                         cursor.close();
                         return PRODUCT_STATUS_DOWNLOADING;
-                    } 
+                    }
                 }
                 return PRODUCT_STATUS_NEED_UPDATE;
             }
-            if(isApplyed) {
+            if (isApplyed) {
                 return PRODUCT_STATUS_APPLYED;
-            }else {
+            } else {
                 return PRODUCT_STATUS_INSTALLED;
             }
         }
@@ -424,31 +419,31 @@ public class ProductDetailFragment extends BasicFragment implements
                 cursor.close();
                 return PRODUCT_STATUS_DOWNLOADING;
             } else if (downStatus == DownloadInfoColumns.DOWNLOAD_STATUS_COMPLETED) {
-                    String fileuri = cursor.getString(cursor
-                            .getColumnIndex(DownloadInfoColumns.LOCAL_PATH));
-                    File dFile = new File(URI.create(fileuri));
-                    if (dFile.exists() && dFile.length() == download_size) {
-                        if (mData != null)
-                            mData.localUrl = fileuri;
-                        if (mData.version_code > current_version_code) {
-                            //服务器已经有新版本，本地缓存可以删除了
-                            downLoadHelper.deleteFile(productID, version_code);
-                            dFile.delete();
-                            return PRODUCT_STATUS_DOWNLOAD;
+                String fileuri = cursor.getString(cursor
+                        .getColumnIndex(DownloadInfoColumns.LOCAL_PATH));
+                File dFile = new File(URI.create(fileuri));
+                if (dFile.exists() && dFile.length() == download_size) {
+                    if (mData != null)
+                        mData.localUrl = fileuri;
+                    if (mData.version_code > current_version_code) {
+                        //服务器已经有新版本，本地缓存可以删除了
+                        downLoadHelper.deleteFile(productID, version_code);
+                        dFile.delete();
+                        return PRODUCT_STATUS_DOWNLOAD;
 //                                } else {
 //                                    return PRODUCT_STATUS_DOWNLOADED;
-                        }
                     }
-                    downLoadHelper.deleteFile(productID, version_code);
-                    cursor.close();
+                }
+                downLoadHelper.deleteFile(productID, version_code);
+                cursor.close();
 //                }
             }
         }
-        if(cursor != null) {
+        if (cursor != null) {
             cursor.close();
         }
         OrderInfo orderinfo = downLoadHelper.isHasorder(product_id);
-        if(orderinfo != null) {
+        if (orderinfo != null) {
             mBillRes = new MarketBillingResult(MarketBillingResult.TYPE_IAB);
             mBillRes.orderId = orderinfo.iab_order_id;
             mBillRes.payCode = orderinfo.pay_code;
@@ -467,23 +462,23 @@ public class ProductDetailFragment extends BasicFragment implements
                 .setPositiveButton(getString(R.string.label_ok),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
-                                    int whichButton) {
+                                                int whichButton) {
 //                                showIndeterminate(R.string.action_delete);
-                                    IntentUtil.sendBroadCastDelete(
-                                                    getActivity(),
-                                                    mData.product_id);
-                                    getActivity().finish();
+                                IntentUtil.sendBroadCastDelete(
+                                        getActivity(),
+                                        mData.product_id);
+                                getActivity().finish();
                             }
                         })
                 .setNegativeButton(getString(R.string.label_cancel),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
-                                    int whichButton) {
+                                                int whichButton) {
                             }
                         }).create().show();
 
     }
-    
+
     void showUpdateDialog() {
         new AlertDialog.Builder(mActivity).setTitle(R.string.action_update)
                 .setMessage(getString(R.string.update_object_message))
@@ -492,9 +487,9 @@ public class ProductDetailFragment extends BasicFragment implements
                         purchase();
                     }
                 }).setNegativeButton(getString(R.string.label_cancel), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                    }
-                }).create().show();
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        }).create().show();
 
     }
 
@@ -515,7 +510,7 @@ public class ProductDetailFragment extends BasicFragment implements
         }
 
         BLog.v(TAG, "begin getProductDetail");
-        if(isVisbleLoadingUI) begin();
+        if (isVisbleLoadingUI) begin();
         if (!DataConnectionUtils.testValidConnection(mActivity)) {
 //            mHandler.postDelayed(new Runnable() {
 //                @Override
@@ -625,19 +620,19 @@ public class ProductDetailFragment extends BasicFragment implements
     }
 
     private void doPaying() {
-        if(mActivity != null && BasicActivity.class.isInstance(mActivity)) {
+        if (mActivity != null && BasicActivity.class.isInstance(mActivity)) {
             btn_download.setEnabled(false);
             btn_download.setText(R.string.action_prepare_purchase);
-            ((BasicActivity)mActivity).purchase(mData, new MarketPurchaseListener() {
-                
+            ((BasicActivity) mActivity).purchase(mData, new MarketPurchaseListener() {
+
                 @Override
                 public void onBillingFinished(boolean isSuccess, MarketBillingResult result) {
-                    if(isSuccess) {
+                    if (isSuccess) {
                         IntentUtil.sendBroadCastforPurchaseSuccess(getActivity().getApplicationContext(), product_id);
                         mData.purchased = true;
                         mBillRes = result;
                         onPayed(result);
-                    }else {
+                    } else {
                         Message mds = mHandler.obtainMessage(PAYING_FAILED);
                         mds.getData().putString(MESSAGE, result.response);
                         mHandler.sendMessage(mds);
@@ -652,16 +647,16 @@ public class ProductDetailFragment extends BasicFragment implements
         mApiUtil = ApiUtil.getInstance();
         WutongParameters params = new WutongParameters();
         String originalJson = null;
-        if(result != null) {
-            if(result.billingType == MarketBillingResult.TYPE_IAB) {
+        if (result != null) {
+            if (result.billingType == MarketBillingResult.TYPE_IAB) {
                 params.add("google_iab_order", result.orderId);
                 originalJson = result.originalJson;
-            }else {
+            } else {
                 params.add("cmcc_mm_order", result.orderId);
                 params.add("cmcc_mm_trade", result.tradeId);
             }
         }
-        mApiUtil.productPurchase(mActivity, product_id, mData==null? version_code : mData.version_code,params, originalJson,
+        mApiUtil.productPurchase(mActivity, product_id, mData == null ? version_code : mData.version_code, params, originalJson,
                 new RequestListener() {
 
                     @Override
@@ -750,92 +745,92 @@ public class ProductDetailFragment extends BasicFragment implements
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-            case LOAD_END: {
-                end();
-                mIsFristLoad = false;
-                if(getActivity() == null) return;
-                boolean suc = msg.getData().getBoolean(RESULT);
-                if (suc) {
-                    refreshUI();
+                case LOAD_END: {
+                    end();
+                    mIsFristLoad = false;
+                    if (getActivity() == null) return;
+                    boolean suc = msg.getData().getBoolean(RESULT);
+                    if (suc) {
+                        refreshUI();
 //                } else {
 //                    showLoadMessage(R.string.msg_loadi_failed);
-                }
-                break;
-            }
-            case DELETE_END: {
-                // end();
-                dismissProgress();
-                if(getActivity() == null) return;
-                boolean suc = msg.getData().getBoolean(RESULT);
-                if (suc) {
-                    if (!TextUtils.isEmpty(mData.localUrl)) {
-                        File f = new File(mData.localUrl);
-                        f.delete();
                     }
-                    downLoadHelper.deleteFile(product_id,
-                            version_code);
-                    refreshProductStatus(PRODUCT_STATUS_DOWNLOAD);
-                } else {
-
+                    break;
                 }
-                break;
-            }
-            case MSG_ON_CHANGE: {
-                if((PRODUCT_STATUS == PRODUCT_STATUS_DOWNLOADING) && downLoadID != -1) {
-                    int[] bytesAndStatus = DownloadUtils.getBytesAndStatus(mActivity,downLoadID);
-                    updateView(bytesAndStatus[0], bytesAndStatus[1], bytesAndStatus[2]);
-                }
-                break;
-            }
-            case PURCHASE_END: {
-                if(getActivity() == null) return;
-                boolean suc = msg.getData().getBoolean(RESULT);
-                if (suc) {
-                    DownLoadHelper.updateIabOderStatus(getActivity().getApplicationContext(), product_id, true);
-                    if(mActivity != null && BasicActivity.class.isInstance(mActivity)) {
-                        ((BasicActivity)mActivity).consumeAsync();
-                    }
-                    String url = msg.getData().getString(URL);
-                    if (TextUtils.isEmpty(url)) {
-                        BLog.e("url is null");
+                case DELETE_END: {
+                    // end();
+                    dismissProgress();
+                    if (getActivity() == null) return;
+                    boolean suc = msg.getData().getBoolean(RESULT);
+                    if (suc) {
+                        if (!TextUtils.isEmpty(mData.localUrl)) {
+                            File f = new File(mData.localUrl);
+                            f.delete();
+                        }
+                        downLoadHelper.deleteFile(product_id,
+                                version_code);
+                        refreshProductStatus(PRODUCT_STATUS_DOWNLOAD);
                     } else {
-                        mData.purchased = true;
-                        DownloadUtils downloadUtils = new DownloadUtils(mActivity.getApplicationContext());
-                        downLoadID = downloadUtils.download(url, mData.name, mData.product_id);
-                        if(downLoadID != -1) {
+
+                    }
+                    break;
+                }
+                case MSG_ON_CHANGE: {
+                    if ((PRODUCT_STATUS == PRODUCT_STATUS_DOWNLOADING) && downLoadID != -1) {
+                        int[] bytesAndStatus = DownloadUtils.getBytesAndStatus(mActivity, downLoadID);
+                        updateView(bytesAndStatus[0], bytesAndStatus[1], bytesAndStatus[2]);
+                    }
+                    break;
+                }
+                case PURCHASE_END: {
+                    if (getActivity() == null) return;
+                    boolean suc = msg.getData().getBoolean(RESULT);
+                    if (suc) {
+                        DownLoadHelper.updateIabOderStatus(getActivity().getApplicationContext(), product_id, true);
+                        if (mActivity != null && BasicActivity.class.isInstance(mActivity)) {
+                            ((BasicActivity) mActivity).consumeAsync();
+                        }
+                        String url = msg.getData().getString(URL);
+                        if (TextUtils.isEmpty(url)) {
+                            BLog.e("url is null");
+                        } else {
+                            mData.purchased = true;
+                            DownloadUtils downloadUtils = new DownloadUtils(mActivity.getApplicationContext());
+                            downLoadID = downloadUtils.download(url, mData.name, mData.product_id);
+                            if (downLoadID != -1) {
 //                            int[] bytesAndStatus = DownloadUtils.getBytesAndStatus(mActivity,downLoadID);
 //                            updateView(bytesAndStatus[0], bytesAndStatus[1], bytesAndStatus[2]);
-                            refreshProductStatus(PRODUCT_STATUS_DOWNLOADING);
+                                refreshProductStatus(PRODUCT_STATUS_DOWNLOADING);
 //                      
-                            downLoadHelper.insert(mData, null, downLoadID, jsonString);
-                            btn_download.setText(R.string.action_downloading);
-                        }else {
-                            Toast.makeText(mActivity, R.string.download_failed,
-                                  Toast.LENGTH_SHORT).show();
+                                downLoadHelper.insert(mData, null, downLoadID, jsonString);
+                                btn_download.setText(R.string.action_downloading);
+                            } else {
+                                Toast.makeText(mActivity, R.string.download_failed,
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                } else {
+                    } else {
 //                    Toast.makeText(mActivity, R.string.purchase_failed,
 //                            Toast.LENGTH_SHORT).show();
 
+                    }
+                    break;
                 }
-                break;
-            }
-            case DOWNLOAD_FAILED: {
-                downLoadHelper.cancleDownloadFile(mData.product_id);
-                QiupuHelper.removeDownloading(mData.product_id);
-                if(getActivity() == null) return;
-                Toast.makeText(mActivity, R.string.download_failed_try_again, Toast.LENGTH_SHORT).show();
-                refreshProductStatus(PRODUCT_STATUS_DOWNLOAD);
-                break;
-            }
-            case PAYING_FAILED: {
-                if(getActivity() == null) return;
-                String respone = msg.getData().getString(MESSAGE);
-                Toast.makeText(mActivity, respone, Toast.LENGTH_LONG).show();
-                refreshProductStatus(PRODUCT_STATUS_PURCHASE);
-                break;
-            }
+                case DOWNLOAD_FAILED: {
+                    downLoadHelper.cancleDownloadFile(mData.product_id);
+                    QiupuHelper.removeDownloading(mData.product_id);
+                    if (getActivity() == null) return;
+                    Toast.makeText(mActivity, R.string.download_failed_try_again, Toast.LENGTH_SHORT).show();
+                    refreshProductStatus(PRODUCT_STATUS_DOWNLOAD);
+                    break;
+                }
+                case PAYING_FAILED: {
+                    if (getActivity() == null) return;
+                    String respone = msg.getData().getString(MESSAGE);
+                    Toast.makeText(mActivity, respone, Toast.LENGTH_LONG).show();
+                    refreshProductStatus(PRODUCT_STATUS_PURCHASE);
+                    break;
+                }
             }
         }
     }
@@ -853,9 +848,9 @@ public class ProductDetailFragment extends BasicFragment implements
 //            } else if (PRODUCT_STATUS == PRODUCT_STATUS_DOWNLOADED) {
 //                IntentUtil.sendBroadCastforInstall(mActivity, mData.localUrl,mData.product_id);
             } else if (PRODUCT_STATUS == PRODUCT_STATUS_INSTALLED) {
-                if(Product.isSupportApply(mData.type)) {
+                if (Product.isSupportApply(mData.type)) {
                     btn_download.setText(R.string.action_wallpaper_setting);
-                    IntentUtil.sendBroadCastforApplyed(mActivity, mData.localUrl,mData.product_id);
+                    IntentUtil.sendBroadCastforApplyed(mActivity, mData.localUrl, mData.product_id);
 //                }else {
 //                    //删除
 //                    showConfirmDialog();
@@ -870,7 +865,7 @@ public class ProductDetailFragment extends BasicFragment implements
             } else if (PRODUCT_STATUS == PRODUCT_STATUS_APPLYED) {
 //                showConfirmDialog();
             }
-        }else if(id == R.id.btn_delete) {
+        } else if (id == R.id.btn_delete) {
             //删除
             showConfirmDialog();
         }
@@ -901,17 +896,17 @@ public class ProductDetailFragment extends BasicFragment implements
 
         // 当监听到数据发生了变化就调用这个方法，并将新添加的数据查询出来
         public void onChange(boolean selfChange) {
-            if(mData == null || downLoadHelper == null) return;
+            if (mData == null || downLoadHelper == null) return;
             Cursor cursor = downLoadHelper.queryTheme(mData.product_id);
             if (cursor.moveToFirst()) {
                 int isApply = cursor.getInt(cursor
                         .getColumnIndex(PlugInColumns.IS_APPLY));
                 if (isApply == 1) {
 //                    refreshProductStatus(PRODUCT_STATUS_APPLYED);
-                    if(getActivity() != null) {
+                    if (getActivity() != null) {
                         getActivity().finish();
                     }
-                }else {
+                } else {
                     refreshProductStatus(PRODUCT_STATUS_INSTALLED);
                 }
             } else {
@@ -926,23 +921,23 @@ public class ProductDetailFragment extends BasicFragment implements
     public void onRefresh() {
         getProductDetail(true);
     }
-    
+
     public class PhotoOnPageChangeListener implements OnPageChangeListener {
 
         @Override
         public void onPageSelected(int position) {
-            if(getActivity() != null && ViewListener.class.isInstance(getActivity())) {
-                if(bottom != null) {
-                    if(position == 0) {
-                        ((ViewListener)getActivity()).show(true);
+            if (getActivity() != null && ViewListener.class.isInstance(getActivity())) {
+                if (bottom != null) {
+                    if (position == 0) {
+                        ((ViewListener) getActivity()).show(true);
                         showBottom();
-                    }else if(position == 1 && current_position == 0) {
-                        ((ViewListener)getActivity()).hide(true);
+                    } else if (position == 1 && current_position == 0) {
+                        ((ViewListener) getActivity()).hide(true);
                         hideBottom();
                     }
                 }
             }
-            
+
             for (int i = 0; i < mPage.getChildCount(); i++) {
                 ImageView dot = (ImageView) mPage.getChildAt(i);
                 if (i == position) {
@@ -951,7 +946,7 @@ public class ProductDetailFragment extends BasicFragment implements
                     dot.setBackgroundResource(R.drawable.indicator_normal);
                 }
             }
-            
+
             current_position = position;
         }
 
@@ -967,10 +962,10 @@ public class ProductDetailFragment extends BasicFragment implements
         public void onPageScrollStateChanged(int arg0) {
         }
     }
-    
+
     public void hideBottom() {
-        if(bottom.getVisibility() == View.VISIBLE) {
-            Animation am1 = AnimationUtils.loadAnimation(getActivity(),R.anim.slide_out_down_self);
+        if (bottom.getVisibility() == View.VISIBLE) {
+            Animation am1 = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_down_self);
             bottomLayout.startAnimation(am1);
             bottom.postDelayed(new Runnable() {
                 @Override
@@ -980,9 +975,10 @@ public class ProductDetailFragment extends BasicFragment implements
             }, getResources().getInteger(android.R.integer.config_longAnimTime));
         }
     }
+
     public void showBottom() {
-        if(bottom.getVisibility() != View.VISIBLE) {
-            Animation am1 = AnimationUtils.loadAnimation(getActivity(),R.anim.slide_in_up_self);
+        if (bottom.getVisibility() != View.VISIBLE) {
+            Animation am1 = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_in_up_self);
             bottomLayout.startAnimation(am1);
             bottom.setVisibility(View.VISIBLE);
         }
@@ -990,23 +986,23 @@ public class ProductDetailFragment extends BasicFragment implements
 
     @Override
     public void onLogin() {
-       getProductDetail(false);
+        getProductDetail(false);
     }
 
     @Override
     public void onLogout() {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
     public void onCancelLogin() {
         // TODO Auto-generated method stub
-        
+
     }
-    
+
     class DownloadOberserver extends ContentObserver {
-        
+
         public DownloadOberserver() {
             super(mHandler);
         }
@@ -1015,7 +1011,7 @@ public class ProductDetailFragment extends BasicFragment implements
         public void onChange(boolean selfChange) {
             mHandler.sendEmptyMessage(MSG_ON_CHANGE);
         }
-        
+
     }
 
     public void updateView(int downLoadedBytes, int totalBytes, int status) {
@@ -1050,9 +1046,9 @@ public class ProductDetailFragment extends BasicFragment implements
             } else {
             }
         }
-        
+
     }
-    
+
     public interface RefreshListener {
         void refreshTitle(String title);
     }
@@ -1060,6 +1056,6 @@ public class ProductDetailFragment extends BasicFragment implements
     @Override
     public void onLoging() {
         // TODO Auto-generated method stub
-        
+
     }
 }

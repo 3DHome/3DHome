@@ -1,12 +1,5 @@
 package com.borqs.se.ase;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.borqs.se.R;
-import com.borqs.se.home3d.HomeUtils;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.text.Editable;
@@ -16,8 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.borqs.se.R;
+import com.borqs.se.home3d.HomeUtils;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ASEExportDialog extends Dialog implements android.view.View.OnClickListener {
-    private EditText mEdtLabel;
+//    private EditText mEdtLabel;
     private Button mBtnOK;
     private Button mBtnCancel;
     private String mInputStr;
@@ -31,8 +31,8 @@ public class ASEExportDialog extends Dialog implements android.view.View.OnClick
         mBtnOK.setOnClickListener(this);
         mBtnCancel = (Button) findViewById(R.id.ase_export_btnCancel);
         mBtnCancel.setOnClickListener(this);
-        mEdtLabel = (EditText) findViewById(R.id.ase_export_edtLabel);
-        mEdtLabel.addTextChangedListener(new TextWatcher() {
+        EditText editText = (EditText) findViewById(R.id.ase_export_edtLabel);
+        editText.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {

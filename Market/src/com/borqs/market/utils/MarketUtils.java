@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONException;
@@ -47,8 +46,6 @@ import com.borqs.market.json.Product.ProductType;
 import com.borqs.market.json.ProductJSONImpl;
 import com.borqs.market.net.RequestListener;
 import com.borqs.market.net.WutongException;
-import com.borqs.market.wallpaper.RawPaperItem;
-import com.borqs.market.wallpaper.WallpaperUtils;
 
 public class MarketUtils {
     @SuppressWarnings("unused")
@@ -712,10 +709,7 @@ public class MarketUtils {
      * photos-h.ak.fbcdn.net photos-f.ak.fbcdn.net
      */
     private static boolean isInTrustHost(String host) {
-        if (host.contains(".fbcdn.net"))
-            return true;
-
-        return host.contains("secure-profile.facebook.com");
+        return host.contains(".fbcdn.net") || host.contains("secure-profile.facebook.com");
 
     }
 

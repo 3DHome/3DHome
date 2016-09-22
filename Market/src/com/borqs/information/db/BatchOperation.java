@@ -1,7 +1,5 @@
 package com.borqs.information.db;
 
-import java.util.ArrayList;
-
 import android.content.ContentProviderOperation;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -9,11 +7,13 @@ import android.content.OperationApplicationException;
 import android.os.RemoteException;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 /**
  * This class handles execution of batch mOperations on Contacts provider.
  */
 public class BatchOperation {
-    private final String TAG = "BatchOperation";
+    private final static String TAG = "BatchOperation";
 
     private final ContentResolver mResolver;
     ArrayList<ContentProviderOperation> mOperations;
@@ -38,8 +38,8 @@ public class BatchOperation {
         // Apply the mOperations to the content provider
         try {
             mResolver.applyBatch(Notification.AUTHORITY, mOperations);
-            if(needNotify) {
-            	mResolver.notifyChange(Notification.NotificationColumns.CONTENT_URI, null);
+            if (needNotify) {
+                mResolver.notifyChange(Notification.NotificationColumns.CONTENT_URI, null);
             }
         } catch (final OperationApplicationException e1) {
             Log.e(TAG, "storing contact data failed", e1);

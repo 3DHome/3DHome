@@ -1,7 +1,5 @@
 package com.borqs.se.home3d;
 
-import com.borqs.se.R;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
@@ -19,20 +17,22 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.borqs.se.R;
+
 public class SearchActivity extends Activity {
     private boolean mQueryWasEmpty = true;
     private EditText mQueryTextView;
     private Context mContext;
-    private ActionBar mActionBar;
+//    private ActionBar mActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        mActionBar = getActionBar();
-        mActionBar.setTitle(R.string.search_activity_title);
-        mActionBar.setDisplayShowTitleEnabled(true);
-        mActionBar.setHomeButtonEnabled(true);
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle(R.string.search_activity_title);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
         setContentView(R.layout.activity_search);
         mContext = this;
         mQueryTextView = (EditText) findViewById(R.id.search_src_text);

@@ -23,9 +23,9 @@ public class ProductTabActivity extends BasicActivity implements ActionBar.TabLi
     private final String TAG_FRAGMENT_LOCAL = "TAG_FRAGMENT_LOCAL";
     private String supported_mod;
 
-    private ActionBar.Tab tabLocal = null;
-    private ActionBar.Tab tabOnline = null;
-    private MyAdapter mAdapter;
+//    private ActionBar.Tab tabLocal = null;
+//    private ActionBar.Tab tabOnline = null;
+//    private MyAdapter mAdapter;
     private ViewPager mPager;
 
     @Override
@@ -43,12 +43,12 @@ public class ProductTabActivity extends BasicActivity implements ActionBar.TabLi
         } else if (MarketUtils.CATEGORY_WALLPAPER.equals(categoryStr)) {
             getActionBar().setTitle(R.string.top_navigation_wallpaper);
         }
-        tabOnline = getActionBar().newTab();
+        ActionBar.Tab tabOnline = getActionBar().newTab();
         tabOnline.setText(R.string.tab_online);
         tabOnline.setTabListener(this);
         getActionBar().addTab(tabOnline, 0);
 
-        tabLocal = getActionBar().newTab();
+        ActionBar.Tab tabLocal = getActionBar().newTab();
         tabLocal.setText(R.string.tab_local);
         tabLocal.setTabListener(this);
         getActionBar().addTab(tabLocal, 1);
@@ -61,10 +61,11 @@ public class ProductTabActivity extends BasicActivity implements ActionBar.TabLi
                     TAG_FRAGMENT_LOCAL);
             tab_index = savedInstanceState.getInt("tab_index");
         }
-        mAdapter = new MyAdapter(getSupportFragmentManager());
+
+        MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
 
         mPager = (ViewPager) findViewById(R.id.pager);
-        mPager.setAdapter(mAdapter);
+        mPager.setAdapter(adapter);
 
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 

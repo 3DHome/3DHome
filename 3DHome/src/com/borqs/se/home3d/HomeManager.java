@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.borqs.market.utils.MarketConfiguration;
 import com.borqs.market.wallpaper.RawPaperItem;
 import com.borqs.se.R;
 
@@ -32,7 +31,6 @@ import com.borqs.borqsweather.weather.IWeatherService;
 import com.borqs.se.download.WallPaperItem;
 import com.borqs.se.engine.SELoadResThread;
 import com.borqs.se.engine.SESceneManager;
-import com.borqs.se.home3d.HomeUtils.CropImageInfo;
 import com.borqs.se.home3d.HomeUtils.SceneOrientation;
 import com.borqs.se.home3d.ProviderUtils.ModelColumns;
 import com.borqs.se.home3d.ProviderUtils.ObjectInfoColumns;

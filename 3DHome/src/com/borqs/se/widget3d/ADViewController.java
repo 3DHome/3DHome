@@ -26,7 +26,7 @@ public class ADViewController implements CameraChangedListener {
     private HomeScene mHomeScene;
     private static ADViewController mADViewController;
 
-    private List<ModelInfo> mFlyers;
+//    private List<ModelInfo> mFlyers;
     private int mCurrentFlyerIndex;
     private Flyer mCurrentFlyer;
     private boolean mIsFly;
@@ -188,22 +188,19 @@ public class ADViewController implements CameraChangedListener {
     }
 
     public boolean hasLoadedADMod() {
-        if (mADViewIntegrated != null) {
-            return mADViewIntegrated.hasAD();
-        }
-        return false;
+        return mADViewIntegrated != null && mADViewIntegrated.hasAD();
     }
 
     private ModelInfo selectFlyer() {
         ModelInfo modelInfo = null;
         // To find type "Airship" model from the current scene
-        mFlyers = HomeManager.getInstance().getModelManager().findModelInfoByType("Airship");
+        List<ModelInfo> modelInfos = HomeManager.getInstance().getModelManager().findModelInfoByType("Airship");
         // Cycle select sky objects
-        if (mFlyers.size() > 0) {
-            if (mCurrentFlyerIndex >= mFlyers.size()) {
+        if (!modelInfos.isEmpty()) {
+            if (mCurrentFlyerIndex >= modelInfos.size()) {
                 mCurrentFlyerIndex = 0;
             }
-            modelInfo = mFlyers.get(mCurrentFlyerIndex);
+            modelInfo = modelInfos.get(mCurrentFlyerIndex);
             mCurrentFlyerIndex++;
         }
         return modelInfo;

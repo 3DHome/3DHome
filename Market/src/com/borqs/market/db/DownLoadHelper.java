@@ -17,10 +17,8 @@ import com.borqs.market.account.AccountSession;
 import com.borqs.market.json.Product;
 import com.borqs.market.json.ProductJSONImpl;
 import com.borqs.market.utils.BLog;
-import com.borqs.market.utils.ThemeXmlParser;
 import com.iab.engine.MarketBillingResult;
 import com.iab.engine.google.util.Purchase;
-import com.support.StaticUtil;
 
 public class DownLoadHelper {
     private final static String TAG = "DownLoadHelper";

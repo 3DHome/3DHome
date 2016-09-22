@@ -1,8 +1,5 @@
 package com.borqs.se.widget3d;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -17,28 +14,31 @@ import android.view.VelocityTracker;
 
 import com.borqs.borqsweather.weather.IWeatherService;
 import com.borqs.borqsweather.weather.WeatherConditions;
-import com.borqs.se.engine.SECameraData;
-import com.borqs.se.engine.SEScene;
 import com.borqs.se.engine.SEAnimFinishListener;
+import com.borqs.se.engine.SEAnimation.CountAnimation;
 import com.borqs.se.engine.SECamera;
+import com.borqs.se.engine.SECamera.CameraChangedListener;
+import com.borqs.se.engine.SECameraData;
 import com.borqs.se.engine.SECommand;
 import com.borqs.se.engine.SELoadResThread;
 import com.borqs.se.engine.SEObject;
 import com.borqs.se.engine.SEObjectFactory;
 import com.borqs.se.engine.SEParticleSystem;
-import com.borqs.se.engine.SEAnimation.CountAnimation;
-import com.borqs.se.engine.SECamera.CameraChangedListener;
+import com.borqs.se.engine.SEScene;
 import com.borqs.se.engine.SEVector.AXIS;
 import com.borqs.se.engine.SEVector.SERay;
 import com.borqs.se.engine.SEVector.SERect3D;
 import com.borqs.se.engine.SEVector.SERotate;
 import com.borqs.se.engine.SEVector.SEVector2f;
 import com.borqs.se.engine.SEVector.SEVector3f;
+import com.borqs.se.home3d.HomeManager;
+import com.borqs.se.home3d.HomeManager.WeatherBindedCallBack;
 import com.borqs.se.home3d.HomeScene;
 import com.borqs.se.home3d.HomeUtils;
-import com.borqs.se.home3d.HomeManager;
 import com.borqs.se.home3d.ProviderUtils;
-import com.borqs.se.home3d.HomeManager.WeatherBindedCallBack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cloud extends NormalObject implements CameraChangedListener, WeatherBindedCallBack {
     private String mSkyImgKey;
@@ -46,7 +46,7 @@ public class Cloud extends NormalObject implements CameraChangedListener, Weathe
     private SkyObject mSunObject;
     private SkyObject mSunLayer;
     private SkyObject mSunShine;
-    private SkyObject mMoon;
+//    private SkyObject mMoon;
     private SkyObject mBlank;
     private List<SkyObject> mSkyObjects;
     private SkyObject mCloudLayer1;
@@ -865,11 +865,11 @@ public class Cloud extends NormalObject implements CameraChangedListener, Weathe
                     try {
                         lunarDay = mService.getlunarDay();
                         if (lunarDay > 1 && lunarDay < 30) {
-                            mMoon = new SkyObject(getScene(), "moon");
-                            mMoon.createMoon("assets/base/sky/moon" + lunarDay + ".png", SkyObject.LAYER_INDEX_1,
+                            SkyObject moon = new SkyObject(getScene(), "moon");
+                            moon.createMoon("assets/base/sky/moon" + lunarDay + ".png", SkyObject.LAYER_INDEX_1,
                                     lunarDay);
-                            getScene().getContentObject().addChild(mMoon, true);
-                            mSkyObjects.add(mMoon);
+                            getScene().getContentObject().addChild(moon, true);
+                            mSkyObjects.add(moon);
                         }
                     } catch (RemoteException e) {
                         e.printStackTrace();
@@ -918,11 +918,11 @@ public class Cloud extends NormalObject implements CameraChangedListener, Weathe
                     try {
                         lunarDay = mService.getlunarDay();
                         if (lunarDay > 1 && lunarDay < 30) {
-                            mMoon = new SkyObject(getScene(), "moon");
-                            mMoon.createMoon("assets/base/sky/moon" + lunarDay + ".png", SkyObject.LAYER_INDEX_0,
+                            SkyObject moon = new SkyObject(getScene(), "moon");
+                            moon.createMoon("assets/base/sky/moon" + lunarDay + ".png", SkyObject.LAYER_INDEX_0,
                                     lunarDay);
-                            getScene().getContentObject().addChild(mMoon, true);
-                            mSkyObjects.add(mMoon);
+                            getScene().getContentObject().addChild(moon, true);
+                            mSkyObjects.add(moon);
                         }
                     } catch (RemoteException e) {
                         // TODO Auto-generated catch block
@@ -1137,23 +1137,23 @@ public class Cloud extends NormalObject implements CameraChangedListener, Weathe
     private SEVector3f mCameraDirection;
     private SEVector3f mCenterOfFace;
     private SEVector3f mFaceDirection;
-    private float mWallRadius;
-    private float mSkyHeight;
+//    private float mWallRadius;
+//    private float mSkyHeight;
     private double mLayerAngle;
 
     private void initSkyFacePara() {
         mSkyImgKey = "assets/base/sky/qingtianbogyun.jpg";
         SECameraData cameraData = getObserveCamera();
         mLayerAngle = Math.atan(cameraData.mAxisZ.getZ() / cameraData.mAxisZ.getY());
-        mSkyHeight = getHomeScene().getHouse().mWallHeight + 100;
-        mWallRadius = getHomeScene().getHouse().mWallRadius + 100;
+        float skyHeight = getHomeScene().getHouse().mWallHeight + 100;
+        float wallRadius = getHomeScene().getHouse().mWallRadius + 100;
         mFaceDirection = new SEVector3f(0, (float) -Math.sin(mLayerAngle), (float) Math.cos(mLayerAngle));
         mCameraDirection = new SEVector3f(0, (float) Math.cos(mLayerAngle), (float) Math.sin(mLayerAngle));
-        SERay rayA = new SERay(new SEVector3f(0, mWallRadius, mSkyHeight), mFaceDirection);
+        SERay rayA = new SERay(new SEVector3f(0, wallRadius, skyHeight), mFaceDirection);
         SERay rayB = new SERay(cameraData.mLocation, mCameraDirection);
         SEVector2f intersect = SERay.rayIntersectRay(rayA, rayB, com.borqs.se.engine.SEVector.AXIS.X);
         mCenterOfFace = new SEVector3f(0, intersect.getX(), intersect.getY());
-        setUserTranslate(new SEVector3f(0, 0, mSkyHeight));
+        setUserTranslate(new SEVector3f(0, 0, skyHeight));
     }
 
     private float[] calculateScreenSize(SEVector3f centerOfFace) {

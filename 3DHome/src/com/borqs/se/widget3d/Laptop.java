@@ -136,11 +136,8 @@ public class Laptop extends NormalObject{
             float changeV = (float) (vX * Math.cos(deskAngle) + vY * Math.sin(deskAngle));
             if (changeV < -500) {
                 isOpen = true;
-            } else if (changeV > 500) {
-                isOpen = false;
-            } else {
-                isOpen = mCurrentShellAngle < CLOSE_SHELL_ANGLE / 2;
-            }
+            } else
+                isOpen = changeV <= 500 && mCurrentShellAngle < CLOSE_SHELL_ANGLE / 2;
             runOpenOrCloseAnimation(null, 5, isOpen);
             break;
         }

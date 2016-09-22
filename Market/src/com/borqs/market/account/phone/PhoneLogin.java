@@ -1,15 +1,5 @@
 package com.borqs.market.account.phone;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -17,12 +7,22 @@ import android.telephony.TelephonyManager;
 
 import com.borqs.market.utils.BLog;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class PhoneLogin {
     public static final String SMS_SERVER_ERROR = "NotWork";
     private Handler mHandler;
     private Context mContext;
     private GetPhoneListener phoneListener;
-    private int DEFAULT_RETRY_TIMES = 3;
+    private final static int DEFAULT_RETRY_TIMES = 3;
     private int retrytimes = 0;
     
     public PhoneLogin(Context context,GetPhoneListener listener) {

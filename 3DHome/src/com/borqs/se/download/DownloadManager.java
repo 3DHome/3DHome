@@ -1,11 +1,8 @@
 package com.borqs.se.download;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
-import com.borqs.se.engine.SEUtils;
 import com.borqs.se.home3d.*;
 
 import org.xmlpull.v1.XmlPullParser;

@@ -35,7 +35,7 @@ public class ScreenShotAdapter  extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if(position == 0) {
             if(desFragment == null) {
-                desFragment = new ProductDescriptionFragment(mData);
+                desFragment = ProductDescriptionFragment.newInstance(mData);
             }
             return desFragment;
         }else {

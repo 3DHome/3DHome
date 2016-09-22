@@ -1,13 +1,5 @@
 package com.borqs.se.home3d;
 
-import java.text.NumberFormat;
-
-import com.borqs.se.R;
-import com.borqs.se.engine.SEScene;
-import com.borqs.se.engine.SECamera;
-import com.borqs.se.engine.SECommand;
-import com.borqs.se.engine.SEVector.SEVector3f;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,11 +7,18 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.borqs.se.R;
+import com.borqs.se.engine.SECamera;
+import com.borqs.se.engine.SECommand;
+import com.borqs.se.engine.SEScene;
+import com.borqs.se.engine.SEVector.SEVector3f;
+
+import java.text.NumberFormat;
 
 public class CameraAdjustDialog extends Dialog implements OnClickListener, OnTouchListener {
 
@@ -28,7 +27,7 @@ public class CameraAdjustDialog extends Dialog implements OnClickListener, OnTou
     private static final int MSG_TYPE_ADD_DOWN_UP = 3;
     private static final int MSG_TYPE_REDUCE_DOWN_UP = 4;
 
-    private Button mBtnReset;
+//    private Button mBtnReset;
     private TextView mCameraLocTextX;
     private TextView mCameraLocTextY;
     private TextView mCameraLocTextZ;
@@ -138,8 +137,8 @@ public class CameraAdjustDialog extends Dialog implements OnClickListener, OnTou
     @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        mBtnReset = (Button) findViewById(R.id.btn_reset);
-        mBtnReset.setOnClickListener(this);
+        View btnReset = findViewById(R.id.btn_reset);
+        btnReset.setOnClickListener(this);
 
         mBtnNear = (ImageView) findViewById(R.id.btn_expand);
 

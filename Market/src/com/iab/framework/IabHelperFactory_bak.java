@@ -1,7 +1,6 @@
 package com.iab.framework;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
@@ -10,7 +9,6 @@ import android.util.Log;
 import com.iab.engine.google.util.IabHelper;
 import com.iab.engine.google.util.IabResult;
 import com.iab.engine.google.util.Purchase;
-import com.iab.engine.google.util.IabHelper.OnConsumeMultiFinishedListener;
 
 import java.io.File;
 import java.io.FileOutputStream;

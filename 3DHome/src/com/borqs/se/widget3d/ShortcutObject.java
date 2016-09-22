@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.util.Log;
 
-import com.borqs.se.engine.SEScene;
 import com.borqs.se.home3d.HomeScene;
 import com.borqs.se.home3d.HomeUtils;
 import com.borqs.se.home3d.HomeManager;

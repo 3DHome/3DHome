@@ -23,13 +23,13 @@ import com.borqs.market.json.Product.ProductType;
 import com.borqs.market.utils.MarketUtils;
 
 public class ProductsDialog extends BasicDialogFragment implements View.OnClickListener{
-    private final int FRAGMENT_COUNT = 2;
-    private final int POSITION_ONLINE = 0;
-    private final int POSITION_LOCAL = 1;
+    private final static int FRAGMENT_COUNT = 2;
+    private final static int POSITION_ONLINE = 0;
+    private final static int POSITION_LOCAL = 1;
     private MarketUtils.OnDragListener OnDragListener;
     private float mPreTouchX;
     private float mPreTouchY;
-    private String mSelectObjectID;
+//    private String mSelectObjectID;
     private boolean mOnDrag = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,15 +48,15 @@ public class ProductsDialog extends BasicDialogFragment implements View.OnClickL
 
     protected String product_type = ProductType.THEME;
     protected String supported_mod;
-    private MyAdapter mAdapter;
+//    private MyAdapter mAdapter;
     private ViewPager mPager;
     private TextView lableOnline;
     private TextView lableLocal;
-    private TextView title_bar_title;
+//    private TextView title_bar_title;
     private View tabOnline;
     private View tabLocal;
-    private View layout_back;
-    private View layout_right;
+//    private View layout_back;
+//    private View layout_right;
 
     private ProductLocalListFragment localFragment = null;
     private ProductListFragment onLineFragment = null;
@@ -66,18 +66,18 @@ public class ProductsDialog extends BasicDialogFragment implements View.OnClickL
         mPager = (ViewPager) mConvertView.findViewById(R.id.pager);
         lableOnline = (TextView) mConvertView.findViewById(R.id.lable_online);
         lableLocal = (TextView) mConvertView.findViewById(R.id.lable_local);
-        title_bar_title = (TextView) mConvertView.findViewById(R.id.title_bar_title);
+        TextView title_bar_title = (TextView) mConvertView.findViewById(R.id.title_bar_title);
         tabOnline = mConvertView.findViewById(R.id.tab_online);
         tabLocal = mConvertView.findViewById(R.id.tab_local);
-        layout_back = mConvertView.findViewById(R.id.layout_back);
-        layout_right = mConvertView.findViewById(R.id.layout_right);
+        View layout_back = mConvertView.findViewById(R.id.layout_back);
+        View layout_right = mConvertView.findViewById(R.id.layout_right);
         tabOnline.setOnClickListener(this);
         tabLocal.setOnClickListener(this);
         layout_back.setOnClickListener(this);
         layout_right.setOnClickListener(this);
-        
-        mAdapter = new MyAdapter(getChildFragmentManager());
-        mPager.setAdapter(mAdapter);
+
+        MyAdapter adapter = new MyAdapter(getChildFragmentManager());
+        mPager.setAdapter(adapter);
         mPager.setCurrentItem(POSITION_LOCAL);
         mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
@@ -249,10 +249,10 @@ public class ProductsDialog extends BasicDialogFragment implements View.OnClickL
         public void onReceive(Context context, Intent intent) {
             mConvertView.setVisibility(View.GONE);
             mOnDrag = true;
-            mSelectObjectID = intent.getStringExtra(MarketUtils.EXTRA_PRODUCT_ID);
+            String selectObjectID = intent.getStringExtra(MarketUtils.EXTRA_PRODUCT_ID);
             OnDragListener = MarketUtils.getOnDragListener();
             if (OnDragListener != null) {
-                OnDragListener.onStartDrag(mSelectObjectID, mPreTouchX, mPreTouchY);
+                OnDragListener.onStartDrag(selectObjectID, mPreTouchX, mPreTouchY);
             }
         }
     };

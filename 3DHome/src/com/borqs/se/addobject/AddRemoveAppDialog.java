@@ -1,18 +1,19 @@
 package com.borqs.se.addobject;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 
 import com.borqs.se.addobject.AddObjectDialog.OnObjectsSelectedListener;
 import com.borqs.se.shortcut.AppItemInfo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddRemoveAppDialog extends AddObjectDialog implements OnObjectsSelectedListener {
     public static final String TAG = "AddRemoveAppDialog";
     private OnAddRemoveListener mOnAddRemoveListener;
 
-    public AddRemoveAppDialog(Context context, LayoutInflater inflater, ArrayList<AppItemInfo> itemInfos, int max) {
+    public AddRemoveAppDialog(Context context, LayoutInflater inflater, List<AppItemInfo> itemInfos, int max) {
         super(context, inflater, itemInfos, AddObjectDialog.ADD_OR_HIDE, max, null, true);
         setInternalListener(this);
     }

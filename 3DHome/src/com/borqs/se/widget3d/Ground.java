@@ -1,8 +1,6 @@
 package com.borqs.se.widget3d;
 
 
-import android.content.pm.ActivityInfo;
-
 import com.borqs.se.engine.SEObject;
 import com.borqs.se.engine.SETransParas;
 import com.borqs.se.engine.SEVector.SEVector2f;

@@ -1,16 +1,8 @@
 package com.borqs.se.home3d;
 
-import java.lang.reflect.Field;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.util.Calendar;
-import java.util.List;
-
-import com.support.StaticFragmentActivity;
-
 import android.app.ActivityManager;
-import android.app.AlertDialog;
 import android.app.ActivityManager.RunningTaskInfo;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
@@ -45,9 +37,16 @@ import com.borqs.se.engine.SESceneManager;
 import com.borqs.se.home3d.HomeUtils.SceneOrientation;
 import com.borqs.se.upgrade.UpgradeTest;
 import com.borqs.se.widget3d.ADViewController;
+import com.support.StaticFragmentActivity;
+
+import java.lang.reflect.Field;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.Calendar;
+import java.util.List;
 
 public class HomeActivity extends StaticFragmentActivity implements View.OnCreateContextMenuListener {
-    private WorkSpace mWorkSpace;
+//    private WorkSpace mWorkSpace;
     private AppSearchPane mAppSearchPane;
     private SERenderView mRenderView;
     private HomeManager mHomeManager;
@@ -63,12 +62,12 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
     private UpgradeTest mAutoChecker;
     private String mUpgradeUrl;
     private StringBuilder mReleaseNode;
-    private boolean mHaveGoolgePlay = false;
+//    private boolean mHaveGoolgePlay = false;
     private String mUpgradePreferencesName = HomeUtils.PKG_CURRENT_NAME + ".upgrade";
-    private String KEY_VERSION_NUMBER = "saved.version";
-    private String KEY_USER_CANCELED = "canceled.by.user";
-    private String KEY_CHECK_DATE = "checked.date";
-    private String GOOGLE_PLAY_PACKAGE_NAME = "com.android.vending";
+    private final static String KEY_VERSION_NUMBER = "saved.version";
+    private final static String KEY_USER_CANCELED = "canceled.by.user";
+    private final static String KEY_CHECK_DATE = "checked.date";
+    private final static String GOOGLE_PLAY_PACKAGE_NAME = "com.android.vending";
     // dialog id should not conflict with dialog id in SE3DHomeScene.java, they
     // are use same onCreateDialog()and onPrepareDialog().
     public static final int ALERT_DIALOG_UPDATE_SW = 1000;
@@ -176,6 +175,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         int year = c.get(Calendar.YEAR);
         String newDate = String.valueOf(year) + String.valueOf(month) + String.valueOf(day);
 
+        boolean mHaveGoolgePlay = false;
         try {
             getPackageManager().getApplicationInfo(GOOGLE_PLAY_PACKAGE_NAME, PackageManager.GET_UNINSTALLED_PACKAGES);
             mHaveGoolgePlay = true;
@@ -286,8 +286,8 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
 
     private void initView() {
         boolean hasScene = mHomeManager.getHomeScene() != null;
-        mWorkSpace = (WorkSpace) findViewById(R.id.workspace);
-        mHomeManager.setWorkSpace(mWorkSpace);
+        WorkSpace workSpace = (WorkSpace) findViewById(R.id.workspace);
+        mHomeManager.setWorkSpace(workSpace);
         Configuration config = getResources().getConfiguration();
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             mHomeManager.setSceneOrientation(SceneOrientation.AUTO_LAND); 
@@ -295,7 +295,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
             mHomeManager.setSceneOrientation(SceneOrientation.AUTO_PORT); 
         }
         mRenderView = new SERenderView(this, false);
-        mWorkSpace.addView(mRenderView);
+        workSpace.addView(mRenderView);
         SESceneManager.getInstance().setGLSurfaceView(mRenderView);
         SESceneManager.getInstance().setGLActivity(this);
         if (SettingsActivity.getFPSSetting(this)) {
@@ -405,10 +405,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             SESceneManager.getInstance().handleMenuKey();
         }
-        if (keyCode == KeyEvent.KEYCODE_SEARCH) {
-            return false;
-        }
-        return super.onKeyUp(keyCode, event);
+        return keyCode != KeyEvent.KEYCODE_SEARCH && super.onKeyUp(keyCode, event);
 
     }
 

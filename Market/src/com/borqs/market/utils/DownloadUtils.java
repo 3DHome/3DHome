@@ -1,8 +1,5 @@
 package com.borqs.market.utils;
 
-import java.io.File;
-import java.text.DecimalFormat;
-
 import android.app.DownloadManager;
 import android.app.DownloadManager.Request;
 import android.content.Context;
@@ -11,17 +8,20 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.io.File;
+import java.text.DecimalFormat;
+
 public class DownloadUtils {
     public static final String TAG = DownloadUtils.class.getSimpleName();
     public static final Uri CONTENT_URI = Uri.parse("content://downloads/my_downloads");
     
-    private Context mContext;
+//    private Context mContext;
     private DownloadManager dm;
     
     public DownloadUtils(Context context) {
         super();
-        this.mContext = context;
-        dm = (DownloadManager)mContext.getSystemService(Context.DOWNLOAD_SERVICE);
+//        this.mContext = context;
+        dm = (DownloadManager)context.getSystemService(Context.DOWNLOAD_SERVICE);
     }
 
     public long download(String url, String name, String id) {

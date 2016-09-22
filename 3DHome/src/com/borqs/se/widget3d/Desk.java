@@ -1,28 +1,36 @@
 package com.borqs.se.widget3d;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.widget.Toast;
 
 import com.borqs.se.R;
-import com.borqs.se.engine.*;
+import com.borqs.se.engine.SEAnimFinishListener;
 import com.borqs.se.engine.SEAnimation.CountAnimation;
+import com.borqs.se.engine.SECameraData;
+import com.borqs.se.engine.SECommand;
+import com.borqs.se.engine.SEEmptyAnimation;
+import com.borqs.se.engine.SEObject;
+import com.borqs.se.engine.SEScene;
+import com.borqs.se.engine.SESceneManager;
+import com.borqs.se.engine.SETransParas;
+import com.borqs.se.engine.SEVector;
 import com.borqs.se.engine.SEVector.SERay;
 import com.borqs.se.engine.SEVector.SERotate;
 import com.borqs.se.engine.SEVector.SEVector2f;
 import com.borqs.se.engine.SEVector.SEVector3f;
 import com.borqs.se.home3d.HomeManager;
-import com.borqs.se.home3d.ProviderUtils;
 import com.borqs.se.home3d.HomeScene;
-import com.borqs.se.home3d.UpdateDBThread;
 import com.borqs.se.home3d.MountPointData.SEMountPointGroup;
 import com.borqs.se.home3d.MountPointData.SEMountPointItem;
+import com.borqs.se.home3d.ProviderUtils;
+import com.borqs.se.home3d.UpdateDBThread;
 import com.borqs.se.shortcut.LauncherModel;
 import com.borqs.se.widget3d.ObjectInfo.ObjectSlot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Desk extends VesselObject {
     private final static double MAX_SIGHT_ANGLE = Math.PI / 6;
@@ -41,7 +49,7 @@ public class Desk extends VesselObject {
     public int mMAXChildNum;
     protected SEVector3f mDeskSize;
     private SECameraData mObserverCameraData;
-    private boolean mIsLandScape;
+//    private boolean mIsLandScape;
 
     public Desk(HomeScene scene, String name, int index) {
         super(scene, name, index);
@@ -57,7 +65,7 @@ public class Desk extends VesselObject {
         super.initStatus();
         setNeedCullFace(true);
         setOnClickListener(null);
-        mIsLandScape = HomeManager.getInstance().isLandscapeOrientation();
+//        mIsLandScape = HomeManager.getInstance().isLandscapeOrientation();
         mMAXChildNum = getContainerMountPoint().getMountPointItems().size();
         mDeskSize = getObjectInfo().mModelInfo.mMaxPoint.subtract(getObjectInfo().mModelInfo.mMinPoint);
         String canBeRotated = getObjectInfo().mModelInfo.getSpecialAttribute(getContext(), "canBeRotated");
@@ -269,10 +277,7 @@ public class Desk extends VesselObject {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (mDisableTouch) {
-            return true;
-        }
-        return super.dispatchTouchEvent(event);
+        return mDisableTouch || super.dispatchTouchEvent(event);
     }
 
     @Override

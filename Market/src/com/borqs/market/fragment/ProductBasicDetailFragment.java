@@ -1,12 +1,5 @@
 package com.borqs.market.fragment;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
@@ -17,7 +10,6 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
@@ -57,12 +49,18 @@ import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.DataConnectionUtils;
 import com.borqs.market.utils.DownloadUtils;
 import com.borqs.market.utils.IntentUtil;
-import com.borqs.market.utils.MD5;
 import com.borqs.market.utils.MarketConfiguration;
 import com.borqs.market.utils.MarketUtils;
 import com.borqs.market.utils.QiupuHelper;
 import com.iab.engine.MarketBillingResult;
 import com.iab.engine.MarketPurchaseListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
 
 public class ProductBasicDetailFragment extends BasicFragment implements
         OnClickListener, DownloadListener {
@@ -75,7 +73,7 @@ public class ProductBasicDetailFragment extends BasicFragment implements
     private ScreenShotAdapter mAdapter;
     protected Product mData = null;
     private ApiUtil mApiUtil;
-    private boolean isBottomVisable = true;
+//    private boolean isBottomVisable = true;
 
     protected ViewPager mPager;
     protected LinearLayout mPage;
@@ -231,7 +229,7 @@ public class ProductBasicDetailFragment extends BasicFragment implements
         if (savedInstanceState != null) {
             mData = savedInstanceState.getParcelable(FLAG_DATA);
             current_position = savedInstanceState.getInt("current_position");
-            isBottomVisable = savedInstanceState.getBoolean(BOTTOM_LAYOUT_VISABLE);
+            boolean isBottomVisable = savedInstanceState.getBoolean(BOTTOM_LAYOUT_VISABLE);
             if(isBottomVisable) {
                 bottomLayout.setVisibility(View.VISIBLE);
                 ((ViewListener)getActivity()).show(false);

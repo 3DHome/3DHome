@@ -9,7 +9,6 @@ import com.borqs.market.CommentListActivity;
 import com.borqs.market.CreateCommentActivity;
 import com.borqs.market.ProductDetailActivity;
 import com.borqs.market.ProductLocalDetailActivity;
-import com.borqs.market.WallpaperProductDetailActivity;
 import com.borqs.market.json.Product;
 import com.borqs.market.json.Product.ProductType;
 

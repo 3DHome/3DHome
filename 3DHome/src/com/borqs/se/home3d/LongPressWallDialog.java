@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import com.borqs.se.R;
 import com.borqs.se.engine.SESceneManager;
-import com.borqs.se.home3d.HomeUtils.CropImageInfo;
-import com.borqs.se.widget3d.House;
 
 import android.app.Dialog;
 import android.appwidget.AppWidgetManager;

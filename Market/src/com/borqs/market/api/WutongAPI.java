@@ -10,7 +10,6 @@ import com.borqs.market.net.RequestListener;
 import com.borqs.market.net.WutongException;
 import com.borqs.market.net.WutongParameters;
 import com.borqs.market.utils.BLog;
-import com.borqs.market.utils.MarketConfiguration;
 
 /**
  * API的基类，每个接口类都继承了此抽象类

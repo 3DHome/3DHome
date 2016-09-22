@@ -2,7 +2,6 @@ package com.borqs.market.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.widget.Gallery;
 
 public class CustomGallery extends Gallery {

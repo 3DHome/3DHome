@@ -15,39 +15,41 @@
 
 package com.borqs.se.addobject;
 
-import java.util.ArrayList;
 import android.app.Dialog;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.FontMetrics;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.v4.view.PagerAdapter;
+import android.text.TextUtils;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ImageView;
 import android.widget.Toast;
-import android.os.Parcelable;
-import android.graphics.Color;
-import android.view.ViewGroup.LayoutParams;
-import android.view.LayoutInflater;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.BitmapDrawable;
-import android.util.DisplayMetrics;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.graphics.Paint.FontMetrics;
-import android.graphics.Paint;
-import android.support.v4.view.PagerAdapter;
-import android.database.Cursor;
-import android.content.ContentResolver;
-import android.content.pm.ActivityInfo;
 
 import com.borqs.se.R;
-import com.borqs.se.shortcut.ItemInfo;
-import com.borqs.se.shortcut.AppItemInfo;
 import com.borqs.se.addobject.AddObjectGridView.OnItemCheckListener;
 import com.borqs.se.engine.SESceneManager;
-import com.borqs.se.shortcut.LauncherModel;
 import com.borqs.se.home3d.HomeManager;
 import com.borqs.se.home3d.ProviderUtils.ObjectInfoColumns;
+import com.borqs.se.shortcut.AppItemInfo;
+import com.borqs.se.shortcut.ItemInfo;
+import com.borqs.se.shortcut.LauncherModel;
 import com.borqs.se.widget3d.ObjectInfo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -74,7 +76,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
     /**/
     private IIPagerAdapter mPagerAdapter = null;
     private View mContentView = null;
-    private AddObjectViewPager mPager = null;
+//    private AddObjectViewPager mPager = null;
     private TextView mSelectdNumView = null;
     private LinearLayout mPageIndicator = null;
 
@@ -90,7 +92,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
     
     public AddObjectDialog(Context context) { super(context); }
 
-    public AddObjectDialog(Context context, LayoutInflater inflater, ArrayList<AppItemInfo> itemInfos, int tag, int max, Bundle bundle,boolean needShowCheckedMark) {
+    public AddObjectDialog(Context context, LayoutInflater inflater, List<AppItemInfo> itemInfos, int tag, int max, Bundle bundle, boolean needShowCheckedMark) {
         super(context, R.style.HomeDialogStyle);
         mContext = context;
         mInflater = inflater;
@@ -248,9 +250,9 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
         }
 
         mPagerAdapter = new IIPagerAdapter(mContext, mInflater, itemInfos, this, mNum, nper,needShowCheckedMark);
-        mPager = (AddObjectViewPager)mContentView.findViewById(R.id.contentvp);
-        mPager.setAdapter(mPagerAdapter);
-        mPager.setOnPageChangeListener(new AddObjectViewPager.OnPageChangeListener() {
+        AddObjectViewPager viewPager = (AddObjectViewPager)mContentView.findViewById(R.id.contentvp);
+        viewPager.setAdapter(mPagerAdapter);
+        viewPager.setOnPageChangeListener(new AddObjectViewPager.OnPageChangeListener() {
             @Override
             public void onPageSelected(int arg0) {
                 setIndicator(arg0);
@@ -345,7 +347,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
             }
         }
 
-        mPager.setCurrentItem(0);
+        viewPager.setCurrentItem(0);
         setFadingViewVisible(false);
         setContentView(mContentView);
     }

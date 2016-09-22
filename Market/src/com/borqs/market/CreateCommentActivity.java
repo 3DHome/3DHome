@@ -3,10 +3,8 @@ package com.borqs.market;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 
-import com.borqs.market.fragment.CommentListFragment;
 import com.borqs.market.fragment.CreateCommentFragment;
 import com.borqs.market.utils.IntentUtil;
-import com.borqs.market.utils.MarketUtils;
 
 public class CreateCommentActivity extends BasicActivity {
 

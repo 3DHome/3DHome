@@ -5,7 +5,6 @@ import java.util.List;
 
 import android.content.ComponentName;
 import android.database.Cursor;
-import android.graphics.Rect;
 
 import com.borqs.se.engine.*;
 import com.borqs.se.engine.SEScene.SCENE_CHANGED_TYPE;

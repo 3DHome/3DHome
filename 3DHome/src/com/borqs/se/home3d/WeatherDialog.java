@@ -5,17 +5,13 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.borqs.borqsweather.weather.CheckLocServiceDialogActivity;
 import com.borqs.borqsweather.weather.IWeatherService;
 import com.borqs.borqsweather.weather.yahoo.ForecastWeatherInfo;
 import com.borqs.borqsweather.weather.yahoo.WeatherInfo;
 import com.borqs.se.R;
-import com.borqs.se.engine.SESceneManager;
 
 import android.app.Dialog;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -25,7 +21,6 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,8 +30,6 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class WeatherDialog extends Dialog{

@@ -167,10 +167,7 @@ public class VesselLayer {
         if (objectSlot1 == null && objectSlot2 == null) {
             return true;
         }
-        if ((objectSlot1 != null && objectSlot2 == null) || (objectSlot1 == null && objectSlot2 != null)) {
-            return false;
-        }
-        return objectSlot1.equals(objectSlot2);
+        return !((objectSlot1 != null && objectSlot2 == null) || (objectSlot1 == null && objectSlot2 != null)) && objectSlot1.equals(objectSlot2);
     }
 
     protected SETransParas getTransParasInVessel(NormalObject needPlaceObj, ObjectSlot objectSlot) {

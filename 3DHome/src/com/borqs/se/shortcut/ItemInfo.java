@@ -158,11 +158,7 @@ public class ItemInfo {
     }
 
     public boolean equals(ItemInfo itemInfo) {
-        if (itemInfo != null && mComponentName != null && mComponentName.equals(itemInfo.getComponentName())) {
-            return true;
-        } else {
-            return super.equals(itemInfo);
-        }
+        return itemInfo != null && mComponentName != null && mComponentName.equals(itemInfo.getComponentName()) || super.equals(itemInfo);
     }
 
 }

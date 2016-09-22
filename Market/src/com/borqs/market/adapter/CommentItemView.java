@@ -1,8 +1,5 @@
 package com.borqs.market.adapter;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +9,15 @@ import android.widget.TextView;
 import com.borqs.market.R;
 import com.borqs.market.json.Comment;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class CommentItemView {
     public static final String TAG = CommentItemView.class.getSimpleName();
     public View convertView;
     
-    private Context mContext;
-    private LayoutInflater inflater;
+//    private Context mContext;
+//    private LayoutInflater inflater;
     private Comment mData;
     
     TextView content;
@@ -31,8 +31,8 @@ public class CommentItemView {
     
     public CommentItemView(Context context) {
         super();
-        mContext = context;
-        inflater = LayoutInflater.from(mContext);
+//        mContext = context;
+        LayoutInflater inflater = LayoutInflater.from(context);
         lableVersion = context.getString(R.string.product_info_version);
         lable_comment_on = context.getString(R.string.lable_comment_on);
         fmt=new SimpleDateFormat("yyyy-MM-dd HH:mm"); 

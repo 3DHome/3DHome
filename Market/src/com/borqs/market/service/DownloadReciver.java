@@ -3,7 +3,6 @@ package com.borqs.market.service;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.net.URI;
-import java.util.HashMap;
 import java.util.Set;
 
 import android.app.DownloadManager;

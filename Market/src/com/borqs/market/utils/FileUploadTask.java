@@ -3,8 +3,6 @@ package com.borqs.market.utils;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -14,14 +12,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.borqs.market.api.ApiUtil;
-import com.borqs.market.net.HttpManager;
 import com.borqs.market.net.RequestListener;
 import com.borqs.market.net.WutongException;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.Log;
