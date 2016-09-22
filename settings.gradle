@@ -1,3 +1,6 @@
-//include ':app', ':domain', ':model', ':common'
-
-include ':3DHome',':3DHomeEngine',':BaiduStatic',':BorqsWeather',':DigitalFrameService',':Market'
+include ':3DHome'
+include ':3DHomeEngine'
+include ':BaiduStatic'
+include ':BorqsWeather'
+include ':DigitalFrameService'
+include ':Market'
