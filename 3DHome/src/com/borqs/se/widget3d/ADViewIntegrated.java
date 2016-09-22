@@ -196,13 +196,13 @@ public class ADViewIntegrated extends LinearLayout {
     }
 
     public interface AdListener {
-        public void onFailedToReceiveAd(String arg0);
+        void onFailedToReceiveAd(String arg0);
 
-        public void onReceiveAd();
+        void onReceiveAd();
         
-        public void onRequestAd();
+        void onRequestAd();
         
-        public void onDestoryAd();
+        void onDestoryAd();
     }
 
     @Override
@@ -457,11 +457,8 @@ public class ADViewIntegrated extends LinearLayout {
     private boolean isNetworkingAvailable() {
         ConnectivityManager cm = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         final NetworkInfo activeInfo = cm.getActiveNetworkInfo();
-        if (null != activeInfo) {
-            return true;
-        }
+        return null != activeInfo;
 
-        return false;
     }
 
     private WebView getWebView() {

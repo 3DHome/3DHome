@@ -25,11 +25,7 @@ public class Laptop extends NormalObject{
         super(scene, name, index);
         mCurrentShellAngle = 0;
         mCancelClick = false;
-        if (name.equals("group_pc")) {
-            mCanOpenAndClose = true;
-        } else {
-            mCanOpenAndClose = false;
-        }
+        mCanOpenAndClose = name.equals("group_pc");
     }
 
     @Override
@@ -143,11 +139,7 @@ public class Laptop extends NormalObject{
             } else if (changeV > 500) {
                 isOpen = false;
             } else {
-                if (mCurrentShellAngle < CLOSE_SHELL_ANGLE / 2) {
-                    isOpen = true;
-                } else {
-                    isOpen = false;
-                }
+                isOpen = mCurrentShellAngle < CLOSE_SHELL_ANGLE / 2;
             }
             runOpenOrCloseAnimation(null, 5, isOpen);
             break;

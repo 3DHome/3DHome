@@ -27,10 +27,7 @@ public class BookshelfLayer extends VesselLayer {
         super.canHandleSlot(object, touchX, touchY);
         if (object instanceof AppObject) {
             mExistentSlot = getExistentSlot();
-            if (searchEmptySlot(mExistentSlot) == null) {
-                return false;
-            }
-            return true;
+            return searchEmptySlot(mExistentSlot) != null;
         }
         return false;
     }

@@ -437,7 +437,7 @@ public class WallFrame2 extends WallObject {
                     matrix.postScale(scaleX, scaleX); 
                     tmp = Bitmap.createBitmap(bitmap, 0, 0,bw, bh, matrix, true);
                     x = 0;
-                    y =(tmp.getHeight()-height-10)/2;;
+                    y =(tmp.getHeight()-height-10)/2;
                 }
                 tmp = Bitmap.createBitmap(tmp, x, y, width, height); 
             }else{
@@ -629,7 +629,7 @@ public class WallFrame2 extends WallObject {
     }
 
     private void initPref() {
-        String prefName = (String) FrameSettingPrefManager.getFramePrefByFrameID(mContext, mFrameID);
+        String prefName = FrameSettingPrefManager.getFramePrefByFrameID(mContext, mFrameID);
         SharedPreferences settings = mContext.getSharedPreferences(prefName, Context.MODE_MULTI_PROCESS);
 
         this.mAlbumDir = settings.getString(FrameSettingPrefManager.FOLDER_OR_FILE_PATH_KEY, "");

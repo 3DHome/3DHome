@@ -60,7 +60,7 @@ public class SECamera {
 
 
     public interface CameraChangedListener {
-        public void onCameraChanged();
+        void onCameraChanged();
     }
 
     public SECamera(SEScene scene) {

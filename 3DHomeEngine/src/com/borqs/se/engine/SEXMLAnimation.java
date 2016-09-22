@@ -6,7 +6,7 @@ public class SEXMLAnimation extends SECommand {
     private int mObjectIndex = 0;
     private int mCount = 0;
     private int mAnimationTimes = 0;
-    private boolean mIsFinished;;
+    private boolean mIsFinished;
     private boolean mIsReversed;
 
     public native int addAnimation_JNI(String xmlPath);

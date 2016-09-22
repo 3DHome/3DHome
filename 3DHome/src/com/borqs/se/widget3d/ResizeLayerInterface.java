@@ -3,9 +3,9 @@ package com.borqs.se.widget3d;
 import android.view.MotionEvent;
 
 public interface ResizeLayerInterface {
-    public void startResize();
+    void startResize();
 
-    public void endResize();
+    void endResize();
 
-    public boolean handleResizeTouchEvent(MotionEvent ev);
+    boolean handleResizeTouchEvent(MotionEvent ev);
 }

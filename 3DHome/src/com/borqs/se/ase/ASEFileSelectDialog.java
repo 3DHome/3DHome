@@ -39,7 +39,7 @@ public class ASEFileSelectDialog extends Dialog implements OnItemClickListener {
     private int mTop = 0;
 
     public interface DoSelectedListener {
-        abstract void onSelected(String fileName, String filePath);
+        void onSelected(String fileName, String filePath);
     }
 
     public ASEFileSelectDialog(Context context, int titleId, DoSelectedListener callback) {

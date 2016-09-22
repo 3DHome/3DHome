@@ -31,10 +31,7 @@ public class AppWallLayer extends VesselLayer {
         super.canHandleSlot(object, touchX, touchY);
         if ((object instanceof AppObject) || (object instanceof Folder)) {
             mExistentSlot = getExistentSlot();
-            if (searchEmptySlot(mExistentSlot) == null) {
-                return false;
-            }
-            return true;
+            return searchEmptySlot(mExistentSlot) != null;
         }
         return false;
     }

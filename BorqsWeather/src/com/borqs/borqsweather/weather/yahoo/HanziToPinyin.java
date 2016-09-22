@@ -445,16 +445,11 @@ public class HanziToPinyin {
         // TODO Auto-generated method stub
         final char c = character;
 
-        if (c == '\u6c88' // 沈
+        return c == '\u6c88' // 沈
                 || c == '\u7fdf' // 翟
                 || c == '\u66fe' // 曾
-                || c == '\u4ec7' // 仇
+                || c == '\u4ec7';
 
-        ) {
-            return true;
-        }
-
-        return false;
     }
 
     private String checkDuoyin(char ch) {

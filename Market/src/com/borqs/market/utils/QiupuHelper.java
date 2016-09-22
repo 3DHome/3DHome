@@ -219,10 +219,7 @@ public class QiupuHelper {
     }
 
     public static boolean hasDownloading() {
-        if (downloadingMap != null || downloadingMap.size() > 0) {
-            return true;
-        }
-        return false;
+        return downloadingMap != null || downloadingMap.size() > 0;
     }
 
     public static void registerDownloadListener(String key, DownloadListener listener) {

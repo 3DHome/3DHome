@@ -88,8 +88,8 @@ public class ChangeLabelDialog extends Dialog implements android.view.View.OnCli
     }
 
     public OnDialogFinished mDialogFinished;
-    public static interface OnDialogFinished {
-        public void onFinish(String displayName, boolean changed);
+    public interface OnDialogFinished {
+        void onFinish(String displayName, boolean changed);
     }
 
     public void setOnDialogFinished(OnDialogFinished mOnDialogFinished) {

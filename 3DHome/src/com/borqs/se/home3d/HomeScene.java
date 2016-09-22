@@ -1038,11 +1038,7 @@ public class HomeScene extends SEScene implements ModelChangeCallBack, OnAppSele
             y = 0;
         }
         boolean reversal;
-        if (x > mSceneInfo.getSceneWidth() / 2) {
-            reversal = true;
-        } else {
-            reversal = false;
-        }
+        reversal = x > mSceneInfo.getSceneWidth() / 2;
         Bundle bundle = new Bundle();
         bundle.putInt("dlgx", x);
         bundle.putInt("dlgy", y);
@@ -1547,7 +1543,7 @@ public class HomeScene extends SEScene implements ModelChangeCallBack, OnAppSele
                 for (ItemInfo iia : selectedList) {
                     ItemInfo ii = new AppItemInfo(getContext(), iia.getResolveInfo(), iia.getComponentName());
                     ii.mItemType = ItemInfo.ITEM_TYPE_APP;
-                    AppObject itemObject = AppObject.create(HomeScene.this, (AppItemInfo) ii);
+                    AppObject itemObject = AppObject.create(HomeScene.this, ii);
                     itemObject.getObjectInfo().mVesselName = folder.mName;
                     itemObject.getObjectInfo().mVesselIndex = folder.getObjectInfo().mIndex;
                     itemObject.getObjectInfo().mObjectSlot.mSlotIndex = c;

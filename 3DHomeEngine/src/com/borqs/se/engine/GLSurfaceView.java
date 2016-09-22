@@ -1380,8 +1380,7 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
                             // When pausing, optionally release the EGL Context:
                             if (pausing && mHaveEglContext) {
                                 GLSurfaceView view = mGLSurfaceViewWeakRef.get();
-                                boolean preserveEglContextOnPause = view == null ?
-                                        false : view.mPreserveEGLContextOnPause;
+                                boolean preserveEglContextOnPause = view != null && view.mPreserveEGLContextOnPause;
                                 if (!preserveEglContextOnPause || sGLThreadManager.shouldReleaseEGLContextWhenPausing()) {
                                     stopEglContextLocked();
                                     if (LOG_SURFACE) {
@@ -1928,9 +1927,9 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
                 try {
                     Class cl = Class.forName("android.os.SystemProperties");
                     Object invoker = cl.newInstance();
-                    Method m = cl.getMethod("getInt", new Class[] { String.class, int.class });
-                    mGLESVersion = (Integer) m.invoke(invoker, new Object[] { "ro.opengles.version",
-                            ConfigurationInfo.GL_ES_VERSION_UNDEFINED });
+                    Method m = cl.getMethod("getInt", String.class, int.class);
+                    mGLESVersion = (Integer) m.invoke(invoker, "ro.opengles.version",
+                            ConfigurationInfo.GL_ES_VERSION_UNDEFINED);
                 } catch (Exception e) {
                 }
                 if (mGLESVersion >= kGLES_20) {

@@ -101,7 +101,7 @@ public class DownloadManager {
             Cursor cursor = mContext.getContentResolver().query(ThemeColumns.CONTENT_URI, selection, where, null, null);
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
-                    boolean isApplyed = cursor.getInt(0) == 1 ? true : false;
+                    boolean isApplyed = cursor.getInt(0) == 1;
                     HomeUtils.deleteThemeDBByProductID(mContext, mPluginPackageInfo.product_id);
                     if (!isApplyed) {
                         if (unzipPackage()) {
@@ -216,7 +216,7 @@ public class DownloadManager {
                         new String[] { ThemeColumns.IS_APPLY }, where, null, null);
                 if (cursor != null) {
                     if (cursor.moveToFirst()) {
-                        isApply = cursor.getInt(0) == 1 ? true : false;
+                        isApply = cursor.getInt(0) == 1;
                     }
                     cursor.close();
                 }

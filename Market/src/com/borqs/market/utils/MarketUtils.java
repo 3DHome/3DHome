@@ -520,10 +520,10 @@ public class MarketUtils {
         return mOnDragListener;
     }
 
-    public static interface OnDragListener {
-        public void onStartDrag(String resourceID, float startX, float startY);
+    public interface OnDragListener {
+        void onStartDrag(String resourceID, float startX, float startY);
 
-        public boolean onDrag(MotionEvent ev);
+        boolean onDrag(MotionEvent ev);
     }
 
     public static Bitmap decodeSampledBitmapFromInputStream(InputStream inputStream, int outW, int outH) {
@@ -575,11 +575,7 @@ public class MarketUtils {
     public static boolean hasSDcard() {
         if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File file = new File("sdcard-ext");
-            if (file.exists() && file.canWrite()) {
-                return true;
-            } else {
-                return false;
-            }
+            return file.exists() && file.canWrite();
         }
         return true;
     }
@@ -719,10 +715,8 @@ public class MarketUtils {
         if (host.contains(".fbcdn.net"))
             return true;
 
-        if (host.contains("secure-profile.facebook.com"))
-            return true;
+        return host.contains("secure-profile.facebook.com");
 
-        return false;
     }
 
 }

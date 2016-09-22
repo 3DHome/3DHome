@@ -105,6 +105,6 @@ public class AddObjectEditText extends EditText {
     }
     
     public interface IMStatusListener {
-        public void statusChanged(boolean show);
+        void statusChanged(boolean show);
     }
 }

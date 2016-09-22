@@ -13,7 +13,7 @@ public interface LifeCycle {
      * @see #stop()
      * @see #isFailed()
      */
-    public void start() throws Exception;
+    void start() throws Exception;
 
     /* ------------------------------------------------------------ */
     /**
@@ -26,13 +26,13 @@ public interface LifeCycle {
      * @see #start()
      * @see #isFailed()
      */
-    public void stop() throws Exception;
+    void stop() throws Exception;
 
     /* ------------------------------------------------------------ */
     /**
      * @return true if the component is starting or has been started.
      */
-    public boolean isRunning();
+    boolean isRunning();
 
     /* ------------------------------------------------------------ */
     /**
@@ -40,21 +40,21 @@ public interface LifeCycle {
      * @see #start()
      * @see #isStarting()
      */
-    public boolean isStarted();
+    boolean isStarted();
 
     /* ------------------------------------------------------------ */
     /**
      * @return true if the component is starting.
      * @see #isStarted()
      */
-    public boolean isStarting();
+    boolean isStarting();
 
     /* ------------------------------------------------------------ */
     /**
      * @return true if the component is stopping.
      * @see #isStopped()
      */
-    public boolean isStopping();
+    boolean isStopping();
 
     /* ------------------------------------------------------------ */
     /**
@@ -62,33 +62,33 @@ public interface LifeCycle {
      * @see #stop()
      * @see #isStopping()
      */
-    public boolean isStopped();
+    boolean isStopped();
 
     /* ------------------------------------------------------------ */
     /**
      * @return true if the component has failed to start or has failed to stop.
      */
-    public boolean isFailed();
+    boolean isFailed();
 
     /* ------------------------------------------------------------ */
-    public void addLifeCycleListener(LifeCycle.Listener listener);
+    void addLifeCycleListener(LifeCycle.Listener listener);
 
     /* ------------------------------------------------------------ */
-    public void removeLifeCycleListener(LifeCycle.Listener listener);
+    void removeLifeCycleListener(LifeCycle.Listener listener);
 
     /* ------------------------------------------------------------ */
     /**
      * Listener. A listener for Lifecycle events.
      */
-    public interface Listener extends EventListener {
-        public void lifeCycleStarting(LifeCycle event);
+    interface Listener extends EventListener {
+        void lifeCycleStarting(LifeCycle event);
 
-        public void lifeCycleStarted(LifeCycle event);
+        void lifeCycleStarted(LifeCycle event);
 
-        public void lifeCycleFailure(LifeCycle event, Throwable cause);
+        void lifeCycleFailure(LifeCycle event, Throwable cause);
 
-        public void lifeCycleStopping(LifeCycle event);
+        void lifeCycleStopping(LifeCycle event);
 
-        public void lifeCycleStopped(LifeCycle event);
+        void lifeCycleStopped(LifeCycle event);
     }
 }

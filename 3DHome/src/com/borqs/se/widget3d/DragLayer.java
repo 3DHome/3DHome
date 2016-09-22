@@ -59,11 +59,7 @@ public class DragLayer {
                     && mOnDragObject.getObjectInfo().mModelInfo.mSlotType == ObjectInfo.SLOT_TYPE_DESKTOP) {
                 isDesktopObj = true;
             }
-            if (mOnDragObject instanceof AppObject || isDesktopObj) {
-                mCanChangeLayer = true;
-            } else {
-                mCanChangeLayer = false;
-            }
+            mCanChangeLayer = mOnDragObject instanceof AppObject || isDesktopObj;
             for (VesselLayer vesselLayer : mChildLayers) {
                 if (vesselLayer.canHandleSlot(mOnDragObject, mCompensateTouch.getX() + touchX, mCompensateTouch.getY()
                         + touchY)) {
@@ -136,10 +132,7 @@ public class DragLayer {
     }
 
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (mIsOnDrag || mIsOnObjectResize) {
-            return true;
-        }
-        return false;
+        return mIsOnDrag || mIsOnObjectResize;
     }
 
     public boolean dispatchTouchEvent(MotionEvent event) {
@@ -395,7 +388,7 @@ public class DragLayer {
         SEVector2i locationBottom = mHomeScene.getCamera().worldToScreenCoordinate(desTranslate);
         boundOfRecycle.left = (int) (mCamera.getWidth() / 2 - 80 * mHomeScene.getScreenDensity());
         boundOfRecycle.right = (int) (mCamera.getWidth() / 2 + 80 * mHomeScene.getScreenDensity());
-        boundOfRecycle.bottom = (int) locationBottom.getY();
+        boundOfRecycle.bottom = locationBottom.getY();
         boundOfRecycle.top = (int) (boundOfRecycle.bottom - 50 * mHomeScene.getScreenDensity());
         currentLayer.setBoundOfRecycle(boundOfRecycle);
         loadAndShowRecycle(srcTranslate, desTranslate, scale);

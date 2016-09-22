@@ -69,17 +69,17 @@ public class HomeManager {
     private boolean mShowHelpDialog = false;
 
     public interface TimeChangeCallBack {
-        public void onTimeChanged();
+        void onTimeChanged();
     }
 
     public interface WeatherBindedCallBack {
-        public void onWeatherServiceBinded(IWeatherService service);
+        void onWeatherServiceBinded(IWeatherService service);
     }
 
     public interface ModelChangeCallBack {
-        public void onAddModelToDB(ModelInfo modelInfo);
+        void onAddModelToDB(ModelInfo modelInfo);
 
-        public void onRemoveModelFromDB(ModelInfo modelInfo);
+        void onRemoveModelFromDB(ModelInfo modelInfo);
     }
 
     private HomeManager() {
@@ -441,7 +441,7 @@ public class HomeManager {
             if (modelInfo == null) {
                 return;
             }
-            ModelChangeCallBack modelChangeCallBack = (ModelChangeCallBack) mHomeScene;
+            ModelChangeCallBack modelChangeCallBack = mHomeScene;
             if (modelChangeCallBack != null) {
                 modelChangeCallBack.onRemoveModelFromDB(modelInfo);
             }
@@ -479,7 +479,7 @@ public class HomeManager {
                     modelInfo.saveToDB();
                 }
                 if (modelInfo != null) {
-                    ModelChangeCallBack modelChangeCallBack = (ModelChangeCallBack) mHomeScene;
+                    ModelChangeCallBack modelChangeCallBack = mHomeScene;
                     if (modelChangeCallBack != null) {
                         modelChangeCallBack.onAddModelToDB(modelInfo);
                     }

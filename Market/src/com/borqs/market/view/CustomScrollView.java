@@ -26,11 +26,8 @@ public class CustomScrollView extends ScrollView {
     // Return false if we're scrolling in the x direction     
     class YScrollDetector extends SimpleOnGestureListener {   
         @Override  
-        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {   
-            if(Math.abs(distanceY) > Math.abs(distanceX)) {   
-                return true;   
-            }   
-            return false;   
-        }   
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            return Math.abs(distanceY) > Math.abs(distanceX);
+        }
     }   
 } 

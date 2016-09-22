@@ -38,12 +38,9 @@ public class WallCellLayer extends VesselLayer {
     @Override
     public boolean canHandleSlot(NormalObject object, float touchX, float touchY) {
         super.canHandleSlot(object, touchX, touchY);
-        if (object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_WALL
+        return object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_WALL
                 || object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_APP_WALL
-                || object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_BOOKSHELF) {
-            return true;
-        }
-        return false;
+                || object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_BOOKSHELF;
     }
 
     @Override
@@ -248,11 +245,7 @@ public class WallCellLayer extends VesselLayer {
             SEVector2i nearestSlot = getNearestEmptySlotAtWall(mHouse.mCellCountX, mHouse.mCellCountY, moveSlot,
                     existentSlot);
             clearMoveSlot();
-            if (placeConflictObjects(nearestSlot)) {
-                return true;
-            } else {
-                return false;
-            }
+            return placeConflictObjects(nearestSlot);
         } else {
             return true;
         }
@@ -415,10 +408,7 @@ public class WallCellLayer extends VesselLayer {
 
         float mixY = conflictSlot.mStartY - 0.32f;
         float maxY = conflictSlot.mStartY + conflictSlot.mSpanY - slot.mSpanY + 0.32f;
-        if ((convertStartX > mixX && convertStartX < maxX) && (convertStartY > mixY && convertStartY < maxY)) {
-            return true;
-        }
-        return false;
+        return (convertStartX > mixX && convertStartX < maxX) && (convertStartY > mixY && convertStartY < maxY);
     }
 
     @Override

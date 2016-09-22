@@ -590,13 +590,9 @@ public class WeatherDialog extends Dialog{
             case MotionEvent.ACTION_MOVE:
                 int changeX = touchX - mPreTouchX;
                 boolean RToL = true;
-                if(mIsWeatherShown){
-                    //here should show fore weather ,only support fling right to left
-                    RToL = true;
-                }else{
-                    //here should show weather, only support fling left to right
-                    RToL = false;
-                }
+                //here should show fore weather ,only support fling right to left
+//here should show weather, only support fling left to right
+                RToL = mIsWeatherShown;
                 translateWeather(RToL,changeX);
                 break;
             case MotionEvent.ACTION_UP:

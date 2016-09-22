@@ -202,12 +202,9 @@ public class WutongParameters extends Parameters {
    	}
 
     public boolean isEmpty() {
-   		if (fileMap.isEmpty() && super.isEmpty()) {
-   			return true;
-   		}
+        return fileMap.isEmpty() && super.isEmpty();
 
-   		return false;
-   	}
+    }
 
     public String encodeParameters() {
         StringBuilder buf = new StringBuilder();

@@ -37,7 +37,7 @@ public class RecommendPhotoFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
-        mData = (Recommend) args.getParcelable(KEY_DATA);
+        mData = args.getParcelable(KEY_DATA);
         supported_mod = args.getString(KEY_MOD);
         category = args.getString(KEY_CATEGORY);
     }
@@ -65,7 +65,7 @@ public class RecommendPhotoFragment extends Fragment {
         BLog.d(TAG, "onActivityCreated()");
         super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
-            mData = (Recommend) savedInstanceState.getParcelable(KEY_DATA);
+            mData = savedInstanceState.getParcelable(KEY_DATA);
             supported_mod = savedInstanceState.getString(KEY_MOD);
             category = savedInstanceState.getString(KEY_CATEGORY);
         }

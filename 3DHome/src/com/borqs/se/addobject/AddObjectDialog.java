@@ -199,13 +199,13 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
         int h = getAvailableContentLayoutMaxHeight(swh[1], or);
 
         View contentvpl = mContentView.findViewById(R.id.contentvpl);
-        LayoutParams params = (LayoutParams)contentvpl.getLayoutParams();
+        LayoutParams params = contentvpl.getLayoutParams();
         params.height = h;
         params.width = w;
         contentvpl.setLayoutParams(params);
 
         View contentvplparent = mContentView.findViewById(R.id.contentvplparent);
-        LayoutParams paramsparent = (LayoutParams)contentvplparent.getLayoutParams();
+        LayoutParams paramsparent = contentvplparent.getLayoutParams();
         paramsparent.height = h + mContext.getResources().getDimensionPixelSize(R.dimen.addobject_dialog_indicator_h);
         paramsparent.width = clearw;
         contentvplparent.setLayoutParams(paramsparent);
@@ -220,7 +220,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
         contentvplparent.setLayoutParams(paramsparent);
 
         View contentvpcvl = mContentView.findViewById(R.id.contentvpcvl);
-        LayoutParams paramscv = (LayoutParams)contentvpcvl.getLayoutParams();
+        LayoutParams paramscv = contentvpcvl.getLayoutParams();
         paramscv.height = params.height;
         paramscv.width = params.width;
         contentvpcvl.setLayoutParams(paramscv);
@@ -232,12 +232,12 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
         });
         
         View fvl = mContentView.findViewById(R.id.fadingv_left);
-        LayoutParams paramsfvl = (LayoutParams)fvl.getLayoutParams();
+        LayoutParams paramsfvl = fvl.getLayoutParams();
         paramsfvl.height = params.height;
         paramsfvl.width = FadingView.getFVWidth(mContext);
         fvl.setLayoutParams(paramsfvl);
         View fvr = mContentView.findViewById(R.id.fadingv_right);
-        LayoutParams paramsfvr = (LayoutParams)fvr.getLayoutParams();
+        LayoutParams paramsfvr = fvr.getLayoutParams();
         paramsfvr.height = params.height;
         paramsfvr.width = FadingView.getFVWidth(mContext);
         fvr.setLayoutParams(paramsfvr);
@@ -291,13 +291,13 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
             mPageIndicator.addView(iv, i);
         }
 
-        ((ImageView)mContentView.findViewById(R.id.addobject_btn_cancel)).setOnClickListener(new View.OnClickListener() {
+        mContentView.findViewById(R.id.addobject_btn_cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
             }
         });
-        ((ImageView)mContentView.findViewById(R.id.addobject_btn_ok)).setOnClickListener(new View.OnClickListener() {
+        mContentView.findViewById(R.id.addobject_btn_ok).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ifEditStatus() == true) {
@@ -396,8 +396,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
     }
     
     private boolean ifEditStatus() {
-        if (TextUtils.isEmpty(defaultFolderName) == false) { return true; }
-        return false;
+        return TextUtils.isEmpty(defaultFolderName) == false;
     }
     
     private void setFadingViewVisible(boolean bl) {
@@ -641,9 +640,9 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
      * Interface for select objects
      */ 
     public interface OnObjectsSelectedListener {
-        public void onObjectSelected(ArrayList<AddObjectItemInfo> selectedList);
-        public void onObjectChecked(AddObjectItemInfo selected, boolean checked, int currentNum);
-        public void onObjectCheckedDirectly(AddObjectItemInfo selected);
+        void onObjectSelected(ArrayList<AddObjectItemInfo> selectedList);
+        void onObjectChecked(AddObjectItemInfo selected, boolean checked, int currentNum);
+        void onObjectCheckedDirectly(AddObjectItemInfo selected);
     }
 
 } // class AddObjectDialog

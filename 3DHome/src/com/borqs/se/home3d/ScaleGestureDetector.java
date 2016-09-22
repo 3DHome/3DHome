@@ -51,7 +51,7 @@ public class ScaleGestureDetector {
          *         This can be useful if an application, for example, only wants
          *         to update scaling factors if the change is greater than 0.01.
          */
-        public boolean onScale(ScaleGestureDetector detector);
+        boolean onScale(ScaleGestureDetector detector);
 
         /**
          * Responds to the beginning of a scaling gesture. Reported by new
@@ -66,7 +66,7 @@ public class ScaleGestureDetector {
          *         onScaleBegin() may return false to ignore the rest of the
          *         gesture.
          */
-        public boolean onScaleBegin(ScaleGestureDetector detector);
+        boolean onScaleBegin(ScaleGestureDetector detector);
 
         /**
          * Responds to the end of a scale gesture. Reported by existing pointers
@@ -81,7 +81,7 @@ public class ScaleGestureDetector {
          *            The detector reporting the event - use this to retrieve
          *            extended info about event state.
          */
-        public void onScaleEnd(ScaleGestureDetector detector);
+        void onScaleEnd(ScaleGestureDetector detector);
     }
 
     /**

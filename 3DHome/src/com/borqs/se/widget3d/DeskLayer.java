@@ -32,10 +32,7 @@ public class DeskLayer extends VesselLayer {
 
     @Override
     public boolean canHandleSlot(NormalObject object, float touchX, float touchY) {
-        if (object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_DESKTOP) {
-            return true;
-        }
-        return false;
+        return object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_DESKTOP;
     }
 
     @Override

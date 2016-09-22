@@ -155,10 +155,7 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
         public static final String PORTRAIT = "portrait";
     }
     public static boolean isSupportApply(String category) {
-        if(Product.ProductType.OBJECT.equals(category)) {
-            return false;
-        }
-        return true;
+        return !ProductType.OBJECT.equals(category);
     }
 
     @Override
@@ -215,7 +212,7 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
         created_time = in.readLong();
         updated_time = in.readLong();
         app_package = in.readString();
-        purchased = in.readInt() == 1 ? true : false;
+        purchased = in.readInt() == 1;
         price = in.readString();
         version_name = in.readString();
         version_code = in.readInt();
@@ -223,9 +220,9 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
         current_version_code = in.readInt();
         downloads_count = in.readInt();
         localUrl = in.readString();
-        isApplyed = in.readInt() == 1 ? true : false;
+        isApplyed = in.readInt() == 1;
 //        isInstalled = in.readInt() == 1 ? true : false;
-        isFree = in.readInt() == 1 ? true : false;
+        isFree = in.readInt() == 1;
         mGoogleSku = in.readString();
         mm_paycode = in.readString();
         mm_paycode_count = in.readInt();
@@ -259,11 +256,7 @@ public class Product implements Serializable, Comparable<Product>, Parcelable {
         boolean isBelongSystem = false;
         if(MarketConfiguration.getSystemThemeDir() != null) {
             String dir = MarketConfiguration.getSystemThemeDir().getPath();
-            if(!TextUtils.isEmpty(installed_file_path) && installed_file_path.startsWith(dir)) {
-                isBelongSystem = true;
-            }else {
-                isBelongSystem = false;
-            }
+            isBelongSystem = !TextUtils.isEmpty(installed_file_path) && installed_file_path.startsWith(dir);
         }
         
         return isBelongSystem;

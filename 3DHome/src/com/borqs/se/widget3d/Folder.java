@@ -572,10 +572,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
         if (objectInfo == null) {
             return false;
         }
-        if ((objectInfo.isShortcut()) || (objectInfo.isAppUserUpdate())) {
-            return true;
-        }
-        return false;
+        return (objectInfo.isShortcut()) || (objectInfo.isAppUserUpdate());
     }
 
     private class FolderExpandDialog extends VesselObject {
@@ -722,10 +719,7 @@ public class Folder extends VesselObject implements OnFolderEditedListener {
 
         @Override
         public boolean onInterceptTouchEvent(MotionEvent ev) {
-            if (mOnMoveIcon != null) {
-                return true;
-            }
-            return false;
+            return mOnMoveIcon != null;
         }
 
         private SEVector3f rayCrossY(SERay ray, float y) {

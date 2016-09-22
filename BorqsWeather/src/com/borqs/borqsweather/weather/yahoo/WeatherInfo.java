@@ -244,7 +244,7 @@ public class WeatherInfo implements Parcelable{
     }
 
     public boolean isNoData() {
-        if (TextUtils.isEmpty(mCity) || TextUtils.isEmpty(mDate)
+        return TextUtils.isEmpty(mCity) || TextUtils.isEmpty(mDate)
                 || TextUtils.isEmpty(mCondition)
                 || TextUtils.isEmpty(mTemperature)
                 || TextUtils.isEmpty(mTempHigh)
@@ -253,11 +253,7 @@ public class WeatherInfo implements Parcelable{
                 || DEFAULT_DATA.equals(mCondition)
                 || DEFAULT_DATA.equals(mTemperature)
                 || DEFAULT_DATA.equals(mTempHigh)
-                || DEFAULT_DATA.equals(mTempLow) || "3200".equals(mCode)) {
-            return true;
-        } else {
-            return false;
-        }
+                || DEFAULT_DATA.equals(mTempLow) || "3200".equals(mCode);
     }
 
     @Override
@@ -267,16 +263,12 @@ public class WeatherInfo implements Parcelable{
         }
 
         WeatherInfo info = (WeatherInfo) object;
-        if (info.getCity().equals(mCity) && info.getDate().equals(mDate)
+        return info.getCity().equals(mCity) && info.getDate().equals(mDate)
                 && info.getCondition().equals(mCondition)
                 && info.getTemperature(0).equals(mTemperature)
                 && info.getTempHigh(0).equals(mTempHigh)
                 && info.getTempLow(0).equals(mTempLow)
-                && info.getCode().equals(mCode)) {
-            return true;
-        } else {
-            return false;
-        }
+                && info.getCode().equals(mCode);
     }
 
     public Date getFormatDate() {

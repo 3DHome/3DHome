@@ -229,7 +229,7 @@ public class BasicActivity extends FragmentActivity implements AccountListener{
             }
         }
 
-    };
+    }
 
     public void goBackToScene() {
         IntentUtil.sendBroadBackToScene(getApplicationContext());

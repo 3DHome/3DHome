@@ -18,16 +18,16 @@ import android.view.MotionEvent;
 public abstract class SEScene {
     public enum SCENE_CHANGED_TYPE {
         NEW_CONFIG, NEW_SCENE
-    };
+    }
 
     public final static int LIGHT_TYPE_POINT_LIGHT = 0;
     public final static int LIGHT_TYPE_DIRECT_LIGHT = 1;
     public final static int LIGHT_TYPE_SPOT_LIGHT = 2;
 
     public interface SESensorEventListener {
-        public void onAccuracyChanged(Sensor sensor, int accuracy);
+        void onAccuracyChanged(Sensor sensor, int accuracy);
 
-        public void onSensorChanged(SensorEvent event);
+        void onSensorChanged(SensorEvent event);
     }
 
     public native void create_JNI();

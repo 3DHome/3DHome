@@ -33,11 +33,7 @@ public class WallLayer extends VesselLayer {
         mHouse = (House) vesselObject;
         mCurrentLayer = null;
         mCamera = scene.getCamera();
-        if (HomeManager.getInstance().isLandscapeOrientation()) {
-            mIsLandscapeTheme = true;
-        } else {
-            mIsLandscapeTheme = false;
-        }
+        mIsLandscapeTheme = HomeManager.getInstance().isLandscapeOrientation();
         mVirtualWallRadius = mHouse.mWallRadius * 0.8f;
         mSkyRadius = mHouse.mSkyRadius * 0.6f;
     }
@@ -46,11 +42,8 @@ public class WallLayer extends VesselLayer {
     public boolean canHandleSlot(NormalObject object, float touchX, float touchY) {
         super.canHandleSlot(object, touchX, touchY);
         int slotType = object.getObjectInfo().mSlotType;
-        if (slotType == ObjectInfo.SLOT_TYPE_WALL || slotType == ObjectInfo.SLOT_TYPE_APP_WALL
-                || slotType == ObjectInfo.SLOT_TYPE_BOOKSHELF) {
-            return true;
-        }
-        return false;
+        return slotType == ObjectInfo.SLOT_TYPE_WALL || slotType == ObjectInfo.SLOT_TYPE_APP_WALL
+                || slotType == ObjectInfo.SLOT_TYPE_BOOKSHELF;
     }
 
     @Override
@@ -275,7 +268,7 @@ public class WallLayer extends VesselLayer {
         float c = Xa * Xa + Ya * Ya - radius * radius;
         float para;
         if (b * b - 4 * a * c < 0) {
-            para = (float) (-b / (2 * a));
+            para = -b / (2 * a);
         } else {
             para = (float) ((-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a));
         }

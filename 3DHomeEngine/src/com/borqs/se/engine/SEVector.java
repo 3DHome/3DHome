@@ -3,9 +3,9 @@ package com.borqs.se.engine;
 import org.xmlpull.v1.XmlPullParser;
 
 public class SEVector {
-    public static enum AXIS {
+    public enum AXIS {
         X, Y, Z
-    };
+    }
 
     public static class SEVector2f {
         public float[] mD = { 0.0f, 0.0f };

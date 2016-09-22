@@ -56,8 +56,8 @@ public class AddObjectGridView extends GridView implements OnItemClickListener {
     private boolean anyClick = false;
 
     public OnItemCheckListener mOnItemCheckListener;
-    public static interface OnItemCheckListener {
-        public void onCheck(int tagIdx, AddObjectItemInfo info, int position, boolean checked, int checkedNum);
+    public interface OnItemCheckListener {
+        void onCheck(int tagIdx, AddObjectItemInfo info, int position, boolean checked, int checkedNum);
     }
     
     public AddObjectGridView(Context context, AttributeSet attrs) {
@@ -130,7 +130,7 @@ public class AddObjectGridView extends GridView implements OnItemClickListener {
         List<AddObjectItemInfo> selected = new ArrayList<AddObjectItemInfo>();
         for(int i=0;i<size;i++) {
             if(itemSelected[i] == true) {
-                selected.add((AddObjectItemInfo)allData.get(i));
+                selected.add(allData.get(i));
             }
         }
         

@@ -8,13 +8,13 @@ import com.borqs.market.json.Product;
 
 public interface MarketBilling {
     
-    public void purchase(Activity act, Product product,MarketPurchaseListener mpListener);
+    void purchase(Activity act, Product product, MarketPurchaseListener mpListener);
     
-    public void consumeAsync(Context context);
+    void consumeAsync(Context context);
     
-    public boolean onActivityResult(int requestCode, int resultCode, Intent data);
+    boolean onActivityResult(int requestCode, int resultCode, Intent data);
     
-    public boolean isEngineReady();
+    boolean isEngineReady();
     
-    public void depose();
+    void depose();
 }

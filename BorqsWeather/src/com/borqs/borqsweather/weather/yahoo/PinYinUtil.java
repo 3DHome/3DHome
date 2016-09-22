@@ -13,10 +13,7 @@ public class PinYinUtil {
 
     public static boolean isChinese(char ch) {
         Character.UnicodeBlock ub = Character.UnicodeBlock.of(ch);
-        if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS) {
-            return true;
-        }
-        return false;
+        return ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS;
     }
 
     // modify by xiaofei for polyphone
@@ -454,16 +451,12 @@ public class PinYinUtil {
     // end by xiaofei
 
     private static boolean isEnglishLetter(char ch) {
-        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
-            return true;
-        return false;
+        return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
     }
 
     public static boolean isEnglishLetterOrDigit(char ch) {
-        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')
-                || (ch >= '0' && ch <= '9'))
-            return true;
-        return false;
+        return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')
+                || (ch >= '0' && ch <= '9');
     }
 
 }

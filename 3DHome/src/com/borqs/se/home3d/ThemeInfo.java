@@ -103,9 +103,9 @@ public class ThemeInfo {
         }
         String isApplyed = parser.getAttributeValue(null, "isApplyed");
         if (!TextUtils.isEmpty(isApplyed)) {
-            info.mIsApplyed = Integer.parseInt(isApplyed) == 1 ? true : false;
+            info.mIsApplyed = Integer.parseInt(isApplyed) == 1;
         }
-        boolean isAsset = filePath.startsWith("assets") ? true : false;
+        boolean isAsset = filePath.startsWith("assets");
         // 开始解析房间中摆放了什么物体，假如default_objects_in_scene.xml文件没有那么使用默认配置，有的话切换场景时物体的摆放会更改成自己的配置
         if (!isAsset) {
             try {
@@ -163,7 +163,7 @@ public class ThemeInfo {
         fixUpgrade(context, mFilePath);
         InputStream is = null;
         try {
-            boolean isAsset = mFilePath.startsWith("assets") ? true : false;
+            boolean isAsset = mFilePath.startsWith("assets");
             if (!isAsset) {
                 is = new FileInputStream(mFilePath + File.separator + "camera_config.xml");
             } else {
@@ -204,7 +204,7 @@ public class ThemeInfo {
      * 主题在新版本中可能文件缺少或者格式不对
      */
     private void fixUpgrade(Context context, String themePath) {
-        boolean isAsset = mFilePath.startsWith("assets") ? true : false;
+        boolean isAsset = mFilePath.startsWith("assets");
         if (!isAsset) {
             InputStream is = null;
             try {
@@ -322,11 +322,10 @@ public class ThemeInfo {
         info.mID = cursor.getInt(cursor.getColumnIndexOrThrow(ThemeColumns._ID));
         info.mThemeName = cursor.getString(cursor.getColumnIndexOrThrow(ThemeColumns.NAME));
         info.mFilePath = cursor.getString(cursor.getColumnIndexOrThrow(ThemeColumns.FILE_PATH));
-        info.mIsApplyed = cursor.getInt(cursor.getColumnIndexOrThrow(ThemeColumns.IS_APPLY)) == 1 ? true : false;
+        info.mIsApplyed = cursor.getInt(cursor.getColumnIndexOrThrow(ThemeColumns.IS_APPLY)) == 1;
         info.mProductID = cursor.getString(cursor.getColumnIndexOrThrow(ThemeColumns.PRODUCT_ID));
         info.mSceneName = cursor.getString(cursor.getColumnIndexOrThrow(ThemeColumns.SCENE_NAME));
-        info.mIsDownloaded = cursor.getInt(cursor.getColumnIndexOrThrow(ThemeColumns.IS_DOWNLOADED)) == 1 ? true
-                : false;
+        info.mIsDownloaded = cursor.getInt(cursor.getColumnIndexOrThrow(ThemeColumns.IS_DOWNLOADED)) == 1;
         info.mHouseName = cursor.getString(cursor.getColumnIndexOrThrow(ThemeColumns.HOUSE_NAME));
 
         String cameraLoc = cursor.getString(cursor.getColumnIndexOrThrow(ThemeColumns.CAMERA_LOCATION));

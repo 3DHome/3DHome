@@ -23,23 +23,23 @@ public class ProviderUtils {
     public static final String SPLIT_SYMBOL = ",";
 
     public interface Tables {
-        public static final String MODEL_INFO = "model_info";
-        public static final String IMAGE_INFO = "image_info";
-        public static final String COMPONENT_INFO = "component_info";
+        String MODEL_INFO = "model_info";
+        String IMAGE_INFO = "image_info";
+        String COMPONENT_INFO = "component_info";
 
-        public static final String OBJECTS_INFO = "Objects_Config";        
-        public static final String VESSEL = "Vessel";
-        public static final String OBJECT_LEFT_JOIN_ALL = "Objects_Config LEFT JOIN Vessel ON Objects_Config._id=Vessel.objectID";
+        String OBJECTS_INFO = "Objects_Config";
+        String VESSEL = "Vessel";
+        String OBJECT_LEFT_JOIN_ALL = "Objects_Config LEFT JOIN Vessel ON Objects_Config._id=Vessel.objectID";
         
-        public static final String FILE_URL_INFO = "file_url_info";
+        String FILE_URL_INFO = "file_url_info";
         
-        public static final String THEME = "theme";
-        public static final String CAMERA_INFO = "camrea_info";
-        public static final String HOUSE_INFO = "house_info";
-        public static final String THEME_LEFT_JOIN_ALL = THEME + " LEFT JOIN " + CAMERA_INFO + " USING(_id) LEFT JOIN "
+        String THEME = "theme";
+        String CAMERA_INFO = "camrea_info";
+        String HOUSE_INFO = "house_info";
+        String THEME_LEFT_JOIN_ALL = THEME + " LEFT JOIN " + CAMERA_INFO + " USING(_id) LEFT JOIN "
                 + HOUSE_INFO + " USING(_id)";
 
-        public static final String APPS_DRAWER = "appdrawer";
+        String APPS_DRAWER = "appdrawer";
 
     }
 

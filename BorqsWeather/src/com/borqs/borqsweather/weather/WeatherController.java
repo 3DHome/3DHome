@@ -167,11 +167,7 @@ public class WeatherController {
     }
 
     public boolean isControllerRunning() {
-        if (mCurrentState == StateType.IDLE || Math.abs(System.currentTimeMillis() - mRequestTime) > 1000 * 60 * 10) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(mCurrentState == StateType.IDLE || Math.abs(System.currentTimeMillis() - mRequestTime) > 1000 * 60 * 10);
     }
 
     public void stopController() {

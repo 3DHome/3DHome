@@ -185,12 +185,12 @@ public class AddFolderDialog extends AddObjectDialog implements OnObjectsSelecte
 
     /**/
     public interface OnFolderCreatedListener {
-        public void onFolderCreated(String folderName, ArrayList<AddObjectItemInfo> selectedList);
+        void onFolderCreated(String folderName, ArrayList<AddObjectItemInfo> selectedList);
     }
     
     /**/
     public interface OnFolderEditedListener {
-        public void onFolderEdited(String folderName, ArrayList<AddObjectItemInfo> selectedList);
+        void onFolderEdited(String folderName, ArrayList<AddObjectItemInfo> selectedList);
     }
 } // class AddFolderDialog
 

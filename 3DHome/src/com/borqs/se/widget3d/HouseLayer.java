@@ -17,12 +17,9 @@ public class HouseLayer extends VesselLayer {
     public boolean canHandleSlot(NormalObject object, float touchX, float touchY) {
         super.canHandleSlot(object, touchX, touchY);
         int slotType = object.getObjectInfo().mSlotType;
-        if (slotType == ObjectInfo.SLOT_TYPE_WALL || slotType == ObjectInfo.SLOT_TYPE_APP_WALL
-                || slotType == ObjectInfo.SLOT_TYPE_BOOKSHELF || slotType == ObjectInfo.SLOT_TYPE_GROUND) {
-            return true;
-        }
+        return slotType == ObjectInfo.SLOT_TYPE_WALL || slotType == ObjectInfo.SLOT_TYPE_APP_WALL
+                || slotType == ObjectInfo.SLOT_TYPE_BOOKSHELF || slotType == ObjectInfo.SLOT_TYPE_GROUND;
 
-        return false;
     }
 
     @Override

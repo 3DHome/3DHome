@@ -201,7 +201,7 @@ public class HttpManager {
 
 		@Override
 		public Socket createSocket(Socket socket, String host, int port, boolean autoClose)
-				throws IOException, UnknownHostException {
+				throws IOException {
 			return sslContext.getSocketFactory().createSocket(socket, host, port, autoClose);
 		}
 

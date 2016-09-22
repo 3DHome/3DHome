@@ -98,10 +98,7 @@ public class ModelInfo {
     }
 
     public boolean hasInstance() {
-        if (mInstances.size() > 0) {
-            return true;
-        }
-        return false;
+        return mInstances.size() > 0;
     }
 
     public static ModelInfo CreateFromXml(XmlPullParser parser, String id, String localPath)
@@ -270,8 +267,7 @@ public class ModelInfo {
         info.mBasedataFile = cursor.getString(cursor.getColumnIndexOrThrow(ModelColumns.BASEDATA_FILE));
         info.mAssetsPath = cursor.getString(cursor.getColumnIndexOrThrow(ModelColumns.ASSETS_PATH));
         info.mSlotType = cursor.getInt(cursor.getColumnIndexOrThrow(ModelColumns.SLOT_TYPE));
-        info.mIsDownloaded = cursor.getInt(cursor.getColumnIndexOrThrow(ModelColumns.IS_DOWNLOADED)) == 1 ? true
-                : false;
+        info.mIsDownloaded = cursor.getInt(cursor.getColumnIndexOrThrow(ModelColumns.IS_DOWNLOADED)) == 1;
         if (info.mIsDownloaded) {
             info.mActionStatus |= ObjectInfo.ACTION_CAN_UNINSATLL;
         }
@@ -871,10 +867,7 @@ public class ModelInfo {
         @Override
         public boolean equals(Object o) {
             ImageItem newItem = (ImageItem) o;
-            if (mImageName.equals(newItem.mImageName)) {
-                return true;
-            }
-            return false;
+            return mImageName.equals(newItem.mImageName);
         }
 
         public String mImageName;

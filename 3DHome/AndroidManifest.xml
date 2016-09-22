@@ -23,15 +23,15 @@
     <uses-permission android:name="android.permission.READ_LOGS" />
 
     <!-- VERY IMPORTANT! Don't forget this permission, or in-app billing won't work. -->
-    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <!-- borqs Market permission -->
-    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
 
     <!-- google oauth -->
-    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <uses-feature
         android:name="android.hardware.location"
@@ -52,159 +52,191 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="15"/>
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="22" />
 
-    <supports-screens android:requiresSmallestWidthDp="480" android:smallScreens="false"/>
+    <supports-screens
+        android:requiresSmallestWidthDp="480"
+        android:smallScreens="false" />
 
-    <application tools:replace="android:icon, android:label, android:theme, android:name"
+    <application
+        android:name="com.borqs.se.home3d.HomeApplication"
         android:allowClearUserData="false"
         android:description="@string/description"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
-        android:name="com.borqs.se.home3d.HomeApplication"
+        android:largeHeap="true"
         android:theme="@style/HomeThemeWithActionBar"
-        android:largeHeap="true" >
-        
-        <!-- 您从百度网站获取的APP KEY -->
-		<meta-data android:name="BaiduMobAd_STAT_ID" android:value="5d6a8f9235" /> <!-- abcd1234 -->
-		<!-- 渠道商编号 -->
-		<meta-data android:name="BaiduMobAd_CHANNEL" android:value="all_market" />
+        tools:replace="android:icon, android:label, android:theme, android:name">
 
-		<!-- 是否开启错误日志统计，默认为false -->
-		<meta-data android:name="BaiduMobAd_EXCEPTION_LOG" android:value="true" />
-		<!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
-		<meta-data android:name="BaiduMobAd_SEND_STRATEGY" android:value="APP_START" />
-		<!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
-		<meta-data android:name="BaiduMobAd_TIME_INTERVAL" android:value="2" />  -->
-		<!-- 日志仅在wifi网络下发送，默认为false -->
-		<meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="false" />
-		<!-- 是否获取基站位置信息 ,默认为true-->
-		<meta-data android:name="BaiduMobAd_CELL_LOCATION" android:value="true" />
-		<!-- 是否获取GPS位置信息，默认为true -->
-		<meta-data android:name="BaiduMobAd_GPS_LOCATION" android:value="true" />
-		<!-- 是否获取WIFI位置信息，默认为true -->
-		<meta-data android:name="BaiduMobAd_WIFI_LOCATION" android:value="true" />
-		
+        <!-- 您从百度网站获取的APP KEY -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="5d6a8f9235" /> <!-- abcd1234 -->
+        <!-- 渠道商编号 -->
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="all_market" />
+
+        <!-- 是否开启错误日志统计，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="true" />
+        <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
+        <meta-data
+            android:name="BaiduMobAd_SEND_STRATEGY"
+            android:value="APP_START" />
+        <!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
+        <meta-data
+            android:name="BaiduMobAd_TIME_INTERVAL"
+            android:value="2" />
+        -->
+        <!-- 日志仅在wifi网络下发送，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="false" />
+        <!-- 是否获取基站位置信息 ,默认为true-->
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+        <!-- 是否获取GPS位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true" />
+        <!-- 是否获取WIFI位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true" />
+
         <activity
+            android:name="com.borqs.se.home3d.HomeActivity"
             android:clearTaskOnLaunch="true"
             android:configChanges="screenSize|mnc|mcc"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan"
-            android:name="com.borqs.se.home3d.HomeActivity"
             android:stateNotNeeded="true"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
-            <intent-filter >
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
-        <activity-alias android:name="HomeAlias1" android:enabled="false" 
+
+        <activity-alias
+            android:name="HomeAlias1"
+            android:enabled="false"
             android:targetActivity="com.borqs.se.home3d.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
-        <activity-alias android:name="HomeAlias2"
+        <activity-alias
+            android:name="HomeAlias2"
             android:targetActivity="com.borqs.se.home3d.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
-        
-        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" 
-            android:name="com.borqs.se.home3d.HomeSwitcherActivity" 
+
+        <activity
+            android:name="com.borqs.se.home3d.HomeSwitcherActivity"
             android:launchMode="singleTask"
-            android:taskAffinity="com.borqs.se.switcher">
+            android:taskAffinity="com.borqs.se.switcher"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <meta-data android:name="ignoreAtProgramList" android:value="true" />
+            <meta-data
+                android:name="ignoreAtProgramList"
+                android:value="true" />
         </activity>
-        
+
         <activity
             android:name="com.borqs.se.home3d.SettingsActivity"
             android:theme="@style/HomeSettingStyle"
             android:title="@string/menu_preference">
-            <intent-filter >
+            <intent-filter>
                 <action android:name="com.borqs.se.settings" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:label="@string/about"
             android:name="com.borqs.se.home3d.SettingAbout"
+            android:label="@string/about"
             android:title="@string/about" />
 
         <activity
-            android:label="@string/weather_settings"
-            android:theme="@style/WeatherSettingStyle"
             android:name="com.borqs.borqsweather.weather.WeatherSettings"
-            android:title="@string/weather_settings"
-            android:process=":remote"/>
+            android:label="@string/weather_settings"
+            android:process=":remote"
+            android:theme="@style/WeatherSettingStyle"
+            android:title="@string/weather_settings" />
 
         <receiver
-            android:enabled="true"
-            android:name="com.borqs.se.upgrade.UpdateServerChangeReceiver" >
-            <intent-filter >
+            android:name="com.borqs.se.upgrade.UpdateServerChangeReceiver"
+            android:enabled="true">
+            <intent-filter>
                 <action android:name="art.appupdate.action.CHANGE_SERVER" />
             </intent-filter>
         </receiver>
 
         <provider
-            android:authorities="com.borqs.se.settings"
             android:name="com.borqs.se.home3d.HomeProvider"
+            android:authorities="com.borqs.se.settings"
             android:exported="false"
             android:readPermission="com.borqs.se.permission.READ_SETTINGS"
             android:writePermission="com.borqs.se.permission.WRITE_SETTINGS" />
 
         <activity
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:name="com.google.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@style/Theme.Translucent" />
 
         <activity
             android:name="com.borqs.se.home3d.SearchActivity"
             android:label="@string/search_activity_title"
             android:windowSoftInputMode="adjustResize" />
-        
+
 
         <receiver android:name="com.borqs.se.download.DownloadChangeReceiver">
-            <intent-filter >
-                <action android:name="com.borqs.se.market.intent.action.DOWNLOAD_COMPLETE"/>
-                <action android:name="com.borqs.se.market.intent.action.INSTALL"/>
-                <action android:name="com.borqs.se.market.intent.action.APPLY"/>
-                <action android:name="com.borqs.se.market.intent.action.DELETE"/>
+            <intent-filter>
+                <action android:name="com.borqs.se.market.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="com.borqs.se.market.intent.action.INSTALL" />
+                <action android:name="com.borqs.se.market.intent.action.APPLY" />
+                <action android:name="com.borqs.se.market.intent.action.DELETE" />
                 <!-- temporary statistic the purchase of fighter aircraft intent -->
-                <action android:name="com.borqs.se.intent.action.PURCHASE"/>
-                <action android:name="com.borqs.se.market.intent.action.SCAN_COMPLETE"/>
-               <action android:name="com.borqs.se.intent.action.ADD_MODEL_TO_HOUSE"/>
+                <action android:name="com.borqs.se.intent.action.PURCHASE" />
+                <action android:name="com.borqs.se.market.intent.action.SCAN_COMPLETE" />
+                <action android:name="com.borqs.se.intent.action.ADD_MODEL_TO_HOUSE" />
             </intent-filter>
         </receiver>
-        
-        <service android:name="com.borqs.information.InformationDownloadService"/>
+
+        <service android:name="com.borqs.information.InformationDownloadService" />
 
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
-        </service>
+            android:process=":remote"></service>
 
-<!--         <activity android:name="com.umeng.fb.ConversationActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name="com.umeng.fb.ContactActivity"
-                  android:theme="@android:style/Theme.Black.NoTitleBar"/>
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="50f647625270153aad00000f" /> -->
-        <service android:name="com.borqs.se.home3d.LocalService"/>
+        <!--         <activity android:name="com.umeng.fb.ConversationActivity"
+                          android:theme="@android:style/Theme.Black.NoTitleBar"
+                    android:windowSoftInputMode="adjustResize" />
+                <activity android:name="com.umeng.fb.ContactActivity"
+                          android:theme="@android:style/Theme.Black.NoTitleBar"/>
+                <meta-data
+                    android:name="UMENG_APPKEY"
+                    android:value="50f647625270153aad00000f" /> -->
+        <service android:name="com.borqs.se.home3d.LocalService" />
         <meta-data
             android:name="WITHOUT_ADVERTISEMENT"
             android:value="false" />
@@ -217,6 +249,6 @@
             android:name="com.borqs.se.ase.ASELoaderActivity"
             android:process=":ase"
             android:theme="@style/HomeSettingStyle" />
-</application>
+    </application>
 
 </manifest>

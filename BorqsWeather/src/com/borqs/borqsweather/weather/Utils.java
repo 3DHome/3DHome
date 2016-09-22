@@ -25,11 +25,7 @@ public class Utils {
     public static boolean hasSDcard() {
         if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File file = new File("sdcard-ext");
-            if (file.exists() && file.canWrite()) {
-                return true;
-            } else {
-                return false;
-            }
+            return file.exists() && file.canWrite();
         }
         return true;
     }
@@ -69,21 +65,14 @@ public class Utils {
         ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connManager != null) {
             NetworkInfo networkinfo = connManager.getActiveNetworkInfo();
-            if (networkinfo == null || !networkinfo.isAvailable()) {
-                return false;
-            } else {
-                return true;
-            }
+            return !(networkinfo == null || !networkinfo.isAvailable());
         }
         return false;
     }
 
     public static boolean isChinese(char ch) {
         Character.UnicodeBlock ub = Character.UnicodeBlock.of(ch);
-        if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS) {
-            return true;
-        }
-        return false;
+        return ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS;
     }
 
     public static String changeHanZiToPinYin(String hanZi) {
@@ -118,32 +107,21 @@ public class Utils {
         Calendar cal2 = Calendar.getInstance();
         cal2.setTimeInMillis(time2);
 
-        if ((cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR))
+        return (cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR))
                 && (cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH))
-                && (cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH))) {
-            return true;
-        } else {
-            return false;
-        }
+                && (cal1.get(Calendar.DAY_OF_MONTH) == cal2.get(Calendar.DAY_OF_MONTH));
     }
 
     public static boolean isInvalidWeather(long CurrentTime, long SpecifiedTime) {
         //Set 48 hours to adapt with China Weather Network.  
         //If weather you get is not elder than 48 hours, we think it is invalid.
 
-        if ((CurrentTime - SpecifiedTime) > 48 * 1000 * 60 * 60) {
-            return false;
-        } else {
-            return true;
-        }
+        return (CurrentTime - SpecifiedTime) <= 48 * 1000 * 60 * 60;
     }
     
     public static boolean isLocationServicesEnabled(Context context) {
         LocationManager lm= (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-        if (lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER) || lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            return true;
-        }
-        return false;
+        return lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER) || lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
 
     public static String get24Time(String time){

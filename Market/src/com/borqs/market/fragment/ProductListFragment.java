@@ -312,11 +312,7 @@ public class ProductListFragment extends ProductBasicListFragment {
                             List<Product> temDatas = getTmpData();
                             if (temDatas != null && temDatas.size() > 0) {
                                 mDatas.addAll(temDatas);
-                                if (mDatas.size() >= totalCount) {
-                                    hasMore = false;
-                                } else {
-                                    hasMore = true;
-                                }
+                                hasMore = mDatas.size() < totalCount;
                             }
                             mPage = (mDatas.size() - 1) / count;
                             notifyDataChange();
@@ -338,11 +334,7 @@ public class ProductListFragment extends ProductBasicListFragment {
                         List<Product> temDatas = getTmpData();
                         if (temDatas != null && temDatas.size() > 0) {
                             mDatas.addAll(temDatas);
-                            if (mDatas.size() >= totalCount) {
-                                hasMore = false;
-                            } else {
-                                hasMore = true;
-                            }
+                            hasMore = mDatas.size() < totalCount;
                         }
                         mPage = (mDatas.size() - 1) / count;
                         notifyDataChange();

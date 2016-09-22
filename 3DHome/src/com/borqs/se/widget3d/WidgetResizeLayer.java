@@ -30,7 +30,7 @@ public class WidgetResizeLayer implements ResizeLayerInterface {
 
     private enum START_POSITION {
         LEFT_TOP, RIGHT_TOP, LEFT_BOTTOM, RIGHT_BOTTOM
-    };
+    }
 
     private START_POSITION mStartPostion = START_POSITION.RIGHT_BOTTOM;
     private float mTouchParaX;

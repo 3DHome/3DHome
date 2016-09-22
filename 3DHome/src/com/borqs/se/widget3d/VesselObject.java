@@ -124,10 +124,7 @@ public abstract class VesselObject extends NormalObject implements AppCallBack {
         if (objectInfo.isShortcut()) {
             objectInfo.mComponentName = null;
         }
-        if (objectInfo.isShortcut() && objectInfo.mShortcutIcon == null) {
-            return false;
-        }
-        return true;
+        return !(objectInfo.isShortcut() && objectInfo.mShortcutIcon == null);
     }
 
     private int mLoadCount;

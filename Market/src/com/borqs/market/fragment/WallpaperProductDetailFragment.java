@@ -262,10 +262,7 @@ public class WallpaperProductDetailFragment extends BasicFragment implements
         if(Product.ProductType.THEME.equals(category)) {
             return true;
         }
-        if(Product.ProductType.WALL_PAPER.equals(category)) {
-            return true;
-        }
-        return false;
+        return Product.ProductType.WALL_PAPER.equals(category);
     }
 
     protected void refreshUI() {
@@ -311,7 +308,7 @@ public class WallpaperProductDetailFragment extends BasicFragment implements
             themeCursor.moveToFirst();
             mData.current_version_name = themeCursor.getString(themeCursor.getColumnIndex(PlugInColumns.VERSION_NAME));
             mData.current_version_code = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.VERSION_CODE));
-            boolean isApplyed = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.IS_APPLY)) == 1 ? true : false;
+            boolean isApplyed = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.IS_APPLY)) == 1;
             themeCursor.close();
             if (mData.version_code > mData.current_version_code) {
                 Cursor cursor = downLoadHelper.queryDownloadFile(productID);
@@ -554,7 +551,7 @@ public class WallpaperProductDetailFragment extends BasicFragment implements
         WutongParameters params = new WutongParameters();
         String originalJson = null;
         if(result != null) {
-            if(result.billingType == result.TYPE_IAB) {
+            if(result.billingType == MarketBillingResult.TYPE_IAB) {
                 params.add("google_iab_order", result.orderId);
                 originalJson = result.originalJson;
             }else {

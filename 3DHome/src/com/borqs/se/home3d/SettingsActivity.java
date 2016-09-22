@@ -654,7 +654,8 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
             }
         }
 
-    };
+    }
+
     private BroadcastReceiver mReceiver;
     private void cancelListenBackToScene() {
         if (mReceiver != null) {

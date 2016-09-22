@@ -79,7 +79,7 @@ public class Wallpaper {
     /// A unit item of wallpaper package, which
 /// map a name with a image file path.
     public static class PaperUnit extends HashMap<String, String> {
-    };
+    }
 
     private static final String TAG_ID = "id";
     private static final String TAG_PKG_NAME = "app";

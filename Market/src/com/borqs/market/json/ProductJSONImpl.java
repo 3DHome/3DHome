@@ -63,7 +63,7 @@ public class ProductJSONImpl extends Product {
         type = obj.optString(TAG_TYPE);
         cover_url = obj.optString(TAG_COVER);
         logo_url = obj.optString(TAG_LOGO);
-        isFree = obj.optInt(TAG_IS_FREE,1)==1?true:false;   //1为免费，2为收费
+        isFree = obj.optInt(TAG_IS_FREE, 1) == 1;   //1为免费，2为收费
         if(!isFree) {
             if(obj.has(TAG_PRICE)) {
                 JSONObject priceObj =  obj.optJSONObject(TAG_PRICE);

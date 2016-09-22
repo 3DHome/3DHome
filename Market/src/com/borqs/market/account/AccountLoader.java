@@ -181,9 +181,6 @@ public abstract class AccountLoader {
         if (null == mActivity) {
             return true;
         }
-        if (mActivity.isFinishing()) {
-            return true;
-        }
-        return false;
+        return mActivity.isFinishing();
     }
 }

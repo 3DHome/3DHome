@@ -1159,7 +1159,7 @@ public class ApplicationMenu extends SEObject implements AppCallBack, OnAddRemov
             canvas.translate((newW - bitmapW) * 0.5f, (newH - bitmapH) * 0.5f);
 
             int iconSize = (int) (mAppMenuIconSize * scale);
-            int iconLeft = (int) ((bitmapW - iconSize) / 2);
+            int iconLeft = (bitmapW - iconSize) / 2;
             int iconTop = (int) (mAppMenuIconPaddingTop * scale);
             try {
                 Rect oldBounds = icon.copyBounds();
@@ -1214,7 +1214,7 @@ public class ApplicationMenu extends SEObject implements AppCallBack, OnAddRemov
         }
         mPreViewFaces = new ArrayList<PreViewFace>();
         mApps = new ArrayList<PreViewObject>();
-        mAppFaceNum = (int) ((apps.size() + mIconCount - 1) / mIconCount);
+        mAppFaceNum = (apps.size() + mIconCount - 1) / mIconCount;
         mFaceNumber = mAppFaceNum < 2 ? 2 : mAppFaceNum;
 
         for (int i = 0; i < mFaceNumber; i++) {
@@ -1242,7 +1242,7 @@ public class ApplicationMenu extends SEObject implements AppCallBack, OnAddRemov
 
     private void updatePosition() {
         Collections.sort(mApps, new SortByType());
-        mAppFaceNum = (int) ((mApps.size() + mIconCount - 1) / mIconCount);
+        mAppFaceNum = (mApps.size() + mIconCount - 1) / mIconCount;
         int faceNumber = mAppFaceNum < 2 ? 2 : mAppFaceNum;
         if (faceNumber > mFaceNumber) {
             for (int i = mFaceNumber; i < faceNumber; i++) {

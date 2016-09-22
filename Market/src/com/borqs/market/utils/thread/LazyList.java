@@ -229,7 +229,7 @@ public class LazyList implements Cloneable, Serializable {
     /* ------------------------------------------------------------ */
     public static Object toArray(Object list, Class aClass) {
         if (list == null)
-            return (Object[]) Array.newInstance(aClass, 0);
+            return Array.newInstance(aClass, 0);
 
         if (list instanceof List) {
             List l = (List) list;
@@ -312,7 +312,7 @@ public class LazyList implements Cloneable, Serializable {
         if (list == null)
             return "[]";
         if (list instanceof List)
-            return ((List) list).toString();
+            return list.toString();
         return "[" + list + "]";
     }
 

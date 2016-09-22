@@ -43,7 +43,7 @@ public class SearchActivity extends Activity {
         mQueryTextView.setHorizontallyScrolling(false);
 
         Button btnSearch = (Button) findViewById(R.id.search_go_btn);
-        LayoutParams laParams=(LayoutParams)btnSearch.getLayoutParams();
+        LayoutParams laParams= btnSearch.getLayoutParams();
         laParams.width = width / 3;
         btnSearch.setLayoutParams(laParams);
         btnSearch.setOnClickListener(new OnClickListener() {

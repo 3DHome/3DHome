@@ -27,10 +27,7 @@ public class WorkSpace extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (getHomeScene() != null && getHomeScene().getStatus(HomeScene.STATUS_ON_SCALL)) {
-            return true;
-        }
-        return false;
+        return getHomeScene() != null && getHomeScene().getStatus(HomeScene.STATUS_ON_SCALL);
     }
 
     @Override

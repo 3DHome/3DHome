@@ -85,7 +85,7 @@ public class Utils {
     public static boolean hasNetWork(Context context) {
         ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
-        return (networkInfo != null && networkInfo.isAvailable()) == true ? true : false;
+        return (networkInfo != null && networkInfo.isAvailable()) == true;
     }
     
     public static void saveToPlugTable(Context context, DownloadInfo info, String filePath) {
@@ -226,7 +226,7 @@ public class Utils {
             if (null != entryEnum) {
                 ZipEntry zipEntry = null;
                 while (entryEnum.hasMoreElements()) {
-                    zipEntry = (ZipEntry) entryEnum.nextElement();
+                    zipEntry = entryEnum.nextElement();
 
                     if (zipEntry.isDirectory()) {
                         File dir = new File(unzipFilePath + "/" + zipEntry.getName());
@@ -450,10 +450,7 @@ public class Utils {
 
     private static boolean isWallpaperFile(File file) {
         final String name = file.getName().toLowerCase();
-        if (name.startsWith("wallpaper")) {
-            return true;
-        }
-        return false;
+        return name.startsWith("wallpaper");
     }
 
     public static void showOnlineObjects(Context context) {

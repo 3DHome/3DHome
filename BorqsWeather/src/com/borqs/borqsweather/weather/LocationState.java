@@ -9,7 +9,7 @@ public class LocationState extends State {
     private static final String TAG = "Weather_LocationState";
 
     public interface Locate {
-        public void requestLocationAndCity(Bundle data);
+        void requestLocationAndCity(Bundle data);
 
         void stop();
     }

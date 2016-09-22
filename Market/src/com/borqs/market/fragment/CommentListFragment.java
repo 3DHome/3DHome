@@ -212,11 +212,7 @@ public class CommentListFragment extends BasicFragment implements OnScrollListen
                     }
                     if (commentList != null && commentList.size() > 0) {
                         mDatas.addAll(commentList);
-                        if(mDatas.size() >= totalCount) {
-                            hasMore = false;
-                        }else {
-                            hasMore = true;
-                        }
+                        hasMore = mDatas.size() < totalCount;
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

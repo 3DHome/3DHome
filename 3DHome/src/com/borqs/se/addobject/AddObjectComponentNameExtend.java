@@ -53,13 +53,13 @@ public final class AddObjectComponentNameExtend implements Parcelable {
     }
     
     public boolean getIsShortcutOrUserUpdate() {
-        return (mIsShortcutOrUserUpdate == 1 ? true : false);
+        return (mIsShortcutOrUserUpdate == 1);
     }
     
     public int describeContents() { return 0; }
 
     public void writeToParcel(Parcel out, int flags) {
-        out.writeParcelable((Parcelable)mComponentName, 0);
+        out.writeParcelable(mComponentName, 0);
         out.writeString(mObjectInfoName);
         out.writeString(mType);
         out.writeInt(mIsShortcutOrUserUpdate);
@@ -74,12 +74,12 @@ public final class AddObjectComponentNameExtend implements Parcelable {
     }
     
     public static AddObjectComponentNameExtend readFromParcel(Parcel in) {
-        ComponentName c = (ComponentName)in.readParcelable(null);
+        ComponentName c = in.readParcelable(null);
         if (c == null) { return null; }
         String s1 = in.readString();
         String s2 = in.readString();
         int i = in.readInt();
-        return new AddObjectComponentNameExtend(c, s1, s2, (i == 1 ? true : false));
+        return new AddObjectComponentNameExtend(c, s1, s2, (i == 1));
     }
     
     public static final Parcelable.Creator<AddObjectComponentNameExtend> CREATOR
@@ -94,7 +94,7 @@ public final class AddObjectComponentNameExtend implements Parcelable {
     };
 
     public AddObjectComponentNameExtend(Parcel in) {
-        mComponentName = (ComponentName)in.readParcelable(null);
+        mComponentName = in.readParcelable(null);
         mObjectInfoName = in.readString();
         mType = in.readString();
         mIsShortcutOrUserUpdate = in.readInt();

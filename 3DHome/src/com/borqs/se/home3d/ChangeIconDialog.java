@@ -116,8 +116,8 @@ public class ChangeIconDialog extends Dialog implements android.view.View.OnClic
     }
 
     public OnDialogFinished mDialogFinished;
-    public static interface OnDialogFinished {
-        public void onFinish(Bitmap icon, boolean changed);
+    public interface OnDialogFinished {
+        void onFinish(Bitmap icon, boolean changed);
     }
 
     public void setOnDialogFinished(OnDialogFinished mOnDialogFinished) {

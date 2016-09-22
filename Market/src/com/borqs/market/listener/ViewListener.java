@@ -2,9 +2,9 @@ package com.borqs.market.listener;
 
 public interface ViewListener {
     
-    public void show(boolean showAnimation);
+    void show(boolean showAnimation);
     
-    public void hide(boolean showAnimation);
+    void hide(boolean showAnimation);
     
-    public void showOrHide(boolean showAnimation);
+    void showOrHide(boolean showAnimation);
 }

@@ -245,11 +245,7 @@ public class ProductBasicDetailFragment extends BasicFragment implements
         
         if(MarketConfiguration.getSystemThemeDir() != null) {
             String dir = MarketConfiguration.getSystemThemeDir().getPath();
-            if(mData != null && !TextUtils.isEmpty(mData.installed_file_path) && mData.installed_file_path.startsWith(dir)) {
-                isBelongSystem = true;
-            }else {
-                isBelongSystem = false;
-            }
+            isBelongSystem = mData != null && !TextUtils.isEmpty(mData.installed_file_path) && mData.installed_file_path.startsWith(dir);
         }
         
         if(mData != null) {
@@ -366,7 +362,7 @@ public class ProductBasicDetailFragment extends BasicFragment implements
             themeCursor.moveToFirst();
             mData.current_version_name = themeCursor.getString(themeCursor.getColumnIndex(PlugInColumns.VERSION_NAME));
             mData.current_version_code = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.VERSION_CODE));
-            boolean isApplyed = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.IS_APPLY)) == 1 ? true : false;
+            boolean isApplyed = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.IS_APPLY)) == 1;
             themeCursor.close();
             if (mData.version_code > mData.current_version_code) {
                 Cursor cursor = downLoadHelper.queryDownloadFile(productID);
@@ -606,7 +602,7 @@ public class ProductBasicDetailFragment extends BasicFragment implements
         WutongParameters params = new WutongParameters();
         String originalJson = null;
         if(result != null) {
-            if(result.billingType == result.TYPE_IAB) {
+            if(result.billingType == MarketBillingResult.TYPE_IAB) {
                 params.add("google_iab_order", result.orderId);
                 originalJson = result.originalJson;
             }else {
@@ -993,7 +989,7 @@ public class ProductBasicDetailFragment extends BasicFragment implements
     public void onSaveInstanceState(Bundle outState) {
         outState.putParcelable(FLAG_DATA, mData);
         outState.putInt("current_position", current_position);
-        outState.putBoolean(BOTTOM_LAYOUT_VISABLE, bottomLayout.getVisibility()==View.VISIBLE ? true : false);
+        outState.putBoolean(BOTTOM_LAYOUT_VISABLE, bottomLayout.getVisibility() == View.VISIBLE);
         super.onSaveInstanceState(outState);
     }
 }

@@ -300,11 +300,7 @@ public class WallFrame extends WallObject {
 
         @Override
         public void onFirstly(int count) {
-            if (Math.random() > 0.5) {
-                mDirection_Center = true;
-            } else {
-                mDirection_Center = false;
-            }
+            mDirection_Center = Math.random() > 0.5;
             mSpan_Center = (float) (Math.random() * 15 + 1);
         }
 

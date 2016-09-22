@@ -112,8 +112,8 @@ public class GoogleAccountLoader extends AccountLoader{
     public void login() {
         mEmail = null;
         authenticate();
-    };
-    
+    }
+
     @Override
     public void authenticate() {
         if (!isFinishing()) {

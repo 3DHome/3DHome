@@ -366,10 +366,7 @@ public class IabManager  implements AccountListener{
 
     private static final String SKU_AD_REMOVAL = "sku_ad_remove";
     private boolean isConsumableProduct(String sku) {
-        if (SKU_AD_REMOVAL.equalsIgnoreCase(sku)) {
-            return false;
-        }
-        return true;
+        return !SKU_AD_REMOVAL.equalsIgnoreCase(sku);
     }
 
     @Override

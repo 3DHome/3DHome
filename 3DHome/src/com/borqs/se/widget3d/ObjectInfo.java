@@ -199,10 +199,7 @@ public class ObjectInfo {
     }
 
     public boolean isShortcut() {
-        if (mShortcutUrl != null && !TextUtils.isEmpty(mShortcutUrl)) {
-            return true;
-        }
-        return false;
+        return mShortcutUrl != null && !TextUtils.isEmpty(mShortcutUrl);
     }
 
     /**
@@ -615,11 +612,7 @@ public class ObjectInfo {
 
         String isnative = parser.getAttributeValue(null, ObjectInfoColumns.IS_NATIVE_OBJ);
         if (!TextUtils.isEmpty(isnative)) {
-            if (Integer.parseInt(isnative) > 0) {
-                info.mIsNativeObject = true;
-            } else {
-                info.mIsNativeObject = false;
-            }
+            info.mIsNativeObject = Integer.parseInt(isnative) > 0;
         }
 
         String index = parser.getAttributeValue(null, ObjectInfoColumns.OBJECT_INDEX);
@@ -662,11 +655,7 @@ public class ObjectInfo {
         }
 
         int nativeObj = cursor.getInt(cursor.getColumnIndexOrThrow(ObjectInfoColumns.IS_NATIVE_OBJ));
-        if (nativeObj > 0) {
-            info.mIsNativeObject = true;
-        } else {
-            info.mIsNativeObject = false;
-        }
+        info.mIsNativeObject = nativeObj > 0;
         info.mShortcutUrl = cursor.getString(cursor.getColumnIndexOrThrow(ObjectInfoColumns.SHORTCUT_URL));
         info.mIndex = cursor.getInt(cursor.getColumnIndexOrThrow(ObjectInfoColumns.OBJECT_INDEX));
         info.mDisplayName = cursor.getString(cursor.getColumnIndexOrThrow(ObjectInfoColumns.DISPLAY_NAME));
@@ -739,11 +728,8 @@ public class ObjectInfo {
                 return false;
             }
             ObjectSlot newOP = (ObjectSlot) o;
-            if (newOP.mSlotIndex == mSlotIndex && newOP.mStartX == mStartX && newOP.mStartY == mStartY
-                    && newOP.mSpanX == mSpanX && newOP.mSpanY == mSpanY) {
-                return true;
-            }
-            return false;
+            return newOP.mSlotIndex == mSlotIndex && newOP.mStartX == mStartX && newOP.mStartY == mStartY
+                    && newOP.mSpanX == mSpanX && newOP.mSpanY == mSpanY;
         }
 
         @Override
@@ -791,35 +777,21 @@ public class ObjectInfo {
         }
 
         public boolean contain(ObjectSlot slot) {
-            if (left() <= slot.left() && right() >= slot.right() && top() <= slot.top() && bottom() >= slot.bottom()) {
-                return true;
-            }
-            return false;
+            return left() <= slot.left() && right() >= slot.right() && top() <= slot.top() && bottom() >= slot.bottom();
         }
 
         public boolean horizontalIntersect(ObjectSlot mySlot) {
-            if (isLeft(mySlot) || isRight(mySlot)) {
-                return false;
-            } else {
-                return true;
-            }
+            return !(isLeft(mySlot) || isRight(mySlot));
         }
 
         public boolean verticalIntersect(ObjectSlot mySlot) {
-            if (isAbove(mySlot) || isBelow(mySlot)) {
-                return false;
-            } else {
-                return true;
-            }
+            return !(isAbove(mySlot) || isBelow(mySlot));
         }
 
         public boolean isConflict(ObjectSlot cmpSlot) {
             boolean xConflict = horizontalIntersect(cmpSlot);
             boolean YConflict = verticalIntersect(cmpSlot);
-            if (xConflict && YConflict) {
-                return true;
-            }
-            return false;
+            return xConflict && YConflict;
         }
     }
 

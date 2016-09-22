@@ -169,11 +169,7 @@ public class Flyer extends NormalObject {
         if (!mOnMovingFlyer) {
             mOnMovingFlyer = true;
             final boolean reversed;
-            if (Math.random() > 0.5) {
-                reversed = false;
-            } else {
-                reversed = true;
-            }
+            reversed = Math.random() <= 0.5;
             mReversed = reversed;
             onStartAnimation();
             playAnimation(speed, reversed, new SEAnimFinishListener() {
@@ -340,7 +336,7 @@ public class Flyer extends NormalObject {
         }
         String shakeBody = getObjectInfo().mModelInfo.getSpecialAttribute(getContext(), "shakeBody");
         if (!TextUtils.isEmpty(shakeBody)) {
-            mShakeBody = shakeBody.equals("true") ? true : false;
+            mShakeBody = shakeBody.equals("true");
         }
     }
 

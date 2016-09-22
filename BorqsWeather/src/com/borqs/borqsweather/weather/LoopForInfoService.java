@@ -310,12 +310,8 @@ public class LoopForInfoService {
         time.setToNow();
         int hour = time.hour;
         int min = time.minute;
-        if ((hour > setHour || hour < riseHour) || (hour == riseHour && min < riseMin)
-                || (hour == setHour && min >= setMin)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (hour > setHour || hour < riseHour) || (hour == riseHour && min < riseMin)
+                || (hour == setHour && min >= setMin);
     }
 
     public void saveUpdateTime(long time) {

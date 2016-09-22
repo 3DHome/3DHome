@@ -1034,7 +1034,7 @@ public class SEObject {
     public SEObject mMotionTarget;
 
     public interface OnTouchListener {
-        public void run(SEObject obj);
+        void run(SEObject obj);
     }
 
     public interface DepriveTouchListener {
@@ -1726,11 +1726,7 @@ public class SEObject {
             return false;
         }
         SEObject newobj = (SEObject) obj;
-        if (mName.equals(newobj.mName) && mIndex == newobj.mIndex) {
-            return true;
-        } else {
-            return false;
-        }
+        return mName.equals(newobj.mName) && mIndex == newobj.mIndex;
 
     }
 
@@ -1997,11 +1993,7 @@ public class SEObject {
     public void setImageValidAreaSize(int w, int h) {
         mImageWidth = w;
         mImageHeight = h;
-        if (SEUtils.isPower2(mImageWidth) && SEUtils.isPower2(mImageHeight)) {
-            mHasResizeImage = true;
-        } else {
-            mHasResizeImage = false;
-        }
+        mHasResizeImage = SEUtils.isPower2(mImageWidth) && SEUtils.isPower2(mImageHeight);
     }
 
     /**

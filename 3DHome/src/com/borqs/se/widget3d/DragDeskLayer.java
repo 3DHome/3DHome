@@ -18,12 +18,9 @@ public class DragDeskLayer extends VesselLayer {
     @Override
     public boolean canHandleSlot(NormalObject object, float touchX, float touchY) {
         super.canHandleSlot(object, touchX, touchY);
-        if ("DeskLand".equals(object.getObjectInfo().mType) || "DeskPort".equals(object.getObjectInfo().mType)
+        return "DeskLand".equals(object.getObjectInfo().mType) || "DeskPort".equals(object.getObjectInfo().mType)
                 || "Airship".equals(object.getObjectInfo().mType) || "Shelf".equals(object.getObjectInfo().mType)
-                || object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_UNKNOWN) {
-            return true;
-        }
-        return false;
+                || object.getObjectInfo().mSlotType == ObjectInfo.SLOT_TYPE_UNKNOWN;
     }
 
     @Override

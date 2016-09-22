@@ -19,9 +19,9 @@ import android.text.TextUtils;
 
 public class LocalImageManager {
     public interface ImageUpdateListener {
-        public String getImageName();
+        String getImageName();
 
-        public void onImageUpdated(Bitmap image);
+        void onImageUpdated(Bitmap image);
     }
 
     private List<HandlerThread> sWorkerThreads;

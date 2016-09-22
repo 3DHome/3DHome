@@ -15,7 +15,7 @@ import com.borqs.se.engine.SEVector.SEVector3f;
 public class MountPointData {
     public enum ContainerType {
         IS_OBJECT, IS_CONTAINER
-    };
+    }
 
     private List<SEMountPointGroup> mMountPointGroups = new ArrayList<SEMountPointGroup>();
 

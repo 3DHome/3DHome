@@ -11,10 +11,10 @@ public interface RequestListener {
      * 用于获取服务器返回的响应内容
      * @param response
      */
-	public void onComplete(String response);
+	void onComplete(String response);
 
-	public void onIOException(IOException e);
+	void onIOException(IOException e);
 
-	public void onError(WutongException e);
+	void onError(WutongException e);
 
 }

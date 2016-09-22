@@ -95,11 +95,11 @@ public class House extends VesselObject implements ShortcutCallBack,OnCropImageF
     private boolean mShowAppShef = false;
     
     public interface WallRadiusChangedListener {
-        public void onWallRadiusChanged(int faceIndex);
+        void onWallRadiusChanged(int faceIndex);
     }
 
     public interface WallRotateListener {
-        public void onWallRotate(float faceIndex, int wallNum);
+        void onWallRotate(float faceIndex, int wallNum);
     }
 
     public House(HomeScene scene, String name, int index) {
@@ -643,7 +643,7 @@ public class House extends VesselObject implements ShortcutCallBack,OnCropImageF
                 mCancelClick = true;
             } else {
                 int width = getCamera().getWidth();
-                float ratio = (float) (mPerFaceAngle * 2 / width);
+                float ratio = mPerFaceAngle * 2 / width;
                 float transAngle = ratio * (getTouchX() - getPreTouchX());
                 float curAngle = mCurrentAngle - transAngle;
                 setRotate(curAngle, false);
@@ -723,10 +723,7 @@ public class House extends VesselObject implements ShortcutCallBack,OnCropImageF
     }
 
     private boolean isBusy() {
-        if (mToFaceAnimation != null && !mToFaceAnimation.isFinish()) {
-            return true;
-        }
-        return false;
+        return mToFaceAnimation != null && !mToFaceAnimation.isFinish();
     }
 
     @Override
@@ -961,7 +958,7 @@ public class House extends VesselObject implements ShortcutCallBack,OnCropImageF
         cropImageInfo.mAspectY = mWallPaperCropSizeY;
         cropImageInfo.mSaveImageSizeX = mWallPaperSizeX;
         cropImageInfo.mSaveImageSizeY = mWallPaperSizeY;
-        cropImageInfo.mImageName = mImageNamesOfAllWall.get(wallIndex);;
+        cropImageInfo.mImageName = mImageNamesOfAllWall.get(wallIndex);
         cropImageInfo.mTempCropImageFile = new File(HomeUtils.getTmpImageFilePath());
         cropImageInfo.mSaveImagePath = getWallPaperSavePath(wallIndex);
         cropImageInfo.mOnCropImageFinishedListener = House.this;

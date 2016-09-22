@@ -46,10 +46,7 @@ public class GroundLayer extends VesselLayer {
     public boolean canHandleSlot(NormalObject object, float touchX, float touchY) {
         super.canHandleSlot(object, touchX, touchY);
         int slotType = object.getObjectInfo().mSlotType;
-        if (slotType == ObjectInfo.SLOT_TYPE_GROUND) {
-            return true;
-        }
-        return false;
+        return slotType == ObjectInfo.SLOT_TYPE_GROUND;
     }
 
     @Override
@@ -251,7 +248,7 @@ public class GroundLayer extends VesselLayer {
         float c = Xa * Xa + Ya * Ya - radius * radius;
         float para;
         if (b * b - 4 * a * c < 0) {
-            para = (float) (-b / (2 * a));
+            para = -b / (2 * a);
         } else {
             para = (float) ((-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a));
         }

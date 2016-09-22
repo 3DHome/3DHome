@@ -1,13 +1,7 @@
 package com.borqs.market;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.borqs.market.fragment.WallpaperProductGridFragment;

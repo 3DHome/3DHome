@@ -83,12 +83,9 @@ public class WoeidAndCityState extends State {
         nowCal.setTimeInMillis(now);
         Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(time);
-        if ((nowCal.get(Calendar.YEAR) == cal.get(Calendar.YEAR))
+        return !((nowCal.get(Calendar.YEAR) == cal.get(Calendar.YEAR))
                 && (nowCal.get(Calendar.MONTH) == cal.get(Calendar.MONTH))
-                && (nowCal.get(Calendar.DAY_OF_MONTH) == cal.get(Calendar.DAY_OF_MONTH))) {
-            return false;
-        }
-        return true;
+                && (nowCal.get(Calendar.DAY_OF_MONTH) == cal.get(Calendar.DAY_OF_MONTH)));
     }
 
     @Override

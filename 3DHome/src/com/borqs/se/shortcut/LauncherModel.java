@@ -18,32 +18,32 @@ import android.util.Log;
 public class LauncherModel extends BroadcastReceiver {
 
     public interface AppCallBack {
-        public void bindAppsAdded(List<ItemInfo> apps);
+        void bindAppsAdded(List<ItemInfo> apps);
 
-        public void bindAppsUpdated(List<ItemInfo> apps);
+        void bindAppsUpdated(List<ItemInfo> apps);
 
-        public void bindAppsRemoved(List<ItemInfo> apps);
+        void bindAppsRemoved(List<ItemInfo> apps);
 
-        public void bindAllPackagesUpdated();
+        void bindAllPackagesUpdated();
 
-        public void bindAllPackages();
+        void bindAllPackages();
 
-        public void bindUnavailableApps(List<ItemInfo> apps);
+        void bindUnavailableApps(List<ItemInfo> apps);
 
-        public void bindAvailableApps(List<ItemInfo> apps);
+        void bindAvailableApps(List<ItemInfo> apps);
     }
 
     public interface LoadAppFinishedListener {
-        public void onFinished();
+        void onFinished();
     }
 
     public interface ShortcutCallBack {
 
-        public void shortcutAction(Context context, Intent data);
+        void shortcutAction(Context context, Intent data);
     }
 
     public interface LanguageChangeCallBack {
-        public void onLanguageChanged();
+        void onLanguageChanged();
     }
 
     private List<AppCallBack> mAppCallBacks;

@@ -43,7 +43,7 @@ public class AddRemoveAppDialog extends AddObjectDialog implements OnObjectsSele
      * Interface for add or remove apps
      */
     public interface OnAddRemoveListener {
-        public void OnAddRemoveApps(ArrayList<AddObjectItemInfo> unSelectedList);
+        void OnAddRemoveApps(ArrayList<AddObjectItemInfo> unSelectedList);
     }
 
 }

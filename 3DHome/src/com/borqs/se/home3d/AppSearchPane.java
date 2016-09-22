@@ -51,7 +51,7 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
     private OnAppSearchItemLongClickListener mItemLongClickListener;
 
     public interface OnAppSearchItemLongClickListener {
-        public void onItemLongClick(Item holder);
+        void onItemLongClick(Item holder);
     }
 
     public void setItemLongClickListener(OnAppSearchItemLongClickListener l) {

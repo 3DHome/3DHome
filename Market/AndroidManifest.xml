@@ -2,65 +2,61 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.borqs.market"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="15" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>  
-	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>  
-	
-	<permission android:name="borqs.market.permission.DOWNLOAD_COMPLETE"
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+
+    <permission
+        android:name="borqs.market.permission.DOWNLOAD_COMPLETE"
         android:label="borqs market download completed"
-        android:protectionLevel="normal"/>
-	
-	<!-- borqs Market permission -->
+        android:protectionLevel="normal" />
+
+    <!-- borqs Market permission -->
     <!--<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>-->
     <!-- google oauth -->
-    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
-    
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
     <!-- IAP -->
     <uses-permission android:name="android.permission.SEND_SMS" />
-	<uses-permission android:name="android.permission.READ_SMS" />
-	
+    <uses-permission android:name="android.permission.READ_SMS" />
+
     <application
+        android:name=".MarketApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" 
-        android:name=".MarketApplication">
+        android:theme="@style/AppTheme">
         <!-- borqs market -->
         <activity
             android:name="com.borqs.market.MarketHomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/themes_market"
-            android:theme="@style/Theme.wallpaper"
-            />
+            android:theme="@style/Theme.wallpaper" />
         <activity
             android:name="com.borqs.market.ProductListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
+            android:theme="@style/Theme.wallpaper"></activity>
         <activity
             android:name="com.borqs.market.UserShareListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
+            android:theme="@style/Theme.wallpaper"></activity>
         <activity
             android:name="com.borqs.market.PartitionsListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
+            android:theme="@style/Theme.wallpaper"></activity>
         <activity
             android:name="com.borqs.market.wallpaper.WallpaperExportActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/tab_tile_wallpaper"
-            android:theme="@style/Theme.wallpaper"
-            >
-        </activity>
+            android:theme="@style/Theme.wallpaper"></activity>
 
         <activity
             android:name="com.borqs.market.WallPaperProductListActivity"
@@ -77,80 +73,77 @@
         <activity
             android:name="com.borqs.market.ProductTabActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper">
-        </activity>
+            android:theme="@style/Theme.wallpaper"></activity>
 
         <activity
             android:name="com.borqs.market.ProductLocalDetailActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/Theme.Sherlock.Custom"
-            />
+            android:theme="@style/Theme.Sherlock.Custom" />
         <activity
             android:name="com.borqs.market.ProductDetailActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:theme="@style/Theme.Sherlock.Custom"
-            />
+            android:theme="@style/Theme.Sherlock.Custom" />
         <activity
             android:name="com.borqs.market.CommentListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper"
-            />
+            android:theme="@style/Theme.wallpaper" />
         <activity
             android:name="com.borqs.market.CreateCommentActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.wallpaper"
-            />
-        <provider android:name="com.borqs.market.db.DownLoadProvider"
-            android:exported="false"
-            android:authorities="com.borqs.se.download"/>
+            android:theme="@style/Theme.wallpaper" />
+
+        <provider
+            android:name="com.borqs.market.db.DownLoadProvider"
+            android:authorities="com.borqs.se.download"
+            android:exported="false" />
 
         <receiver android:name="com.borqs.market.service.LocalDataInitReciver">
-            <intent-filter >
-                <action android:name="com.borqs.market.intent.action.Init"/>
-                <action android:name="com.borqs.market.intent.action.Insert"/>
+            <intent-filter>
+                <action android:name="com.borqs.market.intent.action.Init" />
+                <action android:name="com.borqs.market.intent.action.Insert" />
             </intent-filter>
         </receiver>
         <receiver android:name="com.borqs.market.service.DownloadReciver">
-            <intent-filter >
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
         </receiver>
 
         <!--<activity-->
-            <!--android:name="com.borqs.market.MarketHomeActivity"-->
-            <!--android:label="@string/app_name" -->
-            <!--android:theme="@style/Theme.Sherlock.Custom">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+        <!--android:name="com.borqs.market.MarketHomeActivity"-->
+        <!--android:label="@string/app_name" -->
+        <!--android:theme="@style/Theme.Sherlock.Custom">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
         <!--</activity>-->
         <!--<activity-->
-            <!--android:name=".ProductDetailActivity"-->
-            <!--android:theme="@style/Theme.Sherlock.Custom.black">-->
+        <!--android:name=".ProductDetailActivity"-->
+        <!--android:theme="@style/Theme.Sherlock.Custom.black">-->
         <!--</activity>-->
         <!--<activity-->
-            <!--android:name=".ProductListActivity"-->
-            <!--android:theme="@style/Theme.Sherlock.Custom">-->
+        <!--android:name=".ProductListActivity"-->
+        <!--android:theme="@style/Theme.Sherlock.Custom">-->
         <!--</activity>-->
         <!--<activity-->
-            <!--android:name=".WallPaperProductListActivity"-->
-            <!--android:theme="@style/Theme.Sherlock.Custom">-->
-<!--&lt;!&ndash;-->
-             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-<!--&ndash;&gt;-->
+        <!--android:name=".WallPaperProductListActivity"-->
+        <!--android:theme="@style/Theme.Sherlock.Custom">-->
+        <!--&lt;!&ndash;-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--&ndash;&gt;-->
         <!--</activity>        -->
-        
-<!--         <provider android:name=".db.MarketProvider" android:authorities="com.borqs.market"/> -->
+
+        <!--         <provider android:name=".db.MarketProvider" android:authorities="com.borqs.market"/> -->
         <!--<provider android:name=".db.DownLoadProvider" android:authorities="com.borqs.market"/>-->
         <!--<receiver android:name=".service.DownloadReciver">-->
-            <!--<intent-filter >-->
-                <!--<action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>-->
-            <!--</intent-filter>-->
+        <!--<intent-filter >-->
+        <!--<action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
     </application>
 

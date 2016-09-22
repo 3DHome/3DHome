@@ -24,7 +24,7 @@ public class VesselLayer {
 
     public enum ACTION {
         BEGIN, MOVE, UP, FLY, FINISH
-    };
+    }
 
     public VesselLayer(HomeScene scene, VesselObject vesselObject) {
         mHomeScene = scene;
@@ -279,7 +279,7 @@ public class VesselLayer {
 
     protected enum MOVE_DIRECTION {
         LEFT, RIGHT, DOWN, UP
-    };
+    }
 
     protected void cancelConflictTask() {
         if (mConflictTask != null) {

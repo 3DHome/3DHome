@@ -19,8 +19,7 @@ public class ProductLocalDetailFragment extends ProductBasicDetailFragment {
             themeCursor.moveToFirst();
             mData.current_version_name = themeCursor.getString(themeCursor.getColumnIndex(PlugInColumns.VERSION_NAME));
             mData.current_version_code = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.VERSION_CODE));
-            boolean isApplyed = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.IS_APPLY)) == 1 ? true
-                    : false;
+            boolean isApplyed = themeCursor.getInt(themeCursor.getColumnIndex(PlugInColumns.IS_APPLY)) == 1;
             themeCursor.close();
             if (mData.version_code > mData.current_version_code) {
                 Cursor cursor = downLoadHelper.queryDownloadFile(productID);

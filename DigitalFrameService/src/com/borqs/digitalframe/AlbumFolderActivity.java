@@ -125,9 +125,9 @@ public class AlbumFolderActivity extends FragmentActivity implements
                     count = getAllFilesPathForFolder(folderpath).size();
 
                     for (int i = 0; i < mImageFileList.size(); i++) {
-                        if (((ImageFileItemInfo) mImageFileList.get(i)).getFolderPath().equals(
+                        if (mImageFileList.get(i).getFolderPath().equals(
                                 folderpath)) {
-                            firstPath = ((ImageFileItemInfo) mImageFileList.get(i)).getPath();
+                            firstPath = mImageFileList.get(i).getPath();
                             break;
                         }
                     }

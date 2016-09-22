@@ -97,11 +97,7 @@ public class HomeUtils {
     public static boolean hasSDcard() {
         if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File file = new File("sdcard-ext");
-            if (file.exists() && file.canWrite()) {
-                return true;
-            } else {
-                return false;
-            }
+            return file.exists() && file.canWrite();
         }
         return true;
     }
@@ -161,11 +157,7 @@ public class HomeUtils {
         InputStream is = null;
         try {
             is = context.getResources().getAssets().open(filePath);
-            if (is != null) {
-                return true;
-            } else {
-                return false;
-            }
+            return is != null;
         } catch (Exception e) {
             return false;
         } finally {
@@ -230,7 +222,7 @@ public class HomeUtils {
                     if (zipFile.isFile() && (zipFile.getName().endsWith(".zip") || zipFile.getName().endsWith(".apk"))) {
                         try {
                             String unzipFile = HomeUtils.getLocalFilePath(context,
-                                    zipFile.getName().substring(0, (int) (zipFile.getName().length() - 4)));
+                                    zipFile.getName().substring(0, zipFile.getName().length() - 4));
                             HomeUtils.deleteFile(unzipFile);
                             Utils.unzipDataPartition(zipFile.getAbsolutePath(), unzipFile);
                             File configFile = new File(unzipFile + File.separator + MarketUtils.MARKET_CONFIG_FILE_NAME);
@@ -623,7 +615,7 @@ public class HomeUtils {
                     int.class });
             // d = resources.getDrawableForDensity(iconId, mIconDpi);
             method.setAccessible(true);
-            d = (Drawable) method.invoke(resources, new Object[] { iconId, iconDpi });
+            d = (Drawable) method.invoke(resources, iconId, iconDpi);
         } catch (Exception e) {
             Log.d("AppItemInfo", "error : " + e.getMessage());
             d = null;
@@ -1701,18 +1693,10 @@ public class HomeUtils {
         public boolean isSimilar(HSV hsv) {
             // 假如颜色的明暗度和饱和度都比较小，那么判断该颜色为黑白图
             if (mIndex == 0) {
-                if (hsv.mS < 0.1f || hsv.mV < 0.1) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return hsv.mS < 0.1f || hsv.mV < 0.1;
                 // 假如颜色分量靠近0，那么为纯红色
             } else if (mIndex == 12) {
-                if (hsv.mH < 0.024590165f || hsv.mH > 0.9412065f) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return hsv.mH < 0.024590165f || hsv.mH > 0.9412065f;
             } else {
                 return (hsv.mH >= mMinH && hsv.mH <= mMaxH);
             }
@@ -1786,10 +1770,10 @@ public class HomeUtils {
         public OnCropImageFinishedListener mOnCropImageFinishedListener;
     }
 
-    public static interface OnCropImageFinishedListener {
-        public void onResetImage(String imageName);
+    public interface OnCropImageFinishedListener {
+        void onResetImage(String imageName);
 
-        public void onChangeImage(String imageName, String imageNewPath);
+        void onChangeImage(String imageName, String imageNewPath);
     }
 
     public static boolean getDeskObjectShelfShownPreference(Context context) {
@@ -1814,7 +1798,7 @@ public class HomeUtils {
                 for (int y = 0; y < sizeY; y++) {
                     for (int x = 0; x < sizeX; x++) {
                         char c = line.charAt(y * sizeX + x);
-                        shelfSlot[y][x] = c == '0' ? false : true;
+                        shelfSlot[y][x] = c != '0';
                     }
                 }
             }

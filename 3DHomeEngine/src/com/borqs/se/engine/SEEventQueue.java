@@ -81,10 +81,6 @@ public class SEEventQueue {
         _lock.unlock();
         exeQuene = null;
         lazyQuene = null;
-        if (needRequestRender) {
-            return true;
-        } else {
-            return false;
-        }
+        return needRequestRender;
     }
 }

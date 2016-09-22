@@ -222,7 +222,7 @@ public class DownLoadHelper {
                             product.version_name = cursor.getString(cursor.getColumnIndexOrThrow(PlugInColumns.VERSION_NAME));
                             product.version_code = cursor.getInt(cursor.getColumnIndexOrThrow(PlugInColumns.VERSION_CODE));
                             product.type = cursor.getString(cursor.getColumnIndexOrThrow(PlugInColumns.TYPE));
-                            product.isApplyed = cursor.getInt(cursor.getColumnIndexOrThrow(PlugInColumns.IS_APPLY)) == 1? true : false;
+                            product.isApplyed = cursor.getInt(cursor.getColumnIndexOrThrow(PlugInColumns.IS_APPLY)) == 1;
                             product.installed_file_path = filePath;
                             
                             productList.add(product);
@@ -450,8 +450,8 @@ public class DownLoadHelper {
             orderInfo.signature = cursor.getString(cursor.getColumnIndexOrThrow(OrderInfoColumns.SIGNATURE));
             orderInfo.version_code = cursor.getInt(cursor.getColumnIndexOrThrow(OrderInfoColumns.VERSION_CODE));
             orderInfo.iab_order_id = cursor.getString(cursor.getColumnIndexOrThrow(OrderInfoColumns.IAB_ORDER_ID));
-            orderInfo.has_ordered = cursor.getInt(cursor.getColumnIndexOrThrow(OrderInfoColumns.HAS_ORDERED)) == 1 ? true:false;
-            orderInfo.has_consumed = cursor.getInt(cursor.getColumnIndexOrThrow(OrderInfoColumns.HAS_CONSUMED)) == 1 ? true:false;
+            orderInfo.has_ordered = cursor.getInt(cursor.getColumnIndexOrThrow(OrderInfoColumns.HAS_ORDERED)) == 1;
+            orderInfo.has_consumed = cursor.getInt(cursor.getColumnIndexOrThrow(OrderInfoColumns.HAS_CONSUMED)) == 1;
             try {
                 orderInfo.purchase = new Purchase(orderInfo.item_type, orderInfo.jsonPurchaseInfo, orderInfo.signature);
             } catch (Exception e) {

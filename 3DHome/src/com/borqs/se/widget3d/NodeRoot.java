@@ -17,7 +17,7 @@ public class NodeRoot extends VesselObject implements ScaleGestureDetector.OnSca
 
     public NodeRoot(HomeScene scene, String name, int index) {
         super(scene, name, index);
-        mHomeScene = (HomeScene) scene;
+        mHomeScene = scene;
         setPressType(PRESS_TYPE.NONE);
         mCheckSceneStatus = HomeScene.STATUS_APP_MENU + HomeScene.STATUS_HELPER_MENU + HomeScene.STATUS_MOVE_OBJECT
                 + HomeScene.STATUS_ON_DESK_SIGHT + HomeScene.STATUS_ON_SKY_SIGHT + HomeScene.STATUS_ON_WIDGET_SIGHT;
@@ -41,10 +41,7 @@ public class NodeRoot extends VesselObject implements ScaleGestureDetector.OnSca
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (mHomeScene.getStatus(HomeScene.STATUS_ON_SCALL)) {
-            return true;
-        }
-        return false;
+        return mHomeScene.getStatus(HomeScene.STATUS_ON_SCALL);
     }
 
     private void trackVelocity(MotionEvent ev) {
@@ -119,10 +116,7 @@ public class NodeRoot extends VesselObject implements ScaleGestureDetector.OnSca
     }
 
     private boolean canScall() {
-        if ((mHomeScene.getStatus() & mCheckSceneStatus) > 0) {
-            return false;
-        }
-        return true;
+        return (mHomeScene.getStatus() & mCheckSceneStatus) <= 0;
     }
 
     @Override

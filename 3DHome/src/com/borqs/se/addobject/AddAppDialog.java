@@ -64,7 +64,7 @@ public class AddAppDialog extends AddObjectDialog implements OnObjectsSelectedLi
      * Interface for select apps
      */ 
     public interface OnAppSelectedListener {
-        public void onAppSelected(ArrayList<AddObjectItemInfo> selectedList, int availableNum);
+        void onAppSelected(ArrayList<AddObjectItemInfo> selectedList, int availableNum);
     }
 
 } // class AddAppDialog
