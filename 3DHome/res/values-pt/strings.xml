@@ -61,7 +61,7 @@
 
     <!-- About strings -->
     <string name="about_version">Versão: %s</string>
-    <string name="about_copy_right1" translatable="false">Copyright © 2013 Borqs Ltd.  Todos os direitos reservados.</string>
+    <!--<string name="about_copy_right1" translatable="false">Copyright © 2013 Borqs Ltd.  Todos os direitos reservados.</string>-->
     <string name="about_website">Página oficial: http://apps.borqs.com/3dhome.html</string>
 
     <!-- Weather strings -->

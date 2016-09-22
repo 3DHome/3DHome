@@ -72,8 +72,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile project(':3DHomeEngine')
-    compile project(':BaiduStatic')
+//    compile project(':3DHomeEngine')
+//    compile project(':BaiduStatic')
     compile project(':BorqsWeather')
     compile project(':DigitalFrameService')
     compile project(':Market')

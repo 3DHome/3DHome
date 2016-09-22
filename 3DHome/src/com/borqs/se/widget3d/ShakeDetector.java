@@ -5,8 +5,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.util.FloatMath;
-//import android.util.Log;
 
 public class ShakeDetector implements SensorEventListener {
     static final int UPDATE_INTERVAL = 100;
@@ -81,7 +79,7 @@ public class ShakeDetector implements SensorEventListener {
         mLastX = x;
         mLastY = y;
         mLastZ = z;
-        float delta = FloatMath.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ) 
+        double delta = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ)
                 / diffTime * 10000;
         if (delta > shakeThreshold) {
             //Log.i("test", "delta is "+ delta);
