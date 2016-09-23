@@ -1,4 +1,10 @@
-buildscript {
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: 'dependencies.gradle'
+
+buildscript {    // Gradle will not find vars defined in an external file when referring to them
+    // in the buildscript block, unless you link it from the buildscript block, too.
+    apply from: 'dependencies.gradle'
+
     repositories {
         jcenter()
     }
@@ -6,16 +12,6 @@ buildscript {
         classpath 'com.android.tools.build:gradle:2.2.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
-}
-
-ext {
-    compileSdkVersion = 23
-    buildToolsVersion = "24.0.2"
-
-    minSdkVersion = 14
-    targetSdkVersion = 22
-
-    supportLibs = "23.2.1"
 }
 
 allprojects {

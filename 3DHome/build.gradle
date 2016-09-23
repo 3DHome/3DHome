@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     sourceSets {
         main {
@@ -47,8 +47,9 @@ android {
 
     defaultConfig {
         applicationId "com.borqs.se"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
 
         versionCode 4603
         versionName "2.0.1-4603p"
@@ -79,6 +80,6 @@ dependencies {
     compile project(':Market')
 
     // Google libraries
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibs"
-    compile "com.android.support:design:$rootProject.ext.supportLibs"
+    compile libraries.supportAppCompat
+    compile libraries.supportDesign
 }
