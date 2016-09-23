@@ -45,7 +45,7 @@ import java.util.Collections;
 
 public class WallpaperExportFragment extends BasicFragment implements View.OnClickListener {
     private static final String TAG = "WallpaperExportFragment";
-    protected static int TOTAL_COUNT = 3;
+    protected static final int TOTAL_COUNT = 3;
 
     protected View pager_layout;
     private PhotoAdapter mAdapter;

@@ -1,23 +1,8 @@
 package com.borqs.market.net;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
-import java.util.zip.GZIPInputStream;
-
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
+import com.borqs.market.utils.BLog;
+import com.borqs.market.utils.QiupuHelper;
+import com.borqs.market.utils.Utility;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -44,243 +29,263 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 
-import com.borqs.market.utils.BLog;
-import com.borqs.market.utils.QiupuHelper;
-import com.borqs.market.utils.Utility;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.zip.GZIPInputStream;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 /**
- * 
  * @author luopeng (luopeng@staff.sina.com.cn)
  */
 public class HttpManager {
 
-//	private static final String BOUNDARY = "7cd4a6d158c";
-    private static final String BOUNDARY=getBoundry();
-	static final String MP_BOUNDARY = "--" + BOUNDARY;
+    //	private static final String BOUNDARY = "7cd4a6d158c";
+    private static final String BOUNDARY = getBoundry();
+    static final String MP_BOUNDARY = "--" + BOUNDARY;
     static final String DEFAULT_CONTENT_TYPE = "application/x-www-form-urlencoded";
-	private static final String END_MP_BOUNDARY = "--" + BOUNDARY + "--";
-	private static final String MULTIPART_FORM_DATA = "multipart/form-data";
+    private static final String END_MP_BOUNDARY = "--" + BOUNDARY + "--";
+    private static final String MULTIPART_FORM_DATA = "multipart/form-data";
 //    public static String UserAgent="os=android;client=com.borqs.market";    
 
 
-	public static final String HTTPMETHOD_POST = "POST";
-	public static final String HTTPMETHOD_GET = "GET";
+    public static final String HTTPMETHOD_POST = "POST";
+    public static final String HTTPMETHOD_GET = "GET";
 
-	private static final int SET_CONNECTION_TIMEOUT = 20 * 1000;
-	private static final int SET_SOCKET_TIMEOUT = 120 * 1000;
-	/**
-	 * 
-	 * @param url 服务器地址
-	 * @param method "GET"or “POST”
-	 * @param params   存放参数的容器
-	 * @return 响应结果
-	 * @throws com.wutong.sdk.android.WutongException
-	 */
-	public static String openUrl(String url, String method, WutongParameters params) throws WutongException {
-		String result = "";
-		try {
+    private static final int SET_CONNECTION_TIMEOUT = 20 * 1000;
+    private static final int SET_SOCKET_TIMEOUT = 120 * 1000;
+
+    /**
+     * @param url    服务器地址
+     * @param method "GET"or “POST”
+     * @param params 存放参数的容器
+     * @return 响应结果
+     * @throws com.wutong.sdk.android.WutongException
+     */
+    public static String openUrl(String url, String method, WutongParameters params) throws WutongException {
+        String result = "";
+        try {
             params.add("call_id", Long.toString(System.currentTimeMillis()));
             params.generateSignature();
 
-			HttpClient client = getNewHttpClient();
-			HttpUriRequest request = null;
-			ByteArrayOutputStream bos = null;
-			client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, NetStateManager.getAPN());
-			if (method.equals(HTTPMETHOD_GET)) {
-				url = url + "?" + Utility.encodeUrl(params);
-				HttpGet get = new HttpGet(url);
-				BLog.v("HttpManager", url);
-				request = get;
-			} else if (method.equals(HTTPMETHOD_POST)) {
-				HttpPost post = new HttpPost(url);
-				request = post;
-				byte[] data = null;
+            HttpClient client = getNewHttpClient();
+            HttpUriRequest request = null;
+            ByteArrayOutputStream bos = null;
+            client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, NetStateManager.getAPN());
+            if (method.equals(HTTPMETHOD_GET)) {
+                url = url + "?" + Utility.encodeUrl(params);
+                HttpGet get = new HttpGet(url);
+                BLog.v("HttpManager", url);
+                request = get;
+            } else if (method.equals(HTTPMETHOD_POST)) {
+                HttpPost post = new HttpPost(url);
+                request = post;
+                byte[] data = null;
 
-				bos = new ByteArrayOutputStream();
-				if (params.hasImage()) {
-					params.paramToUpload(bos);
-					post.setHeader("Content-Type", MULTIPART_FORM_DATA + "; boundary=" + BOUNDARY);
+                bos = new ByteArrayOutputStream();
+                if (params.hasImage()) {
+                    params.paramToUpload(bos);
+                    post.setHeader("Content-Type", MULTIPART_FORM_DATA + "; boundary=" + BOUNDARY);
                     final String file = params.getImagePath();
-					Utility.UploadImageUtils.revitionPostImageSize(file);
-					imageContentToUpload(bos, file);
-				} else {
+                    Utility.UploadImageUtils.revitionPostImageSize(file);
+                    imageContentToUpload(bos, file);
+                } else {
                     post.setHeader("Content-Type", params.popupContentType());
-					
 
-					String postParam = Utility.encodeParameters(params);
-					data = postParam.getBytes("UTF-8");
-					bos.write(data);
-				}
-				data = bos.toByteArray();
-				bos.close();
-				ByteArrayEntity formEntity = new ByteArrayEntity(data);
-				post.setEntity(formEntity);
-			} else if (method.equals("DELETE")) {
-				request = new HttpDelete(url);
-			}
-			request.setHeader( "user-agent",QiupuHelper.user_agent);
-			HttpResponse response = client.execute(request);
-			StatusLine status = response.getStatusLine();
-			int statusCode = status.getStatusCode();
 
-			if (statusCode != 200) {
-				result = readHttpResponse(response);
-				throw new WutongException(result, statusCode);
-			}
-			result = readHttpResponse(response);
-			return result;
+                    String postParam = Utility.encodeParameters(params);
+                    data = postParam.getBytes("UTF-8");
+                    bos.write(data);
+                }
+                data = bos.toByteArray();
+                bos.close();
+                ByteArrayEntity formEntity = new ByteArrayEntity(data);
+                post.setEntity(formEntity);
+            } else if (method.equals("DELETE")) {
+                request = new HttpDelete(url);
+            }
+            request.setHeader("user-agent", QiupuHelper.user_agent);
+            HttpResponse response = client.execute(request);
+            StatusLine status = response.getStatusLine();
+            int statusCode = status.getStatusCode();
+
+            if (statusCode != 200) {
+                result = readHttpResponse(response);
+                throw new WutongException(result, statusCode);
+            }
+            result = readHttpResponse(response);
+            return result;
         } catch (IOException e) {
             throw new WutongException(e);
         } catch (SecurityException e) {
             throw new WutongException(e);
         }
     }
-	
-	private static HttpClient getNewHttpClient() {
-		try {
-			KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
-			trustStore.load(null, null);
 
-			SSLSocketFactory sf = new MySSLSocketFactory(trustStore);
-			sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+    private static HttpClient getNewHttpClient() {
+        try {
+            KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+            trustStore.load(null, null);
 
-			HttpParams params = new BasicHttpParams();
+            SSLSocketFactory sf = new MySSLSocketFactory(trustStore);
+            sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
 
-			HttpConnectionParams.setConnectionTimeout(params, 10000);
-			HttpConnectionParams.setSoTimeout(params, 10000);
+            HttpParams params = new BasicHttpParams();
 
-			HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
-			HttpProtocolParams.setContentCharset(params, HTTP.UTF_8);
+            HttpConnectionParams.setConnectionTimeout(params, 10000);
+            HttpConnectionParams.setSoTimeout(params, 10000);
 
-			SchemeRegistry registry = new SchemeRegistry();
-			registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-			registry.register(new Scheme("https", sf, 443));
+            HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
+            HttpProtocolParams.setContentCharset(params, HTTP.UTF_8);
 
-			ClientConnectionManager ccm = new ThreadSafeClientConnManager(params, registry);
+            SchemeRegistry registry = new SchemeRegistry();
+            registry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+            registry.register(new Scheme("https", sf, 443));
 
-			HttpConnectionParams.setConnectionTimeout(params, SET_CONNECTION_TIMEOUT);
-			HttpConnectionParams.setSoTimeout(params, SET_SOCKET_TIMEOUT);
-			HttpClient client = new DefaultHttpClient(ccm, params);
-//			if (NetState.Mobile == NetStateManager.CUR_NETSTATE) {
-//				// 获取当前正在使用的APN接入点
-//				HttpHost proxy = NetStateManager.getAPN();
-//				if (null != proxy) {
-//					client.getParams().setParameter(ConnRouteParams.DEFAULT_PROXY, proxy);
-//				}
-//			}
-			return client;
-		} catch (Exception e) {
-			return new DefaultHttpClient();
-		}
-	}
+            ClientConnectionManager ccm = new ThreadSafeClientConnManager(params, registry);
 
-	private static class MySSLSocketFactory extends SSLSocketFactory {
-		SSLContext sslContext = SSLContext.getInstance("TLS");
+            HttpConnectionParams.setConnectionTimeout(params, SET_CONNECTION_TIMEOUT);
+            HttpConnectionParams.setSoTimeout(params, SET_SOCKET_TIMEOUT);
+            HttpClient client = new DefaultHttpClient(ccm, params);
+//            if (NetState.Mobile == NetStateManager.CUR_NETSTATE) {
+//                // 获取当前正在使用的APN接入点
+//                HttpHost proxy = NetStateManager.getAPN();
+//                if (null != proxy) {
+//                    client.getParams().setParameter(ConnRouteParams.DEFAULT_PROXY, proxy);
+//                }
+//            }
+            return client;
+        } catch (Exception e) {
+            return new DefaultHttpClient();
+        }
+    }
 
-		public MySSLSocketFactory(KeyStore truststore) throws NoSuchAlgorithmException,
-				KeyManagementException, KeyStoreException, UnrecoverableKeyException {
-			super(truststore);
+    private static class MySSLSocketFactory extends SSLSocketFactory {
+        SSLContext sslContext = SSLContext.getInstance("TLS");
 
-			TrustManager tm = new X509TrustManager() {
-				public void checkClientTrusted(X509Certificate[] chain, String authType)
-						throws CertificateException {
-				}
+        public MySSLSocketFactory(KeyStore truststore) throws NoSuchAlgorithmException,
+                KeyManagementException, KeyStoreException, UnrecoverableKeyException {
+            super(truststore);
 
-				public void checkServerTrusted(X509Certificate[] chain, String authType)
-						throws CertificateException {
-				}
+            TrustManager tm = new X509TrustManager() {
+                public void checkClientTrusted(X509Certificate[] chain, String authType)
+                        throws CertificateException {
+                }
 
-				public X509Certificate[] getAcceptedIssuers() {
-					return null;
-				}
-			};
+                public void checkServerTrusted(X509Certificate[] chain, String authType)
+                        throws CertificateException {
+                    try {
+                        chain[0].checkValidity();
+                    } catch (Exception e) {
+                        throw new CertificateException("Certificate not valid or trusted.");
+                    }
+                }
 
-			sslContext.init(null, new TrustManager[] { tm }, null);
-		}
+                public X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+            };
 
-		@Override
-		public Socket createSocket(Socket socket, String host, int port, boolean autoClose)
-				throws IOException {
-			return sslContext.getSocketFactory().createSocket(socket, host, port, autoClose);
-		}
+            sslContext.init(null, new TrustManager[]{tm}, null);
+        }
 
-		@Override
-		public Socket createSocket() throws IOException {
-			return sslContext.getSocketFactory().createSocket();
-		}
-	}
+        @Override
+        public Socket createSocket(Socket socket, String host, int port, boolean autoClose)
+                throws IOException {
+            return sslContext.getSocketFactory().createSocket(socket, host, port, autoClose);
+        }
 
-	private static void imageContentToUpload(OutputStream out, String imgpath) throws WutongException {
-		if(imgpath==null){
-		    return;
-		}
-	    StringBuilder temp = new StringBuilder();
-		
-		temp.append(MP_BOUNDARY).append("\r\n");
-		temp.append("Content-Disposition: form-data; name=\"pic\"; filename=\"")
-				.append("news_image").append("\"\r\n");
-		String filetype = "image/png";
-		temp.append("Content-Type: ").append(filetype).append("\r\n\r\n");
-		byte[] res = temp.toString().getBytes();
-		FileInputStream input = null;
-		try {
-			out.write(res);
-			 input = new FileInputStream(imgpath);
-			byte[] buffer=new byte[1024*50];
-			while(true){
-				int count=input.read(buffer);
-				if(count==-1){
-					break;
-				}
-				out.write(buffer, 0, count);
-			}
-			out.write("\r\n".getBytes());
-			out.write(("\r\n" + END_MP_BOUNDARY).getBytes());
-		} catch (IOException e) {
-			throw new WutongException(e);
-		} finally {
-			if (null != input) {
-				try {
-					input.close();
-				} catch (IOException e) {
-					throw new WutongException(e);
-				}
-			}
-		}
-	}
+        @Override
+        public Socket createSocket() throws IOException {
+            return sslContext.getSocketFactory().createSocket();
+        }
+    }
 
-	/**
-	 * 读取HttpResponse数据
-	 * 
-	 * @param response
-	 * @return
-	 */
-	private static String readHttpResponse(HttpResponse response) {
-		String result = "";
-		HttpEntity entity = response.getEntity();
-		InputStream inputStream;
-		try {
-			inputStream = entity.getContent();
-			ByteArrayOutputStream content = new ByteArrayOutputStream();
+    private static void imageContentToUpload(OutputStream out, String imgpath) throws WutongException {
+        if (imgpath == null) {
+            return;
+        }
+        StringBuilder temp = new StringBuilder();
 
-			Header header = response.getFirstHeader("Content-Encoding");
-			if (header != null && header.getValue().toLowerCase().indexOf("gzip") > -1) {
-				inputStream = new GZIPInputStream(inputStream);
-			}
+        temp.append(MP_BOUNDARY).append("\r\n");
+        temp.append("Content-Disposition: form-data; name=\"pic\"; filename=\"")
+                .append("news_image").append("\"\r\n");
+        String filetype = "image/png";
+        temp.append("Content-Type: ").append(filetype).append("\r\n\r\n");
+        byte[] res = temp.toString().getBytes();
+        FileInputStream input = null;
+        try {
+            out.write(res);
+            input = new FileInputStream(imgpath);
+            byte[] buffer = new byte[1024 * 50];
+            while (true) {
+                int count = input.read(buffer);
+                if (count == -1) {
+                    break;
+                }
+                out.write(buffer, 0, count);
+            }
+            out.write("\r\n".getBytes());
+            out.write(("\r\n" + END_MP_BOUNDARY).getBytes());
+        } catch (IOException e) {
+            throw new WutongException(e);
+        } finally {
+            if (null != input) {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    throw new WutongException(e);
+                }
+            }
+        }
+    }
 
-			int readBytes = 0;
-			byte[] sBuffer = new byte[512];
-			while ((readBytes = inputStream.read(sBuffer)) != -1) {
-				content.write(sBuffer, 0, readBytes);
-			}
-			result = new String(content.toByteArray());
-			return result;
-		} catch (IllegalStateException e) {
-		} catch (IOException e) {
-		}
-		return result;
-	}
-	   /**
+    /**
+     * 读取HttpResponse数据
+     *
+     * @param response
+     * @return
+     */
+    private static String readHttpResponse(HttpResponse response) {
+        String result = "";
+        HttpEntity entity = response.getEntity();
+        InputStream inputStream;
+        try {
+            inputStream = entity.getContent();
+            ByteArrayOutputStream content = new ByteArrayOutputStream();
+
+            Header header = response.getFirstHeader("Content-Encoding");
+            if (header != null && header.getValue().toLowerCase().indexOf("gzip") > -1) {
+                inputStream = new GZIPInputStream(inputStream);
+            }
+
+            int readBytes = 0;
+            byte[] sBuffer = new byte[512];
+            while ((readBytes = inputStream.read(sBuffer)) != -1) {
+                content.write(sBuffer, 0, readBytes);
+            }
+            result = new String(content.toByteArray());
+            return result;
+        } catch (IllegalStateException e) {
+        } catch (IOException e) {
+        }
+        return result;
+    }
+
+    /**
      * 产生11位的boundary
      */
     static String getBoundry() {

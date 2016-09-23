@@ -682,7 +682,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
         registerReceiver(mReceiver, new IntentFilter("com.borqs.se.intent.action.ADD_MODEL_TO_HOUSE"));
     }
 
-    // / wallpaper and user share code end
+    // wallpaper and user share code end
 
     @Override
     protected void onDestroy() {
