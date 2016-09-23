@@ -21,13 +21,14 @@ import com.borqs.market.account.AccountLoader;
 import com.borqs.market.account.AccountLoaderFactory;
 import com.borqs.market.account.AccountObserver;
 import com.borqs.market.account.AccountSession;
+import com.borqs.market.di.DaggerMarketBillingComponent;
+import com.borqs.market.di.MarketBillingModule;
 import com.borqs.market.json.Product;
 import com.borqs.market.utils.BLog;
 import com.borqs.market.utils.IntentUtil;
 import com.borqs.market.utils.MarketUtils;
 import com.borqs.market.view.LightProgressDialog;
 import com.iab.engine.MarketBilling;
-import com.iab.engine.MarketBillingFactory;
 import com.iab.engine.MarketPurchaseListener;
 
 public class BasicActivity extends FragmentActivity implements AccountListener{
@@ -45,8 +46,10 @@ public class BasicActivity extends FragmentActivity implements AccountListener{
             accountLoader = AccountLoaderFactory.createAccountLoader(this);
             AccountSession.loadAccount(getBaseContext());
         }
-        marketBilling = MarketBillingFactory.createMarketBilling(this);
         
+        marketBilling = DaggerMarketBillingComponent.builder().
+                marketBillingModule(new MarketBillingModule(this)).
+                build().make();
     }
     
     @Override
@@ -289,17 +292,21 @@ public class BasicActivity extends FragmentActivity implements AccountListener{
   }
   
   public void purchase(Product product, MarketPurchaseListener listener) {
-      if(marketBilling == null) {
-          marketBilling = MarketBillingFactory.createMarketBilling(this);
+//      if(marketBilling == null) {
+//          marketBilling = MarketBillingFactory.createMarketBilling(this);
+//      }
+      if(marketBilling != null) {
+          marketBilling.purchase(this, product, listener);
       }
-      marketBilling.purchase(this,product, listener);
   }
 
   public void consumeAsync() {
-      if(marketBilling == null) {
-          marketBilling = MarketBillingFactory.createMarketBilling(this);
+//      if(marketBilling == null) {
+//          marketBilling = MarketBillingFactory.createMarketBilling(this);
+//      }
+      if(marketBilling != null) {
+          marketBilling.consumeAsync(this.getBaseContext());
       }
-      marketBilling.consumeAsync(this.getBaseContext());
   }
 
   @Override

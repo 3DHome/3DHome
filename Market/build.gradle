@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -75,6 +76,10 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     compile project(':BaiduStatic')
+
+    //for dagger2
+    compile libraries.dagger;
+    apt libraries.daggerCompiler
 
     // Google libraries
     compile libraries.supportAppCompat
