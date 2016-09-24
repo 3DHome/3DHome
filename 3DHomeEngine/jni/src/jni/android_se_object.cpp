@@ -102,11 +102,20 @@ static jmethodID methodgetStatusValue;
 static jmethodID methodgetLightNames;
 static jmethodID methodgetSpatialDataValue;
 
-static bool isNewBitmapPlatform() {
+static jfieldID isNewBitmapPlatform(JNIEnv* env) {
     char buf[PROP_VALUE_MAX];
     __system_property_get("ro.build.version.sdk", buf);
     int versionCode = atoi(buf);
-    return versionCode >= 21;
+    //return versionCode >= 21;
+    
+    jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
+    if (versionCode < 21) { //pre-lolipop
+        return env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    } else if (versionCode < 23) { // lolipop 21, 22
+        return env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
+    } else {
+        return env->GetFieldID(bitmapClass, "mNativePtr", "J");
+    }
 }
 
 SE_Scene* findScene(const char* sceneName);
@@ -1310,14 +1319,7 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
     classObject = (jclass)env->NewGlobalRef(clazz);
     methodInitObject = env->GetMethodID(classObject, "<init>", "(Ljava/lang/String;I)V");
 
-    jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
-    //nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
-    // for android 5.0+
-    if (isNewBitmapPlatform()) {
-        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
-    } else {
-        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
-    }
+    nativeBitmapID = isNewBitmapPlatform(env);
 
     methodGetParentName = env->GetMethodID(clazz, "getParentName", "()Ljava/lang/String;");
     methodGetParentIndex = env->GetMethodID(clazz, "getParentIndex", "()I");

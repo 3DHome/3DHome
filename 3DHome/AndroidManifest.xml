@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.borqs.se"
-    android:versionCode="4604"
-    android:versionName="2.0.1.4604p">
+    android:versionCode="4605"
+    android:versionName="2.0.1.4605p">
 
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -66,6 +66,7 @@
         android:description="@string/description"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
+        android:debuggable="false"
         android:largeHeap="true"
         android:theme="@style/HomeThemeWithActionBar"
         tools:replace="android:icon, android:label, android:theme, android:name">

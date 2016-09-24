@@ -17,11 +17,20 @@
 
 static jfieldID nativeBitmapID = 0;
 
-static bool isNewBitmapPlatform() {
+static jfieldID isNewBitmapPlatform(JNIEnv* env) {
     char buf[PROP_VALUE_MAX];
     __system_property_get("ro.build.version.sdk", buf);
     int versionCode = atoi(buf);
-    return versionCode >= 21;
+    //return versionCode >= 21;
+    
+    jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
+    if (versionCode < 21) { //pre-lolipop
+        return env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
+    } else if (versionCode < 23) { // lolipop 21, 22
+        return env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
+    } else {
+        return env->GetFieldID(bitmapClass, "mNativePtr", "J");
+    }
 }
 
 static void se_CreateGUI(JNIEnv* env,jobject clazz)
@@ -253,14 +262,7 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
         return JNI_FALSE;
     }
 
-    jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
-    //nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
-    // for android 5.0+
-    if (isNewBitmapPlatform()) {
-        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "J");
-    } else {
-        nativeBitmapID = env->GetFieldID(bitmapClass, "mNativeBitmap", "I");
-    }
+    nativeBitmapID = isNewBitmapPlatform(env);
 
     return JNI_TRUE;
 }
