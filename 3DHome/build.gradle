@@ -51,8 +51,8 @@ android {
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
 
-        versionCode 4605
-        versionName "2.0.1-4605p"
+        versionCode versions.code
+        versionName versions.name
 
         // Enabling multidex support.
         multiDexEnabled true
