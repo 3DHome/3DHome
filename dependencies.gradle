@@ -4,8 +4,8 @@ ext.versions = [
 
         minSdk                       : 14,
         targetSdk                    : 23,
-        compileSdk                   : 23,
-        buildTools                   : '24.0.2',
+        compileSdk                   : 26,
+        buildTools                   : '26.0.2',
 
         androidGradlePlugin          : '2.2.0',
         aptGradlePlugin              : '1.8',
@@ -25,7 +25,7 @@ ext.versions = [
         rxAndroid                    : '1.2.1',
         rxJava                       : '1.1.9',
         rxLint                       : '1.0',
-        supportLibs                  : '23.2.1',
+        supportLibs                  : '26.1.0',
         okHttp                       : '3.4.1',
         retrofit                     : '2.1.0',
         jackson                      : '2.6.3',
