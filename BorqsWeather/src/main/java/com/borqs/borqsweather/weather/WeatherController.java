@@ -1,10 +1,5 @@
 package com.borqs.borqsweather.weather;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Iterator;
-import com.borqs.borqsweather.weather.yahoo.WeatherPreferences;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +9,13 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.borqs.borqsweather.weather.yahoo.WeatherPreferences;
+import com.funyoung.androidfacade.AndroidServiceUtils;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class WeatherController {
     private static final String TAG = "Weather_Controller";
@@ -84,7 +86,7 @@ public class WeatherController {
             Log.d(TAG, "######begin request weather####### is auto locate = " + mIsAutoLocate);
         if (mIsAutoLocate) {
             // 假如手机不是在中国，那么要求打开GPS，因为国外不支持百度SDK
-            if ((460 != Utils.getCountryCode(mContext)) && !Utils.isLocationServicesEnabled(mContext)) {
+            if (AndroidServiceUtils.isInChina(mContext) && !Utils.isLocationServicesEnabled(mContext)) {
                 Message msg = Message.obtain(mEventHandler, WeatherController.EVENT_REQUEST_FAILE,
                         WeatherController.RESULT_ERROR_SHOULD_OPEN_GPS);
                 mEventHandler.sendMessage(msg);

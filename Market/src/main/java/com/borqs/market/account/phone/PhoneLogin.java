@@ -3,9 +3,9 @@ package com.borqs.market.account.phone;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.telephony.TelephonyManager;
 
 import com.borqs.market.utils.BLog;
+import com.funyoung.androidfacade.AndroidServiceUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -159,8 +159,7 @@ public class PhoneLogin {
     }
     
     public static String getImsi(Context context) {
-        TelephonyManager telephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        String imsi = telephonyMgr.getSubscriberId();
+        String imsi = AndroidServiceUtils.getSubscriberId(context);
         if(imsi == null) {
             return null;
         }else {

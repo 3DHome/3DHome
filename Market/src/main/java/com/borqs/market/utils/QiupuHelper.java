@@ -1,19 +1,6 @@
 package com.borqs.market.utils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.ref.WeakReference;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Locale;
-
-import javax.net.ssl.HttpsURLConnection;
-
-import org.apache.http.conn.ssl.AbstractVerifier;
-
+import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
@@ -25,10 +12,24 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.borqs.market.listener.DownloadListener;
+import com.funyoung.androidfacade.AndroidServiceUtils;
+
+import org.apache.http.conn.ssl.AbstractVerifier;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Locale;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class QiupuHelper {
     private static final String TAG = "QiupuHelper";
@@ -145,11 +146,13 @@ public class QiupuHelper {
 
     public static String getDeviceID(Context con) {
         String deviceid = "";
-        WifiManager wm = (WifiManager) con.getSystemService(Context.WIFI_SERVICE);
         try {
-            WifiInfo info = wm.getConnectionInfo();
-            deviceid = info.getMacAddress().replace(":", "");
-            BLog.d("DEVICE", "deviceid 1=" + deviceid);
+            WifiManager wm = (WifiManager) con.getSystemService(Context.WIFI_SERVICE);
+            if (con.checkCallingOrSelfPermission(Manifest.permission.ACCESS_WIFI_STATE) == PackageManager.PERMISSION_GRANTED) {
+                WifiInfo info = wm.getConnectionInfo();
+                deviceid = info.getMacAddress().replace(":", "");
+                BLog.d("DEVICE", "deviceid 1=" + deviceid);
+            }
         } catch (Exception ne) {
             ne.printStackTrace();
             BLog.d("DEVICE", "deviceid 1 exception=" + ne.getMessage());
@@ -157,17 +160,16 @@ public class QiupuHelper {
 
         if (con.checkCallingOrSelfPermission(android.Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
             // 2. imei/imsi
-            TelephonyManager tm = (TelephonyManager) con.getSystemService(Context.TELEPHONY_SERVICE);
             if (deviceid == null || deviceid.length() == 0) {
-                String imei = tm.getDeviceId();
-                String imsi = tm.getSubscriberId();
+                String imei = AndroidServiceUtils.getDeviceId(con);
+                String imsi = AndroidServiceUtils.getSubscriberId(con);
 
                 deviceid = (imei == null ? "" : imei + imsi == null ? "" : imsi);
                 BLog.d("DEVICE", "deviceid 2=" + deviceid);
             }
             // 3. phone number
             if (deviceid == null || deviceid.length() == 0) {
-                deviceid = tm.getLine1Number();
+                deviceid = AndroidServiceUtils.getLine1Number(con);
                 BLog.d("DEVICE", "deviceid 3=" + deviceid);
             }
 

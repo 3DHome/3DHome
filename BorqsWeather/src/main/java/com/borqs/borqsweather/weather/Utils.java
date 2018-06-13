@@ -13,10 +13,7 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
-import android.telephony.CellLocation;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.borqs.borqsweather.weather.yahoo.PinYinUtil;
 
@@ -82,23 +79,6 @@ public class Utils {
             strB.append(token);
         }
         return strB.toString();
-    }
-
-    public static int getCountryCode(Context context) {
-        int mcc = -1;
-        TelephonyManager telManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        CellLocation cl = telManager.getCellLocation();
-        if (cl != null && telManager.getPhoneType() != TelephonyManager.PHONE_TYPE_NONE) {
-            String strOperator = telManager.getNetworkOperator();
-            if (!TextUtils.isEmpty(strOperator)) {
-                try {
-                    mcc = Integer.valueOf(strOperator.substring(0, 3));
-                } catch (Exception e) {
-                    Log.e("Test_Utils", "Get country code error. " + e.getMessage());
-                }
-            }
-        }
-        return mcc;
     }
 
     public static boolean isSameDate(long time1, long time2) {

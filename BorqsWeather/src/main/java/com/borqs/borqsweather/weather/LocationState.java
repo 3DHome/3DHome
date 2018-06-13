@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
 
+import com.funyoung.androidfacade.AndroidServiceUtils;
+
 public class LocationState extends State {
 
     private static final String TAG = "Weather_LocationState";
@@ -26,9 +28,8 @@ public class LocationState extends State {
 
     @Override
     public void run(Bundle data) {
-        Utils.printToLogFile("申请获取天气位置 countryCode = " + Utils.getCountryCode(mContext));
+        Utils.printToLogFile("申请获取天气位置 countryCode = " + AndroidServiceUtils.getCountryCode(mContext));
         requestCity(null, true, true);
-
     }
 
     /**
@@ -44,9 +45,10 @@ public class LocationState extends State {
             onFailed(null);
             return;
         }
-        int countryCode = Utils.getCountryCode(mContext);
+//        int countryCode = Utils.getCountryCode(mContext);
+        boolean inChina = AndroidServiceUtils.isInChina(mContext);
         if (auto) {           
-            if (countryCode == 460) {
+            if (inChina) {
                 if (WeatherController.DEBUG)
                     Log.i(TAG, "### request location ### using baidu server for location, mTryCount = " + mTryCount);
                 mLocate = new BDLocate(this);
@@ -56,7 +58,7 @@ public class LocationState extends State {
                 mLocate = new GLocate(this);
             }
         } else {
-            if (usingBaidu && countryCode == 460) {
+            if (inChina) {
                 if (WeatherController.DEBUG)
                     Log.i(TAG, "### request location ### using baidu server for location, mTryCount = " + mTryCount);
                 mLocate = new BDLocate(this);

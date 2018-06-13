@@ -46,4 +46,5 @@ dependencies {
     // Google libraries
     compile libraries.supportAppCompat
     compile libraries.supportDesign
+    compile project(path: ':androidfacade')
 }

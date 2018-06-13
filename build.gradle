@@ -7,6 +7,10 @@ buildscript {    // Gradle will not find vars defined in an external file when r
 
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.0'
@@ -17,5 +21,9 @@ buildscript {    // Gradle will not find vars defined in an external file when r
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }

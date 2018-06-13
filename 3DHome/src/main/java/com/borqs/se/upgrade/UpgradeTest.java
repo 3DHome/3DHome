@@ -1,5 +1,21 @@
 package com.borqs.se.upgrade;
 
+import android.content.Context;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+
+import com.borqs.se.home3d.HomeActivity;
+import com.borqs.se.home3d.HomeUtils;
+import com.borqs.se.home3d.SettingsActivity;
+import com.funyoung.androidfacade.AndroidServiceUtils;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -8,23 +24,9 @@ import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-import android.content.Context;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.telephony.TelephonyManager;
-import android.util.Log;
-
-import com.borqs.se.home3d.HomeActivity;
-import com.borqs.se.home3d.HomeUtils;
-import com.borqs.se.home3d.SettingsActivity;
-
 public class UpgradeTest extends Thread {
+    private static final String TAG = UpgradeTest.class.getSimpleName();
+
     private Context mContext;
     private static final String URL_RELEASE = "http://release.borqs.com/apk/find.php";
 
@@ -51,9 +53,8 @@ public class UpgradeTest extends Thread {
     }
 
     private String getAppInfo(Context context) {
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        String imei = telephonyManager.getDeviceId();
-        String imsi = telephonyManager.getSubscriberId();
+        String imei = AndroidServiceUtils.getDeviceId(context);
+        String imsi = AndroidServiceUtils.getSubscriberId(context);
         String packageName = context.getPackageName();
         int version = 0;
         try {
@@ -82,7 +83,7 @@ public class UpgradeTest extends Thread {
         try {
             URL netUrl = new URL(URL_RELEASE);
             if (HomeUtils.DEBUG)
-                Log.d("UpgradeTest ##############", "upgrade netUrl = " + netUrl);
+                Log.d(TAG, "upgrade netUrl = " + netUrl);
             HttpURLConnection con = (HttpURLConnection) netUrl.openConnection();
             con.setRequestMethod("POST");
             con.setConnectTimeout(30000);
@@ -95,7 +96,7 @@ public class UpgradeTest extends Thread {
             }
             String appsInfo = getAppInfo(context);
             if (HomeUtils.DEBUG)
-                Log.d("UpgradeTest ##############", "upgrade current appsInfo = " + appsInfo);
+                Log.d(TAG, "upgrade current appsInfo = " + appsInfo);
             OutputStream out = con.getOutputStream();
             out.write(appsInfo.getBytes());
             out.flush();
@@ -106,7 +107,7 @@ public class UpgradeTest extends Thread {
                     return;
                 }
                 if (HomeUtils.DEBUG)
-                    Log.d("UpgradeTest ##############", "upgrade response success responseCode = " + responseCode);
+                    Log.d(TAG, "upgrade response success responseCode = " + responseCode);
                 InputStream in = con.getInputStream();
                 DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
                 DocumentBuilder docBuilder = dbf.newDocumentBuilder();
@@ -115,7 +116,7 @@ public class UpgradeTest extends Thread {
                 NodeList nodes = root.getElementsByTagName("item");
                 int len = nodes.getLength();
                 if (HomeUtils.DEBUG)
-                    Log.d("UpgradeTest ##############", "upgrade response get len = " + len);
+                    Log.d(TAG, "upgrade response get len = " + len);
                 for (int i = 0; i < len; i++) {
                     if (mStop) {
                         return;
@@ -170,7 +171,7 @@ public class UpgradeTest extends Thread {
                         return;
                     }
                     if (HomeUtils.DEBUG)
-                        Log.d("UpgradeTest ##############", "upgrade response success packageName = " + packageName
+                        Log.d(TAG, "upgrade response success packageName = " + packageName
                                 + "; size = " + size + "; md5 = " + md5 + "; url = " + url + "; version = " + version);
                     // download the app by the absolute url and install it
                 }
@@ -182,11 +183,11 @@ public class UpgradeTest extends Thread {
                 }
             } else {
                 if (HomeUtils.DEBUG)
-                    Log.d("UpgradeTest ##############", "upgrade response failed responseCode = " + responseCode);
+                    Log.d(TAG, "upgrade response failed responseCode = " + responseCode);
             }
         } catch (Exception e) {
             if (HomeUtils.DEBUG)
-                Log.d("UpgradeTest ##############", "upgrade exception = " + e.toString());
+                Log.d(TAG, "upgrade exception = " + e.toString());
         }
         if (testType == TEST_TYPE_SETTINGS) {
             mHandler.sendEmptyMessage(SettingsActivity.MSG_ERROR_REMOVE_UPGRADE_PD);

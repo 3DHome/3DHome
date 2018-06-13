@@ -18,10 +18,6 @@ import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-//import android.telephony.CellLocation;
-//import android.telephony.PhoneStateListener;
-//import android.telephony.TelephonyManager;
-//import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.text.format.Time;
@@ -31,6 +27,7 @@ import com.borqs.borqsweather.R;
 import com.borqs.borqsweather.WeatherApplication;
 import com.borqs.borqsweather.weather.yahoo.WeatherInfo;
 import com.borqs.borqsweather.weather.yahoo.WeatherPreferences;
+import com.funyoung.androidfacade.AndroidServiceUtils;
 
 public class LoopForInfoService {
     // below string used for communicated with 3DHome begin
@@ -74,11 +71,7 @@ public class LoopForInfoService {
             mGLSObserver = new GLSObserver(new Handler(), mContext);
             mGLSObserver.startObserving();
         }
-//        if (mCellStateListener == null) {
-//            mCellStateListener = new CellStateListener();
-//            TelephonyManager manager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
-//            manager.listen(mCellStateListener, PhoneStateListener.LISTEN_CELL_LOCATION);
-//        }
+
         setAlarm();
     }
 
@@ -424,7 +417,7 @@ public class LoopForInfoService {
      * 提示用户开启GPS设置
      */
     public boolean checkLocationServices() {
-        if (WeatherSettings.isAutoLocation(mContext) && ((460 != Utils.getCountryCode(mContext)))
+        if (WeatherSettings.isAutoLocation(mContext) && (AndroidServiceUtils.isInChina(mContext))
                 && !Utils.isLocationServicesEnabled(mContext) && !mHasPopupGPSSetting) {
             mHasPopupGPSSetting = true;
             Intent intent = new Intent(mContext, CheckLocServiceDialogActivity.class);

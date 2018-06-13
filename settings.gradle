@@ -1,4 +1,4 @@
-include ':3DHome'
+include ':3DHome', ':androidfacade'
 include ':3DHomeEngine'
 include ':BaiduStatic'
 include ':BorqsWeather'
