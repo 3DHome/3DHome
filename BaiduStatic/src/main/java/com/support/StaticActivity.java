@@ -12,13 +12,13 @@ public class StaticActivity extends Activity {
 
     @Override
     protected void onResume() {
-        super.onStart();
+        super.onResume();
         StatService.onResume(this);
     }
 
     @Override
     protected void onPause() {
-        super.onStop();
+        super.onPause();
         StatService.onPause(this);
     }
 }
