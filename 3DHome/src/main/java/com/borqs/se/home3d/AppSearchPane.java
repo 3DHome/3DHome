@@ -17,7 +17,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -35,6 +34,7 @@ import com.borqs.se.shortcut.AppItemInfo;
 import com.borqs.se.shortcut.ItemInfo;
 import com.borqs.se.shortcut.LauncherModel;
 import com.borqs.se.shortcut.LauncherModel.AppCallBack;
+import com.funyoung.androidfacade.CommonHelperUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,8 +46,6 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
     private GridView mAppGridView;
     private List<Item> mFullAppsList;
     private boolean mQueryWasEmpty = true;
-//    private int mScreenWidth;
-    //private int mScreenHeight;
     private OnAppSearchItemLongClickListener mItemLongClickListener;
 
     public interface OnAppSearchItemLongClickListener {
@@ -88,33 +86,25 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
         View v = mInflater.inflate(R.layout.activity_search_app, null);
         addView(v);
         setBackgroundColor(Color.BLACK);
-        mEdtSearchText = (EditText) findViewById(R.id.search_text);
+        mEdtSearchText = findViewById(R.id.search_text);
         mEdtSearchText.addTextChangedListener(new SearchTextWatcher());
 
-        mAppGridView = (GridView) findViewById(R.id.app_grid);
+        mAppGridView = findViewById(R.id.app_grid);
         mAppGridView.setNumColumns(4);
         mAppGridView.setGravity(Gravity.CENTER);
         DisplayMetrics displaymetrics = new DisplayMetrics();
         displaymetrics = mContext.getResources().getDisplayMetrics();
         int widthPixels = displaymetrics.widthPixels;
-        //mScreenHeight= displaymetrics.heightPixels;
         mAppGridView.setPadding(widthPixels / 40, 5, widthPixels / 40, 0);
-        //mAppGridView.setHorizontalSpacing(mScreenWidth / 15);
-        //mAppGridView.setVerticalSpacing(mScreenWidth / 15);
         mAppGridView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
-        //mAppGridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
 
         loadAllApps();
         mAppGridView.invalidateViews();
-//        AppsAdapter ap = new AppsAdapter();
-//        ap.setAppList(mFullAppsList);
-//        mAppGridView.setAdapter(ap);
         mAppGridView.setOnItemClickListener(new GridItemClickListener());
         mAppGridView.setOnItemLongClickListener(new GridItemLongClickListener());
 
         mEdtSearchText.requestFocus();
-        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+        CommonHelperUtils.showIme(mContext);
     }
 
     class GridItemClickListener implements OnItemClickListener {
@@ -128,8 +118,7 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
             } else {
                 return;
             }
-            ((InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE))
-            .hideSoftInputFromWindow(mEdtSearchText.getWindowToken(), 0);
+            CommonHelperUtils.hideIme(mContext, mEdtSearchText.getWindowToken());
         }
     }
 
@@ -146,8 +135,7 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
             if (mItemLongClickListener != null) {
                 mItemLongClickListener.onItemLongClick(holder);
             }
-            ((InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE))
-            .hideSoftInputFromWindow(mEdtSearchText.getWindowToken(), 0);
+            CommonHelperUtils.hideIme(mContext, mEdtSearchText.getWindowToken());
             return false;
         }
 
@@ -335,8 +323,8 @@ public class AppSearchPane extends FrameLayout implements AppCallBack {
                 v = convertView;
             }
 
-            ImageView appIcon = (ImageView)v.findViewById(R.id.itemImage);
-            TextView appLabel = (TextView)v.findViewById(R.id.itemText);
+            ImageView appIcon = v.findViewById(R.id.itemImage);
+            TextView appLabel = v.findViewById(R.id.itemText);
             appIcon.setImageDrawable(mAppsList.get(position).mIcon);
 
             appLabel.setText(mAppsList.get(position).mLabel, TextView.BufferType.SPANNABLE);

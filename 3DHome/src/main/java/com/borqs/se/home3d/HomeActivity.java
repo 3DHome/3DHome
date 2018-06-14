@@ -28,7 +28,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.borqs.se.R;
@@ -37,6 +36,7 @@ import com.borqs.se.engine.SESceneManager;
 import com.borqs.se.home3d.HomeUtils.SceneOrientation;
 import com.borqs.se.upgrade.UpgradeTest;
 import com.borqs.se.widget3d.ADViewController;
+import com.funyoung.androidfacade.CommonHelperUtils;
 import com.support.StaticFragmentActivity;
 
 import java.lang.reflect.Field;
@@ -46,7 +46,8 @@ import java.util.Calendar;
 import java.util.List;
 
 public class HomeActivity extends StaticFragmentActivity implements View.OnCreateContextMenuListener {
-//    private WorkSpace mWorkSpace;
+    private static final String TAG = HomeActivity.class.getSimpleName();
+
     private AppSearchPane mAppSearchPane;
     private SERenderView mRenderView;
     private HomeManager mHomeManager;
@@ -62,17 +63,18 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
     private UpgradeTest mAutoChecker;
     private String mUpgradeUrl;
     private StringBuilder mReleaseNode;
-//    private boolean mHaveGoolgePlay = false;
-    private String mUpgradePreferencesName = HomeUtils.PKG_CURRENT_NAME + ".upgrade";
+    private static final String mUpgradePreferencesName = HomeUtils.PKG_CURRENT_NAME + ".upgrade";
     private final static String KEY_VERSION_NUMBER = "saved.version";
     private final static String KEY_USER_CANCELED = "canceled.by.user";
     private final static String KEY_CHECK_DATE = "checked.date";
     private final static String GOOGLE_PLAY_PACKAGE_NAME = "com.android.vending";
     // dialog id should not conflict with dialog id in SE3DHomeScene.java, they
     // are use same onCreateDialog()and onPrepareDialog().
-    public static final int ALERT_DIALOG_UPDATE_SW = 1000;
+    private static final int ALERT_DIALOG_UPDATE_SW = 1000;
     public static final int MSG_GET_UPGRADE_INFO = 1000;
-    private Handler mHandlerForUpgrade = new Handler() {
+
+    // todo: fix memory leak by non static inner class.
+    private final Handler mHandlerForUpgrade = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -92,11 +94,11 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
                 }
                 if (!userCanceled) {
                     long size = data.getLong("size");
-                    DecimalFormat formater = new DecimalFormat();
-                    formater.setMaximumFractionDigits(2);
-                    formater.setGroupingSize(0);
-                    formater.setRoundingMode(RoundingMode.FLOOR);
-                    String fileSize = formater.format(size / (1024f * 1024f)) + "MB";
+                    DecimalFormat formatter = new DecimalFormat();
+                    formatter.setMaximumFractionDigits(2);
+                    formatter.setGroupingSize(0);
+                    formatter.setRoundingMode(RoundingMode.FLOOR);
+                    String fileSize = formatter.format(size / (1024f * 1024f)) + "MB";
                     mUpgradeUrl = data.getString("url");
                     String releaseNotes = data.getString("release_note");
                     mReleaseNode = new StringBuilder();
@@ -158,8 +160,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
             Class<WindowManager.LayoutParams> c = WindowManager.LayoutParams.class;
             Field field = c.getField("FLAG_NEEDS_MENU_KEY");
             field.setAccessible(true);
-            int id = field.getInt(c);
-            return id;
+            return field.getInt(c);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -175,14 +176,14 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         int year = c.get(Calendar.YEAR);
         String newDate = String.valueOf(year) + String.valueOf(month) + String.valueOf(day);
 
-        boolean mHaveGoolgePlay = false;
+        boolean autoChecking;
         try {
             getPackageManager().getApplicationInfo(GOOGLE_PLAY_PACKAGE_NAME, PackageManager.GET_UNINSTALLED_PACKAGES);
-            mHaveGoolgePlay = true;
+            autoChecking = true;
         } catch (NameNotFoundException e) {
-            mHaveGoolgePlay = false;
+            autoChecking = false;
         }
-        if (!mHaveGoolgePlay && !newDate.equals(dateStr)) {
+        if (!autoChecking && !newDate.equals(dateStr)) {
             mAutoChecker = new UpgradeTest(HomeActivity.this, mHandlerForUpgrade, UpgradeTest.TEST_TYEP_ACTIVITY);
             mAutoChecker.start();
             SharedPreferences.Editor editor = upgradePreferences.edit();
@@ -286,7 +287,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
 
     private void initView() {
         boolean hasScene = mHomeManager.getHomeScene() != null;
-        WorkSpace workSpace = (WorkSpace) findViewById(R.id.workspace);
+        WorkSpace workSpace = findViewById(R.id.workspace);
         mHomeManager.setWorkSpace(workSpace);
         Configuration config = getResources().getConfiguration();
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -308,11 +309,6 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         if (hasScene) {
             SESceneManager.getInstance().onActivityRestart();
         }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -401,7 +397,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (HomeUtils.DEBUG)
-            Log.d("BORQS", "keyCode = " + keyCode);
+            Log.d(TAG, "onKeyUp, keyCode = " + keyCode);
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             SESceneManager.getInstance().handleMenuKey();
         }
@@ -425,9 +421,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
                     mAppSearchPane = mHomeManager.getAppSearchPane();
                     if (mAppSearchPane != null && mAppSearchPane.getVisibility() == View.VISIBLE) {
                         mAppSearchPane.setVisibility(View.INVISIBLE);
-                        ((InputMethodManager) HomeManager.getInstance().getContext()
-                                .getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(
-                                mAppSearchPane.getWindowToken(), 0);
+                        CommonHelperUtils.hideIme(HomeManager.getInstance().getContext(), mAppSearchPane.getWindowToken());
                     }
                     dismissDialog(ALERT_DIALOG_UPDATE_SW);
                 } catch (Exception e) {
@@ -441,9 +435,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         List<RunningTaskInfo> tasks = am.getRunningTasks(1);
         if (tasks != null && !tasks.isEmpty()) {
             ComponentName topActivity = tasks.get(0).topActivity;
-            if (topActivity.equals(getComponentName())) {
-                return true;
-            }
+            return topActivity.equals(getComponentName());
         }
         return false;
     }
@@ -467,14 +459,4 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         return false;
     }
 
-    void complain(String message) {
-        alert("Error: " + message);
-    }
-
-    void alert(String message) {
-        AlertDialog.Builder bld = new AlertDialog.Builder(this);
-        bld.setMessage(message);
-        bld.setNeutralButton("OK", null);
-        bld.create().show();
-    }
 }

@@ -250,7 +250,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
         }
 
         mPagerAdapter = new IIPagerAdapter(mContext, mInflater, itemInfos, this, mNum, nper,needShowCheckedMark);
-        AddObjectViewPager viewPager = (AddObjectViewPager)mContentView.findViewById(R.id.contentvp);
+        AddObjectViewPager viewPager = mContentView.findViewById(R.id.contentvp);
         viewPager.setAdapter(mPagerAdapter);
         viewPager.setOnPageChangeListener(new AddObjectViewPager.OnPageChangeListener() {
             @Override
@@ -271,7 +271,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
             }
         });
         
-        mPageIndicator = (LinearLayout)mContentView.findViewById(R.id.pageindicatorl);
+        mPageIndicator = mContentView.findViewById(R.id.pageindicatorl);
         ImageView iv = null;
         for (int i = 0; i < mNum; i++) {
             iv = new ImageView(mContext);
@@ -317,9 +317,9 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
             }
         });
 
-        mSelectdNumView = (TextView)mContentView.findViewById(R.id.selectedinfo);
+        mSelectdNumView = mContentView.findViewById(R.id.selectedinfo);
         if (mTag == FOLDER) {
-            mEditText = (AddObjectEditText)mContentView.findViewById(R.id.contenttitle_ev);
+            mEditText = mContentView.findViewById(R.id.contenttitle_ev);
             mEditText.setListener(new AddObjectEditText.IMStatusListener() {
                 public void statusChanged(boolean show) {
                     setContentVisibility(show);
@@ -338,7 +338,7 @@ public class AddObjectDialog extends Dialog implements OnItemCheckListener {
             mContentView.findViewById(R.id.contenttitle_ev).setVisibility(View.GONE);
             mContentView.findViewById(R.id.contenttitle_tv).setVisibility(View.VISIBLE);
             if(mTag == ADD_OR_HIDE){
-                TextView tv = (TextView)mContentView.findViewById(R.id.contenttitle_tv);
+                TextView tv = mContentView.findViewById(R.id.contenttitle_tv);
                 tv.setText(R.string.select_app_to_hide);
                 mSelectdNumView.setVisibility(View.INVISIBLE);
             }else{

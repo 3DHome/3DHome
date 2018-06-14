@@ -23,6 +23,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.funyoung.androidfacade.CommonHelperUtils;
+
 /**
  * For folder edit.
  */
@@ -90,9 +92,8 @@ public class AddObjectEditText extends EditText {
     
     public void hideIM() {
         setCursorVisible(false);
-        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         clearFocus();
-        imm.hideSoftInputFromWindow(getWindowToken(), 0);
+        CommonHelperUtils.hideIme(getContext(), getWindowToken());
     }
 
     @Override
