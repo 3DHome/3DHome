@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.borqs.digitalframe" >
 
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="15" />
-
     <application>
         <!--<activity-->
             <!--android:name="com.borqs.digitalframe.AlbumFolderActivity"-->
