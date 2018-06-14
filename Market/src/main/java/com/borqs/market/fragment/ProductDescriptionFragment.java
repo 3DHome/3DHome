@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -15,14 +16,14 @@ import android.widget.TextView;
 import com.borqs.market.R;
 import com.borqs.market.json.Product;
 import com.borqs.market.utils.DownloadUtils;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.funyoung.androidfacade.CommonHelperUtils;
 
 
 public class ProductDescriptionFragment extends Fragment {
-    public static final String TAG = ProductDescriptionFragment.class.getSimpleName();
-    private Product mData;
+    private static final String TAG = ProductDescriptionFragment.class.getSimpleName();
+    private static final String FLAG_DATA = "FLAG_DATA";
+
+    private @Nullable Product mData;
     private View view;
 //    private Context ctx;
     public interface ClickListener {
@@ -32,7 +33,10 @@ public class ProductDescriptionFragment extends Fragment {
     public ProductDescriptionFragment() {
         super();
 
-        this.mData = (Product) getArguments().getSerializable(Intent.EXTRA_STREAM);
+        Bundle arguments = getArguments();
+        if (null != arguments) {
+            this.mData = (Product) arguments.getSerializable(Intent.EXTRA_STREAM);
+        }
     }
 
     public static ProductDescriptionFragment newInstance(Product data) {
@@ -47,7 +51,7 @@ public class ProductDescriptionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if(savedInstanceState != null) {
-            this.mData = savedInstanceState.getParcelable("FLAG_DATA");
+            this.mData = savedInstanceState.getParcelable(FLAG_DATA);
         }
 
         Context ctx = getActivity().getApplicationContext();
@@ -127,8 +131,8 @@ public class ProductDescriptionFragment extends Fragment {
                 tv_update_time.setVisibility(View.GONE);
                 lable_update_time.setVisibility(View.GONE);
             }else {
-                SimpleDateFormat fmt=new SimpleDateFormat("yyyy-MM-dd"); 
-                tv_update_time.setText(fmt.format(new Date(mData.updated_time)));
+                String text = CommonHelperUtils.formatDate(mData.updated_time);
+                tv_update_time.setText(text);
                 tv_update_time.setVisibility(View.VISIBLE);
                 lable_update_time.setVisibility(View.VISIBLE);
             }
@@ -154,11 +158,12 @@ public class ProductDescriptionFragment extends Fragment {
         this.mData = data;
         initUI();
     }
-    
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putParcelable("FLAG_DATA", mData);
+        if (null != mData) {
+            outState.putParcelable(FLAG_DATA, mData);
+        }
         super.onSaveInstanceState(outState);
     }
-
 }

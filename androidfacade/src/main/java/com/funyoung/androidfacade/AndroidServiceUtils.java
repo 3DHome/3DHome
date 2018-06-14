@@ -3,10 +3,14 @@ package com.funyoung.androidfacade;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import java.util.Locale;
+
+// todo: handle else case to request dynamic permissions.
 
 public class AndroidServiceUtils {
     private static final String TAG = AndroidServiceUtils.class.getSimpleName();
@@ -17,7 +21,7 @@ public class AndroidServiceUtils {
     }
 
     public static String getDeviceId(Context context) {
-        if (context.checkCallingOrSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+        if (hasReadPhoneState(context)) {
             TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             return tm.getDeviceId();
         } else {
@@ -26,7 +30,7 @@ public class AndroidServiceUtils {
     }
 
     public static String getSubscriberId(Context context) {
-        if (context.checkCallingOrSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+        if (hasReadPhoneState(context)) {
             TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             return tm.getSubscriberId();
         } else {
@@ -35,7 +39,7 @@ public class AndroidServiceUtils {
     }
 
     public static String getLine1Number(Context context) {
-        if (context.checkCallingOrSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+        if (hasReadPhoneState(context)) {
             TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             return tm.getLine1Number();
         } else {
@@ -70,5 +74,35 @@ public class AndroidServiceUtils {
 //        }
 //
 //        return mcc;
+    }
+
+    private static boolean hasReadPhoneState(Context context) {
+        if (context.checkCallingOrSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean hasLocationPermission(Context context) {
+        if (context.checkCallingOrSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                || context.checkCallingOrSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static void removeLocationListener(Context context, LocationManager locationManager,
+                                              LocationListener locationListener) {
+        if (hasLocationPermission(context)) {
+            locationManager.removeUpdates(locationListener);
+        }
+    }
+
+    public static void requestLocationUpdates(Context context, String provider, LocationManager locationManager,
+                                              LocationListener locationListener) {
+        if (hasLocationPermission(context)) {
+            locationManager.requestLocationUpdates(provider, 0, 0, locationListener);
+        }
     }
 }

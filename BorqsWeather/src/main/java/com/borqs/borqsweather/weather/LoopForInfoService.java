@@ -34,7 +34,7 @@ public class LoopForInfoService {
     public static final String UPDATE_WEATHER = "weather.action.intent.UPDATE";
     // end
 
-    public static final String TAG = "Weather_LoopForInfoService";
+    public static final String TAG = LoopForInfoService.class.getSimpleName();
 
     public static final String INTENT_ACTION_WEATHER_LOOP_UPDATE = "3dhome.action.intent.WEATHER_LOOP_UPDATE";
     public static final String INTENT_ACTION_WEATHER_DAY_NIGHT_CHANGED = "3dhome.action.intent.WEATHER_DAY_NIGHT_CHANGED";
@@ -270,6 +270,7 @@ public class LoopForInfoService {
         if (info == null || !WeatherSettings.isAutoLocation(mContext)) {
             return false;
         }
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
         Date date = null;
         try {

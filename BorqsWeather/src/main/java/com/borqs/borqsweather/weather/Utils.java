@@ -1,13 +1,5 @@
 package com.borqs.borqsweather.weather;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-
 import android.content.Context;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -16,6 +8,13 @@ import android.os.Environment;
 import android.text.TextUtils;
 
 import com.borqs.borqsweather.weather.yahoo.PinYinUtil;
+import com.funyoung.androidfacade.CommonHelperUtils;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.List;
 
 public class Utils {
 
@@ -147,13 +146,11 @@ public class Utils {
 
 
         private FileOutputStream mWriter;
-        private SimpleDateFormat mFormatter;
         private String mLogBasePath;
         private File mFile;
         private LogWriter(String file_path) {
             mWriter = null;
             mLogBasePath = file_path;
-            mFormatter = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss ");
             try {
                 open(mLogBasePath + ".0");
             } catch (IOException e) {
@@ -195,8 +192,9 @@ public class Utils {
 
         public void print(String log) throws IOException {
             if (mWriter != null) {
-                Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
-                String time = mFormatter.format(curDate) + ":";
+//                Date curDate = new Date(System.currentTimeMillis());// 获取当前时间
+//                String time = mFormatter.format(curDate) + ":";
+                String time = CommonHelperUtils.formatDateTime(System.currentTimeMillis()) + ":";
                 mWriter.write(time.getBytes());
                 mWriter.write(log.getBytes());
                 String s = "\n";

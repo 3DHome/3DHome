@@ -1,8 +1,5 @@
 package com.borqs.borqsweather.weather;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
@@ -11,9 +8,12 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.borqs.borqsweather.weather.LocationState.Locate;
+import com.funyoung.androidfacade.AndroidServiceUtils;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class GLocate implements Locate {
-
     private static final String TAG = "Weather_LocationState";
     private static boolean DEBUG = WeatherController.DEBUG;
     private LocationState mState;
@@ -32,7 +32,8 @@ public class GLocate implements Locate {
                 mTimer = null;
             }
             mHasGotLocation = true;
-            mLocationManager.removeUpdates(mLocationListener);
+            removeListener();
+//            AndroidServiceUtils.removeLocationListener(mState.mContext, mLocationManager, mLocationListener);
             mLatitude = String.valueOf(location.getLatitude());
             mLongitude = String.valueOf(location.getLongitude());
             if (DEBUG)
@@ -75,11 +76,14 @@ public class GLocate implements Locate {
         }
         mTimer = new Timer();
         mTimer.schedule(new CancelLocateTask(), 1000 * 60);
-        if (isLocationProviderEnabled()) {
-            mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, mLocationListener);
-        } else {
-            mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLocationListener);
-        }
+
+        String provider = isLocationProviderEnabled() ? LocationManager.NETWORK_PROVIDER : LocationManager.GPS_PROVIDER;
+        AndroidServiceUtils.requestLocationUpdates(mState.mContext, provider, mLocationManager, mLocationListener);
+//        if (isLocationProviderEnabled()) {
+//            mLocationManager.requestLocationUpdates(provider, 0, 0, mLocationListener);
+//        } else {
+//            mLocationManager.requestLocationUpdates(provider, 0, 0, mLocationListener);
+//        }
     }
 
     private class CancelLocateTask extends TimerTask {
@@ -118,8 +122,16 @@ public class GLocate implements Locate {
             mTimer.cancel();
             mTimer = null;
         }
-        if (mLocationListener != null) {
-            mLocationManager.removeUpdates(mLocationListener);
+
+        removeListener();
+    }
+
+    private void removeListener() {
+        if (null != mLocationListener) {
+            AndroidServiceUtils.removeLocationListener(mState.mContext, mLocationManager, mLocationListener);
         }
+//        if (mLocationListener != null) {
+//            mLocationManager.removeUpdates(mLocationListener);
+//        }
     }
 }

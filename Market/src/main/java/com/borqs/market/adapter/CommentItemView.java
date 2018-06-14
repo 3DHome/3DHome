@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.borqs.market.R;
 import com.borqs.market.json.Comment;
+import com.funyoung.androidfacade.CommonHelperUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,7 +28,7 @@ public class CommentItemView {
     
     private String lableVersion;
     private String lable_comment_on;
-    private SimpleDateFormat fmt;
+//    private SimpleDateFormat fmt;
     
     public CommentItemView(Context context) {
         super();
@@ -35,7 +36,7 @@ public class CommentItemView {
         LayoutInflater inflater = LayoutInflater.from(context);
         lableVersion = context.getString(R.string.product_info_version);
         lable_comment_on = context.getString(R.string.lable_comment_on);
-        fmt=new SimpleDateFormat("yyyy-MM-dd HH:mm"); 
+//        fmt=new SimpleDateFormat("yyyy-MM-dd HH:mm");
         convertView = inflater.inflate(R.layout.comment_list_item, null);
         content = (TextView)convertView.findViewById(R.id.comment_content);
         version = (TextView)convertView.findViewById(R.id.version);
@@ -57,7 +58,9 @@ public class CommentItemView {
         descriptionBuilder.append(" ");
         descriptionBuilder.append(lable_comment_on);
         descriptionBuilder.append(" ");
-        descriptionBuilder.append(fmt.format(new Date(mData.updated_time)));
+        String text = CommonHelperUtils.formatDateTime(mData.updated_time);
+//        descriptionBuilder.append(fmt.format(new Date(mData.updated_time)));
+        descriptionBuilder.append(text);
         
         description.setText(descriptionBuilder);
     }

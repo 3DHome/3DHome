@@ -29,15 +29,9 @@ public class ExportDescriptionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.wallpaper_export_description, null);
-//            ((TextView)view.findViewById(R.id.tv_title)).setText(getSharedTitle());
-//            ((TextView)view.findViewById(R.id.tv_size)).setText(DownloadUtils.getAppSize(mData.size));
-//            ((TextView)view.findViewById(R.id.tv_size)).setText("");
-//            ((TextView)view.findViewById(R.id.tv_version)).setText("0");
         mAuthorView = ((TextView)view.findViewById(R.id.tv_author));
         ((TextView)view.findViewById(R.id.tv_desc)).setText(getSharedDescription());
         updateAuthorInfo();
-//            SimpleDateFormat fmt=new SimpleDateFormat("yyyy-MM-dd");
-//            ((TextView)view.findViewById(R.id.tv_update_time)).setText(fmt.format(new Date(System.currentTimeMillis())));
         return view;
     }
 
