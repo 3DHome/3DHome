@@ -1,12 +1,9 @@
 package com.borqs.se.home3d;
 
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningTaskInfo;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -43,7 +40,6 @@ import java.lang.reflect.Field;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Calendar;
-import java.util.List;
 
 public class HomeActivity extends StaticFragmentActivity implements View.OnCreateContextMenuListener {
     private static final String TAG = HomeActivity.class.getSimpleName();
@@ -186,9 +182,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         if (!autoChecking && !newDate.equals(dateStr)) {
             mAutoChecker = new UpgradeTest(HomeActivity.this, mHandlerForUpgrade, UpgradeTest.TEST_TYEP_ACTIVITY);
             mAutoChecker.start();
-            SharedPreferences.Editor editor = upgradePreferences.edit();
-            editor.putString(KEY_CHECK_DATE, newDate);
-            editor.commit();
+            CommonHelperUtils.putString(upgradePreferences, KEY_CHECK_DATE, newDate);
         }
     }
 
@@ -225,9 +219,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
                     .setPositiveButton(R.string.upgrade_dialog_ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, final int whichButton) {
                             SharedPreferences upgradePreferences = getSharedPreferences(mUpgradePreferencesName, 0);
-                            SharedPreferences.Editor editor = upgradePreferences.edit();
-                            editor.putBoolean(KEY_USER_CANCELED, true);
-                            editor.commit();
+                            CommonHelperUtils.putBoolean(upgradePreferences, KEY_USER_CANCELED, true);
                             dialog.dismiss();
                             if (mUpgradeUrl != null) {
                                 try {
@@ -244,17 +236,13 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
                         public void onClick(DialogInterface dialog, final int whichButton) {
                             // user ignore this version
                             SharedPreferences upgradePreferences = getSharedPreferences(mUpgradePreferencesName, 0);
-                            SharedPreferences.Editor editor = upgradePreferences.edit();
-                            editor.putBoolean(KEY_USER_CANCELED, true);
-                            editor.commit();
+                            CommonHelperUtils.putBoolean(upgradePreferences, KEY_USER_CANCELED,true);
                             dialog.dismiss();
                         }
                     }).setOnCancelListener(new DialogInterface.OnCancelListener() {
                         public void onCancel(DialogInterface dialog) {
                             SharedPreferences upgradePreferences = getSharedPreferences(mUpgradePreferencesName, 0);
-                            SharedPreferences.Editor editor = upgradePreferences.edit();
-                            editor.putBoolean(KEY_USER_CANCELED, true);
-                            editor.commit();
+                            CommonHelperUtils.putBoolean(upgradePreferences, KEY_USER_CANCELED,true);
                         }
                     }).create();
             if (mReleaseNode != null) {
@@ -343,6 +331,8 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         try {
             unregisterReceiver(mHomeReceiver);
         } catch (IllegalArgumentException e) {
+            if (HomeUtils.DEBUG)
+                Log.e(TAG, "onPause, exception " + e.getMessage());
         }
         mHasLeave3DHome = mUserLeaveHint || !isTopActivity() || !mPowerManager.isScreenOn();
         mUserLeaveHint = false;
@@ -425,19 +415,15 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
                     }
                     dismissDialog(ALERT_DIALOG_UPDATE_SW);
                 } catch (Exception e) {
+                    if (HomeUtils.DEBUG)
+                        Log.e(TAG, "onNewIntent, exception " + e.getMessage());
                 }
             }
         }
     }
 
     private boolean isTopActivity() {
-        ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        List<RunningTaskInfo> tasks = am.getRunningTasks(1);
-        if (tasks != null && !tasks.isEmpty()) {
-            ComponentName topActivity = tasks.get(0).topActivity;
-            return topActivity.equals(getComponentName());
-        }
-        return false;
+        return CommonHelperUtils.isTopActivity(this, getComponentName());
     }
 
     private class HomeReceiver extends BroadcastReceiver {
