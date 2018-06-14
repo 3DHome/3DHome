@@ -4,11 +4,10 @@ ext.versions = [
 
         minSdk                       : 14,
         targetSdk                    : 26,
-        compileSdk                   : 26,
-        buildTools                   : '26.0.2',
+        compileSdk                   : 27,
+        buildTools                   : '27.0.3',
 
         androidGradlePlugin          : '2.2.0',
-        aptGradlePlugin              : '1.8',
         retrolambdaGradlePlugin      : '3.2.5',
         lombokGradlePlugin           : '0.2.3.a2',
         paperworkGradlePlugin        : '1.2.7',
@@ -25,7 +24,7 @@ ext.versions = [
         rxAndroid                    : '1.2.1',
         rxJava                       : '1.1.9',
         rxLint                       : '1.0',
-        supportLibs                  : '26.1.0',
+        supportLibs                  : '27.1.1',
         okHttp                       : '3.4.1',
         retrofit                     : '2.1.0',
         jackson                      : '2.6.3',
@@ -72,7 +71,6 @@ ext.versions = [
 
 ext.gradlePlugins = [
         android          : "com.android.tools.build:gradle:$versions.androidGradlePlugin",
-        apt              : "com.neenbedankt.gradle.plugins:android-apt:$versions.aptGradlePlugin",
         retrolambda      : "me.tatarka:gradle-retrolambda:$versions.retrolambdaGradlePlugin",
         lombok           : "me.tatarka.retrolambda.projectlombok:lombok.ast:$versions.lombokGradlePlugin",
         paperwork        : "hu.supercluster:paperwork-plugin:$versions.paperworkGradlePlugin",

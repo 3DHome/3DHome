@@ -13,8 +13,7 @@ buildscript {    // Gradle will not find vars defined in an external file when r
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.android.tools.build:gradle:3.1.3'
     }
 }
 

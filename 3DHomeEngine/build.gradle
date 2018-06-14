@@ -32,8 +32,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            zipAlignEnabled true
-            shrinkResources true
             //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFile 'proguard.cfg'
         }
@@ -45,9 +43,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Google libraries
-    compile libraries.supportAppCompat
-    compile libraries.supportDesign
+    implementation libraries.supportAppCompat
+    implementation libraries.supportDesign
 }

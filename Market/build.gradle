@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -34,8 +33,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            zipAlignEnabled true
-            shrinkResources true
             //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFile 'proguard.cfg'
         }
@@ -49,16 +46,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile project(':BaiduStatic')
+    implementation project(':BaiduStatic')
 
     //for dagger2
-    compile libraries.dagger;
-    apt libraries.daggerCompiler
+    implementation libraries.dagger
+    annotationProcessor   libraries.daggerCompiler
 
     // Google libraries
-    compile libraries.supportAppCompat
-    compile libraries.supportDesign
-    compile project(path: ':androidfacade')
+    implementation libraries.supportAppCompat
+    implementation libraries.supportDesign
+    implementation project(path: ':androidfacade')
 }

@@ -27,8 +27,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            zipAlignEnabled true
-            shrinkResources true
             //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFile 'proguard.cfg'
         }
@@ -40,10 +38,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':3DHomeEngine')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':3DHomeEngine')
 
     // Google libraries
-    compile libraries.supportAppCompat
-    compile libraries.supportDesign
+    implementation libraries.supportAppCompat
+    implementation libraries.supportDesign
 }
