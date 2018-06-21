@@ -41,7 +41,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
-public class HomeActivity extends StaticFragmentActivity implements View.OnCreateContextMenuListener {
+public class HomeActivity extends StaticFragmentActivity {
     private static final String TAG = HomeActivity.class.getSimpleName();
 
     private AppSearchPane mAppSearchPane;
@@ -60,10 +60,10 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
     private String mUpgradeUrl;
     private StringBuilder mReleaseNode;
     private static final String mUpgradePreferencesName = HomeUtils.PKG_CURRENT_NAME + ".upgrade";
-    private final static String KEY_VERSION_NUMBER = "saved.version";
-    private final static String KEY_USER_CANCELED = "canceled.by.user";
-    private final static String KEY_CHECK_DATE = "checked.date";
-    private final static String GOOGLE_PLAY_PACKAGE_NAME = "com.android.vending";
+    private static final String KEY_VERSION_NUMBER = "saved.version";
+    private static final String KEY_USER_CANCELED = "canceled.by.user";
+    private static final String KEY_CHECK_DATE = "checked.date";
+    private static final String GOOGLE_PLAY_PACKAGE_NAME = "com.android.vending";
     // dialog id should not conflict with dialog id in SE3DHomeScene.java, they
     // are use same onCreateDialog()and onPrepareDialog().
     private static final int ALERT_DIALOG_UPDATE_SW = 1000;
@@ -125,7 +125,6 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
 
     @Override
     protected void onCreate(Bundle icicle) {
-        getFilesDir();
         if (HomeUtils.DEBUG)
             Log.d(HomeUtils.TAG, "SEHomeActivity onCreate time : " + System.currentTimeMillis());
         super.onCreate(icicle);
@@ -180,7 +179,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
             autoChecking = false;
         }
         if (!autoChecking && !newDate.equals(dateStr)) {
-            mAutoChecker = new UpgradeTest(HomeActivity.this, mHandlerForUpgrade, UpgradeTest.TEST_TYEP_ACTIVITY);
+            mAutoChecker = new UpgradeTest(this, mHandlerForUpgrade, UpgradeTest.TEST_TYEP_ACTIVITY);
             mAutoChecker.start();
             CommonHelperUtils.putString(upgradePreferences, KEY_CHECK_DATE, newDate);
         }
@@ -214,10 +213,11 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
     protected Dialog onCreateDialog(int id, Bundle bundle) {
         switch (id) {
         case ALERT_DIALOG_UPDATE_SW:
-            AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this)
+            AlertDialog alertDialog = new AlertDialog.Builder(this)
                     .setTitle(R.string.upgrade_dialog_title)
                     .setPositiveButton(R.string.upgrade_dialog_ok, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, final int whichButton) {
+                        @Override
+                        public void onClick(DialogInterface dialog, int whichButton) {
                             SharedPreferences upgradePreferences = getSharedPreferences(mUpgradePreferencesName, 0);
                             CommonHelperUtils.putBoolean(upgradePreferences, KEY_USER_CANCELED, true);
                             dialog.dismiss();
@@ -233,13 +233,15 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
                             }
                         }
                     }).setNegativeButton(R.string.upgrade_dialog_cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, final int whichButton) {
+                        @Override
+                        public void onClick(DialogInterface dialog, int whichButton) {
                             // user ignore this version
                             SharedPreferences upgradePreferences = getSharedPreferences(mUpgradePreferencesName, 0);
                             CommonHelperUtils.putBoolean(upgradePreferences, KEY_USER_CANCELED,true);
                             dialog.dismiss();
                         }
                     }).setOnCancelListener(new DialogInterface.OnCancelListener() {
+                        @Override
                         public void onCancel(DialogInterface dialog) {
                             SharedPreferences upgradePreferences = getSharedPreferences(mUpgradePreferencesName, 0);
                             CommonHelperUtils.putBoolean(upgradePreferences, KEY_USER_CANCELED,true);
@@ -279,9 +281,9 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
         mHomeManager.setWorkSpace(workSpace);
         Configuration config = getResources().getConfiguration();
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            mHomeManager.setSceneOrientation(SceneOrientation.AUTO_LAND); 
+            mHomeManager.setSceneOrientation(SceneOrientation.AUTO_LAND);
         } else {
-            mHomeManager.setSceneOrientation(SceneOrientation.AUTO_PORT); 
+            mHomeManager.setSceneOrientation(SceneOrientation.AUTO_PORT);
         }
         mRenderView = new SERenderView(this, false);
         workSpace.addView(mRenderView);
@@ -404,7 +406,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
     @Override
     protected void onNewIntent(Intent intent) {
         if (Intent.ACTION_MAIN.equals(intent.getAction())) {
-            boolean alreadyOnHome = ((intent.getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+            boolean alreadyOnHome = (intent.getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT;
             if (alreadyOnHome) {
                 SESceneManager.getInstance().onNewIntent(intent);
                 try {
@@ -427,6 +429,7 @@ public class HomeActivity extends StaticFragmentActivity implements View.OnCreat
     }
 
     private class HomeReceiver extends BroadcastReceiver {
+        @Override
         public void onReceive(Context context, Intent intent) {
             if (Intent.ACTION_TIMEZONE_CHANGED.equals(intent.getAction())
                     || Intent.ACTION_TIME_CHANGED.equals(intent.getAction())
