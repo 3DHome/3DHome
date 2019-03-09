@@ -1,11 +1,11 @@
 ext.versions = [
-        code                         : 4612,
-        name                         : '2.0.7-4612p',
+        code                         : 4613,
+        name                         : '2.0.8-4613p',
 
         minSdk                       : 14,
-        targetSdk                    : 26,
-        compileSdk                   : 27,
-        buildTools                   : '27.0.3',
+        targetSdk                    : 28,
+        compileSdk                   : 28,
+        buildTools                   : '28.0.3',
 
         androidGradlePlugin          : '2.2.0',
         retrolambdaGradlePlugin      : '3.2.5',
@@ -24,7 +24,7 @@ ext.versions = [
         rxAndroid                    : '1.2.1',
         rxJava                       : '1.1.9',
         rxLint                       : '1.0',
-        supportLibs                  : '27.1.1',
+        supportLibs                  : '28.0.0',
         okHttp                       : '3.4.1',
         retrofit                     : '2.1.0',
         jackson                      : '2.6.3',
